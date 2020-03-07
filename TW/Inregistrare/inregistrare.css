@@ -138,77 +138,150 @@ input[type="submit"] {
     min-height: 20%;
   }
 }
-
-
-
-main h1{
+main{
+  width: 100%;
+  text-align: left;
+  padding: 0;
+}
+main .main-dreapta,
+main .main-stanga{
+  display: inline-block;
+  vertical-align: top;
+}
+.main-dreapta{
+  width: 45%;
+}
+.main-stanga{
+  width: 45%;
+}
+.main-stanga h1{
 max-width: 500px;
 margin: auto;
-font-size: 100px;
-text-align: center;
+font-size: 50px;
+text-align:center;
+
 }
 
-.inregistrare-register,
-.inregistrare-email,
-.inregistrare-parola{
+.main-stanga .inregistrare-register,
+.main-stanga .inregistrare-email,
+.main-stanga .inregistrare-parola{
     display: flex;
-    width: 100%;
+    width:100%;
     margin-bottom: 15px;
 }
 
-.inregistrare-register img{
-  width: 100px;
-  height:100px;
-  margin-left:100px;
-  margin-top:50px;
+.main-stanga .inregistrare-register img{
+  width: 50px;
+  height:50px;
+  margin-left:120px;
+  margin-top:30px;
 } 
 
-.inregistrare-email img{
-    width: 100px;
-    height:100px;
-    margin-left:100px;
-    margin-top:50px;
+.main-stanga .inregistrare-email img{
+  width: 50px;
+  height:50px;
+    margin-left:120px;
+    margin-top:20px;
   } 
-  .inregistrare-parola img{
-    width: 100px;
-    height:100px;
-    margin-left:100px;
-    margin-top:50px;
+.main-stanga .inregistrare-parola img{
+    width: 50px;
+    height:50px;
+    margin-left:120px;
+    margin-top:20px;
   } 
- .input-register {
-  font-size: 50px;
-  height: 84px;
-  margin-top: 55px;
+.main-stanga .input-register {
+  font-size: 30px;
+  height: 39px;
+  margin-top:33px;
   left: 0;
  }
- .input-email {
-    font-size: 50px;
-    height: 84px;
-    margin-top: 55px;
+.main-stanga .input-email {
+    font-size: 30px;
+    height: 39px;
+    margin-top: 24px;
     left: 0;
   
    }
-   .input-parola {
-    font-size: 50px;
-    height: 84px;
-    margin-top: 55px;
+   .main-stanga .input-parola {
+    font-size: 30px;
+    height: 39px;
+    margin-top:24px;
     left: 0;
   
    }
-   .buton{
+.main-stanga  .buton-stanga{
        background-color: rgb(140, 21, 161);
        color: white;
-       height: 84px;
-       font-size: 50px;
+       height: 56px;
+       font-size: 35px;
        cursor: pointer;
        opacity: 0.9;
-       width: 715px;
-       margin-left:100px;
-       margin-top:30px;
+       width: 420px;
+       margin-left:120px;
+       margin-top:24px;
    }
-   .buton:hover{
+.main-stanga .buton-stanga:hover{
        opacity: 1;
    }
+ 
+
+   /*partea dreapta*/
+.main-dreapta h2{
+  max-width: 500px;
+  font-size: 50px;
+  text-align:center;
+  margin-top: 15px;
+  margin:auto;
+}
+
+.main-dreapta .logare-register,
+.main-dreapta .logare-parola{
+    display: flex;
+    width:100%;
+    margin-bottom: 15px;
+}
+   
+.main-dreapta .logare-register img{
+  width: 50px;
+  height:50px;
+  margin-left:120px;
+  margin-top:20px;
+} 
+.main-dreapta .logare-parola img{
+    width: 50px;
+    height:50px;
+    margin-left:120px;
+    margin-top:20px;
+  } 
+.main-dreapta .logare-register .input-d-register {
+  font-size: 30px;
+    height: 39px;
+    margin-top:24px;
+    left: 0;
+  
+ }
+   .main-dreapta .logare-parola .input-d-parola {
+    font-size: 30px;
+    height: 39px;
+    margin-top:24px;
+    left: 0;
+  
+   }
+.main-dreapta  .buton-dreapta{
+       background-color: rgb(140, 21, 161);
+       color: white;
+       height: 56px;
+       font-size: 35px;
+       cursor: pointer;
+       opacity: 0.9;
+       width: 420px;
+       margin-left:120px;
+       margin-top:24px;
+   }
+.main-dreapta .buton-dreapta:hover{
+       opacity: 1;
+   }
+ 
 .footer{
   background-color: rgb(236, 193, 248);
   text-align: left;
