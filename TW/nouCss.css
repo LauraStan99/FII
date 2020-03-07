@@ -178,7 +178,7 @@ input[type="submit"] {
 }
 
 .footer{
-  background-color: rgb(250, 232, 255);
+  background-color: rgb(236, 193, 248);
   text-align: left;
   width:100%;
   font: bold 16px sans-serif;
@@ -186,7 +186,7 @@ input[type="submit"] {
 }
 
 .footer .footer-stanga, 
-.footer .footer-drepta,
+.footer .footer-dreapta,
 .footer .footer-centru{
   display: inline-block;
   vertical-align: top;
@@ -229,6 +229,7 @@ input[type="submit"] {
 
 .footer .footer-centru{
   width: 35%;
+  margin-top:25px;
   
 }
 .footer .footer-centru .locatie img{
@@ -291,8 +292,60 @@ input[type="submit"] {
 }
 
 .footer .footer-dreapta {
-  widows: 30%;
+  width: 25%;
+  margin-top: 5px;
 }
 
+.footer .footer-dreapta p{
+  display: inline-block;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  margin-left: 70px;
+}
 
-
+.footer .footer-dreapta .footer-icons #facebook{
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: normal;
+  margin-left:70px;
+}
+.footer .footer-dreapta .footer-icons #instagram{
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: normal;
+  margin-left:20px;
+}
+.footer .footer-dreapta .footer-icons #git{
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: normal;
+  margin-left:20px;
+}
+.footer .footer-dreapta .footer-icons #youtube{
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: normal;
+  margin-left:20px;
+}
+@media (max-width:800px)
+{
+  .footer{
+    font:bold 15px sans-serif;
+  }
+  .footer .footer-stanga,
+  .footer .footer-dreapta,
+  .footer .footer-centru{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  } 
+  .footer .footer-dreapta a{
+    margin-left: 0;
+  }
+}
