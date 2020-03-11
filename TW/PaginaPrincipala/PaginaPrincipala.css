@@ -1,0 +1,292 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+
+header{
+  width:100%;
+}
+
+header,.logo-nume{
+    top:0;
+    height: 50px;
+}
+header,.logo{
+    top:0;
+    height: 50px;
+}
+.header,.logo-favorite
+{
+    position: absolute;
+    font-size: 0;
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    line-height: 15px;
+    right:70px;
+}
+
+.logo-cos
+{
+  position: absolute;
+  font-size: 0;
+  text-align: center;
+  width: 45px;
+  height: 45px;
+  line-height: 15px;
+  right:7px;
+}
+
+.logo-cont
+{
+  position: absolute;
+  font-size: 0;
+  text-align: center;
+  width: 45px;
+  height: 45px;
+  line-height: 15px;
+  right:130px;
+}
+
+.logo-nume
+{
+  position: relative;
+  font-size: 0;
+  text-align: center;
+  width: 200px;
+  height: 50px;
+  line-height: 15px;
+  left:0px;
+} 
+
+header .header-right{
+  width: 50%;
+  margin-top:5px;
+}
+header .header-left{
+  width: 50%;
+  margin-top:5px;
+}
+
+
+ 
+.navbar {
+  background-color:rgb(243, 199, 255);
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+.navbar a {
+  color: black;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+ 
+.navbar  a:hover {
+  background-color:rgb(250, 232, 255);
+  color: black;
+}
+
+
+.navbar form input{
+  align-self: flex-start;
+  margin-top: 10px;
+  padding: 5px 15px;
+}
+  
+input {
+  align-self: flex-start;
+}
+
+input[type="submit"] {
+  margin-left: 0px;
+  background:black;
+  border: 0;
+  color: white;
+}
+
+
+.inainte, .inapoi {
+  cursor: pointer;
+  position: absolute;
+  top:50%;
+  width:auto;
+  padding:30px;
+  margin-top: -22px;
+  color:black;
+  font-weight: bold;
+  font-size: 40px;
+  border-radius: 0 9px 9px 0;
+  transition: 0.5s ease;
+  user-select: none;
+}
+
+.inainte {
+  right : 0;
+  border-radius: 9px 0 0 9px;
+}
+
+.inainte:hover, .inapoi:hover {
+  background-color: rgb(250, 232, 255);
+}
+
+/*
+@media only screen and (max-width:700px) 
+{
+  .inainte, .inapoi {font-size: 20px;
+  top: 30%;}
+}
+
+@media only screen and (min-width:700px) 
+{
+  .inainte, .inapoi {font-size: 40px;
+  top: 50%;}
+}
+*/
+
+.poze-main img {
+  width:100%;
+}
+
+.footer{
+  background-color: rgb(236, 193, 248);
+  text-align: left;
+  width:100%;
+  font: bold 16px sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top:20px;
+  justify-content: space-between;
+}
+
+.footer .footer-stanga, 
+.footer .footer-dreapta,
+.footer .footer-centru{
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .footer-stanga
+{
+  width:35%;
+}
+
+.footer-stanga #logo{
+  width: 100px;
+ 
+}
+
+.footer-stanga #logo-nume{
+  width: 300px;
+ 
+}
+
+.footer .footer-links a{
+  color:black;
+  font-size:25px;
+}
+
+.footer .nume-companie{
+
+  font-size: 20px;
+}
+
+.footer .footer-centru{
+  width: 35%;
+  margin-top:25px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  
+}
+.footer .footer-centru .locatie img{
+  width: 35px;
+}
+
+.footer .footer-centru .locatie p{
+  align-self: left;
+  font: bold sans-serif;
+}
+
+.footer .footer-centru .telefon img{
+  width: 35px;
+}
+
+.footer .footer-centru .telefon p{
+  text-align: left;
+  font: bold sans-serif;
+}
+
+.footer .footer-centru .mail img{
+  width: 35px;
+}
+
+.footer .footer-centru .mail p{
+  text-align: left;
+  font: bold sans-serif;
+}
+
+.footer .footer-dreapta {
+  align-items: center;
+  width: 25%;
+  margin-top: 5px;
+}
+
+.footer .footer-dreapta p{
+  text-align: center;
+  color: black;}
+
+.footer .footer-dreapta .footer-icons #facebook{
+  width: 35px;
+
+}
+.footer .footer-dreapta .footer-icons #instagram{
+  width: 35px;
+ 
+}
+.footer .footer-dreapta .footer-icons #git{
+  width: 35px;
+  
+}
+.footer .footer-dreapta .footer-icons #youtube{
+  width: 35px;
+
+}
+
+@media screen and (max-width: 700px)
+ {
+  header .logo-nume{
+    display:none;
+
+  }
+ .navbar{   
+    flex-direction: column;
+    width: 100%;
+  }
+ .navbar form input[type="search"] {
+  margin-left:50px;
+   }
+  .footer{
+    font:bold 15px sans-serif;
+  }
+  .footer .footer-stanga,
+  .footer .footer-dreapta,
+  .footer .footer-centru{
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+    align-items: center;
+
+  } 
+
+  
+}
