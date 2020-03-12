@@ -164,38 +164,30 @@ main{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-
-
+  justify-content: center;
 }
 
-main p{
+main h3{
+  margin-top: 100px;
   text-align: center;
-
+  align-self: center;
+  height: 100px;
+  font-size: bold 20px;
 }
 
 main .butoane{
-  flex-direction: row;
-  justify-content: space-around;
-
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
+main .butoane .autentificare,
 main .butoane .continua-cumparaturi{
-  width: 45%;
-  display: flex;
-  flex-direction: row;  
-  justify-content: space-around;
-  margin-top: 10px;
-  margin-left: 10px;
-
-}
-main .butoane .autentificare{
-  display: flex;
-  flex-direction: row;  
-  width: 45%;
-  justify-content: space-around;
-  margin-top: 150px;
-  margin-left: 10px;
-
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 main .butoane .autentificare a{ 
@@ -207,7 +199,9 @@ main .butoane .autentificare a{
   text-decoration: none;
   font-size: bold 20px;
   cursor: pointer;
-  margin-left: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
 }
 
 main .butoane .continua-cumparaturi a{  
@@ -219,11 +213,9 @@ main .butoane .continua-cumparaturi a{
   text-decoration: none;
   font-size: bold 20px;
   cursor: pointer;
+  margin-top:10px;
+  margin-bottom: 10px;
 }
-
-
-
-
 
 .footer{
   background-color: rgba(255, 199, 250, 0.897);
@@ -346,8 +338,10 @@ main .butoane .continua-cumparaturi a{
 
   main .butoane{
     flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 100%;
   }
-
 
   .footer{
     font:bold 15px sans-serif;
