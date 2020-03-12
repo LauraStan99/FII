@@ -45,31 +45,121 @@
 
  </header>
 
-    <nav class="navbar">
+<div class="navbar">
 
-       
-         <a href="#">FEMEI</a> 
-         <a href="#">BARBATI</a> 
-         <a href="#">COPII</a> 
-       
+            <div class="femei">
+              <button class="femei-buton" onclick="myFunction1()">FEMEI</button>
+              <div class="femei-continut" id="DropF">
+                <a href="#">Blugi</a>
+                <a href="#">Bluze</a>
+                <a href="#">Camasi</a>
+                <a href="#">Fuste</a>
+                <a href="#">Jachete</a>
+                <a href="#">Pantaloni</a>
+                <a href="#">Rochii</a>
+
+              </div>
+              <script> 
+              function myFunction1() {
+                document.getElementById("DropF").classList.toggle("show");
+                  }
+              
+                window.onclick = function(e) {
+                if (!e.target.matches('.femei-buton')) {
+                var myDropdown = document.getElementById("DropF");
+                  if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                  }
+                }
+              }
+              
+              </script>
+            </div>
+
+ 
+
+
+            <div class="barbati">
+              <button class="barbati-buton" onclick="myFunction2()">BARBATI</button>
+              <div class="barbati-continut" id="DropB">
+                <a href="#">Blugi</a>
+                <a href="#">Bluze</a>
+                <a href="#">Camasi</a>
+                <a href="#">Jachete</a>
+                <a href="#">Pantaloni</a>
+                <a href="#">Tricouri</a>
+              </div>
+              <script> 
+                function myFunction2() {
+                document.getElementById("DropB").classList.toggle("show");
+                    }
+              
+              window.onclick = function(e) {
+                if (!e.target.matches('.barbati-buton')) {
+                var myDropdown = document.getElementById("DropB");
+                  if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                  }
+                }
+              }
+              
+              </script>
+            </div>
+
+
+    
+
+            <div class="copii">
+              <button class="copii-buton" onclick="myFunction3()">COPII</button>
+              <div class="copii-continut" id="DropC">
+                <a href="#">Blugi</a>
+                <a href="#">Bluze</a>
+                <a href="#">Fuste</a>
+                <a href="#">Pantaloni</a>
+                <a href="#">Rochii</a>
+                <a href="#">Tricouri</a>
+                <a href="#">Salopete</a>
+                
+              </div>
+              
+              <script> 
+                function myFunction3() {
+                document.getElementById("DropC").classList.toggle("show");
+                    }
+              
+              window.onclick = function(e) {
+                if (!e.target.matches('.copii-buton')) {
+                var myDropdown = document.getElementById("DropC");
+                  if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                  }
+                }
+              }
+              
+             </script>
+
+            </div>
+
 
        <form  >
          <input type="search" name="q" placeholder="Cauta...">
          <input type="submit" value="OK">
        </form>
 
-    </nav>
+ </div>
+
+
 
     <main>
       <a class="inapoi" onclick = "incrementSlide(-1)"> &#10094;</a>
       <a class="inainte" onclick = "incrementSlide(1)"> &#10095;</a>
 
       <div class = "poze-main">
-        <img src = "promotii1.jpg" alt = "pozaPromotii1">
+        <img href="#" src = "promotii1.jpg" alt = "pozaPromotii1">
       </div>
 
       <div class = "poze-main">
-        <img src = "promotii2.jpg" alt = "pozaPromotii2">
+        <img href="#" src = "promotii2.png" alt = "pozaPromotii2">
       </div>
 
       <script>
