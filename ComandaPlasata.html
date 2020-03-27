@@ -4,12 +4,12 @@
     <title>Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/PaginaPrincipala.css" rel="stylesheet" />
+    <link href="css/ComandaPlasata.css" rel="stylesheet" />
   </head>
 
   <body>
     <header>
-      <div class="header-navigation">
+      <div>
         <div class="header-right">
           <div class="favotite">
             <a class="link-favorite" href="" title="Lista de dorinte">
@@ -50,7 +50,6 @@
         </div>
       </div>
     </header>
-
     <div class="navbar">
       <div class="femei">
         <button class="femei-buton" onclick="myFunction1()">FEMEI</button>
@@ -140,46 +139,22 @@
     </div>
 
     <main>
-      <a class="inapoi" onclick="incrementSlide(-1)"> &#10094;</a>
-      <a class="inainte" onclick="incrementSlide(1)"> &#10095;</a>
+      <h1 id="mesaj-multumire">VA MULTUMIM PENTRU COMANDA PLASATA !</h1>
 
-      <div class="poze-main">
-        <img href="#" src="Poze/promotii1.jpg" alt="pozaPromotii1" />
-      </div>
+      <h2 id="mesaj-status">
+        Mai multe detalii despre statusul comenzii se vor regasi pe email.
+      </h2>
 
-      <div class="poze-main">
-        <img href="#" src="Poze/promotii2.png" alt="pozaPromotii2" />
-      </div>
-
-      <script>
-        var index = 1;
-        show(index);
-
-        function incrementSlide(n) {
-          show((index += n));
-        }
-
-        function curentSlide(n) {
-          show((index = n));
-        }
-
-        function show(n) {
-          var i;
-          var slide = document.getElementsByClassName("poze-main");
-          if (n > slide.length) {
-            index = 1;
-          }
-          if (n < 1) {
-            index = slide.length;
-          }
-          for (i = 0; i < slide.length; i++) {
-            slide[i].style.display = "none";
-          }
-
-          slide[index - 1].style.display = "block";
-        }
-      </script>
+      <button
+        id="inapoi-pagPrincipala"
+        type="button"
+        onclick="window.location.href='./PaginaPrincipala.html'"
+      >
+        &lt Inapoi la pagina principala
+      </button>
     </main>
+
+    <!-- footerul -->
     <footer class="footer">
       <div class="footer-stanga">
         <h1>

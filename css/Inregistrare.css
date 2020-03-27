@@ -11,18 +11,15 @@ header {
   width: 100%;
 }
 
-header,
-.logo-nume {
-  margin-top: 0;
+header .logo-nume {
+  top: 0;
   height: 50px;
 }
-header,
-.logo {
-  margin-top: 0;
+header .logo {
+  top: 0;
   height: 50px;
 }
-.header,
-.logo-favorite {
+header .logo-favorite {
   position: absolute;
   font-size: 0;
   text-align: center;
@@ -59,7 +56,6 @@ header,
   width: 200px;
   height: 50px;
   line-height: 15px;
-  margin-top: 0;
   left: 0px;
 }
 
@@ -73,7 +69,7 @@ header .header-left {
 }
 
 .navbar {
-  background-color: rgba(255, 199, 250, 0.897);
+  background-color: rgb(243, 199, 255);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -117,7 +113,7 @@ input[type="submit"] {
 .femei-buton:hover,
 .barbati-buton:hover,
 .copii-buton:hover {
-  background-color: rgba(245, 209, 239, 0.952);
+  background-color: rgba(243, 226, 247, 0.952);
 }
 
 .femei-continut,
@@ -145,50 +141,13 @@ input[type="submit"] {
 .femei-continut a:hover,
 .barbati-continut a:hover,
 .copii-continut a:hover {
-  background-color: rgba(245, 209, 239, 0.952);
+  background-color: rgba(243, 226, 247, 0.952);
 }
 
 .show {
   display: block;
 }
 
-/* partea de main*/
-
-.cos {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-.titlu {
-  height: 50px;
-  padding: 20px 30px;
-  color: black;
-  font-size: 30px;
-}
-
-.cos .imagine-produs {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.cos .imagine-produs .produs1 .p1 {
-  height: 360px;
-  width: 250px;
-  margin-left: 30px;
-}
-.cos .imagine-produs .detalii-p1 #titlu-p1 {
-  font-size: 20px;
-  margin-left: 10px;
-}
-
-.cos .imagine-produs .detalii-p1 {
-  flex-direction: column;
-  margin-top: 20px;
-  margin-left: 10px;
-  font-size: 20px;
-}
 main {
   width: 100%;
   display: flex;
@@ -212,19 +171,10 @@ main .main-stanga h1 {
   font-size: 35px;
   margin-left: 40px;
 }
-main .main-stanga .metoda-livrare {
-  margin-left: 40px;
-  margin-top: 0;
-  margin-right: 15px;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 
-main .main-stanga #cont,
+main .main-stanga #register,
 #email,
-#adresa,
-#oras,
-#tara {
+#parola {
   height: 20px;
   margin-left: 40px;
 }
@@ -234,52 +184,68 @@ main .main-stanga input[type="text"] {
   width: 50%;
   height: 30px;
   margin-bottom: 10px;
+  margin-top: 5px;
 }
-main .main-stanga #inapoi-la-cos {
+main .main-stanga .buton-stanga {
   background-color: rgb(143, 255, 152);
-  width: 25%;
+  width: 30%;
   color: black;
   padding: 14px 10px;
   text-decoration: none;
   margin-top: 30px;
   margin-left: 40px;
   outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+main .main-stanga .buton-stanga:hover {
+  background-color: green;
 }
 
 main .main-dreapta h2 {
   font-size: 35px;
   margin-left: 40px;
 }
+
+main .main-dreapta #log-register,
+#log-parola {
+  height: 20px;
+  margin-left: 0px;
+  margin-top: -10px;
+}
+
 main .main-dreapta input[type="text"] {
   margin-left: 40px;
   width: 50%;
   height: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  margin-top: 7px;
 }
 main .main-dreapta label {
   height: 20px;
   margin-left: 40px;
 }
-main .main-dreapta .metoda-plata {
-  margin-left: 40px;
-  margin-top: 0;
-  margin-right: 15px;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-main .main-dreapta #plaseaza-comanda {
-  background-color: rgb(250, 128, 128);
-  width: 32%;
+
+main .main-dreapta .buton-dreapta {
+  background-color: rgb(143, 255, 152);
+  width: 30%;
   color: black;
   padding: 14px 10px;
   text-decoration: none;
-  margin-top: 40px;
+  margin-top: 30px;
   margin-left: 40px;
   outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+main .main-dreapta .buton-dreapta:hover {
+  background-color: green;
 }
 
 .footer {
-  background-color: rgba(255, 199, 250, 0.897);
+  background-color: rgb(236, 193, 248);
   text-align: left;
   width: 100%;
   font: bold 16px sans-serif;
@@ -365,20 +331,17 @@ main .main-dreapta #plaseaza-comanda {
 .footer .footer-dreapta .footer-icons #facebook {
   width: 35px;
 }
-
 .footer .footer-dreapta .footer-icons #instagram {
   width: 35px;
 }
-
 .footer .footer-dreapta .footer-icons #git {
   width: 35px;
 }
-
 .footer .footer-dreapta .footer-icons #youtube {
   width: 35px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
   header .logo-nume {
     display: none;
   }
@@ -387,7 +350,7 @@ main .main-dreapta #plaseaza-comanda {
     width: 100%;
   }
   .navbar form input[type="search"] {
-    margin-left: 0px;
+    margin-left: 50px;
   }
 
   .main-dreapta,
@@ -397,7 +360,10 @@ main .main-dreapta #plaseaza-comanda {
     text-align: center;
     align-items: center;
   }
-
+  .main-dreapta input[type="text"],
+  .main-stanga input[type="text"] {
+    align-self: center;
+  }
   .footer {
     font: bold 15px sans-serif;
   }
@@ -409,12 +375,5 @@ main .main-dreapta #plaseaza-comanda {
     margin-bottom: 40px;
     text-align: center;
     align-items: center;
-  }
-
-  .footer .footer-stanga #logo {
-    width: 70px;
-  }
-  .footer .footer-stanga #logo-nume {
-    width: 150px;
   }
 }

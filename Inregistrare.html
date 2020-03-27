@@ -4,14 +4,14 @@
     <title>Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/ComandaPlasata.css" rel="stylesheet" />
+    <link href="css/Inregistrare.css" rel="stylesheet" />
   </head>
 
   <body>
     <header>
-      <div>
+      <div class="header-navigation">
         <div class="header-right">
-          <div class="favotite">
+          <div class="favorite">
             <a class="link-favorite" href="" title="Lista de dorinte">
               <img
                 class="logo-favorite"
@@ -50,6 +50,7 @@
         </div>
       </div>
     </header>
+
     <div class="navbar">
       <div class="femei">
         <button class="femei-buton" onclick="myFunction1()">FEMEI</button>
@@ -139,64 +140,165 @@
     </div>
 
     <main>
-      <h1 id="mesaj-multumire">VA MULTUMIM PENTRU COMANDA PLASATA !</h1>
-
-      <h2 id="mesaj-status">
-        Mai multe detalii despre statusul comenzii se vor regasi pe email.
-      </h2>
-
-      <a id="inapoi-pagPrincipala" href="./PaginaPrincipala.html"
-        >&lt Inapoi la pagina principala
-      </a>
-    </main>
-
-    <!-- footerul -->
-    <footer class = "footer">
-      <div class = "footer-stanga">
+      <div class="main-stanga">
         <h1>
-          <img id = "logo" src = "Poze/logo.png" alt = "logo">
-          <img id = "logo-nume" src = "Poze/logo-nume.png" alt = "logo-nume">
+          Inregistrare
         </h1>
-        <p class = "footer-links">
-          <a href = "./PaginaPrincipala.html">Acasa</a>
+
+        <label for="inregistrare-register">
+          <a
+            ><img id="register" src="Poze/register-tw.png" alt="register" />
+            Nume si prenume
+          </a>
+        </label>
+        <input
+          type="text"
+          id="inregistrare-register"
+          name="nume-intreg"
+          placeholder="Popescu Daniel"
+        />
+
+        <label for="inregistrare-email">
+          <a><img id="email" src="Poze/email-tw.png" alt="email" />Email </a>
+        </label>
+        <input
+          type="text"
+          id="inregistrare-email"
+          name="email"
+          placeholder="popescu@gmai.com"
+        />
+
+        <label for="inregistrare-parola">
+          <a
+            ><img id="parola" src="Poze/parola-tw.png" alt="parola" />Parola
+          </a>
+        </label>
+        <input
+          type="text"
+          id="inregistrare-parola"
+          name="parola"
+          placeholder="********"
+        />
+
+        <button
+          class="buton-stanga"
+          type="button"
+          onclick="window.location.href='./PaginaPrincipala.html'"
+        >
+          Inregistrare
+        </button>
+      </div>
+
+      <div class="main-dreapta">
+        <h2>
+          Logare
+        </h2>
+
+        <label for="logare-register">
+          <a
+            ><img
+              id="log-register"
+              src="Poze/register-tw.png"
+              alt="log-register"
+            />
+            Nume si prenume
+          </a>
+        </label>
+        <input
+          type="text"
+          id="logare-register"
+          name="nume-intreg"
+          placeholder="Popescu Daniel"
+        />
+
+        <label for="logare-parola">
+          <a
+            ><img
+              id="log-parola"
+              src="Poze/parola-tw.png"
+              alt="log-parola"
+            />Parola
+          </a>
+        </label>
+        <input
+          type="text"
+          id="logare-parola"
+          name="parola"
+          placeholder="********"
+        />
+
+        <button
+          class="buton-dreapta"
+          type="button"
+          onclick="window.location.href='./PaginaPrincipala.html'"
+        >
+          Logare
+        </button>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-stanga">
+        <h1>
+          <img id="logo" src="Poze/logo.png" alt="logo" />
+          <img id="logo-nume" src="Poze/logo-nume.png" alt="logo-nume" />
+        </h1>
+        <p class="footer-links">
+          <a href="./PaginaPrincipala.html">Acasa</a>
           |
-          <a href = "#">Servicii</a>
+          <a href="#">Servicii</a>
           |
-          <a href = "#">Livrare</a>
+          <a href="#">Livrare</a>
           |
-          <a href = "#">Contact</a>
+          <a href="#">Contact</a>
         </p>
-        <p class = "nume-companie"> Impressed © 2020 </p>
+        <p class="nume-companie">Impressed © 2020</p>
       </div>
-  
-      <div class = "footer-centru">
+
+      <div class="footer-centru">
         <div class="locatie">
-          <a title = "Locatie"><img src = "Poze/locatie-tw.png" alt = "locatie"></a>
-          <p> Strada General Henri Mathias Berthelot Nr. 16 </p>
+          <a title="Locatie"><img src="Poze/locatie-tw.png" alt="locatie"/></a>
+          <p>Strada General Henri Mathias Berthelot Nr. 16</p>
         </div>
-  
+
         <div class="telefon">
-          <a title = "Telefon"><img src = "Poze/telefon-tw.png" alt = "telefon"></a>
-          <p> +4 0767-437-025 </p>
+          <a title="Telefon"><img src="Poze/telefon-tw.png" alt="telefon"/></a>
+          <p>+4 0767-437-025</p>
         </div>
-  
+
         <div class="mail">
-          <a href = "mailto:Impressed2020@company.com?Subject=Impressed" title = "Mail"><img src = "Poze/mail-tw.png" alt = "mail"></a>
-          <p> Impressed@company.com </p>
+          <a
+            href="mailto:Impressed2020@company.com?Subject=Impressed"
+            title="Mail"
+            ><img src="Poze/mail-tw.png" alt="mail"
+          /></a>
+          <p>Impressed@company.com</p>
         </div>
       </div>
-  
-       <div class = "footer-dreapta">
+
+      <div class="footer-dreapta">
         <p>
           Urmărește-ne
         </p>
         <div class="footer-icons">
-            <a title = "Facebook"><img id="facebook" src = "Poze/facebook-tw.png" alt = "facebook-icon"></a>
-            <a title = "Instagram"><img id="instagram" src = "Poze/instagram-tw.png" alt = "instagram-icon"></a>
-            <a href = "https://github.com/LauraStan99/FII/tree/master/TW" title = "GitHub"><img id="git" src = "Poze/git-tw.png" alt = "github-icon"></a>
-            <a title = "YouTube"><img id="youtube" src = "Poze/youtube-tw.png" alt = "youtube-icon"></a>  
+          <a title="Facebook"
+            ><img id="facebook" src="Poze/facebook-tw.png" alt="facebook-icon"
+          /></a>
+          <a title="Instagram"
+            ><img
+              id="instagram"
+              src="Poze/instagram-tw.png"
+              alt="instagram-icon"
+          /></a>
+          <a
+            href="https://github.com/LauraStan99/FII/tree/master/TW"
+            title="GitHub"
+            ><img id="git" src="Poze/git-tw.png" alt="github-icon"
+          /></a>
+          <a title="YouTube"
+            ><img id="youtube" src="Poze/youtube-tw.png" alt="youtube-icon"
+          /></a>
         </div>
-       </div>
-  </footer>
+      </div>
+    </footer>
   </body>
 </html>

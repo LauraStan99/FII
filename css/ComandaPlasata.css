@@ -69,7 +69,7 @@ header .header-left {
 }
 
 .navbar {
-  background-color: rgba(255, 199, 250, 0.897);
+  background-color: rgb(243, 199, 255);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -113,7 +113,7 @@ input[type="submit"] {
 .femei-buton:hover,
 .barbati-buton:hover,
 .copii-buton:hover {
-  background-color: rgba(245, 209, 239, 0.952);
+  background-color: rgba(243, 226, 247, 0.952);
 }
 
 .femei-continut,
@@ -141,20 +141,11 @@ input[type="submit"] {
 .femei-continut a:hover,
 .barbati-continut a:hover,
 .copii-continut a:hover {
-  background-color: rgba(245, 209, 239, 0.952);
+  background-color: rgba(243, 226, 247, 0.952);
 }
 
 .show {
   display: block;
-}
-
-/* partea de main*/
-
-main {
-  flex-direction: column;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .cos {
@@ -193,87 +184,40 @@ main {
   font-size: 20px;
 }
 
-main .tabel-cos > tbody > tr > td,
-.tabel-cos > tfoot > tr > td {
-  vertical-align: middle;
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+main #mesaj-multumire {
+  font-size: 30px;
+  margin-top: 50px;
   text-align: center;
 }
-main .tabel-cos {
-  width: 100%;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.tabel-cos tfoot {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-top: 50px;
-}
-.tabel-cos tfoot tr .total {
-  font-size: 30px;
-}
-tr td .linie1 .produs1 img {
-  width: 25%;
-}
-tr td .descriere-produs1 .titlu-produs1 {
+main #mesaj-status {
   font-size: 20px;
+  margin-top: 50px;
+  text-align: center;
 }
-tr td .descriere-produs1 p {
-  font-size: 15px;
-}
-tr td .buton-stergere img {
-  height: 30px;
-}
-
-main .butoane {
-  flex-direction: row;
-  width: 100%;
-  display: flex;
-}
-
-main .butoane .butoaneSt,
-main .butoane .butoaneDr {
-  width: 50%;
-}
-
-main .butoane .butoaneSt .Continua-cump {
+main #inapoi-pagPrincipala {
   background-color: rgb(143, 255, 152);
   width: 20%;
   color: black;
   padding: 14px 10px;
   text-decoration: none;
-  margin-top: 40px;
-  margin-left: 40px;
-  border: none;
-  align-self: center;
+  margin-top: 30px;
+  margin-left: 30px;
   outline: none;
   cursor: pointer;
-}
-
-main .butoane .butoaneDr .Comanda {
-  background-color: rgb(250, 128, 128);
-  width: 20%;
-  color: black;
-  padding: 14px 10px;
-  text-decoration: none;
-  margin-top: 40px;
-  outline: none;
   border: none;
-  align-self: center;
-  cursor: pointer;
-  margin-left: 575px;
 }
-
-main .butoane .butoaneSt :hover {
+main #inapoi-pagPrincipala:hover {
   background-color: green;
 }
 
-main .butoane .butoaneDr :hover {
-  background-color: red;
-}
-
 .footer {
-  background-color: rgba(255, 199, 250, 0.897);
+  background-color: rgb(243, 199, 255);
   text-align: left;
   width: 100%;
   font: bold 16px sans-serif;
@@ -383,46 +327,26 @@ main .butoane .butoaneDr :hover {
   .navbar form input[type="search"] {
     margin-left: 0px;
   }
-
-  main .butoane {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  main .butoane .butoaneSt .Continua-cump,
-  main .butoane .butoaneDr .Comanda {
-    width: 50%;
-  }
-
-  main .butoane .butoaneDr .Comanda {
-    margin-left: 40px;
-  }
-
-  .tabel-cos tfoot tr {
+  main {
     flex-direction: column;
     width: 100%;
   }
-  .tabel-cos td {
+  main #mesaj-multumire {
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 20px;
+  }
+  main #mesaj-status {
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 10px;
+  }
+  main #inapoi-pagPrincipala {
     flex-direction: column;
-    width: 100%;
-  }
-  .tabel-cos tbody td .cantitate1 {
-    display: inline;
-  }
-  .tabel-cos thead {
-    display: none;
-  }
-  .tabel-cos tbody td {
-    display: block;
-    padding: 10px;
-    min-width: 320px;
-  }
-  .tabel-cos tbody .subtotal {
-    display: none;
-  }
-  .tabel-cos tfoot {
-    display: inline;
-    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 10px;
+    width: 40%;
+    align-self: center;
   }
   .footer {
     font: bold 15px sans-serif;

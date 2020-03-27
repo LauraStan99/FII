@@ -73,28 +73,12 @@ header .header-left {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.navbar a {
-  color: black;
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
-}
-
-.navbar a:hover {
-  background-color: rgb(250, 232, 255);
-  color: black;
+  flex-wrap: wrap;
 }
 
 .navbar form input {
-  align-self: flex-start;
   margin-top: 10px;
   padding: 5px 15px;
-}
-
-input {
-  align-self: flex-start;
 }
 
 input[type="submit"] {
@@ -103,92 +87,141 @@ input[type="submit"] {
   border: 0;
   color: white;
 }
-main {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+
+.femei,
+.barbati,
+.copii {
+  float: left;
+  overflow: hidden;
+  justify-content: space-between;
 }
-main .main-stanga,
-main .main-dreapta {
+
+.femei .femei-buton,
+.barbati .barbati-buton,
+.copii .copii-buton {
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.femei-buton:hover,
+.barbati-buton:hover,
+.copii-buton:hover {
+  background-color: rgba(243, 226, 247, 0.952);
+}
+
+.femei-continut,
+.barbati-continut,
+.copii-continut {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.femei-continut a,
+.barbati-continut a,
+.copii-continut a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.femei-continut a:hover,
+.barbati-continut a:hover,
+.copii-continut a:hover {
+  background-color: rgba(243, 226, 247, 0.952);
+}
+
+.show {
+  display: block;
+}
+
+/* partea de main*/
+
+main {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-}
-.main-stanga {
-  width: 50%;
-}
-.main-dreapta {
-  width: 50%;
+  width: 100%;
 }
 
-main .main-stanga h1 {
-  font-size: 35px;
-  margin-left: 40px;
+main h3 {
+  font-size: 30px;
+  margin-top: 50px;
+  text-align: center;
 }
 
-main .main-stanga #register,
-#email,
-#parola {
-  height: 20px;
-  margin-left: 40px;
+main h4 {
+  font-size: 30px;
+  margin-top: 50px;
+  text-align: center;
 }
 
-main .main-stanga input[type="text"] {
-  margin-left: 40px;
-  width: 50%;
-  height: 30px;
-  margin-bottom: 10px;
-  margin-top: 5px;
+main .butoane {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
-main .main-stanga .buton-stanga {
+
+main .butoane .autentificare,
+main .butoane .continua-cumparaturi {
+  width: 45%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+main .butoane .autentificare {
   background-color: rgb(143, 255, 152);
-  width: 30%;
-  color: black;
-  padding: 14px 10px;
-  text-decoration: none;
-  margin-top: 30px;
-  margin-left: 40px;
-  outline: none;
-}
-
-main .main-dreapta h2 {
-  font-size: 35px;
-  margin-left: 40px;
-}
-
-main .main-dreapta #log-register,
-#log-parola {
-  height: 20px;
-  margin-left: 0px;
-  margin-top: -10px;
-}
-
-main .main-dreapta input[type="text"] {
-  margin-left: 40px;
-  width: 50%;
-  height: 30px;
-  margin-bottom: 15px;
-  margin-top: 7px;
-}
-main .main-dreapta label {
-  height: 20px;
-  margin-left: 40px;
-}
-
-main .main-dreapta .buton-dreapta {
-  background-color: rgb(143, 255, 152);
-  width: 25%;
+  width: 20%;
   color: black;
   padding: 14px 10px;
   text-decoration: none;
   margin-top: 40px;
   margin-left: 40px;
+  border: none;
+  align-self: center;
   outline: none;
+  cursor: pointer;
+}
+
+main .butoane .continua-cumparaturi {
+  background-color: rgb(143, 255, 152);
+  width: 20%;
+  color: black;
+  padding: 14px 10px;
+  text-decoration: none;
+  margin-top: 40px;
+  margin-left: 40px;
+  border: none;
+  align-self: center;
+  outline: none;
+  cursor: pointer;
+}
+
+main .butoane .continua-cumparaturi:hover {
+  background-color: green;
+}
+
+main .butoane .autentificare:hover {
+  background-color: green;
 }
 
 .footer {
-  background-color: rgb(236, 193, 248);
+  background-color: rgb(243, 199, 255);
   text-align: left;
   width: 100%;
   font: bold 16px sans-serif;
@@ -284,7 +317,7 @@ main .main-dreapta .buton-dreapta {
   width: 35px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   header .logo-nume {
     display: none;
   }
@@ -293,20 +326,22 @@ main .main-dreapta .buton-dreapta {
     width: 100%;
   }
   .navbar form input[type="search"] {
-    margin-left: 50px;
+    margin-left: 0px;
   }
 
-  .main-dreapta,
-  .main-stanga {
+  main .butoane {
     flex-direction: column;
-    width: 100%;
     text-align: center;
     align-items: center;
+    width: 100%;
   }
-  .main-dreapta input[type="text"],
-  .main-stanga input[type="text"] {
+
+  main .butoane .autentificare,
+  main .butoane .continua-cumparaturi {
+    width: 30%;
     align-self: center;
   }
+
   .footer {
     font: bold 15px sans-serif;
   }
@@ -318,5 +353,12 @@ main .main-dreapta .buton-dreapta {
     margin-bottom: 40px;
     text-align: center;
     align-items: center;
+  }
+
+  .footer .footer-stanga #logo {
+    width: 70px;
+  }
+  .footer .footer-stanga #logo-nume {
+    width: 150px;
   }
 }
