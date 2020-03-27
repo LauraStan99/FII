@@ -72,8 +72,6 @@ header .header-left{
   width: 50%;
   margin-top:5px;
 }
-
-
  
 .navbar {
   background-color:rgba(255, 199, 250, 0.897);
@@ -157,12 +155,6 @@ input[type="submit"] {
 .show {
   display: block;
 }
-
-
-
-
-
-
 
 .inainte, .inapoi {
   cursor: pointer;

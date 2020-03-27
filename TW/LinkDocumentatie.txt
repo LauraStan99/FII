@@ -1,0 +1,3 @@
+/** Iconita Mail Footer Functionalitate Mail to **/
+https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_mailto
+
