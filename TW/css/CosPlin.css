@@ -11,18 +11,15 @@ header {
   width: 100%;
 }
 
-header,
-.logo-nume {
+header .logo-nume {
   top: 0;
   height: 50px;
 }
-header,
-.logo {
+header .logo {
   top: 0;
   height: 50px;
 }
-.header,
-.logo-favorite {
+header .logo-favorite {
   position: absolute;
   font-size: 0;
   text-align: center;
@@ -250,6 +247,7 @@ main .butoane .butoaneSt .Continua-cump {
   border: none;
   align-self: center;
   outline: none;
+  cursor: pointer;
 }
 
 main .butoane .butoaneDr .Comanda {
@@ -262,7 +260,16 @@ main .butoane .butoaneDr .Comanda {
   outline: none;
   border: none;
   align-self: center;
+  cursor: pointer;
   margin-left: 575px;
+}
+
+main .butoane .butoaneSt :hover {
+  background-color: green;
+}
+
+main .butoane .butoaneDr :hover {
+  background-color: red;
 }
 
 .footer {

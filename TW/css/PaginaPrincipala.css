@@ -7,20 +7,19 @@ body {
   margin: 0;
 }
 
-
 header{
   width:100%;
 }
 
-header,.logo-nume{
+header .logo-nume{
     top:0;
     height: 50px;
 }
-header,.logo{
+header .logo{
     top:0;
     height: 50px;
 }
-.header,.logo-favorite
+header .logo-favorite
 {
     position: absolute;
     font-size: 0;
