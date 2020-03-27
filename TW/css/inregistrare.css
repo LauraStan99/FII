@@ -110,95 +110,90 @@ input[type="submit"] {
   border: 0;
   color: white;
 }
-
 main{
   width: 100%;
   display: flex;
   flex-direction: row;
-  flex-wrap : wrap;
-  align-content: center;
-  justify-content: space-around;
-}
+  flex-wrap: wrap;
 
+}
+main .main-stanga,
 main .main-dreapta{
-  width: 45%;
-  flex-wrap: wrap;
-  flex-direction: row;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
-
-main .main-stanga{
-  width: 45%;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
+.main-stanga{
+width: 50%;
+}
+.main-dreapta{
+width: 50%;
 }
 
 main .main-stanga h1{
-  font-size: 50px;
-  text-align:center;
+  font-size:35px;
+  margin-left: 40px;
 }
 
-.main-stanga .inregistrare-register img,
-.main-stanga .inregistrare-email img, 
-.main-stanga .inregistrare-parola img{
-  width: 50px;
-} 
 
-.main-stanga .input-register,
-.main-stanga .input-email,
-.main-stanga .input-parola
-{
-  width: 70%;
-  font-size: 30px;
+main .main-stanga #register, #email,#parola{
+height: 20px;
+margin-left: 40px;
 }
 
-.main-stanga  .buton-stanga{
-  background-color: rgb(140, 21, 161);
-  color: white;
-  font-size: 35px;
-  cursor: pointer;
-  align-self: flex-start;
-  opacity: 0.9;
-  margin-top: 10px;
-  width:80%;
+main .main-stanga input[type="text"] {
+ margin-left: 40px;
+ width: 50%;
+ height: 30px;
+ margin-bottom: 10px;
+ margin-top: 5px;
+}
+main .main-stanga .buton-stanga{
+background-color: rgb(143, 255, 152);
+width: 30%;
+color: black;
+padding: 14px 10px;
+text-decoration: none;
+margin-top: 30px;
+margin-left: 40px;
+outline:none;
 }
 
-.main-stanga .buton-stanga:hover{
-  opacity: 1;
-}
-   /*partea dreapta*/
-.main-dreapta h2{
-  text-align:center;
-  font-size:50px;
-}
-   
-.main-dreapta .logare-register img,
-.main-dreapta .logare-parola img{
-  width: 50px;
-  align-self: center;
-} 
-
-.main-dreapta .logare-register .input-d-register,
-.main-dreapta .logare-parola .input-d-parola {
-  width: 70%;
-  font-size: 30px;
+main .main-dreapta h2{
+  font-size:35px;
+  margin-left: 40px;
 }
 
-.main-dreapta  .buton-dreapta{
-  background-color: rgb(140, 21, 161);
-  color: white;
-  font-size: 35px;
-  cursor: pointer;
-  align-self: center;
-  opacity: 0.9;
-  margin-top: 10px;
-  box-sizing: border-box;
-  width: 80%;
+main .main-dreapta #log-register,#log-parola{
+  height: 20px;
+  margin-left: 0px;
+  margin-top: -10px;
+
+  }
+
+main .main-dreapta input[type="text"] {
+  margin-left: 40px;
+  width: 50%;
+  height: 30px;
+  margin-bottom: 15px;
+  margin-top: 7px;
+ }
+main .main-dreapta label{
+height: 20px;
+margin-left: 40px;
 }
 
-.main-dreapta .buton-dreapta:hover{
-  opacity: 1;
-}
+main .main-dreapta .buton-dreapta {
+  background-color: rgb(143, 255, 152);
+  width: 25%;
+  color: black;
+  padding: 14px 10px;
+  text-decoration: none;
+  margin-top: 40px;
+  margin-left: 40px;
+  outline:none;
+  }
+
 
 .footer{
     background-color: rgb(236, 193, 248);
@@ -317,18 +312,18 @@ main .main-stanga h1{
    .navbar form input[type="search"] {
     margin-left:50px;
      }
-    main{
-      flex-wrap: wrap;
+
+     .main-dreapta,
+     .main-stanga{
       flex-direction: column;
-      justify-content: center;
-      width:100%;
-    }
-    main .main-dreapta,
-    main .main-stanga{
-      text-align:center;
+      width: 100%;
+      text-align: center;
       align-items: center;
-      width:100%
-    }
+     }
+     .main-dreapta input[type="text"],
+     .main-stanga input[type="text"]{
+       align-self:center;
+     }
     .footer{
       font:bold 15px sans-serif;
     }
