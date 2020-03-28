@@ -28,6 +28,7 @@ header .logo-favorite {
   line-height: 15px;
   right: 70px;
 }
+
 .logo-cos {
   position: absolute;
   font-size: 0;
@@ -55,7 +56,6 @@ header .logo-favorite {
   width: 200px;
   height: 50px;
   line-height: 15px;
-  margin-top: 0;
   left: 0px;
 }
 
@@ -148,146 +148,76 @@ input[type="submit"] {
   display: block;
 }
 
-/* partea de main*/
-
-.cos {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-.titlu {
-  height: 50px;
-  padding: 20px 30px;
-  color: black;
-  font-size: 30px;
-}
-
-.cos .imagine-produs {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.cos .imagine-produs .produs1 .p1 {
-  height: 360px;
-  width: 250px;
-  margin-left: 30px;
-}
-.cos .imagine-produs .detalii-p1 #titlu-p1 {
-  font-size: 20px;
-  margin-left: 10px;
-}
-
-.cos .imagine-produs .detalii-p1 {
-  flex-direction: column;
-  margin-top: 20px;
-  margin-left: 10px;
-  font-size: 20px;
-}
 main {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-main .main-stanga,
-main .main-dreapta {
-  display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
-.main-stanga {
-  width: 50%;
-}
-.main-dreapta {
-  width: 50%;
-}
 
-main .main-stanga h1 {
-  font-size: 35px;
-  margin-left: 40px;
-}
-main .main-stanga .metoda-livrare {
-  margin-left: 40px;
-  margin-top: 0;
-  margin-right: 15px;
-  flex-direction: row;
+main .formular-contact {
+  flex-direction: column;
+  display: flex;
   flex-wrap: wrap;
 }
 
-main .main-stanga #cont,
-#email,
-#adresa,
-#oras,
-#tara {
-  height: 20px;
-  margin-left: 40px;
+main .info-contact p,
+main .info-contact h1,
+main .formular-contact h2 {
+  text-align: left;
+  margin-left: 20px;
 }
 
-main .main-stanga input[type="text"] {
-  margin-left: 40px;
+main .formular-contact #contact-nume,
+#contact-email,
+#contact-telefon,
+#contact-subiect,
+#contact-mesaj {
+  height: 30px;
+  margin-left: 20px;
+}
+
+main .formular-contact input[type="text"],
+select {
+  margin-left: 20px;
   width: 50%;
   height: 30px;
   margin-bottom: 10px;
+  margin-top: 5px;
 }
-main .main-stanga #inapoi-la-cos {
+
+main .formular-contact input #contact-mesaj {
+  width: 50%;
+  height: 50px;
+}
+
+main .formular-contact input[type="mesaj"] {
+  margin-left: 40px;
+  width: 50%;
+  height: 200px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+main .formular-contact .buton-formular {
   background-color: rgb(143, 255, 152);
-  width: 35%;
+  width: 50%;
   color: black;
   padding: 14px 10px;
   text-decoration: none;
   margin-top: 30px;
-  margin-left: 40px;
+  margin-left: 20px;
   outline: none;
-  cursor: pointer;
   border: none;
-}
-
-main .main-dreapta h2 {
-  font-size: 35px;
-  margin-left: 40px;
-}
-main .main-dreapta input[type="text"] {
-  margin-left: 40px;
-  width: 50%;
-  height: 30px;
-  margin-bottom: 10px;
-}
-main .main-dreapta label {
-  height: 20px;
-  margin-left: 40px;
-}
-main .main-dreapta .metoda-plata {
-  margin-left: 40px;
-  margin-top: 0;
-  margin-right: 15px;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-main .main-dreapta #plaseaza-comanda {
-  background-color: rgb(250, 128, 128);
-  width: 35%;
-  color: black;
-  padding: 14px 10px;
-  text-decoration: none;
-  margin-top: 40px;
-  margin-left: 40px;
-  outline: none;
   cursor: pointer;
-  border: none;
 }
 
-main .main-dreapta #plaseaza-comanda:hover {
-  background-color: red;
-}
-
-main .main-stanga #inapoi-la-cos:hover {
+main .formular-contact .buton-formular:hover {
   background-color: green;
 }
 
 .footer {
-  background-color: rgb(243, 199, 255);
+  background-color: rgb(236, 193, 248);
   text-align: left;
   width: 100%;
   font: bold 16px sans-serif;
@@ -373,20 +303,17 @@ main .main-stanga #inapoi-la-cos:hover {
 .footer .footer-dreapta .footer-icons #facebook {
   width: 35px;
 }
-
 .footer .footer-dreapta .footer-icons #instagram {
   width: 35px;
 }
-
 .footer .footer-dreapta .footer-icons #git {
   width: 35px;
 }
-
 .footer .footer-dreapta .footer-icons #youtube {
   width: 35px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
   header .logo-nume {
     display: none;
   }
@@ -395,19 +322,7 @@ main .main-stanga #inapoi-la-cos:hover {
     width: 100%;
   }
   .navbar form input[type="search"] {
-    margin-left: 0px;
-  }
-
-  .main-dreapta,
-  .main-stanga {
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    align-items: center;
-  }
-
-  main .main-dreapta #plaseaza-comanda {
-    width: 40%;
+    margin-left: 50px;
   }
   .footer {
     font: bold 15px sans-serif;
@@ -420,12 +335,5 @@ main .main-stanga #inapoi-la-cos:hover {
     margin-bottom: 40px;
     text-align: center;
     align-items: center;
-  }
-
-  .footer .footer-stanga #logo {
-    width: 70px;
-  }
-  .footer .footer-stanga #logo-nume {
-    width: 150px;
   }
 }
