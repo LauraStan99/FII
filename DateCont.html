@@ -4,7 +4,7 @@
     <title>Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/FavoriteGol.css" rel="stylesheet" />
+    <link href="css/DateCont.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -139,28 +139,65 @@
     </div>
 
     <main>
-      
-      <div class="favorite">
-        <a >
-          <img id="inima-favorite" src="Poze/inima-favorite.png" alt="favorite"/>Lista de dorinte
-        </a>
-      </div>
-      
-      <p>Pentru a selecta produse trebuie sa fiti autentificat.</p>
-      <p>Pentru autentificare sau inregistrare vizitati pagina de Logare. </p>
-      <p> Zi frumoasa !</p>
-
-       
-      
-      <button
-          id="catre-logare"
-          type="button"
-          onclick="window.location.href='./Inregistrare.html'"
-        >
-          &lt Catre pagina de logare
-        </button>
-         
+     <a>
+         <img id="cont" src="Poze/cont.png"/>Contul meu
+     </a>
+     <p>Bine ati revenit, ... !</p>
+     <p>Date personale</p>
     
+         
+     
+        <div class="date">
+
+         <table>
+
+           <thead>
+               <tr>
+                   <th style="width: 25%">Nume si prenume</th>
+                   <th style="width: 25%">Email</th>
+                   <th style="width: 25%">Parola</th>
+               </tr>
+           </thead>
+
+           <tbody>
+               <tr>
+                   <td data-th="Nume si prenume">
+                       <div class="nume">
+                          <a>
+                              <img id="cont" src="Poze/cont.png"/> ...
+                          </a>
+                       </div>
+                   </td>
+                   <td data-th="Email">
+                    <div class="email">
+                        <a>
+                            <img id="email" src="Poze/email-Checkout.png"/> ... 
+                        </a>
+                    </div>
+                </td>
+                <td data-th="Parola">
+                    <div class="parola">
+                        <a>
+                            <img id="parola" src="Poze/parola-tw.png"/>********
+                        </a>
+                    </div>
+                </td>
+               </tr>
+           </tbody>
+
+
+         </table>
+    
+        </div>         
+         
+     
+        <button
+        id="inapoi-la-cump"
+        type="button"
+        onclick="window.location.href='./PaginaPrincipala.html'"
+      >
+        &lt Inapoi la cumparaturi
+      </button>
         
     </main>
 
