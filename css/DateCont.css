@@ -190,42 +190,52 @@
     flex-wrap: wrap;
     width: 100%;
   }
-main .favorite{
-   flex-direction: row;
-   align-self: center;
-   margin-top: 20px;
-   margin-bottom: 50px;
+
+  main a{
+      font: bold;
+      font-size: 30px;
+      align-self: center;
+      margin-bottom: 50px;
+      margin-top: 20px;
   }
+  main a #cont{
+      height: 25px;
+      align-self: center;
+  }
+  main p{
+      font-size: 16px;
+      margin-left: 50px;
+  }
+  main
+  main .date> tbody > tr > td,
+  .tabel-cos > tfoot > tr > td {
+    vertical-align: middle;
+    text-align: center;
+  }
+tbody tr td img{
+      height: 25px;
+      align-content: center;
 
-main .favorite a{
-  font: bold;
-  font-size: 35px;
-  text-align: center;
-
-}
-main .favorite #inima-favorite{
-  height: 25px;
-  margin-right: 5px;
-}
-main p{
-  font: normal;
-  font-size: 16px;
-  align-self: center;
-  
-}
-main  #inapoi-la-cump {
-  background-color: rgb(143, 255, 152);
-  width: 35%;
-  color: black;
-  padding: 14px 10px;
-  text-decoration: none;
-  margin-top: 30px;
-  margin-left: 40px;
-  outline: none;
-  cursor: pointer;
-  border: none;
-  align-self: center;
-}
+  }
+  tbody tr td .nume,
+  tbody tr td .email,
+  tbody tr td .parola{
+      margin-left: 70px;
+      align-self: center;
+  }
+  main  #inapoi-la-cump {
+    background-color: rgb(143, 255, 152);
+    width: 35%;
+    color: black;
+    padding: 14px 10px;
+    text-decoration: none;
+    margin-top: 30px;
+    margin-left: 40px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    align-self: left;
+  }
   
   .footer {
     background-color: rgb(243, 199, 255);
@@ -338,10 +348,10 @@ main  #inapoi-la-cump {
     .navbar form input[type="search"] {
       margin-left: 0px;
     }
-  main{
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
+    main{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
  
     .footer {
       font: bold 15px sans-serif;
