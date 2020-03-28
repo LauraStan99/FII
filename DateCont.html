@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ro">
   <head>
-    <title>Impressed</title>
+    <title>Cont | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/DateCont.css" rel="stylesheet" />
@@ -139,66 +139,49 @@
     </div>
 
     <main>
-     <a>
-         <img id="cont" src="Poze/cont.png"/>Contul meu
-     </a>
-     <p>Bine ati revenit, ... !</p>
-     <p>Date personale</p>
-    
-         
-     
-        <div class="date">
+      <a> <img id="cont" src="Poze/cont.png" />Contul meu </a>
+      <p>Bine ati revenit, ... !</p>
+      <p>Date personale</p>
 
-         <table>
+      <div class="date">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 25%">Nume si prenume</th>
+              <th style="width: 25%">Email</th>
+              <th style="width: 25%">Parola</th>
+            </tr>
+          </thead>
 
-           <thead>
-               <tr>
-                   <th style="width: 25%">Nume si prenume</th>
-                   <th style="width: 25%">Email</th>
-                   <th style="width: 25%">Parola</th>
-               </tr>
-           </thead>
+          <tbody>
+            <tr>
+              <td data-th="Nume si prenume">
+                <div class="nume">
+                  <a> <img id="cont" src="Poze/cont.png" /> ... </a>
+                </div>
+              </td>
+              <td data-th="Email">
+                <div class="email">
+                  <a> <img id="email" src="Poze/email-Checkout.png" /> ... </a>
+                </div>
+              </td>
+              <td data-th="Parola">
+                <div class="parola">
+                  <a> <img id="parola" src="Poze/parola-tw.png" />******** </a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-           <tbody>
-               <tr>
-                   <td data-th="Nume si prenume">
-                       <div class="nume">
-                          <a>
-                              <img id="cont" src="Poze/cont.png"/> ...
-                          </a>
-                       </div>
-                   </td>
-                   <td data-th="Email">
-                    <div class="email">
-                        <a>
-                            <img id="email" src="Poze/email-Checkout.png"/> ... 
-                        </a>
-                    </div>
-                </td>
-                <td data-th="Parola">
-                    <div class="parola">
-                        <a>
-                            <img id="parola" src="Poze/parola-tw.png"/>********
-                        </a>
-                    </div>
-                </td>
-               </tr>
-           </tbody>
-
-
-         </table>
-    
-        </div>         
-         
-     
-        <button
+      <button
         id="inapoi-la-cump"
         type="button"
         onclick="window.location.href='./PaginaPrincipala.html'"
       >
         &lt Inapoi la cumparaturi
       </button>
-        
     </main>
 
     <!-- footerul -->
@@ -213,7 +196,7 @@
           |
           <a href="./Livrare.html">Livrare si Servicii</a>
           |
-          <a href="#">Contact</a>
+          <a href="./Contact.html">Contact</a>
         </p>
         <p class="nume-companie">Impressed © 2020</p>
       </div>
