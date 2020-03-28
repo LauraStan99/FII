@@ -1,3 +1,14 @@
 /** Iconita Mail Footer Functionalitate Mail to **/
 https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_mailto
 
+/** Pagini de inspiratie **/
+https://www.orsay.com/ro-ro/
+
+/** Pagini de la care am preluat cod **/
+https://www.w3schools.com/
+https://www2.hm.com/ro_ro/index.html
+https://bootsnipp.com/snippets/yP7qe?fbclid=IwAR1fZekdt5yHEF4mUS-CzocAEQECfBFLVsibg5qJRHxHGsPS5EnmsE8JurM
+https://azmind.com/demo/bootstrap-footer/template-2/index.html
+https://codepen.io/scanfcode/pen/MEZPNd
+https://meta.discourse.org/t/easy-responsive-footer/95818
+https://www.mockplus.com/blog/post/bootstrap-4-footer-template
