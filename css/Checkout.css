@@ -81,7 +81,7 @@ header .header-left {
   padding: 5px 15px;
 }
 
-input[type='submit'] {
+input[type="submit"] {
   margin-left: 0px;
   background: black;
   border: 0;
@@ -178,7 +178,6 @@ input[type='submit'] {
   font-size: 20px;
   margin-left: 10px;
 }
-
 .cos .imagine-produs .detalii-p1 {
   flex-direction: column;
   margin-top: 20px;
@@ -190,20 +189,23 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 main .main-stanga,
 main .main-dreapta {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 .main-stanga {
   width: 50%;
+  justify-content: space-around;
 }
 .main-dreapta {
   width: 50%;
+  justify-content: space-around;
 }
-
 main .main-stanga h1 {
   font-size: 35px;
   margin-left: 40px;
@@ -226,7 +228,7 @@ main .main-stanga #contNume,
   margin-left: 40px;
 }
 
-main .main-stanga input[type='text'] {
+main .main-stanga input[type="text"] {
   margin-left: 40px;
   width: 50%;
   height: 30px;
@@ -249,7 +251,7 @@ main .main-dreapta h2 {
   font-size: 35px;
   margin-left: 40px;
 }
-main .main-dreapta input[type='text'] {
+main .main-dreapta input[type="text"] {
   margin-left: 40px;
   width: 50%;
   height: 30px;
@@ -395,7 +397,7 @@ main .main-stanga #inapoi-la-cos:hover {
     flex-direction: column;
     width: 100%;
   }
-  .navbar form input[type='search'] {
+  .navbar form input[type="search"] {
     margin-left: 0px;
   }
 
@@ -407,8 +409,17 @@ main .main-stanga #inapoi-la-cos:hover {
     align-items: center;
   }
 
+  main .main-stanga input[type="text"],
+  main .main-dreapta input[type="text"] {
+    width: 70%;
+  }
+
   main .main-dreapta #plaseaza-comanda {
-    width: 40%;
+    width: 70%;
+  }
+
+  main .main-stanga #inapoi-la-cos {
+    width: 70%;
   }
   .footer {
     font: bold 15px sans-serif;
