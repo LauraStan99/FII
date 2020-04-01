@@ -81,7 +81,7 @@ header .header-left {
   padding: 5px 15px;
 }
 
-input[type='submit'] {
+input[type="submit"] {
   margin-left: 0px;
   background: black;
   border: 0;
@@ -178,7 +178,7 @@ main .formular-contact #contact-nume,
   margin-left: 20px;
 }
 
-main .formular-contact input[type='text'],
+main .formular-contact input[type="text"],
 select {
   margin-left: 20px;
   width: 50%;
@@ -187,7 +187,7 @@ select {
   margin-top: 5px;
 }
 
-main .formular-contact input[type='mesaj'] {
+main .formular-contact input[type="mesaj"] {
   margin-left: 20px;
   width: 50%;
   padding: 50px;
@@ -317,16 +317,21 @@ main .formular-contact .buton-formular:hover {
     flex-direction: column;
     width: 100%;
   }
-  .navbar form input[type='search'] {
+  .navbar form input[type="search"] {
     margin-left: 50px;
   }
-  main .formular-contact #contact-nume[type='text'],
-  main .formular-contact #contact-email[type='text'],
-  main .formular-contact #contact-telefon[type='text'],
+  main .formular-contact #contact-nume[type="text"],
+  main .formular-contact #contact-prenume[type="text"],
+  main .formular-contact #contact-email[type="text"],
+  main .formular-contact #contact-telefon[type="text"],
   main .formular-contact #contact-subiect,
-  main .formular-contact #contact-mesaj[type='mesaj'] {
-    width: 70%;
+  main .formular-contact #contact-mesaj[type="mesaj"] {
+    width: 90%;
   }
+  main .formular-contact .buton-formular {
+    width: 90%;
+  }
+
   .footer {
     font: bold 15px sans-serif;
   }

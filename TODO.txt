@@ -1,0 +1,16 @@
+Modificari si actualizari
+1.Checkout (ok!)
+2.ComandaPlasata (ok!)
+*de adaugat afisare detalii legate de comanda realizata
+!aliniere text buton in centru la F12
+3.Contact (ok!)
+4.CosCumparaturi
+*minime modificari de aspect
+5.CosPlin
+6.DateCont
+7.FavoriteGol
+8.FavoriteNelogat
+9.Inregistrare
+10.Livrare
+11.Logare
+12.PaginaPrincipala

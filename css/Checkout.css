@@ -196,7 +196,6 @@ main .main-dreapta {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-around;
 }
 .main-stanga {
   width: 45%;
@@ -274,7 +273,7 @@ main .main-dreapta #plaseaza-comanda {
   color: black;
   padding: 14px 10px;
   text-decoration: none;
-  margin-top: 40px;
+  margin-top: 30px;
   margin-left: 40px;
   outline: none;
   cursor: pointer;
@@ -405,28 +404,30 @@ main .main-stanga #inapoi-la-cos:hover {
   .main-stanga {
     flex-direction: column;
     width: 100%;
-    text-align: center;
-    align-items: center;
   }
 
   main .main-stanga input[type="text"],
   main .main-dreapta input[type="text"] {
-    width: 70%;
+    width: 90%;
     margin-left: 0px;
+    align-self: center;
   }
 
   main .main-dreapta #plaseaza-comanda {
-    width: 70%;
+    width: 90%;
     margin-left: 0px;
+    align-self: center;
   }
 
   main .main-stanga #inapoi-la-cos {
-    width: 70%;
+    width: 90%;
     margin-left: 0px;
+    align-self: center;
   }
 
   main .main-stanga .metoda-livrare {
     margin-left: 0px;
+    align-self: center;
   }
 
   main .main-stanga #contNume,
@@ -435,11 +436,12 @@ main .main-stanga #inapoi-la-cos:hover {
   #adresa,
   #oras,
   #tara {
-    margin-left: 0px;
+    margin-left: 20px;
   }
 
   main .main-stanga h1 {
     margin-left: 0px;
+    text-align: center;
   }
 
   main .main-dreapta h2 {
@@ -448,10 +450,17 @@ main .main-stanga #inapoi-la-cos:hover {
   }
 
   main .main-dreapta label {
-    margin-left: 0px;
+    margin-left: 20px;
   }
   main .main-dreapta .metoda-plata {
     margin-left: 0px;
+  }
+
+  main .main-dreapta .metoda-plata {
+    text-align: center;
+  }
+  main .main-dreapta #plaseaza-comanda {
+    align-self: center;
   }
 
   .footer {
