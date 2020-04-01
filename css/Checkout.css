@@ -199,11 +199,11 @@ main .main-dreapta {
   justify-content: space-around;
 }
 .main-stanga {
-  width: 50%;
+  width: 45%;
   justify-content: space-around;
 }
 .main-dreapta {
-  width: 50%;
+  width: 45%;
   justify-content: space-around;
 }
 main .main-stanga h1 {
@@ -236,7 +236,7 @@ main .main-stanga input[type="text"] {
 }
 main .main-stanga #inapoi-la-cos {
   background-color: rgb(143, 255, 152);
-  width: 35%;
+  width: 50%;
   color: black;
   padding: 14px 10px;
   text-decoration: none;
@@ -270,7 +270,7 @@ main .main-dreapta .metoda-plata {
 }
 main .main-dreapta #plaseaza-comanda {
   background-color: rgb(250, 128, 128);
-  width: 35%;
+  width: 50%;
   color: black;
   padding: 14px 10px;
   text-decoration: none;
@@ -412,15 +412,48 @@ main .main-stanga #inapoi-la-cos:hover {
   main .main-stanga input[type="text"],
   main .main-dreapta input[type="text"] {
     width: 70%;
+    margin-left: 0px;
   }
 
   main .main-dreapta #plaseaza-comanda {
     width: 70%;
+    margin-left: 0px;
   }
 
   main .main-stanga #inapoi-la-cos {
     width: 70%;
+    margin-left: 0px;
   }
+
+  main .main-stanga .metoda-livrare {
+    margin-left: 0px;
+  }
+
+  main .main-stanga #contNume,
+  #contPrenume,
+  #email,
+  #adresa,
+  #oras,
+  #tara {
+    margin-left: 0px;
+  }
+
+  main .main-stanga h1 {
+    margin-left: 0px;
+  }
+
+  main .main-dreapta h2 {
+    margin-left: 0px;
+    text-align: center;
+  }
+
+  main .main-dreapta label {
+    margin-left: 0px;
+  }
+  main .main-dreapta .metoda-plata {
+    margin-left: 0px;
+  }
+
   .footer {
     font: bold 15px sans-serif;
   }
