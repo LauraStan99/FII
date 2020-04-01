@@ -81,7 +81,7 @@ header .header-left {
   padding: 5px 15px;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   margin-left: 0px;
   background: black;
   border: 0;
@@ -216,7 +216,8 @@ main .main-stanga .metoda-livrare {
   flex-wrap: wrap;
 }
 
-main .main-stanga #cont,
+main .main-stanga #contNume,
+#contPrenume,
 #email,
 #adresa,
 #oras,
@@ -225,7 +226,7 @@ main .main-stanga #cont,
   margin-left: 40px;
 }
 
-main .main-stanga input[type="text"] {
+main .main-stanga input[type='text'] {
   margin-left: 40px;
   width: 50%;
   height: 30px;
@@ -248,7 +249,7 @@ main .main-dreapta h2 {
   font-size: 35px;
   margin-left: 40px;
 }
-main .main-dreapta input[type="text"] {
+main .main-dreapta input[type='text'] {
   margin-left: 40px;
   width: 50%;
   height: 30px;
@@ -394,7 +395,7 @@ main .main-stanga #inapoi-la-cos:hover {
     flex-direction: column;
     width: 100%;
   }
-  .navbar form input[type="search"] {
+  .navbar form input[type='search'] {
     margin-left: 0px;
   }
 
