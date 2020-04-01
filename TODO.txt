@@ -4,13 +4,19 @@ Modificari si actualizari
 *de adaugat afisare detalii legate de comanda realizata
 !aliniere text buton in centru la F12
 3.Contact (ok!)
-4.CosCumparaturi
-*minime modificari de aspect
+4.CosCumparaturi(ok!)
 5.CosPlin
+*probleme afisaj F12
+*probleme cu butoanele
+*posibile modificari in functie de listare produse in cod(de cautat tutorial youtube coscumparaturi)
 6.DateCont
-7.FavoriteGol
-8.FavoriteNelogat
+*probleme de afisare 
+(de pus in coloana toate detaliile despre utilizator pe care le-a adaugat la inregistrare)
+7.FavoriteGol(ok!)
+8.FavoriteNelogat(ok!)
 9.Inregistrare
-10.Livrare
+*de terminat modificarile
+10.Livrare(ok!)
 11.Logare
-12.PaginaPrincipala
+*cateva modificari de aspect si simetrie
+12.PaginaPrincipala(ok!)
