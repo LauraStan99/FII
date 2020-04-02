@@ -32,7 +32,7 @@
           </div>
 
           <div class="cont">
-            <a class="link cont" href="" title="Cont">
+            <a class="link cont" href="./DateCont.html" title="Cont">
               <img class="logo-cont" src="Poze/cont-tw.png" alt="Cont" />
             </a>
           </div>
@@ -65,14 +65,14 @@
         </div>
         <script>
           function myFunction1() {
-            document.getElementById("DropF").classList.toggle("show");
+            document.getElementById('DropF').classList.toggle('show');
           }
 
-          window.onclick = function(e) {
-            if (!e.target.matches(".femei-buton")) {
-              var myDropdown = document.getElementById("DropF");
-              if (myDropdown.classList.contains("show")) {
-                myDropdown.classList.remove("show");
+          window.onclick = function (e) {
+            if (!e.target.matches('.femei-buton')) {
+              var myDropdown = document.getElementById('DropF');
+              if (myDropdown.classList.contains('show')) {
+                myDropdown.classList.remove('show');
               }
             }
           };
@@ -91,14 +91,14 @@
         </div>
         <script>
           function myFunction2() {
-            document.getElementById("DropB").classList.toggle("show");
+            document.getElementById('DropB').classList.toggle('show');
           }
 
-          window.onclick = function(e) {
-            if (!e.target.matches(".barbati-buton")) {
-              var myDropdown = document.getElementById("DropB");
-              if (myDropdown.classList.contains("show")) {
-                myDropdown.classList.remove("show");
+          window.onclick = function (e) {
+            if (!e.target.matches('.barbati-buton')) {
+              var myDropdown = document.getElementById('DropB');
+              if (myDropdown.classList.contains('show')) {
+                myDropdown.classList.remove('show');
               }
             }
           };
@@ -119,14 +119,14 @@
 
         <script>
           function myFunction3() {
-            document.getElementById("DropC").classList.toggle("show");
+            document.getElementById('DropC').classList.toggle('show');
           }
 
-          window.onclick = function(e) {
-            if (!e.target.matches(".copii-buton")) {
-              var myDropdown = document.getElementById("DropC");
-              if (myDropdown.classList.contains("show")) {
-                myDropdown.classList.remove("show");
+          window.onclick = function (e) {
+            if (!e.target.matches('.copii-buton')) {
+              var myDropdown = document.getElementById('DropC');
+              if (myDropdown.classList.contains('show')) {
+                myDropdown.classList.remove('show');
               }
             }
           };
@@ -187,7 +187,7 @@
 
         function show(n) {
           var i;
-          var slide = document.getElementsByClassName("poze-main");
+          var slide = document.getElementsByClassName('poze-main');
           if (n > slide.length) {
             index = 1;
           }
@@ -195,10 +195,10 @@
             index = slide.length;
           }
           for (i = 0; i < slide.length; i++) {
-            slide[i].style.display = "none";
+            slide[i].style.display = 'none';
           }
 
-          slide[index - 1].style.display = "block";
+          slide[index - 1].style.display = 'block';
         }
       </script>
     </main>
@@ -220,12 +220,12 @@
 
       <div class="footer-centru">
         <div class="locatie">
-          <a title="Locatie"><img src="Poze/locatie-tw.png" alt="locatie"/></a>
+          <a title="Locatie"><img src="Poze/locatie-tw.png" alt="locatie" /></a>
           <p>Strada General Henri Mathias Berthelot Nr. 16</p>
         </div>
 
         <div class="telefon">
-          <a title="Telefon"><img src="Poze/telefon-tw.png" alt="telefon"/></a>
+          <a title="Telefon"><img src="Poze/telefon-tw.png" alt="telefon" /></a>
           <p>+4 0767-437-025</p>
         </div>
 
