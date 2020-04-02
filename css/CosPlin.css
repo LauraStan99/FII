@@ -81,7 +81,7 @@ header .header-left {
   padding: 5px 15px;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   margin-left: 0px;
   background: black;
   border: 0;
@@ -250,7 +250,7 @@ main .butoane .butoaneSt #Continua-cump {
   margin-left: 40px;
   border: none;
   align-self: center;
-  outline: none
+  outline: none;
   cursor: pointer;
   font-size: 15px;
 }
@@ -267,7 +267,7 @@ main .butoane .butoaneDr #Comanda {
   border: none;
   align-self: center;
   cursor: pointer;
-  margin-left: 500px;
+  margin-left: 450px;
 }
 
 main .butoane .butoaneSt :hover {
@@ -386,7 +386,7 @@ main .butoane .butoaneDr :hover {
     flex-direction: column;
     width: 100%;
   }
-  .navbar form input[type="search"] {
+  .navbar form input[type='search'] {
     margin-left: 0px;
   }
 

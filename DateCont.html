@@ -64,14 +64,14 @@
         </div>
         <script>
           function myFunction1() {
-            document.getElementById("DropF").classList.toggle("show");
+            document.getElementById('DropF').classList.toggle('show');
           }
 
-          window.onclick = function(e) {
-            if (!e.target.matches(".femei-buton")) {
-              var myDropdown = document.getElementById("DropF");
-              if (myDropdown.classList.contains("show")) {
-                myDropdown.classList.remove("show");
+          window.onclick = function (e) {
+            if (!e.target.matches('.femei-buton')) {
+              var myDropdown = document.getElementById('DropF');
+              if (myDropdown.classList.contains('show')) {
+                myDropdown.classList.remove('show');
               }
             }
           };
@@ -90,14 +90,14 @@
         </div>
         <script>
           function myFunction2() {
-            document.getElementById("DropB").classList.toggle("show");
+            document.getElementById('DropB').classList.toggle('show');
           }
 
-          window.onclick = function(e) {
-            if (!e.target.matches(".barbati-buton")) {
-              var myDropdown = document.getElementById("DropB");
-              if (myDropdown.classList.contains("show")) {
-                myDropdown.classList.remove("show");
+          window.onclick = function (e) {
+            if (!e.target.matches('.barbati-buton')) {
+              var myDropdown = document.getElementById('DropB');
+              if (myDropdown.classList.contains('show')) {
+                myDropdown.classList.remove('show');
               }
             }
           };
@@ -118,14 +118,14 @@
 
         <script>
           function myFunction3() {
-            document.getElementById("DropC").classList.toggle("show");
+            document.getElementById('DropC').classList.toggle('show');
           }
 
-          window.onclick = function(e) {
-            if (!e.target.matches(".copii-buton")) {
-              var myDropdown = document.getElementById("DropC");
-              if (myDropdown.classList.contains("show")) {
-                myDropdown.classList.remove("show");
+          window.onclick = function (e) {
+            if (!e.target.matches('.copii-buton')) {
+              var myDropdown = document.getElementById('DropC');
+              if (myDropdown.classList.contains('show')) {
+                myDropdown.classList.remove('show');
               }
             }
           };
@@ -139,44 +139,175 @@
     </div>
 
     <main>
-      <a> <img id="cont" src="Poze/cont.png" />Contul meu </a>
-      <p>Bine ati revenit, ... !</p>
-      <p>Date personale</p>
-
-      <div class="date">
-        <table>
-          <thead>
-            <tr>
-              <th style="width: 25%">Nume si prenume</th>
-              <th style="width: 25%">Email</th>
-              <th style="width: 25%">Parola</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td data-th="Nume si prenume">
-                <div class="nume">
-                  <a> <img id="cont" src="Poze/cont.png" /> ... </a>
-                </div>
-              </td>
-              <td data-th="Email">
-                <div class="email">
-                  <a> <img id="email" src="Poze/email-Checkout.png" /> ... </a>
-                </div>
-              </td>
-              <td data-th="Parola">
-                <div class="parola">
-                  <a> <img id="parola" src="Poze/parola-tw.png" />******** </a>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="titlu">
+        <img id="cont" src="Poze/cont.png" />
+        <a id="titlu">Contul meu </a>
       </div>
 
+      <div class="tip-date">
+        <label for="inregistrare-nume">
+          <a id="id-nume"
+            ><img
+              id="register1"
+              src="Poze/register-tw.png"
+              alt="register"
+            />Nume : Popescu
+          </a>
+        </label>
+      </div>
+      <div class="date">
+        <input
+          type="text"
+          id="inregistrare-nume"
+          name="nume"
+          placeholder="Nume nou "
+        />
+        <button
+          class="buton-schimba"
+          type="submit"
+          onclick="window.location.href='#'"
+        >
+          Schimba
+        </button>
+      </div>
+      <br />
+
+      <div class="tip-date">
+        <label for="inregistrare-prenume">
+          <a id="id-prenume"
+            ><img
+              id="register2"
+              src="Poze/register-tw.png"
+              alt="register"
+            />Prenume : Daniel</a
+          >
+        </label>
+      </div>
+      <div class="date">
+        <input
+          type="text"
+          id="inregistrare-prenume"
+          name="prenume"
+          placeholder="Prenume nou ... "
+        />
+        <button
+          class="buton-schimba"
+          type="submit"
+          onclick="window.location.href='#'"
+        >
+          Schimba
+        </button>
+      </div>
+      <br />
+
+      <div class="tip-date">
+        <label for="inregistrare-email">
+          <a id="id-email"
+            ><img id="email" src="Poze/email-tw.png" alt="email" />Email :
+            popescu@gmail.com</a
+          >
+        </label>
+      </div>
+      <div class="date">
+        <input
+          type="text"
+          id="inregistrare-email"
+          name="email"
+          placeholder="Email nou ..."
+        />
+        <button
+          class="buton-schimba"
+          type="submit"
+          onclick="window.location.href='#'"
+        >
+          Schimba
+        </button>
+      </div>
+
+      <br />
+
+      <div class="tip-date">
+        <label for="inregistrare-telefon">
+          <a id="id-telefon"
+            ><img id="telefon" src="Poze/telefon.png" alt="telefon" />Telefon :
+            0765 234 567
+          </a>
+        </label>
+      </div>
+      <div class="date">
+        <input
+          type="text"
+          id="inregistrare-telefon"
+          name="telefon"
+          placeholder="Numar nou de telefon : ..."
+        />
+        <button
+          class="buton-schimba"
+          type="submit"
+          onclick="window.location.href='#'"
+        >
+          Schimba
+        </button>
+      </div>
+
+      <br />
+
+      <div class="tip-date">
+        <label for="inregistrare-adresa">
+          <a id="id-adresa"
+            ><img
+              id="adresa"
+              src="Poze/adresaCheckout.png"
+              alt="adresa"
+            />Adresa : Str. Primaverii nr.8</a
+          >
+        </label>
+      </div>
+      <div class="date">
+        <input
+          type="text"
+          id="inregistrare-email"
+          name="adresa"
+          placeholder="Adresa noua ..."
+        />
+        <button
+          class="buton-schimba"
+          type="submit"
+          onclick="window.location.href='#'"
+        >
+          Schimba
+        </button>
+      </div>
+
+      <br />
+
+      <div class="tip-date">
+        <label for="inregistrare-parola">
+          <a id="id-parola"
+            ><img id="parola" src="Poze/parola-tw.png" alt="parola" />Parola :
+            12345678</a
+          >
+        </label>
+      </div>
+      <div class="date">
+        <input
+          type="text"
+          id="inregistrare-parola"
+          name="parola"
+          placeholder="Parola noua ********"
+        />
+        <button
+          class="buton-schimba"
+          type="submit"
+          onclick="window.location.href='#'"
+        >
+          Schimba
+        </button>
+      </div>
+      <br />
+
       <button
-        id="inapoi-la-cump"
+        class="buton-inapoi-cump"
         type="button"
         onclick="window.location.href='./PaginaPrincipala.html'"
       >
@@ -203,12 +334,12 @@
 
       <div class="footer-centru">
         <div class="locatie">
-          <a title="Locatie"><img src="Poze/locatie-tw.png" alt="locatie"/></a>
+          <a title="Locatie"><img src="Poze/locatie-tw.png" alt="locatie" /></a>
           <p>Strada General Henri Mathias Berthelot Nr. 16</p>
         </div>
 
         <div class="telefon">
-          <a title="Telefon"><img src="Poze/telefon-tw.png" alt="telefon"/></a>
+          <a title="Telefon"><img src="Poze/telefon-tw.png" alt="telefon" /></a>
           <p>+4 0767-437-025</p>
         </div>
 

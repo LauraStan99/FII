@@ -151,8 +151,9 @@ input[type='submit'] {
 main {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 main h1 {
@@ -160,7 +161,8 @@ main h1 {
   text-align: center;
 }
 
-main #register,
+main #register1,
+#register2,
 #adresa,
 #telefon,
 #email,
@@ -173,20 +175,20 @@ main input[type='text'] {
   margin-left: 400px;
   width: 40%;
   height: 30px;
-  margin-bottom: 10px;
   margin-top: 5px;
 }
 main .buton-inregistrare {
   background-color: rgb(143, 255, 152);
-  width: 30%;
+  width: 40%;
   color: black;
   padding: 14px 10px;
   text-decoration: none;
   margin-top: 30px;
-  margin-left: 450px;
+  margin-left: 400px;
   outline: none;
   border: none;
   cursor: pointer;
+  font-size: 15px;
 }
 
 main .buton-inregistrare:hover {
@@ -305,21 +307,22 @@ main .buton-inregistrare:hover {
   main {
     flex-direction: column;
     width: 100%;
-    text-align: center;
-    align-items: center;
   }
-  main #register,
+  main #register1,
+  #register2,
   #adresa,
   #telefon,
   #email,
   #parola {
-    margin-left: 40px;
+    margin-left: 20px;
   }
-  main [type='text'] {
-    margin-left: 40;
+  main input[type='text'] {
+    margin-left: 20px;
+    width: 90%;
   }
   main .buton-inregistrare {
-    margin-left: 40;
+    margin-left: 20px;
+    width: 90%;
   }
   .footer {
     font: bold 15px sans-serif;
