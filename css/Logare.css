@@ -81,7 +81,7 @@ header .header-left {
   padding: 5px 15px;
 }
 
-input[type='submit'] {
+input[type="submit"] {
   margin-left: 0px;
   background: black;
   border: 0;
@@ -161,41 +161,45 @@ main .main-dreapta {
   flex-wrap: wrap;
 }
 .main-stanga {
-  width: 50%;
+  width: 40%;
 }
 .main-dreapta {
-  width: 50%;
+  width: 55%;
 }
 
 main .main-stanga h1 {
   font-size: 35px;
-  margin-left: 40px;
+  align-self: center;
 }
 
 main .main-stanga #email,
 #parola {
   height: 20px;
-  margin-left: 40px;
+  margin-left: 90px;
+  align-items: center;
 }
 
-main .main-stanga input[type='text'] {
-  margin-left: 40px;
-  width: 50%;
+main .main-stanga input[type="text"] {
+  margin-left: 0px;
+  width: 70%;
   height: 30px;
   margin-bottom: 10px;
   margin-top: 5px;
+  align-self: center;
 }
 main .main-stanga .buton-stanga {
   background-color: rgb(143, 255, 152);
-  width: 30%;
+  width: 70%;
   color: black;
   padding: 14px 10px;
   text-decoration: none;
   margin-top: 30px;
-  margin-left: 40px;
+  margin-left: 0px;
   outline: none;
   border: none;
   cursor: pointer;
+  align-self: center;
+  font-size: 15px;
 }
 
 main .main-stanga .buton-stanga:hover {
@@ -204,19 +208,25 @@ main .main-stanga .buton-stanga:hover {
 
 main .main-dreapta h2 {
   font-size: 35px;
-  align-self: left;
+  align-self: center;
+}
+
+main .main-dreapta h3 {
+  font: bold;
+  align-self: center;
 }
 
 main .main-dreapta .buton-dreapta {
   background-color: rgb(143, 255, 152);
-  width: 30%;
+  width: 50%;
   color: black;
   padding: 14px 10px;
   text-decoration: none;
   margin-top: 20px;
-  margin-left: 40px;
+  margin-left: 0px;
   outline: none;
   border: none;
+  align-self: center;
   cursor: pointer;
 }
 
@@ -224,8 +234,8 @@ main .main-dreapta .buton-dreapta:hover {
   background-color: green;
 }
 main .main-dreapta .beneficii p {
-  font-size: 16px;
-  text-align: left;
+  font-size: 15px;
+  text-align: center;
 }
 
 .footer {
@@ -333,7 +343,7 @@ main .main-dreapta .beneficii p {
     flex-direction: column;
     width: 100%;
   }
-  .navbar form input[type='search'] {
+  .navbar form input[type="search"] {
     margin-left: 50px;
   }
 
@@ -341,15 +351,37 @@ main .main-dreapta .beneficii p {
   .main-stanga {
     flex-direction: column;
     width: 100%;
-    text-align: center;
-    align-items: center;
   }
+
   .main-dreapta .beneficii {
-    margin-left: 20px;
+    margin-left: 0px;
   }
-  .main-stanga input[type='text'] {
+  .main-stanga input[type="text"] {
+    width: 90%;
+  }
+
+  main .main-stanga h1 {
+    font-size: 35px;
     align-self: center;
   }
+
+  main .main-stanga #email,
+  #parola {
+    margin-left: 60px;
+  }
+
+  main .main-stanga .buton-stanga {
+    width: 70%;
+  }
+
+  main .main-dreapta .buton-dreapta {
+    width: 70%;
+  }
+
+  main .main-dreapta h2 {
+    text-align: center;
+  }
+
   .footer {
     font: bold 15px sans-serif;
   }

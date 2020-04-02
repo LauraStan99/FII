@@ -2,7 +2,6 @@ Modificari si actualizari
 1.Checkout (ok!)
 2.ComandaPlasata (ok!)
 *de adaugat afisare detalii legate de comanda realizata
-!aliniere text buton in centru la F12
 3.Contact (ok!)
 4.CosCumparaturi(ok!)
 5.CosPlin
@@ -14,8 +13,7 @@ Modificari si actualizari
 (de pus in coloana toate detaliile despre utilizator pe care le-a adaugat la inregistrare)
 7.FavoriteGol(ok!)
 8.FavoriteNelogat(ok!)
-9.Inregistrare
-*de terminat modificarile
+9.Inregistrare(ok!)
 10.Livrare(ok!)
 11.Logare
 *cateva modificari de aspect si simetrie
