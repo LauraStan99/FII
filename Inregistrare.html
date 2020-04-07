@@ -151,93 +151,110 @@
       </div>
 
       <form action="php/inregistrare.php" method="post">
-        <label for="inregistrare-nume">
-          <a
-            ><img
-              id="register1"
-              src="Poze/register-tw.png"
-              alt="register"
-            />Nume</a
-          >
-        </label>
-        <input
-          type="text"
-          id="inregistrare-nume"
-          name="nume"
-          placeholder="Popescu "
-        />
+        <div class="linie">
+          <label for="inregistrare-nume">
+            <a
+              ><img
+                id="register1"
+                src="Poze/register-tw.png"
+                alt="register"
+              />Nume *
+            </a>
+          </label>
+          <input
+            type="text"
+            id="inregistrare-nume"
+            name="nume"
+            placeholder="Popescu "
+            value="<?php echo $numeErr;?>"
+          />
+          <span class="error"> <?php echo $numeErr ;?></span>
+        </div>
         <br />
 
-        <label for="inregistrare-prenume">
-          <a
-            ><img
-              id="register2"
-              src="Poze/register-tw.png"
-              alt="register"
-            />Prenume</a
-          >
-        </label>
-        <input
-          type="text"
-          id="inregistrare-prenume"
-          name="prenume"
-          placeholder="Daniel"
-        />
+        <div class="linie">
+          <label for="inregistrare-prenume">
+            <a
+              ><img
+                id="register2"
+                src="Poze/register-tw.png"
+                alt="register"
+              />Prenume</a
+            >
+          </label>
+          <input
+            type="text"
+            id="inregistrare-prenume"
+            name="prenume"
+            placeholder="Daniel"
+          />
+        </div>
         <br />
 
-        <label for="inregistrare-email">
-          <a><img id="email" src="Poze/email-tw.png" alt="email" />Email </a>
-        </label>
-        <input
-          type="text"
-          id="inregistrare-email"
-          name="email"
-          placeholder="popescu@gmail.com"
-        />
+        <div class="linie">
+          <label for="inregistrare-email">
+            <a><img id="email" src="Poze/email-tw.png" alt="email" />Email </a>
+          </label>
+          <input
+            type="text"
+            id="inregistrare-email"
+            name="email"
+            placeholder="popescu@gmail.com"
+          />
+        </div>
         <br />
 
-        <label for="inregistrare-telefon">
-          <a
-            ><img id="telefon" src="Poze/telefon.png" alt="telefon" />Telefon</a
-          >
-        </label>
-        <input
-          type="text"
-          id="inregistrare-telefon"
-          name="telefon"
-          placeholder=" 07** *** *** "
-        />
+        <div class="linie">
+          <label for="inregistrare-telefon">
+            <a
+              ><img
+                id="telefon"
+                src="Poze/telefon.png"
+                alt="telefon"
+              />Telefon</a
+            >
+          </label>
+          <input
+            type="text"
+            id="inregistrare-telefon"
+            name="telefon"
+            placeholder=" 07** *** *** "
+          />
+        </div>
         <br />
 
-        <label for="inregistrare-adresa">
-          <a
-            ><img
-              id="adresa"
-              src="Poze/adresaCheckout.png"
-              alt="adresa"
-            />Adresa</a
-          >
-        </label>
-        <input
-          type="text"
-          id="inregistrare-email"
-          name="adresa"
-          placeholder="Str. Primaverii nr.8"
-        />
+        <div class="linie">
+          <label for="inregistrare-adresa">
+            <a
+              ><img
+                id="adresa"
+                src="Poze/adresaCheckout.png"
+                alt="adresa"
+              />Adresa</a
+            >
+          </label>
+          <input
+            type="text"
+            id="inregistrare-email"
+            name="adresa"
+            placeholder="Str. Primaverii nr.8"
+          />
+        </div>
         <br />
 
-        <label for="inregistrare-parola">
-          <a
-            ><img id="parola" src="Poze/parola-tw.png" alt="parola" />Parola
-          </a>
-        </label>
-        <input
-          type="text"
-          id="inregistrare-parola"
-          name="parola"
-          placeholder="********"
-        />
-
+        <div class="linie">
+          <label for="inregistrare-parola">
+            <a
+              ><img id="parola" src="Poze/parola-tw.png" alt="parola" />Parola
+            </a>
+          </label>
+          <input
+            type="text"
+            id="inregistrare-parola"
+            name="parola"
+            placeholder="********"
+          />
+        </div>
         <br />
 
         <button

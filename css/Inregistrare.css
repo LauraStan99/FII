@@ -175,13 +175,17 @@ main #register1,
   height: 20px;
   margin-left: 30px;
 }
-
-main input[type='text'] {
+main .linie {
+  display: flex;
+  flex-direction: column;
+}
+main .linie input[type='text'] {
   margin-left: 30px;
   width: 50%;
   height: 30px;
   margin-top: 5px;
 }
+
 main .buton-inregistrare {
   background-color: rgb(143, 255, 152);
   width: 50%;
