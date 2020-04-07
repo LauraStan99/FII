@@ -81,7 +81,7 @@ header .header-left {
   padding: 5px 15px;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   margin-left: 0px;
   background: black;
   border: 0;
@@ -176,7 +176,7 @@ main #register1,
   margin-left: 30px;
 }
 
-main input[type="text"] {
+main input[type='text'] {
   margin-left: 30px;
   width: 50%;
   height: 30px;
@@ -305,7 +305,7 @@ main .buton-inregistrare:hover {
     flex-direction: column;
     width: 100%;
   }
-  .navbar form input[type="search"] {
+  .navbar form input[type='search'] {
     margin-left: 50px;
   }
 
@@ -321,7 +321,7 @@ main .buton-inregistrare:hover {
   #parola {
     margin-left: 20px;
   }
-  main input[type="text"] {
+  main input[type='text'] {
     margin-left: 20px;
     width: 90%;
   }

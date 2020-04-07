@@ -65,14 +65,14 @@
         </div>
         <script>
           function myFunction1() {
-            document.getElementById("DropF").classList.toggle("show");
+            document.getElementById('DropF').classList.toggle('show');
           }
 
           window.onclick = function (e) {
-            if (!e.target.matches(".femei-buton")) {
-              var myDropdown = document.getElementById("DropF");
-              if (myDropdown.classList.contains("show")) {
-                myDropdown.classList.remove("show");
+            if (!e.target.matches('.femei-buton')) {
+              var myDropdown = document.getElementById('DropF');
+              if (myDropdown.classList.contains('show')) {
+                myDropdown.classList.remove('show');
               }
             }
           };
@@ -91,14 +91,14 @@
         </div>
         <script>
           function myFunction2() {
-            document.getElementById("DropB").classList.toggle("show");
+            document.getElementById('DropB').classList.toggle('show');
           }
 
           window.onclick = function (e) {
-            if (!e.target.matches(".barbati-buton")) {
-              var myDropdown = document.getElementById("DropB");
-              if (myDropdown.classList.contains("show")) {
-                myDropdown.classList.remove("show");
+            if (!e.target.matches('.barbati-buton')) {
+              var myDropdown = document.getElementById('DropB');
+              if (myDropdown.classList.contains('show')) {
+                myDropdown.classList.remove('show');
               }
             }
           };
@@ -119,14 +119,14 @@
 
         <script>
           function myFunction3() {
-            document.getElementById("DropC").classList.toggle("show");
+            document.getElementById('DropC').classList.toggle('show');
           }
 
           window.onclick = function (e) {
-            if (!e.target.matches(".copii-buton")) {
-              var myDropdown = document.getElementById("DropC");
-              if (myDropdown.classList.contains("show")) {
-                myDropdown.classList.remove("show");
+            if (!e.target.matches('.copii-buton')) {
+              var myDropdown = document.getElementById('DropC');
+              if (myDropdown.classList.contains('show')) {
+                myDropdown.classList.remove('show');
               }
             }
           };
@@ -150,98 +150,104 @@
         </p>
       </div>
 
-      <label for="inregistrare-nume">
-        <a
-          ><img
-            id="register1"
-            src="Poze/register-tw.png"
-            alt="register"
-          />Nume</a
+      <form action="php/inregistrare.php" method="post">
+        <label for="inregistrare-nume">
+          <a
+            ><img
+              id="register1"
+              src="Poze/register-tw.png"
+              alt="register"
+            />Nume</a
+          >
+        </label>
+        <input
+          type="text"
+          id="inregistrare-nume"
+          name="nume"
+          placeholder="Popescu "
+        />
+        <br />
+
+        <label for="inregistrare-prenume">
+          <a
+            ><img
+              id="register2"
+              src="Poze/register-tw.png"
+              alt="register"
+            />Prenume</a
+          >
+        </label>
+        <input
+          type="text"
+          id="inregistrare-prenume"
+          name="prenume"
+          placeholder="Daniel"
+        />
+        <br />
+
+        <label for="inregistrare-email">
+          <a><img id="email" src="Poze/email-tw.png" alt="email" />Email </a>
+        </label>
+        <input
+          type="text"
+          id="inregistrare-email"
+          name="email"
+          placeholder="popescu@gmail.com"
+        />
+        <br />
+
+        <label for="inregistrare-telefon">
+          <a
+            ><img id="telefon" src="Poze/telefon.png" alt="telefon" />Telefon</a
+          >
+        </label>
+        <input
+          type="text"
+          id="inregistrare-telefon"
+          name="telefon"
+          placeholder=" 07** *** *** "
+        />
+        <br />
+
+        <label for="inregistrare-adresa">
+          <a
+            ><img
+              id="adresa"
+              src="Poze/adresaCheckout.png"
+              alt="adresa"
+            />Adresa</a
+          >
+        </label>
+        <input
+          type="text"
+          id="inregistrare-email"
+          name="adresa"
+          placeholder="Str. Primaverii nr.8"
+        />
+        <br />
+
+        <label for="inregistrare-parola">
+          <a
+            ><img id="parola" src="Poze/parola-tw.png" alt="parola" />Parola
+          </a>
+        </label>
+        <input
+          type="text"
+          id="inregistrare-parola"
+          name="parola"
+          placeholder="********"
+        />
+
+        <br />
+
+        <button
+          class="buton-inregistrare"
+          type="submit"
+          onclick="window.location.href='#'"
         >
-      </label>
-      <input
-        type="text"
-        id="inregistrare-nume"
-        name="nume"
-        placeholder="Popescu "
-      />
-      <br />
-
-      <label for="inregistrare-prenume">
-        <a
-          ><img
-            id="register2"
-            src="Poze/register-tw.png"
-            alt="register"
-          />Prenume</a
-        >
-      </label>
-      <input
-        type="text"
-        id="inregistrare-prenume"
-        name="prenume"
-        placeholder="Daniel"
-      />
-      <br />
-
-      <label for="inregistrare-email">
-        <a><img id="email" src="Poze/email-tw.png" alt="email" />Email </a>
-      </label>
-      <input
-        type="text"
-        id="inregistrare-email"
-        name="email"
-        placeholder="popescu@gmail.com"
-      />
-      <br />
-
-      <label for="inregistrare-telefon">
-        <a><img id="telefon" src="Poze/telefon.png" alt="telefon" />Telefon</a>
-      </label>
-      <input
-        type="text"
-        id="inregistrare-telefon"
-        name="telefon"
-        placeholder=" 07** *** *** "
-      />
-      <br />
-
-      <label for="inregistrare-adresa">
-        <a
-          ><img
-            id="adresa"
-            src="Poze/adresaCheckout.png"
-            alt="adresa"
-          />Adresa</a
-        >
-      </label>
-      <input
-        type="text"
-        id="inregistrare-email"
-        name="adresa"
-        placeholder="Str. Primaverii nr.8"
-      />
-      <br />
-
-      <label for="inregistrare-parola">
-        <a><img id="parola" src="Poze/parola-tw.png" alt="parola" />Parola </a>
-      </label>
-      <input
-        type="text"
-        id="inregistrare-parola"
-        name="parola"
-        placeholder="********"
-      />
-
-      <br />
-
-      <button
-        class="buton-inregistrare"
-        type="button"
-        onclick="window.location.href='#'"
-      >
-        Inregistrare
-      </button>
+          Inregistrare
+        </button>
+      </form>
     </main>
     <footer class="footer">
       <div class="footer-stanga">
