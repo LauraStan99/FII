@@ -155,12 +155,6 @@ main {
   flex-wrap: wrap;
 }
 
-main .formular-contact {
-  flex-direction: column;
-  display: flex;
-  flex-wrap: wrap;
-}
-
 main .info-contact p,
 main .info-contact h1,
 main .formular-contact h2 {
@@ -168,7 +162,7 @@ main .formular-contact h2 {
   margin-left: 20px;
 }
 
-main .formular-contact #contact-nume,
+main .linie #contact-nume,
 #contact-prenume,
 #contact-email,
 #contact-telefon,
@@ -178,7 +172,12 @@ main .formular-contact #contact-nume,
   margin-left: 20px;
 }
 
-main .formular-contact input[type="text"],
+main .linie {
+  display: flex;
+  flex-direction: column;
+}
+
+main .linie input[type="text"],
 select {
   margin-left: 20px;
   width: 50%;
@@ -187,7 +186,7 @@ select {
   margin-top: 5px;
 }
 
-main .formular-contact input[type="mesaj"] {
+main .linie input[type="mesaj"] {
   margin-left: 20px;
   width: 50%;
   padding: 50px;
@@ -195,7 +194,7 @@ main .formular-contact input[type="mesaj"] {
   margin-top: 5px;
 }
 
-main .formular-contact .buton-formular {
+main  .buton-formular {
   background-color: rgb(143, 255, 152);
   width: 50%;
   color: black;
@@ -209,7 +208,7 @@ main .formular-contact .buton-formular {
   cursor: pointer;
 }
 
-main .formular-contact .buton-formular:hover {
+main .buton-formular:hover {
   background-color: green;
 }
 

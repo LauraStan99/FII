@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="ro">
   <head>
-    <title>Inregistrare | Impressed</title>
+    <title>Contact | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/Inregistrare.css" rel="stylesheet" />
+    <link href="css/Contact.css" rel="stylesheet" />
   </head>
 
   <body>
+  <?php
 
-    
-<?php
-
-$numeErr=$prenumeErr=$emailErr=$telefonErr=$adresaErr=$parolaErr="";
-$nume=$prenume=$email=$telefon=$adresa=$parola="";
+$numeErr=$prenumeErr=$emailErr=$telefonErr=$mesaj="";
+$nume=$prenume=$email=$telefon=$mesaj="";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
  {
-  if (empty($_POST["nume"])) {
-    $numeErr = "Numele este obligatoriu";
-  } else {
-    $nume = test_input($_POST["nume"]);
+    if (empty($_POST["nume"])) {
+        $numeErr = "Numele este obligatoriu";
+    } else {
+        $nume = test_input($_POST["nume"]);
 
-    if (!preg_match("/^[a-zA-Z ]*$/",$nume)) {
-      $numeErr="Obligatoriu doar litere si spatii";
+        if (!preg_match("/^[a-zA-Z ]*$/",$nume)) {
+        $numeErr="Obligatoriu doar litere si spatii";
+        }
     }
-  }
  
     if (empty($_POST["prenume"])) {
       $prenumeErr = "Prenumele este obligatoriu";
@@ -37,24 +35,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
       }
     }
 
-  if (empty($_POST["email"])) {
-    $emailErr = "Email-ul este obligatoriu";
-  } else {
-    $email = test_input($_POST["email"]);
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Format gresit";
+    if (empty($_POST["email"])) {
+        $emailErr = "Email-ul este obligatoriu";
+    } else {
+        $email = test_input($_POST["email"]);
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $emailErr = "Format gresit";
+        }
     }
-  }
- 
-
-  if (empty($_POST["adresa"])) {
-    $adresaErr = "Adresa este obligatorie";
-  } else {
-    $adresa = test_input($_POST["adresa"]);
-  }
 
   
-if (empty($_POST["telefon"])) {
+    if (empty($_POST["telefon"])) {
       $telefonErr = "Numarul de telefon este obligatoriu";
     } else {
       $telefon = test_input($_POST["telefon"]);
@@ -64,17 +55,14 @@ if (empty($_POST["telefon"])) {
       }
     }
     
-    if (empty($_POST["parola"])) {
-      $parolaErr = "Parola este obligatorie";
+    
+    if (empty($_POST["mesaj"])) {
+        $mesajErr = "Mesajul este obligatoriu";
     } else {
-      $parola = test_input($_POST["parola"]);
-  
-      if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#",$parola)) {
-        $parolaErr="Obligatoriu minim cate una din: numere, litere si caractere speciale";
-      }
+        $mesaj = test_input($_POST["mesaj"]);
     }
   
-  }
+}
 
 function test_input($data) {
   $data = trim($data);
@@ -82,7 +70,6 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
-
 ?>
     <header>
       <div class="header-navigation">
@@ -141,14 +128,14 @@ function test_input($data) {
         </div>
         <script>
           function myFunction1() {
-            document.getElementById('DropF').classList.toggle('show');
+            document.getElementById("DropF").classList.toggle("show");
           }
 
-          window.onclick = function (e) {
-            if (!e.target.matches('.femei-buton')) {
-              var myDropdown = document.getElementById('DropF');
-              if (myDropdown.classList.contains('show')) {
-                myDropdown.classList.remove('show');
+          window.onclick = function(e) {
+            if (!e.target.matches(".femei-buton")) {
+              var myDropdown = document.getElementById("DropF");
+              if (myDropdown.classList.contains("show")) {
+                myDropdown.classList.remove("show");
               }
             }
           };
@@ -167,14 +154,14 @@ function test_input($data) {
         </div>
         <script>
           function myFunction2() {
-            document.getElementById('DropB').classList.toggle('show');
+            document.getElementById("DropB").classList.toggle("show");
           }
 
-          window.onclick = function (e) {
-            if (!e.target.matches('.barbati-buton')) {
-              var myDropdown = document.getElementById('DropB');
-              if (myDropdown.classList.contains('show')) {
-                myDropdown.classList.remove('show');
+          window.onclick = function(e) {
+            if (!e.target.matches(".barbati-buton")) {
+              var myDropdown = document.getElementById("DropB");
+              if (myDropdown.classList.contains("show")) {
+                myDropdown.classList.remove("show");
               }
             }
           };
@@ -195,14 +182,14 @@ function test_input($data) {
 
         <script>
           function myFunction3() {
-            document.getElementById('DropC').classList.toggle('show');
+            document.getElementById("DropC").classList.toggle("show");
           }
 
-          window.onclick = function (e) {
-            if (!e.target.matches('.copii-buton')) {
-              var myDropdown = document.getElementById('DropC');
-              if (myDropdown.classList.contains('show')) {
-                myDropdown.classList.remove('show');
+          window.onclick = function(e) {
+            if (!e.target.matches(".copii-buton")) {
+              var myDropdown = document.getElementById("DropC");
+              if (myDropdown.classList.contains("show")) {
+                myDropdown.classList.remove("show");
               }
             }
           };
@@ -216,149 +203,143 @@ function test_input($data) {
     </div>
 
     <main>
-      <div>
+      <div class="info-contact">
         <h1>
-          Creati contul
+          <strong>Contactati-ne</strong>
         </h1>
         <hr />
         <p>
-          Date logare
+          Va invitam sa utilizati formularul de mai jos pentru a putea lua
+          legatura cu noi. In acest fel, veti putea primi un raspuns din partea
+          noastra foarte rapid.
+          <strong>
+            Daca aveti intrebari in legatura cu o comanda pe care ati facut-o,
+            va rugam sa specificati si numarul comenzii pe care il puteti gasi
+            in e-mail-ul de confirmare al comenzii respective.
+          </strong>
+        </p>
+        <p>
+          Va asteptam sa ne contactati de luni pana vineri, intre orele
+          9:00-17:00.
         </p>
       </div>
-
-      <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-        <div class="linie">
-          <label for="inregistrare-nume">
-            <a
-              ><img
-                id="register1"
+        
+      
+      <div class="formular-contact">
+        <h2>
+          <strong>Formular de contact</strong>
+        </h2>
+        <hr />
+        </div>
+        
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+        <div class = "linie">
+            <label for="contact-nume">
+            <a><img
+                id="contact-nume"
                 src="Poze/register-tw.png"
-                alt="register"
-              />Nume 
-            </a>
-           
-          </label>
-          <div class="input">
-              <input
+                alt="contact-nume"/>Nume </a>
+            </label>
+
+            <div class = "input">
+                <input
                 type="text"
-                id="inregistrare-nume"
-                name="nume"
-                placeholder="Popescu "
-              />
-               <span class="error" style="color:red">*  <?php echo $numeErr ;?></span>
+                id="contact-nume"
+                name="nume-intreg"
+                placeholder="Popescu"
+                />
+                <span class="error" style="color:red">*  <?php echo $numeErr ;?></span>
             </div>
         </div>
         <br />
 
-        <div class="linie">
-          <label for="inregistrare-prenume">
-            <a
-              ><img
-                id="register2"
-                src="Poze/register-tw.png"
-                alt="register"
-              />Prenume</a
-            >
-          </label>
-          <div class="input">
-              <input
-                type="text"
-                id="inregistrare-prenume"
-                name="prenume"
-                placeholder="Daniel"
-              />
-              <span class="error" style="color:red">*  <?php echo $prenumeErr ;?></span>
-           </div>
-        </div>
-        <br />
+        <label for="contact-prenume">
+          <a><img
+              id="contact-prenume"
+              src="Poze/register-tw.png"
+              alt="contact-nume"/>Prenume</a>
+          <a style="color: red;">*</a>    
+        </label>
+        <input
+          type="text"
+          id="contact-prenume"
+          name="nume-intreg"
+          placeholder=" Daniel"
+        />
 
-        <div class="linie">
-          <label for="inregistrare-email">
-            <a><img id="email" src="Poze/email-tw.png" alt="email" />Email </a>
-          </label>
-          <div class="input">
-              <input
-                type="text"
-                id="inregistrare-email"
-                name="email"
-                placeholder="popescu@gmail.com"
-              />
-              <span class="error" style="color:red">*  <?php echo $emailErr ;?></span>
-        </div>
-        </div>
-        <br />
+        <label for="contact-email">
+          <a><img
+              id="contact-email"
+              src="Poze/email-tw.png"
+              alt="contact-email"
+            />Email
+          </a>
+          <a style="color: red;">*</a>
+        </label>
+        <input
+          type="text"
+          id="contact-email"
+          name="email"
+          placeholder="popescu@gmai.com"
+        />
 
-        <div class="linie">
-          <label for="inregistrare-telefon">
-            <a
-              ><img
-                id="telefon"
+        <label for="contact-telefon">
+            <a><img
+                id="contact-telefon"
                 src="Poze/telefon.png"
-                alt="telefon"
-              />Telefon</a
-            >
-          </label>
-          <div class="input">
-              <input
-                type="text"
-                id="inregistrare-telefon"
-                name="telefon"
-                placeholder=" 07** *** *** "
-              />
-              <span class="error" style="color:red">*  <?php echo $telefonErr ;?></span>
-           </div>
-        </div>
-        <br />
-
-        <div class="linie">
-          <label for="inregistrare-adresa">
-            <a
-              ><img
-                id="adresa"
-                src="Poze/adresaCheckout.png"
-                alt="adresa"
-              />Adresa</a
-            >
-          </label>
-          <div class="input">
-              <input
-                type="text"
-                id="inregistrare-email"
-                name="adresa"
-                placeholder="Str. Primaverii nr.8"
-              />
-              <span class="error" style="color:red">*   <?php echo $adresaErr ;?></span>
-           </div>
-        </div>
-        <br />
-
-        <div class="linie">
-          <label for="inregistrare-parola">
-            <a
-              ><img id="parola" src="Poze/parola-tw.png" alt="parola" />Parola
+                alt="contact-telefon"
+              />Telefon
             </a>
+            <a style="color: red;">*</a>
           </label>
-          <div class="input">
-              <input
-                type="text"
-                id="inregistrare-parola"
-                name="parola"
-                placeholder="********"
-              />
-              <span class="error" style="color:red">*   <?php echo $parolaErr ;?></span>
-           </div>
-        </div>
-        <br />
+          <input
+            type="text"
+            id="contact-telefon"
+            name="telefon"
+            placeholder="0755-666-777"
+          />
 
-        <button
-          class="buton-inregistrare"
-          type="submit"
+        <label for="contact-subiect">
+          <a
+            ><img
+            id="contact-subiect1"
+            src="Poze/subiect.png"
+            alt="contact-subiect"
+            />Subiect
+          </a>
+        </label>
+        <select id="contact-subiect" name="subiect">
+            <option value="Intrebari despre un articol">Intrebari despre un articol</option>
+            <option value="Intrebari despre comanda dvs.">Intrebari despre comanda dvs.</option>
+            <option value="Intrebari despre factura dvs.">Intrebari despre factura dvs.</option>
+            <option value= "Altele">Altele</option>
+        </select>
+
+        <label for="contact-mesaj">
+            <a><img
+                id="contact-mesaj"
+                src="Poze/mesaj.png"
+                alt="contact-mesaj"
+              />Mesajul dvs.
+            </a>
+            <a style="color: red;">*</a>
+          </label>
+          <input
+            type="mesaj"
+            id="contact-mesaj"
+            name="mesaj"
+          />
+
+          <button
+          class="buton-formular"
+          type="button"
           onclick="window.location.href='#'"
         >
-          Inregistrare
+          Trimiteti
         </button>
-      </form>
+    </form>
     </main>
+
     <footer class="footer">
       <div class="footer-stanga">
         <h1>
@@ -377,12 +358,12 @@ function test_input($data) {
 
       <div class="footer-centru">
         <div class="locatie">
-          <a title="Locatie"><img src="Poze/locatie-tw.png" alt="locatie" /></a>
+          <a title="Locatie"><img src="Poze/locatie-tw.png" alt="locatie"/></a>
           <p>Strada General Henri Mathias Berthelot Nr. 16</p>
         </div>
 
         <div class="telefon">
-          <a title="Telefon"><img src="Poze/telefon-tw.png" alt="telefon" /></a>
+          <a title="Telefon"><img src="Poze/telefon-tw.png" alt="telefon"/></a>
           <p>+4 0767-437-025</p>
         </div>
 
@@ -421,6 +402,5 @@ function test_input($data) {
         </div>
       </div>
     </footer>
-
   </body>
 </html>
