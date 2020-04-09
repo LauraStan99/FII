@@ -179,6 +179,12 @@ main .linie {
   display: flex;
   flex-direction: column;
 }
+main .linie .input {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 main .linie input[type='text'] {
   margin-left: 30px;
   width: 50%;

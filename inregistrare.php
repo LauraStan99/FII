@@ -8,6 +8,83 @@
   </head>
 
   <body>
+
+    
+<?php
+
+$numeErr=$prenumeErr=$adresaErr=$emailErr=$telefonErr=$adresaErr=$parolaErr="";
+$nume=$prenume=$adresa=$email=$telefon=$adresa=$parola="";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+ {
+  if (empty($_POST["nume"])) {
+    $numeErr = "Numele este obligatoriu";
+  } else {
+    $nume = test_input($_POST["nume"]);
+
+    if (!preg_match("/^[a-zA-Z ]*$/",$nume)) {
+      $numeErr="Obligatoriu doar litere si spatii";
+    }
+  }
+ 
+    if (empty($_POST["prenume"])) {
+      $prenumeErr = "Prenumele este obligatoriu";
+    } else {
+      $prenume = test_input($_POST["prenume"]);
+  
+      if (!preg_match("/^[a-zA-Z ]*$/",$prenume)) {
+        $prenumeErr="Obligatoriu doar litere si spatii";
+      }
+    }
+
+  if (empty($_POST["email"])) {
+    $emailErr = "Email-ul este obligatoriu";
+  } else {
+    $email = test_input($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Format gresit";
+    }
+  }
+ 
+
+  if (empty($_POST["adresa"])) {
+    $adresaErr = "Adresa este obligatorie";
+  } else {
+    $adresa = test_input($_POST["adresa"]);
+  }
+
+  
+if (empty($_POST["telefon"])) {
+      $telefonErr = "Numarul de telefon este obligatoriu";
+    } else {
+      $telefon = test_input($_POST["telefon"]);
+  
+      if (!preg_match("/^[0-9]*$/",$telefon)) {
+        $telefonErr="Obligatoriu doar numere";
+      }
+    }
+    
+    if (empty($_POST["parola"])) {
+      $parolaErr = "Parola este obligatorie";
+    } else {
+      $parola = test_input($_POST["parola"]);
+  
+      if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#",$parola)) {
+        $parolaErr="Obligatoriu minim cate una din: numere, litere si caractere speciale";
+      }
+    }
+  
+  }
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+?>
     <header>
       <div class="header-navigation">
         <div class="header-right">
@@ -150,7 +227,7 @@
         </p>
       </div>
 
-      <form action="php/inregistrare.php" method="post">
+      <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
         <div class="linie">
           <label for="inregistrare-nume">
             <a
@@ -158,17 +235,19 @@
                 id="register1"
                 src="Poze/register-tw.png"
                 alt="register"
-              />Nume *
+              />Nume 
             </a>
+           
           </label>
-          <input
-            type="text"
-            id="inregistrare-nume"
-            name="nume"
-            placeholder="Popescu "
-            value="<?php echo $numeErr;?>"
-          />
-          <span class="error"> <?php echo $numeErr ;?></span>
+          <div class="input">
+              <input
+                type="text"
+                id="inregistrare-nume"
+                name="nume"
+                placeholder="Popescu "
+              />
+               <span class="error" style="color:red">*  <?php echo $numeErr ;?></span>
+            </div>
         </div>
         <br />
 
@@ -182,12 +261,15 @@
               />Prenume</a
             >
           </label>
-          <input
-            type="text"
-            id="inregistrare-prenume"
-            name="prenume"
-            placeholder="Daniel"
-          />
+          <div class="input">
+              <input
+                type="text"
+                id="inregistrare-prenume"
+                name="prenume"
+                placeholder="Daniel"
+              />
+              <span class="error" style="color:red">*  <?php echo $prenumeErr ;?></span>
+           </div>
         </div>
         <br />
 
@@ -195,12 +277,15 @@
           <label for="inregistrare-email">
             <a><img id="email" src="Poze/email-tw.png" alt="email" />Email </a>
           </label>
-          <input
-            type="text"
-            id="inregistrare-email"
-            name="email"
-            placeholder="popescu@gmail.com"
-          />
+          <div class="input">
+              <input
+                type="text"
+                id="inregistrare-email"
+                name="email"
+                placeholder="popescu@gmail.com"
+              />
+              <span class="error" style="color:red">*  <?php echo $emailErr ;?></span>
+        </div>
         </div>
         <br />
 
@@ -214,12 +299,15 @@
               />Telefon</a
             >
           </label>
-          <input
-            type="text"
-            id="inregistrare-telefon"
-            name="telefon"
-            placeholder=" 07** *** *** "
-          />
+          <div class="input">
+              <input
+                type="text"
+                id="inregistrare-telefon"
+                name="telefon"
+                placeholder=" 07** *** *** "
+              />
+              <span class="error" style="color:red">*  <?php echo $telefonErr ;?></span>
+           </div>
         </div>
         <br />
 
@@ -233,12 +321,15 @@
               />Adresa</a
             >
           </label>
-          <input
-            type="text"
-            id="inregistrare-email"
-            name="adresa"
-            placeholder="Str. Primaverii nr.8"
-          />
+          <div class="input">
+              <input
+                type="text"
+                id="inregistrare-email"
+                name="adresa"
+                placeholder="Str. Primaverii nr.8"
+              />
+              <span class="error" style="color:red">*   <?php echo $adresaErr ;?></span>
+           </div>
         </div>
         <br />
 
@@ -248,12 +339,15 @@
               ><img id="parola" src="Poze/parola-tw.png" alt="parola" />Parola
             </a>
           </label>
-          <input
-            type="text"
-            id="inregistrare-parola"
-            name="parola"
-            placeholder="********"
-          />
+          <div class="input">
+              <input
+                type="text"
+                id="inregistrare-parola"
+                name="parola"
+                placeholder="********"
+              />
+              <span class="error" style="color:red">*   <?php echo $parolaErr ;?></span>
+           </div>
         </div>
         <br />
 
@@ -328,5 +422,6 @@
         </div>
       </div>
     </footer>
+
   </body>
 </html>
