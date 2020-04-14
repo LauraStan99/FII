@@ -4,7 +4,7 @@
     <title>Comanda | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/ComandaPlasata.css" rel="stylesheet" />
+    <link href="../css/ComandaPlasata.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -15,7 +15,7 @@
             <a class="link-favorite" href="" title="Lista de dorinte">
               <img
                 class="logo-favorite"
-                src="Poze/logo-favorite-tw.png"
+                src="../Poze/logo-favorite-tw.png"
                 alt="Favorite"
               />
             </a>
@@ -25,7 +25,7 @@
             <a class="link cos" href="" title="Cos cumparaturi">
               <img
                 class="logo-cos"
-                src="Poze/shopping-cart-tw.png"
+                src="../Poze/shopping-cart-tw.png"
                 alt="Cos cumparaturi"
               />
             </a>
@@ -33,7 +33,7 @@
 
           <div class="cont">
             <a class="link cont" href="./DateCont.html" title="Cont">
-              <img class="logo-cont" src="Poze/cont-tw.png" alt="Cont" />
+              <img class="logo-cont" src="../Poze/cont-tw.png" alt="Cont" />
             </a>
           </div>
         </div>
@@ -41,10 +41,10 @@
         <div class="header-left">
           <div class="link-nume">
             <a href="#" title="logo"
-              ><img class="logo" src="Poze/logo.png" alt="logo"
+              ><img class="logo" src="../Poze/logo.png" alt="logo"
             /></a>
             <a href="#" title="logo-nume"
-              ><img class="logo-nume" src="Poze/logo-nume.png" alt="logo-nume"
+              ><img class="logo-nume" src="../Poze/logo-nume.png" alt="logo-nume"
             /></a>
           </div>
         </div>
@@ -161,8 +161,8 @@
     <footer class="footer">
       <div class="footer-stanga">
         <h1>
-          <img id="logo" src="Poze/logo.png" alt="logo" />
-          <img id="logo-nume" src="Poze/logo-nume.png" alt="logo-nume" />
+          <img id="logo" src="../Poze/logo.png" alt="logo" />
+          <img id="logo-nume" src="../Poze/logo-nume.png" alt="logo-nume" />
         </h1>
         <p class="footer-links">
           <a href="./PaginaPrincipala.html">Acasa</a>
@@ -176,12 +176,12 @@
 
       <div class="footer-centru">
         <div class="locatie">
-          <a title="Locatie"><img src="Poze/locatie-tw.png" alt="locatie" /></a>
+          <a title="Locatie"><img src="../Poze/locatie-tw.png" alt="locatie" /></a>
           <p>Strada General Henri Mathias Berthelot Nr. 16</p>
         </div>
 
         <div class="telefon">
-          <a title="Telefon"><img src="Poze/telefon-tw.png" alt="telefon" /></a>
+          <a title="Telefon"><img src="../Poze/telefon-tw.png" alt="telefon" /></a>
           <p>+4 0767-437-025</p>
         </div>
 
@@ -189,7 +189,7 @@
           <a
             href="mailto:Impressed2020@company.com?Subject=Impressed"
             title="Mail"
-            ><img src="Poze/mail-tw.png" alt="mail"
+            ><img src="../Poze/mail-tw.png" alt="mail"
           /></a>
           <p>Impressed@company.com</p>
         </div>
@@ -201,21 +201,21 @@
         </p>
         <div class="footer-icons">
           <a title="Facebook"
-            ><img id="facebook" src="Poze/facebook-tw.png" alt="facebook-icon"
+            ><img id="facebook" src="../Poze/facebook-tw.png" alt="facebook-icon"
           /></a>
           <a title="Instagram"
             ><img
               id="instagram"
-              src="Poze/instagram-tw.png"
+              src="../Poze/instagram-tw.png"
               alt="instagram-icon"
           /></a>
           <a
             href="https://github.com/LauraStan99/FII/tree/master/TW"
             title="GitHub"
-            ><img id="git" src="Poze/git-tw.png" alt="github-icon"
+            ><img id="git" src="../Poze/git-tw.png" alt="github-icon"
           /></a>
           <a title="YouTube"
-            ><img id="youtube" src="Poze/youtube-tw.png" alt="youtube-icon"
+            ><img id="youtube" src="../Poze/youtube-tw.png" alt="youtube-icon"
           /></a>
         </div>
       </div>

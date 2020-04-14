@@ -4,7 +4,7 @@
     <title>Cont | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/DateCont.css" rel="stylesheet" />
+    <link href="../css/DateCont.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -15,7 +15,7 @@
             <a class="link-favorite" href="" title="Lista de dorinte">
               <img
                 class="logo-favorite"
-                src="Poze/logo-favorite-tw.png"
+                src="../Poze/logo-favorite-tw.png"
                 alt="Favorite"
               />
             </a>
@@ -25,7 +25,7 @@
             <a class="link cos" href="" title="Cos cumparaturi">
               <img
                 class="logo-cos"
-                src="Poze/shopping-cart-tw.png"
+                src="../Poze/shopping-cart-tw.png"
                 alt="Cos cumparaturi"
               />
             </a>
@@ -33,7 +33,7 @@
 
           <div class="cont">
             <a class="link cont" href="./DateCont.html" title="Cont">
-              <img class="logo-cont" src="Poze/cont-tw.png" alt="Cont" />
+              <img class="logo-cont" src="../Poze/cont-tw.png" alt="Cont" />
             </a>
           </div>
         </div>
@@ -41,10 +41,10 @@
         <div class="header-left">
           <div class="link-nume">
             <a href="#" title="logo"
-              ><img class="logo" src="Poze/logo.png" alt="logo"
+              ><img class="logo" src="../Poze/logo.png" alt="logo"
             /></a>
             <a href="#" title="logo-nume"
-              ><img class="logo-nume" src="Poze/logo-nume.png" alt="logo-nume"
+              ><img class="logo-nume" src="../Poze/logo-nume.png" alt="logo-nume"
             /></a>
           </div>
         </div>
@@ -140,7 +140,7 @@
 
     <main>
       <div class="titlu">
-        <img id="cont" src="Poze/cont.png" />
+        <img id="cont" src="../Poze/cont.png" />
         <a id="titlu">Contul meu </a>
       </div>
 
@@ -158,7 +158,7 @@
           <a id="id-nume"
             ><img
               id="register1"
-              src="Poze/register-tw.png"
+              src="../Poze/register-tw.png"
               alt="register"
             />Nume : Popescu
           </a>
@@ -186,7 +186,7 @@
           <a id="id-prenume"
             ><img
               id="register2"
-              src="Poze/register-tw.png"
+              src="../Poze/register-tw.png"
               alt="register"
             />Prenume : Daniel</a
           >
@@ -212,7 +212,7 @@
       <div class="tip-date">
         <label for="inregistrare-email">
           <a id="id-email"
-            ><img id="email" src="Poze/email-tw.png" alt="email" />Email :
+            ><img id="email" src="../Poze/email-tw.png" alt="email" />Email :
             popescu@gmail.com</a
           >
         </label>
@@ -238,7 +238,7 @@
       <div class="tip-date">
         <label for="inregistrare-telefon">
           <a id="id-telefon"
-            ><img id="telefon" src="Poze/telefon.png" alt="telefon" />Telefon :
+            ><img id="telefon" src="../Poze/telefon.png" alt="telefon" />Telefon :
             0765 234 567
           </a>
         </label>
@@ -266,7 +266,7 @@
           <a id="id-adresa"
             ><img
               id="adresa"
-              src="Poze/adresaCheckout.png"
+              src="../Poze/adresaCheckout.png"
               alt="adresa"
             />Adresa : Str. Primaverii nr.8</a
           >
@@ -293,7 +293,7 @@
       <div class="tip-date">
         <label for="inregistrare-parola">
           <a id="id-parola"
-            ><img id="parola" src="Poze/parola-tw.png" alt="parola" />Parola :
+            ><img id="parola" src="../Poze/parola-tw.png" alt="parola" />Parola :
             12345678</a
           >
         </label>
@@ -328,8 +328,8 @@
     <footer class="footer">
       <div class="footer-stanga">
         <h1>
-          <img id="logo" src="Poze/logo.png" alt="logo" />
-          <img id="logo-nume" src="Poze/logo-nume.png" alt="logo-nume" />
+          <img id="logo" src="../Poze/logo.png" alt="logo" />
+          <img id="logo-nume" src="../Poze/logo-nume.png" alt="logo-nume" />
         </h1>
         <p class="footer-links">
           <a href="./PaginaPrincipala.html">Acasa</a>
@@ -343,12 +343,12 @@
 
       <div class="footer-centru">
         <div class="locatie">
-          <a title="Locatie"><img src="Poze/locatie-tw.png" alt="locatie"/></a>
+          <a title="Locatie"><img src="../Poze/locatie-tw.png" alt="locatie"/></a>
           <p>Strada General Henri Mathias Berthelot Nr. 16</p>
         </div>
 
         <div class="telefon">
-          <a title="Telefon"><img src="Poze/telefon-tw.png" alt="telefon"/></a>
+          <a title="Telefon"><img src="../Poze/telefon-tw.png" alt="telefon"/></a>
           <p>+4 0767-437-025</p>
         </div>
 
@@ -356,7 +356,7 @@
           <a
             href="mailto:Impressed2020@company.com?Subject=Impressed"
             title="Mail"
-            ><img src="Poze/mail-tw.png" alt="mail"
+            ><img src="../Poze/mail-tw.png" alt="mail"
           /></a>
           <p>Impressed@company.com</p>
         </div>
@@ -368,21 +368,21 @@
         </p>
         <div class="footer-icons">
           <a title="Facebook"
-            ><img id="facebook" src="Poze/facebook-tw.png" alt="facebook-icon"
+            ><img id="facebook" src="../Poze/facebook-tw.png" alt="facebook-icon"
           /></a>
           <a title="Instagram"
             ><img
               id="instagram"
-              src="Poze/instagram-tw.png"
+              src="../Poze/instagram-tw.png"
               alt="instagram-icon"
           /></a>
           <a
             href="https://github.com/LauraStan99/FII/tree/master/TW"
             title="GitHub"
-            ><img id="git" src="Poze/git-tw.png" alt="github-icon"
+            ><img id="git" src="../Poze/git-tw.png" alt="github-icon"
           /></a>
           <a title="YouTube"
-            ><img id="youtube" src="Poze/youtube-tw.png" alt="youtube-icon"
+            ><img id="youtube" src="../Poze/youtube-tw.png" alt="youtube-icon"
           /></a>
         </div>
       </div>
