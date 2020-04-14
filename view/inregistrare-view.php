@@ -298,15 +298,7 @@ $date=new Controller;
            </div>
         </div>
         <br />
-
-        <button
-          class="buton-inregistrare"
-          type="submit"
-          value = "submit"
-          name = "submit"
-        >
-          Inregistrare
-        </button>
+        <input type="submit" name="submit" value="Submit">
       </form>
     </main>
     <footer class="footer">
