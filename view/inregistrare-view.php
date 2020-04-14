@@ -1,41 +1,15 @@
-<!DOCTYPE html>
-<html lang="ro">
-  <head>
-    <title>Inregistrare | Impressed</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../css/Inregistrare.css" rel="stylesheet" />
-  </head>
-
-  <body>
-
-    
 <?php
-
+require '../controller/inregistrare-controller.php';
 $numeErr=$prenumeErr=$emailErr=$telefonErr=$adresaErr=$parolaErr="";
 $nume=$prenume=$email=$telefon=$adresa=$parola="";
+$date=new Controller;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
  {
-  if (empty($_POST["nume"])) {
-    $numeErr = "Numele este obligatoriu";
-  } else {
-    $nume = test_input($_POST["nume"]);
-
-    if (!preg_match("/^[a-zA-Z ]*$/",$nume)) {
-      $numeErr="Obligatoriu doar litere si spatii";
-    }
-  }
  
-    if (empty($_POST["prenume"])) {
-      $prenumeErr = "Prenumele este obligatoriu";
-    } else {
-      $prenume = test_input($_POST["prenume"]);
-  
-      if (!preg_match("/^[a-zA-Z ]*$/",$prenume)) {
-        $prenumeErr="Obligatoriu doar litere si spatii";
-      }
-    }
+    $date->validateLastName($_POST["nume"], $nume, $numeErr);
+    $date->validateFirstName($_POST["prenume"], $prenume, $prenumeErr);
+    /*
 
   if (empty($_POST["email"])) {
     $emailErr = "Email-ul este obligatoriu";
@@ -74,16 +48,22 @@ if (empty($_POST["telefon"])) {
       }
     }
   
-  }
+  }*/
 
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
 }
 
 ?>
+
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <title>Inregistrare | Impressed</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../css/Inregistrare.css" rel="stylesheet" />
+  </head>
+
+  <body>
     <header>
       <div class="header-navigation">
         <div class="header-right">
@@ -91,7 +71,7 @@ function test_input($data) {
             <a class="link-favorite" href="" title="Lista de dorinte">
               <img
                 class="logo-favorite"
-                src="Poze/logo-favorite-tw.png"
+                src="../Poze/logo-favorite-tw.png"
                 alt="Favorite"
               />
             </a>
@@ -101,7 +81,7 @@ function test_input($data) {
             <a class="link cos" href="" title="Cos cumparaturi">
               <img
                 class="logo-cos"
-                src="Poze/shopping-cart-tw.png"
+                src="../Poze/shopping-cart-tw.png"
                 alt="Cos cumparaturi"
               />
             </a>
@@ -109,7 +89,7 @@ function test_input($data) {
 
           <div class="cont">
             <a class="link cont" href="./DateCont.html" title="Cont">
-              <img class="logo-cont" src="Poze/cont-tw.png" alt="Cont" />
+              <img class="logo-cont" src="../Poze/cont-tw.png" alt="Cont" />
             </a>
           </div>
         </div>
@@ -117,10 +97,10 @@ function test_input($data) {
         <div class="header-left">
           <div class="link-nume">
             <a href="#" title="logo"
-              ><img class="logo" src="Poze/logo.png" alt="logo"
+              ><img class="logo" src="../Poze/logo.png" alt="logo"
             /></a>
             <a href="#" title="logo-nume"
-              ><img class="logo-nume" src="Poze/logo-nume.png" alt="logo-nume"
+              ><img class="logo-nume" src="../Poze/logo-nume.png" alt="logo-nume"
             /></a>
           </div>
         </div>
@@ -226,13 +206,13 @@ function test_input($data) {
         </p>
       </div>
 
-      <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+      <form method="post">  
         <div class="linie">
           <label for="inregistrare-nume">
             <a
               ><img
                 id="register1"
-                src="Poze/register-tw.png"
+                src="../Poze/register-tw.png"
                 alt="register"
               />Nume 
             </a>
@@ -244,8 +224,9 @@ function test_input($data) {
                 id="inregistrare-nume"
                 name="nume"
                 placeholder="Popescu "
+                value="<?php echo $nume;?>"
               />
-               <span class="error" style="color:red">*  <?php echo $numeErr ;?></span>
+               <span class="error" style="color:red">*  <?php if(isset($numeErr)){echo $numeErr ;}?></span>
             </div>
         </div>
         <br />
@@ -255,7 +236,7 @@ function test_input($data) {
             <a
               ><img
                 id="register2"
-                src="Poze/register-tw.png"
+                src="../Poze/register-tw.png"
                 alt="register"
               />Prenume</a
             >
@@ -266,6 +247,7 @@ function test_input($data) {
                 id="inregistrare-prenume"
                 name="prenume"
                 placeholder="Daniel"
+                value="<?php echo $prenume;?>"
               />
               <span class="error" style="color:red">*  <?php echo $prenumeErr ;?></span>
            </div>
@@ -274,7 +256,7 @@ function test_input($data) {
 
         <div class="linie">
           <label for="inregistrare-email">
-            <a><img id="email" src="Poze/email-tw.png" alt="email" />Email </a>
+            <a><img id="email" src="../Poze/email-tw.png" alt="email" />Email </a>
           </label>
           <div class="input">
               <input
@@ -282,6 +264,7 @@ function test_input($data) {
                 id="inregistrare-email"
                 name="email"
                 placeholder="popescu@gmail.com"
+                value="<?php echo $email;?>"
               />
               <span class="error" style="color:red">*  <?php echo $emailErr ;?></span>
         </div>
@@ -293,7 +276,7 @@ function test_input($data) {
             <a
               ><img
                 id="telefon"
-                src="Poze/telefon.png"
+                src="../Poze/telefon.png"
                 alt="telefon"
               />Telefon</a
             >
@@ -304,6 +287,7 @@ function test_input($data) {
                 id="inregistrare-telefon"
                 name="telefon"
                 placeholder=" 07** *** *** "
+                value="<?php echo $telefon;?>"
               />
               <span class="error" style="color:red">*  <?php echo $telefonErr ;?></span>
            </div>
@@ -315,7 +299,7 @@ function test_input($data) {
             <a
               ><img
                 id="adresa"
-                src="Poze/adresaCheckout.png"
+                src="../Poze/adresaCheckout.png"
                 alt="adresa"
               />Adresa</a
             >
@@ -326,6 +310,7 @@ function test_input($data) {
                 id="inregistrare-email"
                 name="adresa"
                 placeholder="Str. Primaverii nr.8"
+                value="<?php echo $adresa;?>"
               />
               <span class="error" style="color:red">*   <?php echo $adresaErr ;?></span>
            </div>
@@ -335,7 +320,7 @@ function test_input($data) {
         <div class="linie">
           <label for="inregistrare-parola">
             <a
-              ><img id="parola" src="Poze/parola-tw.png" alt="parola" />Parola
+              ><img id="parola" src="../Poze/parola-tw.png" alt="parola" />Parola
             </a>
           </label>
           <div class="input">
@@ -344,6 +329,7 @@ function test_input($data) {
                 id="inregistrare-parola"
                 name="parola"
                 placeholder="********"
+                value="<?php echo $parola;?>"
               />
               <span class="error" style="color:red">*   <?php echo $parolaErr ;?></span>
            </div>
@@ -353,7 +339,8 @@ function test_input($data) {
         <button
           class="buton-inregistrare"
           type="submit"
-          onclick="window.location.href='#'"
+          value = "submit"
+          name = "submit"
         >
           Inregistrare
         </button>
@@ -362,8 +349,8 @@ function test_input($data) {
     <footer class="footer">
       <div class="footer-stanga">
         <h1>
-          <img id="logo" src="Poze/logo.png" alt="logo" />
-          <img id="logo-nume" src="Poze/logo-nume.png" alt="logo-nume" />
+          <img id="logo" src="../Poze/logo.png" alt="logo" />
+          <img id="logo-nume" src="../Poze/logo-nume.png" alt="logo-nume" />
         </h1>
         <p class="footer-links">
           <a href="./PaginaPrincipala.html">Acasa</a>
@@ -377,12 +364,12 @@ function test_input($data) {
 
       <div class="footer-centru">
         <div class="locatie">
-          <a title="Locatie"><img src="Poze/locatie-tw.png" alt="locatie" /></a>
+          <a title="Locatie"><img src="../Poze/locatie-tw.png" alt="locatie" /></a>
           <p>Strada General Henri Mathias Berthelot Nr. 16</p>
         </div>
 
         <div class="telefon">
-          <a title="Telefon"><img src="Poze/telefon-tw.png" alt="telefon" /></a>
+          <a title="Telefon"><img src="../Poze/telefon-tw.png" alt="telefon" /></a>
           <p>+4 0767-437-025</p>
         </div>
 
@@ -390,7 +377,7 @@ function test_input($data) {
           <a
             href="mailto:Impressed2020@company.com?Subject=Impressed"
             title="Mail"
-            ><img src="Poze/mail-tw.png" alt="mail"
+            ><img src="../Poze/mail-tw.png" alt="mail"
           /></a>
           <p>Impressed@company.com</p>
         </div>
@@ -402,21 +389,21 @@ function test_input($data) {
         </p>
         <div class="footer-icons">
           <a title="Facebook"
-            ><img id="facebook" src="Poze/facebook-tw.png" alt="facebook-icon"
+            ><img id="facebook" src="../Poze/facebook-tw.png" alt="facebook-icon"
           /></a>
           <a title="Instagram"
             ><img
               id="instagram"
-              src="Poze/instagram-tw.png"
+              src="../Poze/instagram-tw.png"
               alt="instagram-icon"
           /></a>
           <a
             href="https://github.com/LauraStan99/FII/tree/master/TW"
             title="GitHub"
-            ><img id="git" src="Poze/git-tw.png" alt="github-icon"
+            ><img id="git" src="../Poze/git-tw.png" alt="github-icon"
           /></a>
           <a title="YouTube"
-            ><img id="youtube" src="Poze/youtube-tw.png" alt="youtube-icon"
+            ><img id="youtube" src="../Poze/youtube-tw.png" alt="youtube-icon"
           /></a>
         </div>
       </div>
