@@ -4,7 +4,7 @@ $numeErr=$prenumeErr=$emailErr=$telefonErr=$adresaErr=$parolaErr="";
 $nume=$prenume=$email=$telefon=$adresa=$parola="";
 $date=new Controller;
 
-  if ($_SERVER["REQUEST_METHOD"] == "POST")
+  if (isset($_POST["submit"]))
   {
  
     $date->validateLastName($_POST["nume"], $nume, $numeErr);
@@ -298,15 +298,7 @@ $date=new Controller;
            </div>
         </div>
         <br />
-
-        <button
-          class="buton-inregistrare"
-          type="submit"
-          value = "submit"
-          name = "submit"
-        >
-          Inregistrare
-        </button>
+        <input type="submit" name="submit" value="Submit">
       </form>
     </main>
     <footer class="footer">
