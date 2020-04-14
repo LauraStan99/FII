@@ -1,5 +1,5 @@
 <?php
-require '../controller/inregistrare-controller.php';
+require '../controller/validare-controller.php';
 $numeErr=$prenumeErr=$emailErr=$telefonErr=$adresaErr=$parolaErr="";
 $nume=$prenume=$email=$telefon=$adresa=$parola="";
 $date=new Controller();

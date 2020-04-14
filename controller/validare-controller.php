@@ -1,5 +1,5 @@
 <?php
-include '../model/inregistrare-model.php'; 
+include '../model/comenzi-model.php'; 
 class Controller extends Database{
     
     function validateLastName(&$nume, &$numeErr)
