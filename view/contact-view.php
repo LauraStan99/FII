@@ -32,7 +32,7 @@
           </div>
 
           <div class="cont">
-            <a class="link cont" href="./DateCont.html" title="Cont">
+            <a class="link cont" href="./dateCont-view.php" title="Cont">
               <img class="logo-cont" src="../Poze/cont-tw.png" alt="Cont" />
             </a>
           </div>
@@ -274,11 +274,11 @@
           <img id="logo-nume" src="../Poze/logo-nume.png" alt="logo-nume" />
         </h1>
         <p class="footer-links">
-          <a href="./PaginaPrincipala.html">Acasa</a>
+          <a href="./paginaPrincipala-view.php">Acasa</a>
           |
-          <a href="./Livrare.html">Livrare si Servicii</a>
+          <a href="./livrare-view.php">Livrare si Servicii</a>
           |
-          <a href="./Contact.html">Contact</a>
+          <a href="./contact-view.php">Contact</a>
         </p>
         <p class="nume-companie">Impressed © 2020</p>
       </div>
@@ -319,7 +319,7 @@
               alt="instagram-icon"
           /></a>
           <a
-            href="https://github.com/LauraStan99/FII/tree/master/TW"
+            href="https://github.com/LauraStan99/FII/tree/master"
             title="GitHub"
             ><img id="git" src="../Poze/git-tw.png" alt="github-icon"
           /></a>

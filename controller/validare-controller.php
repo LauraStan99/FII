@@ -10,8 +10,7 @@ class Controller extends Database{
         } 
         else
         {
-            $controller = new Controller();
-            $nume=$controller->test_input($_POST["nume"]);
+            $nume=$this->test_input($_POST["nume"]);
         
             if (!preg_match("/^[a-zA-Z ]*$/",$nume))
             {
@@ -25,8 +24,8 @@ class Controller extends Database{
         if (empty($_POST["prenume"])) {
             $prenumeErr = "Prenumele este obligatoriu";
           } else {
-              $controller = new Controller();
-              $prenume=$controller->test_input($_POST["prenume"]);
+              
+              $prenume=$this->test_input($_POST["prenume"]);
         
             if (!preg_match("/^[a-zA-Z ]*$/",$prenume)) {
               $prenumeErr="Obligatoriu doar litere si spatii";
@@ -39,8 +38,8 @@ class Controller extends Database{
       if (empty($_POST["email"])) {
         $emailErr = "Email-ul este obligatoriu";
       } else {
-        $controller = new Controller();
-        $email=$controller->test_input($_POST["email"]);
+        
+        $email=$this->test_input($_POST["email"]);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
           $emailErr = "Format gresit";
         }
@@ -52,8 +51,7 @@ class Controller extends Database{
       if (empty($_POST["adresa"])) {
         $adresaErr = "Adresa este obligatorie";
       } else {
-        $controller = new Controller();
-        $email=$controller->test_input($_POST["adresa"]);
+        $adresa=$this->test_input($_POST["adresa"]);
       }
     }
 
@@ -62,8 +60,7 @@ class Controller extends Database{
         $telefonErr = "Numarul de telefon este obligatoriu";
       } else {
         
-        $controller = new Controller();
-        $telefon=$controller->test_input($_POST["telefon"]);
+        $telefon=$this->test_input($_POST["telefon"]);
     
         if (!preg_match("/^[0-9]*$/",$telefon)) {
           $telefonErr="Obligatoriu doar numere";
@@ -75,9 +72,7 @@ class Controller extends Database{
       if (empty($_POST["parola"])) {
         $parolaErr = "Parola este obligatorie";
       } else {
-
-        $controller = new Controller();
-        $parola=$controller->test_input($_POST["parola"]);
+        $parola=$this->test_input($_POST["parola"]);
     
         if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#",$parola)) {
           $parolaErr="Obligatoriu minim cate una din: numere, litere si caractere speciale";
