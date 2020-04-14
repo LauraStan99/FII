@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ro">
   <head>
-    <title>Impressed</title>
+    <title>Livrare | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../css/PaginaPrincipala.css" rel="stylesheet" />
+    <link href="../css/Livrare.css" rel="stylesheet" />
   </head>
 
   <body>
     <header>
-      <div class="header-navigation">
+      <div>
         <div class="header-right">
           <div class="favotite">
             <a class="link-favorite" href="" title="Lista de dorinte">
@@ -32,7 +32,7 @@
           </div>
 
           <div class="cont">
-            <a class="link cont" href="./dateCont-view.php" title="Cont">
+            <a class="link cont" href="./DateCont.html" title="Cont">
               <img class="logo-cont" src="../Poze/cont-tw.png" alt="Cont" />
             </a>
           </div>
@@ -50,7 +50,6 @@
         </div>
       </div>
     </header>
-
     <div class="navbar">
       <div class="femei">
         <button class="femei-buton" onclick="myFunction1()">FEMEI</button>
@@ -140,68 +139,130 @@
     </div>
 
     <main>
-      <a class="inapoi" onclick="incrementSlide(-1)"> &#10094;</a>
-      <a class="inainte" onclick="incrementSlide(1)"> &#10095;</a>
+      <h1>Termeni si conditii de livrarea a comenzilor</h1>
 
-      <div class="poze-main">
-        <a href="./paginaPrincipala-view.php" title="Slide1"
-          ><img src="../Poze/slide1.png" alt="Slide1"
-        /></a>
+      <h2>Regulamentul magazinului online Impressed.com</h2>
+      <div class="regulament">
+        <p>1.Informatii Generale</p>
+        <p>2. Continutul site-ului</p>
+        <p>3.Detalii livrare</p>
+        <p>4.Caz de retur</p>
       </div>
 
-      <div class="poze-main">
-        <a href="./paginaPrincipala-view.php" title="Slide2"
-          ><img src="../Poze/slide2.png" alt="Slide2"
-        /></a>
+      <div class="informatii-generale">
+        <a id="id1">1.Informatii Generale</a>
+        <p>
+          1.1. Documentul stabileste termenii si conditiile de utilizare ai
+          siteului/continutului/serviciului de catre utilizator sau client, in
+          cazul in care acesta nu dispune de un alt acord de utilizare valid,
+          incheiat intre IMPRESSED si acesta.
+        </p>
+
+        <p>
+          1.2. Folosirea, inclusiv dar nelimitandu-se la accesarea, vizitarea si
+          vizualizarea, continutului/serviciului, implica aderarea
+          utilizatorului sau clientului la prezentele termeni si conditii in
+          afara de cazul in care continutul respectiv nu are conditii de
+          folosire distinct formulate.
+        </p>
+        <p>
+          1.3. Accesul la serviciu se face exclusiv prin accesarea siteului
+          public disponibil www.IMPRESSED.ro.
+        </p>
+
+        <p>
+          1.4. Prin folosirea siteului/continutului/serviciului, Utilizatorul
+          sau Clientul este singurul responsabil pentru toate activitatile care
+          decurg prin folosirea acestuia. De asemenea, acesta raspunde pentru
+          orice daune materiale, intelectuale sau electronice sau de orice alta
+          natura produse siteului, continutului, serviciului, IMPRESSED sau
+          oricarui tert cu care IMPRESSED are incheiate contracte, in
+          conformitate cu legislatia romana in vigoare.
+        </p>
       </div>
 
-      <div class="poze-main">
-        <a href="./paginaPrincipala-view.php" title="Slide3"
-          ><img src="../Poze/slide3.png" alt="Slide3"
-        /></a>
+      <div class="continut-site">
+        <a id="id2">2.Continutul site-ului</a>
+        <p>
+          2.1.Utilizatorului sau Clientului nu ii este permisa copierea,
+          transferul, modificarea si/sau altfel alterarea, utilizarea, legarea
+          la, expunerea, includerea oricarui continut in orice alt context decat
+          cel original intentionat de IMPRESSED, includerea oricarui continut in
+          afara siteului IMPRESSED, indepartarea insemnelor care semnifica
+          dreptul de autor al IMPRESSED asupra continutului precum si
+          participarea la transferul, vanzarea, distributia unor materiale
+          realizate prin reproducerea, modificarea sau afisarea continutului,
+          decat cu acordul expres al IMPRESSED.
+        </p>
+
+        <p>
+          2.2.Utilizatorul sau Clientul poate copia, transfera si/sau utiliza
+          continut numai in scopuri personale sau non-comerciale, numai in cazul
+          in care acestea nu intra in conflict cu prevederi ale documentului.
+        </p>
       </div>
 
-      <div class="poze-main">
-        <a href="./paginaPrincipala-view.php" title="Slide4"
-          ><img src="../Poze/slide4.png" alt="Slide4"
-        /></a>
+      <div class="detalii-livrare">
+        <a id="id3">3.Detalii livrare</a>
+        <p>
+          3.1. Detaliile de livrare a produselor incluzand dar nelimitandu-se la
+          timpul necesar livrarii nu constituie o obligatie contractuala din
+          parteA IMPRESSED, fara ca vreo parte sa poata sa pretinda celeilalte
+          daune-interese, in cazul in care oricare parte poate fi sau este
+          prejudiciata in orice mod de pe urma incalcarii acestora.
+        </p>
+
+        <p>
+          3.2. In cazul in care un Client isi modifica datele personale,
+          folosind formularele disponibile pe site, toate contractele in
+          derulare existente la acel moment, isi pastreaza datele
+          definite/acceptate de catre Client inainte de momentul modificarii.
+        </p>
+
+        <p>
+          3.3. Clientul poate opta numai pentru una dintre variantele de
+          transport ale produselor/serviciilor achizitionate, disponibila pe
+          site, la momentul efectuarii comenzii, indiferent de tipul comenzii
+          sale.
+        </p>
       </div>
 
-      <div class="poze-main">
-        <a href="./paginaPrincipala-view.php" title="Slide5"
-          ><img src="../Poze/slide5.png" alt="Slide5"
-        /></a>
+      <div class="retur">
+        <a id="id4">4.Caz de retur</a>
+        <p>
+          4.1.Cererea de returnare are data de expediere care depaseste perioada
+          de 15 zile calendaristice prevazute conform regulamentului, din ziua
+          lucratoare urmatoare datei contractului onorat.
+        </p>
+        <p>
+          4.2.In cazul returnarii produsului iar produsul returnat nu este in
+          aceeasi stare in care a fost livrat (in ambalajul original cu toate
+          etichetele intacte si documentele care l-au insotit).
+        </p>
+        <p>
+          4.3.In cazul rambursarii contravalorii produsului, aceasta se va face
+          in cel mult 14 de zile calendaristice de la confirmarea returului.
+        </p>
+        <p>
+          4.4.In cazul inlocuirii produsului cu unul identic, inlocuirea se va
+          face in conditiile si limitele unei comenzi normale.
+        </p>
+        <p>
+          4.5. In cazul in care Clientul care returnat a returnat un produs in
+          conformitate cu prevederile prezentului regulament, iar IMPRESSED nu
+          dispune de un produs identic pentru inlocuire, acesta va oferi
+          clientului contravaloarea produsului.
+        </p>
+        <p>
+          4.6.Contravaloarea serviciilor suplimentare incluzand dar
+          nelimitandu-se la transportul produselor, achitata de catre client, nu
+          se ramburseaza. In toate cazurile, cheltuielile de
+          returnare/re-expediere vor fi suportate de catre client
+        </p>
       </div>
-
-      <script>
-        var index = 1;
-        show(index);
-
-        function incrementSlide(n) {
-          show((index += n));
-        }
-
-        function curentSlide(n) {
-          show((index = n));
-        }
-
-        function show(n) {
-          var i;
-          var slide = document.getElementsByClassName('poze-main');
-          if (n > slide.length) {
-            index = 1;
-          }
-          if (n < 1) {
-            index = slide.length;
-          }
-          for (i = 0; i < slide.length; i++) {
-            slide[i].style.display = 'none';
-          }
-
-          slide[index - 1].style.display = 'block';
-        }
-      </script>
     </main>
+
+    <!-- footerul -->
     <footer class="footer">
       <div class="footer-stanga">
         <h1>
@@ -209,11 +270,11 @@
           <img id="logo-nume" src="../Poze/logo-nume.png" alt="logo-nume" />
         </h1>
         <p class="footer-links">
-          <a href="./paginaPrincipala-view.php">Acasa</a>
+          <a href="./PaginaPrincipala.html">Acasa</a>
           |
-          <a href="./livrare-view.php">Livrare si Servicii</a>
+          <a href="./Livrare.html">Livrare si Servicii</a>
           |
-          <a href="./contact-view.php">Contact</a>
+          <a href="./Contact.html">Contact</a>
         </p>
         <p class="nume-companie">Impressed © 2020</p>
       </div>
@@ -254,7 +315,7 @@
               alt="instagram-icon"
           /></a>
           <a
-            href="https://github.com/LauraStan99/FII/tree/master"
+            href="https://github.com/LauraStan99/FII/tree/master/TW"
             title="GitHub"
             ><img id="git" src="../Poze/git-tw.png" alt="github-icon"
           /></a>

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ro">
   <head>
-    <title>Impressed</title>
+    <title>Favorite | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/PaginaPrincipala.css" rel="stylesheet" />
+    <link href="css/FavoriteNelogat.css" rel="stylesheet" />
   </head>
 
   <body>
     <header>
-      <div class="header-navigation">
+      <div>
         <div class="header-right">
           <div class="favotite">
             <a class="link-favorite" href="" title="Lista de dorinte">
@@ -50,7 +50,6 @@
         </div>
       </div>
     </header>
-
     <div class="navbar">
       <div class="femei">
         <button class="femei-buton" onclick="myFunction1()">FEMEI</button>
@@ -140,68 +139,30 @@
     </div>
 
     <main>
-      <a class="inapoi" onclick="incrementSlide(-1)"> &#10094;</a>
-      <a class="inainte" onclick="incrementSlide(1)"> &#10095;</a>
-
-      <div class="poze-main">
-        <a href="./PaginaPrincipala.html" title="Slide1"
-          ><img src="Poze/slide1.png" alt="Slide1"
-        /></a>
+      <div class="favorite">
+        <a>
+          <img
+            id="inima-favorite"
+            src="Poze/inima-favorite.png"
+            alt="favorite"
+          />Lista de dorinte
+        </a>
       </div>
 
-      <div class="poze-main">
-        <a href="./PaginaPrincipala.html" title="Slide2"
-          ><img src="Poze/slide2.png" alt="Slide2"
-        /></a>
-      </div>
+      <p>Pentru a selecta produse trebuie sa fiti autentificat.</p>
+      <p>Pentru autentificare sau inregistrare vizitati pagina de Logare.</p>
+      <p>Zi frumoasa !</p>
 
-      <div class="poze-main">
-        <a href="./PaginaPrincipala.html" title="Slide3"
-          ><img src="Poze/slide3.png" alt="Slide3"
-        /></a>
-      </div>
-
-      <div class="poze-main">
-        <a href="./PaginaPrincipala.html" title="Slide4"
-          ><img src="Poze/slide4.png" alt="Slide4"
-        /></a>
-      </div>
-
-      <div class="poze-main">
-        <a href="./PaginaPrincipala.html" title="Slide5"
-          ><img src="Poze/slide5.png" alt="Slide5"
-        /></a>
-      </div>
-
-      <script>
-        var index = 1;
-        show(index);
-
-        function incrementSlide(n) {
-          show((index += n));
-        }
-
-        function curentSlide(n) {
-          show((index = n));
-        }
-
-        function show(n) {
-          var i;
-          var slide = document.getElementsByClassName('poze-main');
-          if (n > slide.length) {
-            index = 1;
-          }
-          if (n < 1) {
-            index = slide.length;
-          }
-          for (i = 0; i < slide.length; i++) {
-            slide[i].style.display = 'none';
-          }
-
-          slide[index - 1].style.display = 'block';
-        }
-      </script>
+      <button
+        id="catre-logare"
+        type="button"
+        onclick="window.location.href='./Inregistrare.html'"
+      >
+        &lt Catre pagina de logare
+      </button>
     </main>
+
+    <!-- footerul -->
     <footer class="footer">
       <div class="footer-stanga">
         <h1>
