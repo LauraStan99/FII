@@ -4,53 +4,16 @@ $numeErr=$prenumeErr=$emailErr=$telefonErr=$adresaErr=$parolaErr="";
 $nume=$prenume=$email=$telefon=$adresa=$parola="";
 $date=new Controller;
 
-if ($_SERVER["REQUEST_METHOD"] == "POST")
- {
+  if ($_SERVER["REQUEST_METHOD"] == "POST")
+  {
  
     $date->validateLastName($_POST["nume"], $nume, $numeErr);
     $date->validateFirstName($_POST["prenume"], $prenume, $prenumeErr);
-    /*
-
-  if (empty($_POST["email"])) {
-    $emailErr = "Email-ul este obligatoriu";
-  } else {
-    $email = test_input($_POST["email"]);
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Format gresit";
-    }
+    $date->validateEmail($_POST["email"], $email, $emailErr);
+    $date->validateAdress($_POST["adresa"], $adresa, $adresaErr);
+    $date->validatePhone($_POST["telefon"], $telefon, $telefonErr);
+    $date->validatePassword($_POST["parola"], $parola, $parolaErr);
   }
- 
-
-  if (empty($_POST["adresa"])) {
-    $adresaErr = "Adresa este obligatorie";
-  } else {
-    $adresa = test_input($_POST["adresa"]);
-  }
-
-  
-if (empty($_POST["telefon"])) {
-      $telefonErr = "Numarul de telefon este obligatoriu";
-    } else {
-      $telefon = test_input($_POST["telefon"]);
-  
-      if (!preg_match("/^[0-9]*$/",$telefon)) {
-        $telefonErr="Obligatoriu doar numere";
-      }
-    }
-    
-    if (empty($_POST["parola"])) {
-      $parolaErr = "Parola este obligatorie";
-    } else {
-      $parola = test_input($_POST["parola"]);
-  
-      if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#",$parola)) {
-        $parolaErr="Obligatoriu minim cate una din: numere, litere si caractere speciale";
-      }
-    }
-  
-  }*/
-
-}
 
 ?>
 
