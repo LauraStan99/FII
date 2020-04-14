@@ -2,17 +2,17 @@
 require '../controller/inregistrare-controller.php';
 $numeErr=$prenumeErr=$emailErr=$telefonErr=$adresaErr=$parolaErr="";
 $nume=$prenume=$email=$telefon=$adresa=$parola="";
-$date=new Controller;
+$date=new Controller();
 
-  if ($_SERVER["REQUEST_METHOD"] == "POST")
+if($_SERVER["REQUEST_METHOD"] == "POST")
   {
  
-    $date->validateLastName($_POST["nume"], $nume, $numeErr);
-    $date->validateFirstName($_POST["prenume"], $prenume, $prenumeErr);
-    $date->validateEmail($_POST["email"], $email, $emailErr);
-    $date->validateAdress($_POST["adresa"], $adresa, $adresaErr);
-    $date->validatePhone($_POST["telefon"], $telefon, $telefonErr);
-    $date->validatePassword($_POST["parola"], $parola, $parolaErr);
+    $date->validateLastName($nume, $numeErr);
+    $date->validateFirstName($prenume, $prenumeErr);
+    $date->validateEmail($email, $emailErr);
+    $date->validateAdress($adresa, $adresaErr);
+    $date->validatePhone($telefon, $telefonErr);
+    $date->validatePassword($parola, $parolaErr);
   }
 
 ?>
@@ -298,7 +298,9 @@ $date=new Controller;
            </div>
         </div>
         <br />
-        <input type="submit" name="submit" value="Submit">
+        <button type="submit" name="submit" value="Submit" class="buton-inregistrare">
+        Inregistrare
+        </button>
       </form>
     </main>
     <footer class="footer">

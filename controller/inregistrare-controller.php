@@ -2,15 +2,16 @@
 include '../model/inregistrare-model.php'; 
 class Controller extends Database{
     
-    function validateLastName($name, &$nume, &$numeErr)
+    function validateLastName(&$nume, &$numeErr)
     {
-        if (empty($name))
+        if (empty($_POST["nume"]))
         {
             $numeErr = 'Numele este obligatoriu';
         } 
         else
         {
-            $nume = test_input($name);
+            $controller = new Controller();
+            $nume=$controller->test_input($_POST["nume"]);
         
             if (!preg_match("/^[a-zA-Z ]*$/",$nume))
             {
@@ -19,12 +20,13 @@ class Controller extends Database{
         }
     }
 
-    function validateFirstName($name, &$prenume, &$prenumeErr)
+    function validateFirstName( &$prenume, &$prenumeErr)
     {
-        if (empty($name)) {
+        if (empty($_POST["prenume"])) {
             $prenumeErr = "Prenumele este obligatoriu";
           } else {
-            $prenume = test_input($name);
+              $controller = new Controller();
+              $prenume=$controller->test_input($_POST["prenume"]);
         
             if (!preg_match("/^[a-zA-Z ]*$/",$prenume)) {
               $prenumeErr="Obligatoriu doar litere si spatii";
@@ -32,32 +34,36 @@ class Controller extends Database{
           }
     }
 
-    function validateEmail($e, &$email, &$emailErr)
+    function validateEmail(&$email, &$emailErr)
     {
-      if (empty($e)) {
+      if (empty($_POST["email"])) {
         $emailErr = "Email-ul este obligatoriu";
       } else {
-        $email = test_input($e);
+        $controller = new Controller();
+        $email=$controller->test_input($_POST["email"]);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
           $emailErr = "Format gresit";
         }
       }
     }
 
-    function validateAdress($adress, &$adresa, &$adresaErr)
+    function validateAdress(&$adresa, &$adresaErr)
     {
-      if (empty($adress)) {
+      if (empty($_POST["adresa"])) {
         $adresaErr = "Adresa este obligatorie";
       } else {
-        $adresa = test_input($adress);
+        $controller = new Controller();
+        $email=$controller->test_input($_POST["adresa"]);
       }
     }
 
-    function validatePhone($phone, &$telefon, &$telefonErr){
-      if (empty($phone)) {
+    function validatePhone(&$telefon, &$telefonErr){
+      if (empty($_POST["telefon"])) {
         $telefonErr = "Numarul de telefon este obligatoriu";
       } else {
-        $telefon = test_input($phone);
+        
+        $controller = new Controller();
+        $telefon=$controller->test_input($_POST["telefon"]);
     
         if (!preg_match("/^[0-9]*$/",$telefon)) {
           $telefonErr="Obligatoriu doar numere";
@@ -65,11 +71,13 @@ class Controller extends Database{
       }
     }
 
-    function validatePassword($password, &$parola, &$parolaErr){
-      if (empty($password)) {
+    function validatePassword(&$parola, &$parolaErr){
+      if (empty($_POST["parola"])) {
         $parolaErr = "Parola este obligatorie";
       } else {
-        $parola = test_input($password);
+
+        $controller = new Controller();
+        $parola=$controller->test_input($_POST["parola"]);
     
         if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#",$parola)) {
           $parolaErr="Obligatoriu minim cate una din: numere, litere si caractere speciale";
