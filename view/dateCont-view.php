@@ -1,8 +1,10 @@
 <?php
 require '../controller/validare-controller.php';
+//require '../controller/inserareDate-controller.php';
 $numeErr=$prenumeErr=$emailErr=$telefonErr=$adresaErr=$parolaErr="";
 $nume=$prenume=$email=$telefon=$adresa=$parola="";
 $date=new Controller();
+//$insert=new InsertDate();
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
   {
@@ -12,7 +14,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $date->changeAdress($adresa, $adresaErr);
     $date->changePhone($telefon, $telefonErr);
     $date->changePassword($parola, $parolaErr);
-  }
+    
+ /*   if(isset($_POST["submit"]))  
+    {    if (!empty($_POST["nume"]))
+       {
+          $insert_data = array(  
+                'nume'=> $_POST["nume"]); 
+          if($insert->insertDate('utilizatori',$insert_data ))
+          {
+            $numeErr='Actualizare cu succes!';
+          }      
+       }
+     }*/
+}
 
 ?>
 
