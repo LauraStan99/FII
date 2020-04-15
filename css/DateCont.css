@@ -82,7 +82,7 @@ header .header-left {
   padding: 5px 15px;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   margin-left: 0px;
   background: black;
   border: 0;
@@ -242,7 +242,7 @@ main #register1,
   height: 20px;
 }
 
-main input[type="text"] {
+main input[type='text'] {
   width: 40%;
   height: 30px;
   margin-top: 5px;
@@ -391,7 +391,7 @@ main .buron-inapoi-cump:hover {
     flex-direction: column;
     width: 100%;
   }
-  .navbar form input[type="search"] {
+  .navbar form input[type='search'] {
     margin-left: 0px;
   }
   main {
@@ -427,7 +427,7 @@ main .buron-inapoi-cump:hover {
     margin-left: 0px;
     width: 87%;
   }
-  main .date input[type="text"] {
+  main .date input[type='text'] {
     margin-left: 20px;
     width: 60%;
   }

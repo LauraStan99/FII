@@ -1,3 +1,19 @@
+<?php
+require '../controller/validare-controller.php';
+$numeErr=$prenumeErr=$emailErr=$telefonErr=$mesajErr="";
+$nume=$prenume=$email=$telefon=$mesaj="";
+$date=new Controller();
+
+if($_SERVER["REQUEST_METHOD"] == "POST")
+  {
+    $date->validateLastName($nume, $numeErr);
+    $date->validateFirstName($prenume, $prenumeErr);
+    $date->validateEmail($email, $emailErr);
+    $date->validatePhone($telefon, $telefonErr);
+    $date->validateMessage($mesaj,$mesajErr);
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="ro">
   <head>
@@ -166,105 +182,132 @@
           <strong>Formular de contact</strong>
         </h2>
         <hr />
-        <label for="contact-nume">
-          <a><img
-              id="contact-nume"
-              src="../Poze/register-tw.png"
-              alt="contact-nume"/>Nume </a>
-          <a style="color: red;">*</a>
-        </label>
-        <input
-          type="text"
-          id="contact-nume"
-          name="nume-intreg"
-          placeholder="Popescu"
-        />
+        <form method="post">
+          <div class="linie">
+            <label for="contact-nume">
+              <a><img
+                  id="contact-nume"
+                  src="../Poze/register-tw.png"
+                  alt="contact-nume"/>Nume </a>
+              <a style="color: red;">*</a>
+            </label>
+            <div class="input">
+              <input
+                type="text"
+                id="contact-nume"
+                name="nume"
+                placeholder="Popescu"
+                value="<?php echo $nume;?>"
+              />
+              <span class="error" style="color:red">*  <?php echo $numeErr ;?></span>
+            </div>
+          </div>
+          <div class="linie">
+            <label for="contact-prenume">
+              <a><img
+                  id="contact-prenume"
+                  src="../Poze/register-tw.png"
+                  alt="contact-nume"/>Prenume</a>
+              <a style="color: red;">*</a>    
+            </label>
+            <div class="input">
+              <input
+                type="text"
+                id="contact-prenume"
+                name="prenume"
+                placeholder=" Daniel"
+                value="<?php echo $prenume;?>"
+              />
+              <span class="error" style="color:red">*  <?php echo $prenumeErr ;?></span>
+            </div> 
+          </div>  
+          <div class="linie">
+            <label for="contact-email">
+              <a><img
+                  id="contact-email"
+                  src="../Poze/email-tw.png"
+                  alt="contact-email"
+                />Email
+              </a>
+              <a style="color: red;">*</a>
+            </label>
+            <div class="input">
+              <input
+                type="text"
+                id="contact-email"
+                name="email"
+                placeholder="popescu@gmai.com"
+                value="<?php echo $email;?>"
+              />
+              <span class="error" style="color:red">*  <?php echo $emailErr ;?></span>
+           </div>
+          </div>  
+          <div class="linie">
+            <label for="contact-telefon">
+                <a><img
+                    id="contact-telefon"
+                    src="../Poze/telefon.png"
+                    alt="contact-telefon"
+                  />Telefon
+                </a>
+                <a style="color: red;">*</a>
+              </label>
+              <div class="input">
+                <input
+                  type="text"
+                  id="contact-telefon"
+                  name="telefon"
+                  placeholder="0755-666-777"
+                />
+                <span class="error" style="color:red">*  <?php echo $telefonErr ;?></span>
+             </div>
+          </div>
+          <div class="linie">
+            <label for="contact-subiect">
+              <a
+                ><img
+                id="contact-subiect1"
+                src="../Poze/subiect.png"
+                alt="contact-subiect"
+                />Subiect
+              </a>
+            </label>
+            <select id="contact-subiect" name="subiect">
+                <option value="Intrebari despre un articol">Intrebari despre un articol</option>
+                <option value="Intrebari despre comanda dvs.">Intrebari despre comanda dvs.</option>
+                <option value="Intrebari despre factura dvs.">Intrebari despre factura dvs.</option>
+                <option value= "Altele">Altele</option>
+            </select>
+          </div>
 
-        <label for="contact-prenume">
-          <a><img
-              id="contact-prenume"
-              src="../Poze/register-tw.png"
-              alt="contact-nume"/>Prenume</a>
-          <a style="color: red;">*</a>    
-        </label>
-        <input
-          type="text"
-          id="contact-prenume"
-          name="nume-intreg"
-          placeholder=" Daniel"
-        />
-
-        <label for="contact-email">
-          <a><img
-              id="contact-email"
-              src="../Poze/email-tw.png"
-              alt="contact-email"
-            />Email
-          </a>
-          <a style="color: red;">*</a>
-        </label>
-        <input
-          type="text"
-          id="contact-email"
-          name="email"
-          placeholder="popescu@gmai.com"
-        />
-
-        <label for="contact-telefon">
-            <a><img
-                id="contact-telefon"
-                src="../Poze/telefon.png"
-                alt="contact-telefon"
-              />Telefon
-            </a>
-            <a style="color: red;">*</a>
-          </label>
-          <input
-            type="text"
-            id="contact-telefon"
-            name="telefon"
-            placeholder="0755-666-777"
-          />
-
-        <label for="contact-subiect">
-          <a
-            ><img
-            id="contact-subiect1"
-            src="../Poze/subiect.png"
-            alt="contact-subiect"
-            />Subiect
-          </a>
-        </label>
-        <select id="contact-subiect" name="subiect">
-            <option value="Intrebari despre un articol">Intrebari despre un articol</option>
-            <option value="Intrebari despre comanda dvs.">Intrebari despre comanda dvs.</option>
-            <option value="Intrebari despre factura dvs.">Intrebari despre factura dvs.</option>
-            <option value= "Altele">Altele</option>
-        </select>
-
-        <label for="contact-mesaj">
-            <a><img
-                id="contact-mesaj"
-                src="../Poze/mesaj.png"
-                alt="contact-mesaj"
-              />Mesajul dvs.
-            </a>
-            <a style="color: red;">*</a>
-          </label>
-          <input
-            type="mesaj"
-            id="contact-mesaj"
-            name="mesaj"
-          />
-
-          <button
-          class="buton-formular"
-          type="button"
-          onclick="window.location.href='#'"
-        >
-          Trimiteti
-        </button>
-
+          <div class="linie">
+            <label for="contact-mesaj">
+                <a><img
+                    id="contact-mesaj"
+                    src="../Poze/mesaj.png"
+                    alt="contact-mesaj"
+                  />Mesajul dvs.
+                </a>
+                <a style="color: red;">*</a>
+              </label>
+              <div class="input">
+                <input
+                  type="mesaj"
+                  id="contact-mesaj"
+                  name="mesaj"
+                  value="<?php echo $mesaj;?>"
+                />
+                <span class="error" style="color:red">*  <?php echo $mesajErr ;?></span>
+            </div>
+          </div>
+            <button
+            class="buton-formular"
+            type="submit"
+            onclick="window.location.href='#'"
+          >
+            Trimiteti
+          </button>
+        </form>
     </main>
 
     <footer class="footer">

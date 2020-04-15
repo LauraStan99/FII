@@ -6,7 +6,6 @@ $date=new Controller();
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
   {
- 
     $date->validateLastName($nume, $numeErr);
     $date->validateFirstName($prenume, $prenumeErr);
     $date->validateEmail($email, $emailErr);
