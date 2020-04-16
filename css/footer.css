@@ -1,0 +1,111 @@
+.footer {
+    background-color: rgb(236, 193, 248);
+    text-align: left;
+    width: 100%;
+    font: bold 16px sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-between;
+  }
+  
+  .footer .footer-stanga,
+  .footer .footer-dreapta,
+  .footer .footer-centru {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer .footer-stanga {
+    width: 35%;
+  }
+  
+  .footer-stanga #logo {
+    width: 100px;
+  }
+  
+  .footer-stanga #logo-nume {
+    width: 300px;
+  }
+  
+  .footer .footer-links a {
+    color: black;
+    font-size: 25px;
+  }
+  
+  .footer .nume-companie {
+    font-size: 20px;
+  }
+  
+  .footer .footer-centru {
+    width: 35%;
+    margin-top: 25px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+  }
+  .footer .footer-centru .locatie img {
+    width: 35px;
+  }
+  
+  .footer .footer-centru .locatie p {
+    align-self: left;
+    font: bold sans-serif;
+  }
+  
+  .footer .footer-centru .telefon img {
+    width: 35px;
+  }
+  
+  .footer .footer-centru .telefon p {
+    text-align: left;
+    font: bold sans-serif;
+  }
+  
+  .footer .footer-centru .mail img {
+    width: 35px;
+  }
+  
+  .footer .footer-centru .mail p {
+    text-align: left;
+    font: bold sans-serif;
+  }
+  
+  .footer .footer-dreapta {
+    align-items: center;
+    width: 25%;
+    margin-top: 5px;
+  }
+  
+  .footer .footer-dreapta p {
+    text-align: center;
+    color: black;
+  }
+  
+  .footer .footer-dreapta .footer-icons #facebook {
+    width: 35px;
+  }
+  .footer .footer-dreapta .footer-icons #instagram {
+    width: 35px;
+  }
+  .footer .footer-dreapta .footer-icons #git {
+    width: 35px;
+  }
+  .footer .footer-dreapta .footer-icons #youtube {
+    width: 35px;
+  }
+
+  @media screen and (max-width: 700px) {
+    .footer {
+      font: bold 15px sans-serif;
+    }
+    .footer .footer-stanga,
+    .footer .footer-dreapta,
+    .footer .footer-centru {
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 40px;
+      text-align: center;
+      align-items: center;
+    }
+  }
