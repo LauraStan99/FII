@@ -1,6 +1,5 @@
 <?php
-include '../model/comenzi-model.php'; 
-class Controller extends Database{
+class Validate{
     
     function validateLastName(&$nume, &$numeErr)
     {
