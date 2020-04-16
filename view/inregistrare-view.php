@@ -1,35 +1,3 @@
-<?php
-require '../controller/validare-controller.php';
-require '../controller/inserareDate-controller.php';
-$numeErr = $prenumeErr = $emailErr = $telefonErr = $adresaErr = $parolaErr = "";
-$nume = $prenume = $email = $telefon = $adresa = $parola = "";
-$success_message = "";
-$date = new Validate();
-$insert = new Insert();
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $date->validateLastName($nume, $numeErr);
-  $date->validateFirstName($prenume, $prenumeErr);
-  $date->validateEmail($email, $emailErr);
-  $date->validateAdress($adresa, $adresaErr);
-  $date->validatePhone($telefon, $telefonErr);
-  $date->validatePassword($parola, $parolaErr);
-}
-
-if (isset($_POST["submit"])) {
-  if (!empty($_POST["nume"])) {
-    $insert_data = array(
-      'nume' => $_POST["nume"], 'prenume' => $_POST["prenume"], 'email' => $_POST["email"],
-      'telefon' => $_POST["telefon"], 'adresa' => $_POST["adresa"], 'parola' => $_POST["parola"]
-    );
-    if ($insert->insertDate('utilizatori', $insert_data)) {
-      $success_message = 'Datele au fost introduse cu succes';
-    }
-  }
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="ro">
 
@@ -131,9 +99,7 @@ if (isset($_POST["submit"])) {
       </button>
       <span class="text-success">
         <?php
-        if (isset($success_message)) {
           echo $success_message;
-        }
         ?>
       </span>
     </form>
