@@ -2,7 +2,7 @@
 require '../controller/validare-controller.php';
 $numeErr=$prenumeErr=$emailErr=$telefonErr=$mesajErr="";
 $nume=$prenume=$email=$telefon=$mesaj="";
-$date=new Controller();
+$date=new Validate();
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
   {
