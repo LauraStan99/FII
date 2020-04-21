@@ -1,6 +1,48 @@
 <?php
-require '../model/user-model.php';
-class Validate{
+class Inregistrare extends Controller{
+
+    function __construct()
+    {
+        parent::__construct();
+        $this->view->rend('footer');
+    }
+
+    public function inregistrare()
+    {
+      require 'model/user-model.php';
+      $numeErr = $prenumeErr = $emailErr = $telefonErr = $adresaErr = $parolaErr = "";
+      $nume = $prenume = $email = $telefon = $adresa = $parola = "";
+      $success_message = "";
+      $user = new User();
+
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      $this->validateLastName($nume, $numeErr);
+      $this->validateFirstName($prenume, $prenumeErr);
+      $this->validateEmail($email, $emailErr);
+      $this->validateAdress($adresa, $adresaErr);
+      $this->validatePhone($telefon, $telefonErr);
+      $this->validatePassword($parola, $parolaErr);
+      }
+
+      if (isset($_POST["submit"])) {
+        $insert_data = array(
+          'nume' => $_POST["nume"], 'prenume' => $_POST["prenume"], 'email' => $_POST["email"],
+          'telefon' => $_POST["telefon"], 'adresa' => $_POST["adresa"], 'parola' => $_POST["parola"]
+        );
+        if($numeErr == "" && $prenumeErr == "" && $emailErr == "" && $telefonErr == "" && $adresaErr == ""  && $parolaErr == ""){
+          if ($user->addUser($insert_data)) {
+          $success_message = "Datele au fost introduse cu succes";
+          }
+        }
+        else{
+          $success_message = "Toate campurile campurile trebuie completate conform cerintelor.";
+        }
+        
+      }
+
+      $this->export_message($numeErr, $prenumeErr, $emailErr, $telefonErr, $adresaErr, $parolaErr,
+      $nume,$prenume,$email ,$telefon, $adresa, $parola, $success_message);
+    }
     
     function validateLastName(&$nume, &$numeErr)
     {
@@ -172,44 +214,8 @@ class Validate{
         5 => $adresaErr, 6 => $parolaErr,  7 => $nume, 8 => $prenume, 9 => $email, 10 => $telefon,
         11 => $adresa, 12 => $parola, 13 => $success_message);
         extract($messages);
-        include '../view/inregistrare-view.php';
+        include 'view/inregistrare-view.php';
     }
 }
 ?>
 
-<?php
-$numeErr = $prenumeErr = $emailErr = $telefonErr = $adresaErr = $parolaErr = "";
-$nume = $prenume = $email = $telefon = $adresa = $parola = "";
-$success_message = "";
-$validate = new Validate();
-$user = new User();
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $validate->validateLastName($nume, $numeErr);
-  $validate->validateFirstName($prenume, $prenumeErr);
-  $validate->validateEmail($email, $emailErr);
-  $validate->validateAdress($adresa, $adresaErr);
-  $validate->validatePhone($telefon, $telefonErr);
-  $validate->validatePassword($parola, $parolaErr);
-}
-
-if (isset($_POST["submit"])) {
-    $insert_data = array(
-      'nume' => $_POST["nume"], 'prenume' => $_POST["prenume"], 'email' => $_POST["email"],
-      'telefon' => $_POST["telefon"], 'adresa' => $_POST["adresa"], 'parola' => $_POST["parola"]
-    );
-    if($numeErr == "" && $prenumeErr == "" && $emailErr == "" && $telefonErr == "" && $adresaErr == ""  && $parolaErr == ""){
-      if ($user->addUser($insert_data)) {
-      $success_message = "Datele au fost introduse cu succes";
-      }
-    }
-    else{
-      $success_message = "Toate campurile campurile trebuie completate conform cerintelor.";
-    }
-    
-}
-
-$validate->export_message($numeErr, $prenumeErr, $emailErr, $telefonErr, $adresaErr, $parolaErr,
-$nume,$prenume,$email ,$telefon, $adresa, $parola, $success_message);
-
-?>
