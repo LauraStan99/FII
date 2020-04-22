@@ -5,7 +5,7 @@
   <title>Favorite | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="../public/css/FavoriteGol.css" rel="stylesheet" />
+  <link href="../public/css/wishlistEmpty.css" rel="stylesheet" />
 </head>
 
 <body>

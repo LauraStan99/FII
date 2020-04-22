@@ -5,7 +5,7 @@
   <title>Comanda | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="../public/css/ComandaPlasata.css" rel="stylesheet" />
+  <link href="../public/css/order.css" rel="stylesheet" />
 </head>
 
 <body>

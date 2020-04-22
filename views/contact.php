@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <title>Contact | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="../public/css/Contact.css" rel="stylesheet" />
+  <link href="../public/css/contact.css" rel="stylesheet" />
 </head>
 
 <body>
