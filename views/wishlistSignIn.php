@@ -5,7 +5,7 @@
   <title>Favorite | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="../public/css/wishlistSignIn.css" rel="stylesheet" />
+  <link href="public/css/wishlistSignIn.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -18,7 +18,7 @@
   <main>
     <div class="favorite">
       <a>
-        <img id="inima-favorite" src="../public/poze/inima-favorite.png" alt="favorite" />Lista de dorinte
+        <img id="inima-favorite" src="public/poze/inima-favorite.png" alt="favorite" />Lista de dorinte
       </a>
     </div>
 
