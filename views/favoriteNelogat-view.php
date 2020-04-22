@@ -5,20 +5,20 @@
   <title>Favorite | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="../css/FavoriteNelogat.css" rel="stylesheet" />
+  <link href="../public/css/FavoriteNelogat.css" rel="stylesheet" />
 </head>
 
 <body>
-  <header>
-    <?php
-    require 'header.php';
-    ?>
-  </header>
+
+  <?php
+  require 'header.php';
+  ?>
+
 
   <main>
     <div class="favorite">
       <a>
-        <img id="inima-favorite" src="../Poze/inima-favorite.png" alt="favorite" />Lista de dorinte
+        <img id="inima-favorite" src="../public/poze/inima-favorite.png" alt="favorite" />Lista de dorinte
       </a>
     </div>
 
@@ -31,11 +31,11 @@
     </button>
   </main>
 
-  <footer>
-    <?php
-    require 'footer.php';
-    ?>
-  </footer>
+
+  <?php
+  require 'footer.php';
+  ?>
+
 </body>
 
 </html>
