@@ -26,7 +26,7 @@
     <p>Pentru autentificare sau inregistrare vizitati pagina de Logare.</p>
     <p>Zi frumoasa !</p>
 
-    <button id="catre-logare" type="button" onclick="window.location.href='./inregistrare.php'">
+    <button id="catre-logare" type="button" onclick="window.location.href='./signIn.php'">
       &lt Catre pagina de logare
     </button>
   </main>

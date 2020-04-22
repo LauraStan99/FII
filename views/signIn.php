@@ -106,6 +106,7 @@
       </span>
     </form>
   </main>
+  
     <?php
     require 'footer.php';
     ?>
