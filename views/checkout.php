@@ -1,5 +1,5 @@
 <?php
-require '../controller/inregistrare.php';
+require 'controller/inregistrare.php';
 $numeErr = $prenumeErr = $emailErr = $telefonErr = $adresaErr = $parolaErr = "";
 $nume = $prenume = $email = $telefon = $adresa = $parola = "";
 $date = new Inregistrare();
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <title>Checkout | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="../public/css/checkout.css" rel="stylesheet" />
+  <link href="public/css/checkout.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -45,37 +45,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
 
       <label for="numeCheckout">
-        <a><img id="contNume" src="../public/poze/cont.png" alt="Cont-nume" /> Nume</a>
+        <a><img id="contNume" src="public/poze/cont.png" alt="Cont-nume" /> Nume</a>
         <a style="color: red;">*</a>
       </label>
       <input type="text" id="numeCheckout" name="nume-intreg" placeholder="Popescu" />
 
       <label for="prenumeCheckout">
-        <a><img id="contPrenume" src="../public/poze/cont.png" alt="Cont-nume&prenume" />Prenume</a>
+        <a><img id="contPrenume" src="public/poze/cont.png" alt="Cont-nume&prenume" />Prenume</a>
         <a style="color: red;">*</a>
       </label>
       <input type="text" id="prenumeCheckout" name="nume-intreg" placeholder="Daniel" />
 
       <label for="emailCheckout">
-        <a><img id="email" src="../public/poze/email-Checkout.png" alt="Email-Checkout" />Email</a>
+        <a><img id="email" src="public/poze/email-Checkout.png" alt="Email-Checkout" />Email</a>
         <a style="color: red;">*</a>
       </label>
       <input type="text" id="emailCheckout" name="email-Checkout" placeholder="popescu@gmail.com" />
 
       <label for="adresaCheckout">
-        <a><img id="adresa" src="../public/poze/adresaCheckout.png" alt="adresa-Checkout" />Adresa livrare</a>
+        <a><img id="adresa" src="public/poze/adresaCheckout.png" alt="adresa-Checkout" />Adresa livrare</a>
         <a style="color: red;">*</a>
       </label>
       <input type="text" id="adresaCheckout" name="email-Checkout" placeholder=" Str. Primaverii nr.8" />
 
       <label for="orasCheckout">
-        <a><img id="oras" src="../public/poze/orasCheckout.png" alt="oras-Checkout" />Oras</a>
+        <a><img id="oras" src="public/poze/orasCheckout.png" alt="oras-Checkout" />Oras</a>
         <a style="color: red;">*</a>
       </label>
       <input type="text" id="orasCheckout" name="oras-Checkout" placeholder="Iasi" />
 
       <label for="taraCheckout">
-        <a><img id="tara" src="../public/poze/taraCheckout.png" alt="tara-Checkout" />Tara</a>
+        <a><img id="tara" src="public/poze/taraCheckout.png" alt="tara-Checkout" />Tara</a>
         <a style="color: red;">*</a>
       </label>
       <input type="text" id="taraCheckout" name="tara-Checkout" placeholder="Romania" />

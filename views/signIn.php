@@ -5,7 +5,7 @@
   <title>Inregistrare | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="../public/css/signIn.css" rel="stylesheet" />
+  <link href="public/css/signIn.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -28,7 +28,7 @@
     <form method="post">
       <div class="linie">
         <label for="inregistrare-nume">
-          <a><img id="register1" src="../public/poze/register-tw.png" alt="register" />Nume
+          <a><img id="register1" src="public/poze/register-tw.png" alt="register" />Nume
           </a>
 
         </label>
@@ -43,7 +43,7 @@
 
       <div class="linie">
         <label for="inregistrare-prenume">
-          <a><img id="register2" src="../public/poze/register-tw.png" alt="register" />Prenume</a>
+          <a><img id="register2" src="public/poze/register-tw.png" alt="register" />Prenume</a>
         </label>
         <div class="input">
           <input type="text" id="inregistrare-prenume" name="prenume" placeholder="Daniel" value="<?php echo $prenume; ?>" />

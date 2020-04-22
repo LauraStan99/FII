@@ -5,7 +5,7 @@
   <title>Cos | Impressed</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="../public/css/cartFull.css" rel="stylesheet">
+  <link href="public/css/cartFull.css" rel="stylesheet">
 
 </head>
 <header>
@@ -34,7 +34,7 @@
       <tr>
         <td data-th="Produs">
           <div class="linie1">
-            <div class="produs1"><img src="../public/poze/produs1.png" alt="produs1"></div>
+            <div class="produs1"><img src="public/poze/produs1.png" alt="produs1"></div>
           </div>
         <td data-th="Descriere">
           <div class="descriere-produs1">
@@ -51,7 +51,7 @@
         <td data-th="">
           <button class="buton-stergere">
             <a>
-              <img src="../public/poze/buton-stergere.png" alt="sterge">
+              <img src="public/poze/buton-stergere.png" alt="sterge">
             </a>
           </button>
         </td>

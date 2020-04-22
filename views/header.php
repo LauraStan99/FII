@@ -79,7 +79,7 @@
                 <a href="#">Salopete</a>
             </div>
         </div>
-        <script src="../public/js/navbar.js"> </script>
+        <script src="public/js/navbar.js"> </script>
         <form>
             <input type="search" name="q" placeholder="Cauta..." />
             <input type="submit" value="OK" />
