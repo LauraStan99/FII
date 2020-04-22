@@ -51,7 +51,7 @@ main .linie input[type='text'] {
   margin-top: 5px;
 }
 
-main .buton-inregistrare {
+main form .buton-inregistrare {
   background-color: rgb(143, 255, 152);
   width: 50%;
   color: black;
@@ -65,7 +65,7 @@ main .buton-inregistrare {
   font-size: 15px;
 }
 
-main .buton-inregistrare:hover {
+main form .buton-inregistrare:hover {
   background-color: green;
 }
 

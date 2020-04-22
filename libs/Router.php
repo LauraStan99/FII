@@ -7,9 +7,8 @@ class Router
 
     private $controllerPath = 'controllers/';
     private $modelPath = 'models/';
-    private $errorFile = 'error.php';
+    private $errorFile = 'err.php';
     private $defaultFile = 'home.php';
-
 
     public function init()
     {
@@ -27,12 +26,10 @@ class Router
         $this->controllerPath = trim($path, '/') . '/';
     }
 
-
     public function setModelPath($path)
     {
         $this->modelPath = trim($path, '/') . '/';
     }
-
 
     public function setErrorFile($path)
     {
@@ -53,14 +50,12 @@ class Router
         $this->url = explode('/', $this->url);
     }
 
-
     private function loadDefaultController()
     {
         require $this->controllerPath . $this->defaultFile;
         $this->controller = new Home();
         $this->controller->index();
     }
-
 
     private function loadExistingController()
     {

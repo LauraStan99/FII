@@ -6,7 +6,7 @@ class Database
  
    public function __construct(){
    
-       $this->con = new mysqli('localhost:3306', 'dba', 'sql', 'impressed');
+       $this->con = new mysqli('localhost:3308', 'dba', 'sql', 'impressed');
        if(!$this->con) echo 'Eroare la conexiunea cu baza de date';
    }
  
@@ -31,5 +31,4 @@ class Database
       if(mysqli_query($this->con, $string)) return true;
       else  return false;
    }
-}  
-?>
+}

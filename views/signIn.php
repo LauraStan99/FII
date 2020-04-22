@@ -47,7 +47,9 @@
         </label>
         <div class="input">
           <input type="text" id="inregistrare-prenume" name="prenume" placeholder="Daniel" value="<?php echo $prenume; ?>" />
-          <span class="error" style="color:red">* <?php echo $prenumeErr; ?></span>
+          <span class="error" style="color:red">* <?php if (isset($prenumeErr)) {
+                                                    echo $prenumeErr;
+                                                  }  ?></span>
         </div>
       </div>
       <br />
@@ -58,7 +60,9 @@
         </label>
         <div class="input">
           <input type="text" id="inregistrare-email" name="email" placeholder="popescu@gmail.com" value="<?php echo $email; ?>" />
-          <span class="error" style="color:red">* <?php echo $emailErr; ?></span>
+          <span class="error" style="color:red">* <?php if (isset($emailErr)) {
+                                                    echo $emailErr;
+                                                  }  ?></span>
         </div>
       </div>
       <br />
@@ -69,7 +73,9 @@
         </label>
         <div class="input">
           <input type="text" id="inregistrare-telefon" name="telefon" placeholder=" 07** *** *** " value="<?php echo $telefon; ?>" />
-          <span class="error" style="color:red">* <?php echo $telefonErr; ?></span>
+          <span class="error" style="color:red">* <?php if (isset($telefonErr)) {
+                                                    echo $telefonErr;
+                                                  }  ?></span>
         </div>
       </div>
       <br />
@@ -80,7 +86,9 @@
         </label>
         <div class="input">
           <input type="text" id="inregistrare-email" name="adresa" placeholder="Str. Primaverii nr.8" value="<?php echo $adresa; ?>" />
-          <span class="error" style="color:red">* <?php echo $adresaErr; ?></span>
+          <span class="error" style="color:red">* <?php if (isset($adresaErr)) {
+                                                    echo $adresaErr;
+                                                  }  ?></span>
         </div>
       </div>
       <br />
@@ -92,7 +100,9 @@
         </label>
         <div class="input">
           <input type="text" id="inregistrare-parola" name="parola" placeholder="********" value="<?php echo $parola; ?>" />
-          <span class="error" style="color:red">* <?php echo $parolaErr; ?></span>
+          <span class="error" style="color:red">* <?php if (isset($parolaErr)) {
+                                                    echo $parolaErr;
+                                                  }  ?></span>
         </div>
       </div>
       <br />
@@ -100,16 +110,17 @@
         Inregistrare
       </button>
       <span class="text-success">
-        <?php
+        <?php if (isset($success_message)) {
           echo $success_message;
+        }
         ?>
       </span>
     </form>
   </main>
 
-    <?php
-    require 'footer.php';
-    ?>
+  <?php
+  require 'footer.php';
+  ?>
 </body>
 
 </html>
