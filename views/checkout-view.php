@@ -1,8 +1,8 @@
 <?php
-require '../controller/validare-controller.php';
-$numeErr=$prenumeErr=$emailErr=$telefonErr=$adresaErr=$parolaErr="";
-$nume=$prenume=$email=$telefon=$adresa=$parola="";
-$date=new Validate();
+require '../controller/inregistrare.php';
+$numeErr = $prenumeErr = $emailErr = $telefonErr = $adresaErr = $parolaErr = "";
+$nume = $prenume = $email = $telefon = $adresa = $parola = "";
+$date = new Inregistrare();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <title>Checkout | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="../css/Checkout.css" rel="stylesheet" />
+  <link href="../public/css/Checkout.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
 
       <label for="numeCheckout">
-        <a><img id="contNume" src="../Poze/cont.png" alt="Cont-nume" /> Nume</a>
+        <a><img id="contNume" src="../public/poze/cont.png" alt="Cont-nume" /> Nume</a>
         <a style="color: red;">*</a>
       </label>
       <input type="text" id="numeCheckout" name="nume-intreg" placeholder="Popescu" />
