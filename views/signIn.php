@@ -54,7 +54,7 @@
 
       <div class="linie">
         <label for="inregistrare-email">
-          <a><img id="email" src="../public/poze/email-tw.png" alt="email" />Email </a>
+          <a><img id="email" src="public/poze/email-tw.png" alt="email" />Email </a>
         </label>
         <div class="input">
           <input type="text" id="inregistrare-email" name="email" placeholder="popescu@gmail.com" value="<?php echo $email; ?>" />
@@ -65,7 +65,7 @@
 
       <div class="linie">
         <label for="inregistrare-telefon">
-          <a><img id="telefon" src="../public/poze/telefon.png" alt="telefon" />Telefon</a>
+          <a><img id="telefon" src="public/poze/telefon.png" alt="telefon" />Telefon</a>
         </label>
         <div class="input">
           <input type="text" id="inregistrare-telefon" name="telefon" placeholder=" 07** *** *** " value="<?php echo $telefon; ?>" />
@@ -76,7 +76,7 @@
 
       <div class="linie">
         <label for="inregistrare-adresa">
-          <a><img id="adresa" src="../public/poze/adresaCheckout.png" alt="adresa" />Adresa</a>
+          <a><img id="adresa" src="public/poze/adresaCheckout.png" alt="adresa" />Adresa</a>
         </label>
         <div class="input">
           <input type="text" id="inregistrare-email" name="adresa" placeholder="Str. Primaverii nr.8" value="<?php echo $adresa; ?>" />
@@ -87,7 +87,7 @@
 
       <div class="linie">
         <label for="inregistrare-parola">
-          <a><img id="parola" src="../public/poze/parola-tw.png" alt="parola" />Parola
+          <a><img id="parola" src="public/poze/parola-tw.png" alt="parola" />Parola
           </a>
         </label>
         <div class="input">
@@ -106,7 +106,7 @@
       </span>
     </form>
   </main>
-  
+
     <?php
     require 'footer.php';
     ?>
