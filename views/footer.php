@@ -13,11 +13,11 @@
             <img id="logo-nume" src="../public/poze/logo-nume.png" alt="logo-nume" />
         </h1>
         <p class="footer-links">
-            <a href="./paginaPrincipala-view.php">Acasa</a>
+            <a href="./home.php">Acasa</a>
             |
-            <a href="./livrare-view.php">Livrare si Servicii</a>
+            <a href="./delivery.php">Livrare si Servicii</a>
             |
-            <a href="./contact-view.php">Contact</a>
+            <a href="./contact.php">Contact</a>
         </p>
         <p class="nume-companie">Impressed © 2020</p>
     </div>
@@ -46,7 +46,7 @@
         <div class="footer-icons">
             <a title="Facebook"><img id="facebook" src="../public/poze/facebook-tw.png" alt="facebook-icon" /></a>
             <a title="Instagram"><img id="instagram" src="../public/poze/instagram-tw.png" alt="instagram-icon" /></a>
-            <a href="https://github.com/LauraStan99/FII/tree/master" title="GitHub"><img id="git" src="../Poze/git-tw.png" alt="github-icon" /></a>
+            <a href="https://github.com/LauraStan99/FII/tree/master" title="GitHub"><img id="git" src="../public/poze/git-tw.png" alt="github-icon" /></a>
             <a title="YouTube"><img id="youtube" src="../public/poze/youtube-tw.png" alt="youtube-icon" /></a>
         </div>
     </div>

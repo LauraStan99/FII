@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="cont">
-                    <a class="link cont" href="./DateCont.html" title="Cont">
+                    <a class="link cont" href="./account.html" title="Cont">
                         <img class="logo-cont" src="../public/poze/cont-tw.png" alt="Cont" />
                     </a>
                 </div>
