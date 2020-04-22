@@ -5,7 +5,7 @@
   <title>Home | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="../public/css/PaginaPrincipala.css" rel="stylesheet" />
+  <link href="../public/css/home.css" rel="stylesheet" />
   
 </head>
 
