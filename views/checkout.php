@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-  
+
   <?php
   require 'header.php';
   ?>
@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a style="color: red;">*</a>
       </label>
       <input type="text" id="taraCheckout" name="tara-Checkout" placeholder="Romania" />
-      <button id="inapoi-la-cos" type="button" onclick="window.location.href='./cosPlin.php'">
+      <button id="inapoi-la-cos" type="button" onclick="window.location.href='./cartFull.php'">
         &lt Inapoi la cos
       </button>
     </div>
@@ -108,16 +108,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <label for="CVVCard">CVV <a style="color: red;">*</a></label>
       <input type="text" id="CVVCard" name="CVV-card" placeholder="729" />
 
-      <button id="plaseaza-comanda" type="button" onclick="window.location.href='./comandaPlasata.php'">
+      <button id="plaseaza-comanda" type="button" onclick="window.location.href='./order.php'">
         Plaseaza comanda &gt
       </button>
     </div>
   </main>
 
 
-    <?php
-    require 'footer.php';
-    ?>
+  <?php
+  require 'footer.php';
+  ?>
 
 </body>
 
