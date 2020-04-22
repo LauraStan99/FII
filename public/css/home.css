@@ -31,8 +31,9 @@ body {
 }
 
 main .poze-main img {
-  margin-bottom:0px;
+  margin-bottom: 0px;
   cursor: pointer;
+  width: 100%;
 }
 
 @media screen and (max-width: 800px) {
