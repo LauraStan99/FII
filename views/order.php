@@ -25,7 +25,7 @@
       Mai multe detalii despre statusul comenzii se vor regasi pe email.
     </h2>
 
-    <button id="inapoi-pagPrincipala" type="button" onclick="window.location.href='./paginaPrincipala-view.php'">
+    <button id="inapoi-pagPrincipala" type="button" onclick="window.location.href='./home.php'">
       &lt Inapoi la pagina principala
     </button>
   </main>

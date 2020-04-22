@@ -69,12 +69,12 @@
 
   <div class="butoane">
     <div class="butoaneSt">
-      <button id="Continua-cump" type="button" onclick="window.location.href='./paginaPrincipala-view.php'">
+      <button id="Continua-cump" type="button" onclick="window.location.href='./home.php'">
         Continua cumparaturi
       </button>
     </div>
     <div class="butoaneDr">
-      <button id="Comanda" type="submit" onclick="window.location.href='./checkout-view.php'">
+      <button id="Comanda" type="submit" onclick="window.location.href='./checkout.php'">
         Checkout
       </button>
     </div>
