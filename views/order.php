@@ -9,11 +9,9 @@
 </head>
 
 <body>
-  <header>
     <?php
     require 'header.php';
     ?>
-  </header>
 
   <main>
     <h1 id="mesaj-multumire">
@@ -30,12 +28,10 @@
     </button>
   </main>
 
-  <!-- footerul -->
-  <footer>
     <?php
     require 'footer.php';
     ?>
-  </footer>
+
 </body>
 
 </html>
