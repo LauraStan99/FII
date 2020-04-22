@@ -27,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
+  
   <?php
   require 'header.php';
   ?>
@@ -50,31 +51,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <input type="text" id="numeCheckout" name="nume-intreg" placeholder="Popescu" />
 
       <label for="prenumeCheckout">
-        <a><img id="contPrenume" src="../Poze/cont.png" alt="Cont-nume&prenume" />Prenume</a>
+        <a><img id="contPrenume" src="../public/poze/cont.png" alt="Cont-nume&prenume" />Prenume</a>
         <a style="color: red;">*</a>
       </label>
       <input type="text" id="prenumeCheckout" name="nume-intreg" placeholder="Daniel" />
 
       <label for="emailCheckout">
-        <a><img id="email" src="../Poze/email-Checkout.png" alt="Email-Checkout" />Email</a>
+        <a><img id="email" src="../public/poze/email-Checkout.png" alt="Email-Checkout" />Email</a>
         <a style="color: red;">*</a>
       </label>
       <input type="text" id="emailCheckout" name="email-Checkout" placeholder="popescu@gmail.com" />
 
       <label for="adresaCheckout">
-        <a><img id="adresa" src="../Poze/adresaCheckout.png" alt="adresa-Checkout" />Adresa livrare</a>
+        <a><img id="adresa" src="../public/poze/adresaCheckout.png" alt="adresa-Checkout" />Adresa livrare</a>
         <a style="color: red;">*</a>
       </label>
       <input type="text" id="adresaCheckout" name="email-Checkout" placeholder=" Str. Primaverii nr.8" />
 
       <label for="orasCheckout">
-        <a><img id="oras" src="../Poze/orasCheckout.png" alt="oras-Checkout" />Oras</a>
+        <a><img id="oras" src="../public/poze/orasCheckout.png" alt="oras-Checkout" />Oras</a>
         <a style="color: red;">*</a>
       </label>
       <input type="text" id="orasCheckout" name="oras-Checkout" placeholder="Iasi" />
 
       <label for="taraCheckout">
-        <a><img id="tara" src="../Poze/taraCheckout.png" alt="tara-Checkout" />Tara</a>
+        <a><img id="tara" src="../public/poze/taraCheckout.png" alt="tara-Checkout" />Tara</a>
         <a style="color: red;">*</a>
       </label>
       <input type="text" id="taraCheckout" name="tara-Checkout" placeholder="Romania" />
@@ -113,11 +114,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
   </main>
 
-  <footer>
+
     <?php
     require 'footer.php';
     ?>
-  </footer>
+
 </body>
 
 </html>

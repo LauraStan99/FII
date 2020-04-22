@@ -1,17 +1,16 @@
 <?php
-require '../controller/validare-controller.php';
-$numeErr=$prenumeErr=$emailErr=$telefonErr=$mesajErr="";
-$nume=$prenume=$email=$telefon=$mesaj="";
-$date=new Validate();
+require '../controller/inregistrare.php';
+$numeErr = $prenumeErr = $emailErr = $telefonErr = $mesajErr = "";
+$nume = $prenume = $email = $telefon = $mesaj = "";
+$date = new Inregistrare();
 
-if($_SERVER["REQUEST_METHOD"] == "POST")
-  {
-    $date->validateLastName($nume, $numeErr);
-    $date->validateFirstName($prenume, $prenumeErr);
-    $date->validateEmail($email, $emailErr);
-    $date->validatePhone($telefon, $telefonErr);
-    $date->validateMessage($mesaj,$mesajErr);
-  }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $date->validateLastName($nume, $numeErr);
+  $date->validateFirstName($prenume, $prenumeErr);
+  $date->validateEmail($email, $emailErr);
+  $date->validatePhone($telefon, $telefonErr);
+  $date->validateMessage($mesaj, $mesajErr);
+}
 
 ?>
 <!DOCTYPE html>
@@ -21,15 +20,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   <title>Contact | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="../css/Contact.css" rel="stylesheet" />
+  <link href="../public/css/Contact.css" rel="stylesheet" />
 </head>
 
 <body>
-  <header>
-    <?php
-    require 'header.php';
-    ?>
-  </header>
+
+  <?php
+  require 'header.php';
+  ?>
 
   <main>
     <div class="info-contact">
@@ -61,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
       <form method="post">
         <div class="linie">
           <label for="contact-nume">
-            <a><img id="contact-nume" src="../Poze/register-tw.png" alt="contact-nume" />Nume </a>
+            <a><img id="contact-nume" src="../public/poze/register-tw.png" alt="contact-nume" />Nume </a>
             <a style="color: red;">*</a>
           </label>
           <div class="input">
@@ -71,7 +69,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         </div>
         <div class="linie">
           <label for="contact-prenume">
-            <a><img id="contact-prenume" src="../Poze/register-tw.png" alt="contact-nume" />Prenume</a>
+            <a><img id="contact-prenume" src="../public/poze/register-tw.png" alt="contact-nume" />Prenume</a>
             <a style="color: red;">*</a>
           </label>
           <div class="input">
@@ -81,7 +79,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         </div>
         <div class="linie">
           <label for="contact-email">
-            <a><img id="contact-email" src="../Poze/email-tw.png" alt="contact-email" />Email
+            <a><img id="contact-email" src="../public/poze/email-tw.png" alt="contact-email" />Email
             </a>
             <a style="color: red;">*</a>
           </label>
@@ -92,7 +90,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         </div>
         <div class="linie">
           <label for="contact-telefon">
-            <a><img id="contact-telefon" src="../Poze/telefon.png" alt="contact-telefon" />Telefon
+            <a><img id="contact-telefon" src="../public/poze/telefon.png" alt="contact-telefon" />Telefon
             </a>
             <a style="color: red;">*</a>
           </label>
@@ -103,7 +101,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         </div>
         <div class="linie">
           <label for="contact-subiect">
-            <a><img id="contact-subiect1" src="../Poze/subiect.png" alt="contact-subiect" />Subiect
+            <a><img id="contact-subiect1" src="../public/poze/subiect.png" alt="contact-subiect" />Subiect
             </a>
           </label>
           <select id="contact-subiect" name="subiect">
@@ -116,7 +114,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
         <div class="linie">
           <label for="contact-mesaj">
-            <a><img id="contact-mesaj" src="../Poze/mesaj.png" alt="contact-mesaj" />Mesajul dvs.
+            <a><img id="contact-mesaj" src="../public/poze/mesaj.png" alt="contact-mesaj" />Mesajul dvs.
             </a>
             <a style="color: red;">*</a>
           </label>
@@ -131,11 +129,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
       </form>
   </main>
 
-  <footer>
-    <?php
-    require 'footer.php';
-    ?>
-  </footer>
+
+  <?php
+  require 'footer.php';
+  ?>
+
 </body>
 
 </html>

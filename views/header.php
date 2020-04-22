@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../css/header.css" rel="stylesheet" />
+    <link href="../public/css/header.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -13,27 +13,27 @@
             <div class="header-right">
                 <div class="favorite">
                     <a class="link-favorite" href="" title="Lista de dorinte">
-                        <img class="logo-favorite" src="../Poze/logo-favorite-tw.png" alt="Favorite" />
+                        <img class="logo-favorite" src="../public/poze/logo-favorite-tw.png" alt="Favorite" />
                     </a>
                 </div>
 
                 <div class="cos">
                     <a class="link cos" href="" title="Cos cumparaturi">
-                        <img class="logo-cos" src="../Poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
+                        <img class="logo-cos" src="../public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
                     </a>
                 </div>
 
                 <div class="cont">
                     <a class="link cont" href="./DateCont.html" title="Cont">
-                        <img class="logo-cont" src="../Poze/cont-tw.png" alt="Cont" />
+                        <img class="logo-cont" src="../public/poze/cont-tw.png" alt="Cont" />
                     </a>
                 </div>
             </div>
 
             <div class="header-left">
                 <div class="link-nume">
-                    <a href="#" title="logo"><img class="logo" src="../Poze/logo.png" alt="logo" /></a>
-                    <a href="#" title="logo-nume"><img class="logo-nume" src="../Poze/logo-nume.png" alt="logo-nume" /></a>
+                    <a href="#" title="logo"><img class="logo" src="../public/poze/logo.png" alt="logo" /></a>
+                    <a href="#" title="logo-nume"><img class="logo-nume" src="../public/poze/logo-nume.png" alt="logo-nume" /></a>
                 </div>
             </div>
         </div>

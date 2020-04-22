@@ -1,9 +1,9 @@
 <?php
-require '../controller/validare-controller.php';
+require '../controller/inregistrare.php';
 require '../controller/inserareDate-controller.php';
 $numeErr = $prenumeErr = $emailErr = $telefonErr = $adresaErr = $parolaErr = "";
 $nume = $prenume = $email = $telefon = $adresa = $parola = "";
-$date = new Validate();
+$date = new Inregistrare();
 $insert = new Insert();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form method="post">
       <div class="tip-date">
         <label for="inregistrare-nume">
-          <a id="id-nume"><img id="register1" src="../Poze/register-tw.png" alt="register" />Nume : Popescu
+          <a id="id-nume"><img id="register1" src="../public/poze/register-tw.png" alt="register" />Nume : Popescu
           </a>
         </label>
       </div>
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       <div class="tip-date">
         <label for="inregistrare-prenume">
-          <a id="id-prenume"><img id="register2" src="../Poze/register-tw.png" alt="register" />Prenume : Daniel</a>
+          <a id="id-prenume"><img id="register2" src="../public/poze/register-tw.png" alt="register" />Prenume : Daniel</a>
         </label>
       </div>
       <div class="date">
@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       <div class="tip-date">
         <label for="inregistrare-email">
-          <a id="id-email"><img id="email" src="../Poze/email-tw.png" alt="email" />Email :
+          <a id="id-email"><img id="email" src="../public/poze/email-tw.png" alt="email" />Email :
             popescu@gmail.com</a>
         </label>
       </div>
@@ -106,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       <div class="tip-date">
         <label for="inregistrare-telefon">
-          <a id="id-telefon"><img id="telefon" src="../Poze/telefon.png" alt="telefon" />Telefon :
+          <a id="id-telefon"><img id="telefon" src="../public/poze/telefon.png" alt="telefon" />Telefon :
             0765 234 567
           </a>
         </label>
@@ -127,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       <div class="tip-date">
         <label for="inregistrare-adresa">
-          <a id="id-adresa"><img id="adresa" src="../Poze/adresaCheckout.png" alt="adresa" />Adresa : Str. Primaverii nr.8</a>
+          <a id="id-adresa"><img id="adresa" src="../public/poze/adresaCheckout.png" alt="adresa" />Adresa : Str. Primaverii nr.8</a>
         </label>
       </div>
       <div class="date">
@@ -146,7 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       <div class="tip-date">
         <label for="inregistrare-parola">
-          <a id="id-parola"><img id="parola" src="../Poze/parola-tw.png" alt="parola" />Parola :
+          <a id="id-parola"><img id="parola" src="../public/poze/parola-tw.png" alt="parola" />Parola :
             12345678</a>
         </label>
       </div>
