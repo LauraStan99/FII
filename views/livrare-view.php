@@ -5,15 +5,14 @@
   <title>Livrare | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="../css/Livrare.css" rel="stylesheet" />
+  <link href="../public/css/Livrare.css" rel="stylesheet" />
 </head>
 
 <body>
-  <header>
+
     <?php
     require 'header.php';
     ?>
-  </header>
 
   <main>
     <h1>Termeni si conditii de livrarea a comenzilor</h1>
@@ -139,11 +138,9 @@
     </div>
   </main>
 
-  <footer>
     <?php
     require 'footer.php';
     ?>
-  </footer>
 </body>
 
 </html>

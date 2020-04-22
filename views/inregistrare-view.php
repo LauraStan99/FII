@@ -5,13 +5,15 @@
   <title>Inregistrare | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="css/Inregistrare.css" rel="stylesheet" />
+  <link href="../public/css/Inregistrare.css" rel="stylesheet" />
 </head>
 
 <body>
+
   <?php
   require 'header.php';
   ?>
+
   <main>
     <div>
       <h1>
@@ -26,7 +28,7 @@
     <form method="post">
       <div class="linie">
         <label for="inregistrare-nume">
-          <a><img id="register1" src="../Poze/register-tw.png" alt="register" />Nume
+          <a><img id="register1" src="../public/poze/register-tw.png" alt="register" />Nume
           </a>
 
         </label>
@@ -41,7 +43,7 @@
 
       <div class="linie">
         <label for="inregistrare-prenume">
-          <a><img id="register2" src="../Poze/register-tw.png" alt="register" />Prenume</a>
+          <a><img id="register2" src="../public/poze/register-tw.png" alt="register" />Prenume</a>
         </label>
         <div class="input">
           <input type="text" id="inregistrare-prenume" name="prenume" placeholder="Daniel" value="<?php echo $prenume; ?>" />
@@ -52,7 +54,7 @@
 
       <div class="linie">
         <label for="inregistrare-email">
-          <a><img id="email" src="../Poze/email-tw.png" alt="email" />Email </a>
+          <a><img id="email" src="../public/poze/email-tw.png" alt="email" />Email </a>
         </label>
         <div class="input">
           <input type="text" id="inregistrare-email" name="email" placeholder="popescu@gmail.com" value="<?php echo $email; ?>" />
@@ -63,7 +65,7 @@
 
       <div class="linie">
         <label for="inregistrare-telefon">
-          <a><img id="telefon" src="../Poze/telefon.png" alt="telefon" />Telefon</a>
+          <a><img id="telefon" src="../public/poze/telefon.png" alt="telefon" />Telefon</a>
         </label>
         <div class="input">
           <input type="text" id="inregistrare-telefon" name="telefon" placeholder=" 07** *** *** " value="<?php echo $telefon; ?>" />
@@ -74,7 +76,7 @@
 
       <div class="linie">
         <label for="inregistrare-adresa">
-          <a><img id="adresa" src="../Poze/adresaCheckout.png" alt="adresa" />Adresa</a>
+          <a><img id="adresa" src="../public/poze/adresaCheckout.png" alt="adresa" />Adresa</a>
         </label>
         <div class="input">
           <input type="text" id="inregistrare-email" name="adresa" placeholder="Str. Primaverii nr.8" value="<?php echo $adresa; ?>" />
@@ -85,7 +87,7 @@
 
       <div class="linie">
         <label for="inregistrare-parola">
-          <a><img id="parola" src="../Poze/parola-tw.png" alt="parola" />Parola
+          <a><img id="parola" src="../public/poze/parola-tw.png" alt="parola" />Parola
           </a>
         </label>
         <div class="input">
@@ -104,11 +106,9 @@
       </span>
     </form>
   </main>
-  <footer>
     <?php
     require 'footer.php';
     ?>
-  </footer>
 </body>
 
 </html>

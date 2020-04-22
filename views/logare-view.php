@@ -4,13 +4,15 @@
     <title>Logare | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../css/Logare.css" rel="stylesheet" />
+    <link href="../public/css/Logare.css" rel="stylesheet" />
   </head>
 
   <body>
+
     <?php
       require 'header.php';
     ?>
+
     <main>
       <div class="main-stanga">
         <h1>
@@ -19,7 +21,7 @@
 
         <label for="logare-email">
           <a
-            ><img id="email" src="../Poze/email-tw.png" alt="email" />
+            ><img id="email" src="../public/poze/email-tw.png" alt="email" />
             Email
           </a>
         </label>
@@ -32,7 +34,7 @@
 
         <label for="logare-parola">
           <a
-            ><img id="parola" src="../Poze/parola-tw.png" alt="log-parola" />Parola
+            ><img id="parola" src="../public/poze/parola-tw.png" alt="log-parola" />Parola
           </a>
         </label>
         <input
@@ -79,5 +81,6 @@
     <?php
       require 'footer.php';
     ?>
+    
   </body>
 </html>
