@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <title>Cont | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="../css/DateCont.css" rel="stylesheet" />
+  <link href="../public/css/DateCont.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -163,7 +163,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <br />
     </form>
 
-    <button class="buton-inapoi-cump" type="button" onclick="window.location.href='./paginaPrincipala-view.php'">
+    <button class="buton-inapoi-cump" type="button" onclick="window.location.href='./home.php'">
       &lt Inapoi la cumparaturi
     </button>
   </main>
