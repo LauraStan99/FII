@@ -1,14 +1,14 @@
 <?php
 
-class Home extends Controller
+class Err extends Controller
 {
+
     function __construct()
     {
         parent::__construct();
     }
-
     function index()
     {
-        $this->view->render('home');
+        $this->view->render('error');
     }
 }
