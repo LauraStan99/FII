@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ro">
 
@@ -15,7 +14,6 @@
   require 'header.php';
   ?>
   <main>
-    <!-- <p>Aveti cumparaturi in valoare de : 100$</p> -->
 
     <div class="main-stanga">
       <h1>Detalii livrare</h1>
