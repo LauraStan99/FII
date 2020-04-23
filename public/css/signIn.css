@@ -57,7 +57,7 @@ main form .buton-inregistrare {
   outline: none;
   border: none;
   cursor: pointer;
-  margin-left:30px;
+  margin-left: 30px;
   font-size: 15px;
   margin-bottom: 20px;
 }
@@ -89,8 +89,8 @@ main form .buton-inregistrare:hover {
     margin-left:0px;
   }
   main form .buton-inregistrare {
-    margin-left: 0px;
-    width: 100%;
-    align-items: center;
+    margin-left: 30px;
+    width: 85%;
+    margin-bottom: 5px;
   }
 }

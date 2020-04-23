@@ -39,9 +39,9 @@
       <label for="CVVCard">CVV <a style="color: red;">*</a></label>
       <input type="text" id="CVVCard" name="CVV-card" placeholder="729" />
 
-      <button id="plaseaza-comanda" type="button" onclick="window.location.href='<?php echo URL; ?>order'">
-        Plaseaza comanda &gt
-      </button>
+      <input id="plaseaza-comanda" type="submit" onclick="window.location.href='<?php echo URL; ?>order'">
+
+      </input>
 
   </main>
 
