@@ -80,7 +80,7 @@ main form .buton-inregistrare:hover {
   #parola {
     margin-left: 20px;
   }
-  main input[type='text'] {
+  main form input[type='text'] {
     margin-left: 20px;
     width: 100%;
   }
