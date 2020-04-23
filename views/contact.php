@@ -1,18 +1,4 @@
-<?php
-require 'controller/inregistrare.php';
-$numeErr = $prenumeErr = $emailErr = $telefonErr = $mesajErr = "";
-$nume = $prenume = $email = $telefon = $mesaj = "";
-$date = new Inregistrare();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $date->validateLastName($nume, $numeErr);
-  $date->validateFirstName($prenume, $prenumeErr);
-  $date->validateEmail($email, $emailErr);
-  $date->validatePhone($telefon, $telefonErr);
-  $date->validateMessage($mesaj, $mesajErr);
-}
-
-?>
 <!DOCTYPE html>
 <html lang="ro">
 
