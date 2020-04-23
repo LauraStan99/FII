@@ -9,7 +9,7 @@ class Inregistrare extends Controller
 
   public function index()
   {
-    require 'models/user-model.php';
+    require 'models/user.php';
     $numeErr = $prenumeErr = $emailErr = $telefonErr = $adresaErr = $parolaErr = "";
     $nume = $prenume = $email = $telefon = $adresa = $parola = "";
     $success_message = "";
