@@ -59,6 +59,7 @@ main form .buton-inregistrare {
   outline: none;
   border: none;
   cursor: pointer;
+  margin-left:30px;
   font-size: 15px;
   margin-left: 30px;
   margin-bottom: 5px;
