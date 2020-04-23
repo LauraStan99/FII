@@ -8,11 +8,11 @@ class Wishlist extends Controller{
     }
 
     function empty(){
-        $this->view->render('wishlistEmpty');
+        require 'views/wishlistEmpty.php';
     }
 
     function signed(){
-        $this->view->render('wishlistSignIn');
+        $this->view->render('../wishlistSignIn');
     }
 }
 

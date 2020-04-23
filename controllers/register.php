@@ -9,14 +9,15 @@ class Register extends Controller
 
   public function index()
   {
-    $numeErr = $prenumeErr = $emailErr = $telefonErr = $adresaErr = $parolaErr = "";
+    $this->view->numeErr = ""; 
+    $prenumeErr = $emailErr = $telefonErr = $adresaErr = $parolaErr = "";
     $nume = $prenume = $email = $telefon = $adresa = $parola = "";
     $success_message = "";
     $user = new User();
     $valid = new Validate();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      $valid->validateLastName($nume, $numeErr);
+      $valid->validateLastName($nume, $this->view->numeErr);
       $valid->validateFirstName($prenume, $prenumeErr);
       $valid->validateEmail($email, $emailErr);
       $valid->validateAdress($adresa, $adresaErr);
@@ -29,7 +30,7 @@ class Register extends Controller
         'nume' => $_POST["nume"], 'prenume' => $_POST["prenume"], 'email' => $_POST["email"],
         'telefon' => $_POST["telefon"], 'adresa' => $_POST["adresa"], 'parola' => $_POST["parola"]
       );
-      if ($numeErr == "" && $prenumeErr == "" && $emailErr == "" && $telefonErr == "" && $adresaErr == ""  && $parolaErr == "") {
+      if ($this->view->numeErr == "" && $prenumeErr == "" && $emailErr == "" && $telefonErr == "" && $adresaErr == ""  && $parolaErr == "") {
         if ($user->addUser($insert_data)) {
           $success_message = "Datele au fost introduse cu succes";
         }
@@ -38,7 +39,7 @@ class Register extends Controller
       }
     }
 
-    $valid->export_message_register(
+    /*$valid->export_message_register(
       $numeErr,
       $prenumeErr,
       $emailErr,
@@ -52,7 +53,7 @@ class Register extends Controller
       $adresa,
       $parola,
       $success_message
-    );
-    require 'views/signIn.php';
+    );*/
+    $this->view->render('signIn');
   }
 }

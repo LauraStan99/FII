@@ -12,9 +12,7 @@
     <?php
     require 'header.php';
     ?>
-    <main>
-        <p id="mesaj-eroare"> Aceasta pagina nu exista ! </p>
-    </main>
+    <?php echo $this->message; ?>
     <?php
     require 'footer.php';
     ?>
