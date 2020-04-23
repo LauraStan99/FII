@@ -42,7 +42,9 @@
         <strong>Formular de contact</strong>
       </h2>
       <hr />
+      </div>
       <form method="post">
+
         <div class="linie">
           <label for="contact-nume">
             <a><img id="contact-nume" src="<?php echo URL; ?>public/poze/register-tw.png" alt="contact-nume" />Nume </a>
@@ -53,6 +55,7 @@
             <span class="error" style="color:red; margin-left:20px;"> <?php if(isset($this->numeErr)) echo $this->numeErr; ?></span>
           </div>
         </div>
+
         <div class="linie">
           <label for="contact-prenume">
             <a><img id="contact-prenume" src="<?php echo URL; ?>public/poze/register-tw.png" alt="contact-nume" />Prenume</a>
@@ -63,6 +66,7 @@
             <span class="error" style="color:red; margin-left:20px;"> <?php if(isset($this->prenumeErr)) echo $this->prenumeErr; ?></span>
           </div>
         </div>
+
         <div class="linie">
           <label for="contact-email">
             <a><img id="contact-email" src="<?php echo URL; ?>public/poze/email-tw.png" alt="contact-email" />Email
@@ -74,6 +78,7 @@
             <span class="error" style="color:red; margin-left:20px;"> <?php if(isset($this->emailErr)) echo $this->emailErr; ?></span>
           </div>
         </div>
+
         <div class="linie">
           <label for="contact-telefon">
             <a><img id="contact-telefon" src="<?php echo URL; ?>public/poze/telefon.png" alt="contact-telefon" />Telefon
@@ -85,6 +90,7 @@
             <span class="error" style="color:red; margin-left:20px;"> <?php if(isset($this->telefonErr)) echo $this->telefonErr; ?></span>
           </div>
         </div>
+
         <div class="linie">
           <label for="contact-subiect">
             <a><img id="contact-subiect1" src="<?php echo URL; ?>public/poze/subiect.png" alt="contact-subiect" />Subiect
@@ -109,13 +115,12 @@
             <span class="error" style="color:red; margin-left:20px;"> <?php if(isset($this->mesajErr)) echo $this->mesajErr; ?></span>
           </div>
         </div>
+        
         <button class="buton-formular" type="submit" onclick="window.location.href='#'">
           Trimiteti
         </button>
       </form>
-  </div>
   </main>
-
 
   <?php
   require 'footer.php';

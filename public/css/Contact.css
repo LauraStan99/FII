@@ -19,7 +19,7 @@ main .formular-contact h2 {
   margin-left: 20px;
 }
 
-main .formular-contact form .linie #contact-nume,
+main #contact-nume,
 #contact-prenume,
 #contact-email,
 #contact-telefon,
@@ -29,12 +29,13 @@ main .formular-contact form .linie #contact-nume,
   margin-left: 20px;
 }
 
-main .formular-contact form .linie .input {
+main .linie .input {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-main .formular-contact form .linie input[type='text'],
+
+main .linie input[type='text'],
 select {
   margin-left: 20px;
   width: 50%;
@@ -43,7 +44,7 @@ select {
   margin-top: 5px;
 }
 
-main .formular-contact form .linie input[type='mesaj'] {
+main .linie input[type='mesaj'] {
   margin-left: 30px;
   width: 50%;
   height: 40px;
@@ -51,7 +52,7 @@ main .formular-contact form .linie input[type='mesaj'] {
   margin-bottom: 20px;
 }
 
-main .formular-contact form .buton-formular {
+main form .buton-formular {
   background-color: rgb(143, 255, 152);
   width: 50%;
   color: black;
@@ -65,20 +66,20 @@ main .formular-contact form .buton-formular {
   margin-bottom: 20px;
 }
 
-main .formular-contact form .buton-formular:hover {
+main form .buton-formular:hover {
   background-color: green;
 }
 
 @media screen and (max-width: 700px) {
-  main .formular-contact #contact-nume[type='text'],
-  main .formular-contact #contact-prenume[type='text'],
-  main .formular-contact #contact-email[type='text'],
-  main .formular-contact #contact-telefon[type='text'],
-  main .formular-contact #contact-subiect,
-  main .formular-contact #contact-mesaj[type='mesaj'] {
+  main #contact-nume[type='text'],
+  main #contact-prenume[type='text'],
+  main #contact-email[type='text'],
+  main #contact-telefon[type='text'],
+  main #contact-subiect,
+  main #contact-mesaj[type='mesaj'] {
     width: 90%;
   }
-  main .formular-contact .buton-formular {
+  main .buton-formular {
     width: 90%;
   }
 }
