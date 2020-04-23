@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="public/css/header.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/header.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -12,28 +12,28 @@
         <div class="header-navigation">
             <div class="header-right">
                 <div class="favorite">
-                    <a class="link-favorite" href="" title="Lista de dorinte">
-                        <img class="logo-favorite" src="public/poze/logo-favorite-tw.png" alt="Favorite" />
+                    <a class="link-favorite" href="#" title="Lista de dorinte">
+                        <img class="logo-favorite" src="<?php echo URL; ?>public/poze/logo-favorite-tw.png" alt="Favorite" />
                     </a>
                 </div>
 
                 <div class="cos">
-                    <a class="link cos" href="" title="Cos cumparaturi">
-                        <img class="logo-cos" src="public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
+                    <a class="link cos" href="#" title="Cos cumparaturi">
+                        <img class="logo-cos" src="<?php echo URL; ?>public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
                     </a>
                 </div>
 
                 <div class="cont">
-                    <a class="link cont" href="./account.html" title="Cont">
-                        <img class="logo-cont" src="public/poze/cont-tw.png" alt="Cont" />
+                    <a class="link cont" href="#" title="Cont">
+                        <img class="logo-cont" src="<?php echo URL; ?>public/poze/cont-tw.png" alt="Cont" />
                     </a>
                 </div>
             </div>
 
             <div class="header-left">
                 <div class="link-nume">
-                    <a href="#" title="logo"><img class="logo" src="public/poze/logo.png" alt="logo" /></a>
-                    <a href="#" title="logo-nume"><img class="logo-nume" src="public/poze/logo-nume.png" alt="logo-nume" /></a>
+                    <a href="<?php echo URL; ?>home" title="logo"><img class="logo" src="<?php echo URL; ?>public/poze/logo.png" alt="logo" /></a>
+                    <a href="<?php echo URL; ?>home" title="logo-nume"><img class="logo-nume" src="<?php echo URL; ?>public/poze/logo-nume.png" alt="logo-nume" /></a>
                 </div>
             </div>
         </div>
@@ -79,7 +79,7 @@
                 <a href="#">Salopete</a>
             </div>
         </div>
-        <script src="public/js/navbar.js"> </script>
+        <script src="<?php echo URL; ?>public/js/navbar.js"> </script>
         <form>
             <input type="search" name="q" placeholder="Cauta..." />
             <input type="submit" value="OK" />
