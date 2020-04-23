@@ -6,7 +6,7 @@
   <title>Payment | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="public/css/payment.css" rel="stylesheet" />
+  <link href="<?php echo URL; ?>public/css/payment.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -39,7 +39,7 @@
       <label for="CVVCard">CVV <a style="color: red;">*</a></label>
       <input type="text" id="CVVCard" name="CVV-card" placeholder="729" />
 
-      <button id="plaseaza-comanda" type="button" onclick="window.location.href='./order.php'">
+      <button id="plaseaza-comanda" type="button" onclick="window.location.href='<?php echo URL; ?>order'">
         Plaseaza comanda &gt
       </button>
 

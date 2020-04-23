@@ -5,7 +5,7 @@
   <title>Cont | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="public/css/account.css" rel="stylesheet" />
+  <link href="<?php echo URL; ?>public/css/account.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -16,7 +16,7 @@
   </header>
   <main>
     <div class="titlu">
-      <img id="cont" src="public/poze/cont.png" />
+      <img id="cont" src="<?php echo URL; ?>public/poze/cont.png" />
       <a id="titlu">Contul meu </a>
     </div>
 
@@ -32,7 +32,7 @@
     <form method="post">
       <div class="tip-date">
         <label for="inregistrare-nume">
-          <a id="id-nume"><img id="register1" src="public/poze/register-tw.png" alt="register" />Nume : Popescu
+          <a id="id-nume"><img id="register1" src="<?php echo URL; ?>public/poze/register-tw.png" alt="register" />Nume : Popescu
           </a>
         </label>
       </div>
@@ -49,7 +49,7 @@
 
       <div class="tip-date">
         <label for="inregistrare-prenume">
-          <a id="id-prenume"><img id="register2" src="public/poze/register-tw.png" alt="register" />Prenume : Daniel</a>
+          <a id="id-prenume"><img id="register2" src="<?php echo URL; ?>public/poze/register-tw.png" alt="register" />Prenume : Daniel</a>
         </label>
       </div>
       <div class="date">
@@ -67,7 +67,7 @@
 
       <div class="tip-date">
         <label for="inregistrare-email">
-          <a id="id-email"><img id="email" src="public/poze/email-tw.png" alt="email" />Email :
+          <a id="id-email"><img id="email" src="<?php echo URL; ?>public/poze/email-tw.png" alt="email" />Email :
             popescu@gmail.com</a>
         </label>
       </div>
@@ -87,7 +87,7 @@
 
       <div class="tip-date">
         <label for="inregistrare-telefon">
-          <a id="id-telefon"><img id="telefon" src="public/poze/telefon.png" alt="telefon" />Telefon :
+          <a id="id-telefon"><img id="telefon" src="<?php echo URL; ?>public/poze/telefon.png" alt="telefon" />Telefon :
             0765 234 567
           </a>
         </label>
@@ -108,7 +108,7 @@
 
       <div class="tip-date">
         <label for="inregistrare-adresa">
-          <a id="id-adresa"><img id="adresa" src="public/poze/adresaCheckout.png" alt="adresa" />Adresa : Str. Primaverii nr.8</a>
+          <a id="id-adresa"><img id="adresa" src="<?php echo URL; ?>public/poze/adresaCheckout.png" alt="adresa" />Adresa : Str. Primaverii nr.8</a>
         </label>
       </div>
       <div class="date">
@@ -127,7 +127,7 @@
 
       <div class="tip-date">
         <label for="inregistrare-parola">
-          <a id="id-parola"><img id="parola" src="public/poze/parola-tw.png" alt="parola" />Parola :
+          <a id="id-parola"><img id="parola" src="<?php echo URL; ?>public/poze/parola-tw.png" alt="parola" />Parola :
             12345678</a>
         </label>
       </div>
@@ -144,7 +144,7 @@
       <br />
     </form>
 
-    <button class="buton-inapoi-cump" type="button" onclick="window.location.href='./home.php'">
+    <button class="buton-inapoi-cump" type="button" onclick="window.location.href='<?php echo URL; ?>home'">
       &lt Inapoi la cumparaturi
     </button>
   </main>

@@ -6,7 +6,7 @@
   <title>Contact | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="public/css/contact.css" rel="stylesheet" />
+  <link href="<?php echo URL; ?>public/css/contact.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -45,7 +45,7 @@
       <form method="post">
         <div class="linie">
           <label for="contact-nume">
-            <a><img id="contact-nume" src="public/poze/register-tw.png" alt="contact-nume" />Nume </a>
+            <a><img id="contact-nume" src="<?php echo URL; ?>public/poze/register-tw.png" alt="contact-nume" />Nume </a>
             <a style="color: red;">*</a>
           </label>
           <div class="input">
@@ -55,7 +55,7 @@
         </div>
         <div class="linie">
           <label for="contact-prenume">
-            <a><img id="contact-prenume" src="public/poze/register-tw.png" alt="contact-nume" />Prenume</a>
+            <a><img id="contact-prenume" src="<?php echo URL; ?>public/poze/register-tw.png" alt="contact-nume" />Prenume</a>
             <a style="color: red;">*</a>
           </label>
           <div class="input">
@@ -65,7 +65,7 @@
         </div>
         <div class="linie">
           <label for="contact-email">
-            <a><img id="contact-email" src="public/poze/email-tw.png" alt="contact-email" />Email
+            <a><img id="contact-email" src="<?php echo URL; ?>public/poze/email-tw.png" alt="contact-email" />Email
             </a>
             <a style="color: red;">*</a>
           </label>
@@ -76,7 +76,7 @@
         </div>
         <div class="linie">
           <label for="contact-telefon">
-            <a><img id="contact-telefon" src="public/poze/telefon.png" alt="contact-telefon" />Telefon
+            <a><img id="contact-telefon" src="<?php echo URL; ?>public/poze/telefon.png" alt="contact-telefon" />Telefon
             </a>
             <a style="color: red;">*</a>
           </label>
@@ -87,7 +87,7 @@
         </div>
         <div class="linie">
           <label for="contact-subiect">
-            <a><img id="contact-subiect1" src="public/poze/subiect.png" alt="contact-subiect" />Subiect
+            <a><img id="contact-subiect1" src="<?php echo URL; ?>public/poze/subiect.png" alt="contact-subiect" />Subiect
             </a>
           </label>
           <select id="contact-subiect" name="subiect">
@@ -100,7 +100,7 @@
 
         <div class="linie">
           <label for="contact-mesaj">
-            <a><img id="contact-mesaj" src="public/poze/mesaj.png" alt="contact-mesaj" />Mesajul dvs.
+            <a><img id="contact-mesaj" src="<?php echo URL; ?>public/poze/mesaj.png" alt="contact-mesaj" />Mesajul dvs.
             </a>
             <a style="color: red;">*</a>
           </label>

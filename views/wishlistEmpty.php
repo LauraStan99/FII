@@ -17,7 +17,7 @@
   <main>
     <div class="favorite">
       <a>
-        <img id="inima-favorite" src="public/poze/inima-favorite.png" alt="favorite" />Lista de dorinte
+        <img id="inima-favorite" src="<?php echo URL; ?>public/poze/inima-favorite.png" alt="favorite" />Lista de dorinte
       </a>
     </div>
 
@@ -25,7 +25,7 @@
     <p>Pentru selectie intoarceti-va pe pagina de cumparaturi!</p>
     <p>Zi frumoasa !</p>
 
-    <button id="inapoi-la-cump" type="button" onclick="window.location.href='./home.php'">
+    <button id="inapoi-la-cump" type="button" onclick="window.location.href='<?php echo URL; ?>home'">
       &lt Inapoi la cumparaturi
     </button>
   </main>

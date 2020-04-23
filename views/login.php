@@ -5,7 +5,7 @@
   <title>Logare | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="public/css/login.css" rel="stylesheet" />
+  <link href="<?php echo URL; ?>public/css/login.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -21,19 +21,19 @@
       </h1>
 
       <label for="logare-email">
-        <a><img id="email" src="public/poze/email-tw.png" alt="email" />
+        <a><img id="email" src="<?php echo URL; ?>public/poze/email-tw.png" alt="email" />
           Email
         </a>
       </label>
       <input type="text" id="logare-email" name="email" placeholder="popescu@gmail.com" />
 
       <label for="logare-parola">
-        <a><img id="parola" src="public/poze/parola-tw.png" alt="log-parola" />Parola
+        <a><img id="parola" src="<?php echo URL; ?>public/poze/parola-tw.png" alt="log-parola" />Parola
         </a>
       </label>
       <input type="text" id="logare-parola" name="parola" placeholder="********" />
 
-      <button class="buton-stanga" type="button" onclick="window.location.href='./home.php'">
+      <button class="buton-stanga" type="button" onclick="window.location.href='<?php echo URL; ?>home'">
         Logare
       </button>
     </div>
@@ -43,7 +43,7 @@
         Vreau sa-mi creez un cont!
       </h2>
 
-      <button class="buton-dreapta" type="button" onclick="window.location.href='./signIn.php'">
+      <button class="buton-dreapta" type="button" onclick="window.location.href='<?php echo URL; ?>register'">
         CREATI UN CONT ACUM &gt
       </button>
 
