@@ -6,42 +6,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="<?php echo URL; ?>public/css/home.css" rel="stylesheet" />
+  <script src="<?php echo URL; ?>public/js/slide.js"></script>
 
 </head>
 
 <body>
-
   <?php
   require 'header.php';
   ?>
-
   <main>
-
-    <a class="inapoi" onclick="incrementSlide(-1)"> &#10094;</a>
-    <a class="inainte" onclick="incrementSlide(1)"> &#10095;</a>
-
-    <div class="poze-main">
-      <a href="<?php echo URL; ?>home" title="Slide1"><img src="<?php echo URL; ?>public/poze/slide1.png" alt="Slide1" /></a>
+    <div class="slides">
+      <img class="mySlides" src="<?php echo URL; ?>public/poze/slide1.png" style="width:100%">
+      <img class="mySlides" src="<?php echo URL; ?>public/poze/slide2.png" style="width:100%">
+      <img class="mySlides" src="<?php echo URL; ?>public/poze/slide3.png" style="width:100%">
+      <img class="mySlides" src="<?php echo URL; ?>public/poze/slide4.png" style="width:100%">
+      <img class="mySlides" src="<?php echo URL; ?>public/poze/slide5.png" style="width:100%">
+      <script>
+        carousel();
+      </script>
     </div>
-
-    <div class="poze-main">
-      <a href="<?php echo URL; ?>home" title="Slide2"><img src="<?php echo URL; ?>public/poze/slide2.png" alt="Slide2" /></a>
-    </div>
-
-    <div class="poze-main">
-      <a href="<?php echo URL; ?>home" title="Slide3"><img src="<?php echo URL; ?>public/poze/slide3.png" alt="Slide3" /></a>
-    </div>
-
-    <div class="poze-main">
-      <a href="<?php echo URL; ?>home" title="Slide4"><img src="<?php echo URL; ?>public/poze/slide4.png" alt="Slide4" /></a>
-    </div>
-
-    <div class="poze-main">
-      <a href="<?php echo URL; ?>home" title="Slide5"><img src="<?php echo URL; ?>public/poze/slide5.png" alt="Slide5" /></a>
-    </div>
-    <script src="<?php echo URL; ?>public/js/slide.js"> </script>
 
   </main>
+
   <?php
   require 'footer.php';
   ?>
