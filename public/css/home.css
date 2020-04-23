@@ -30,23 +30,13 @@ body {
   background-color: rgba(243, 226, 247, 0.952);
 }
 
-main .slides img {
-  margin-bottom: 0px;
+main .poze-main img {
   cursor: pointer;
   width: 100%;
 }
 
 @media screen and (max-width: 800px) {
-  .inainte,
-  .inapoi {
-    margin-top: auto;
-    padding: 10px;
-  }
+  
 }
-main .slides{margin-left:auto;
-  margin-right:auto;
-  max-width:980px;
-  margin-top:16px!important;
-  margin-bottom:16px!important;
-}
+
 

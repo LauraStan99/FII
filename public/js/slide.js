@@ -2,7 +2,7 @@ var myIndex = 0;
 carousel();
 function carousel() {
   var i;
-  var x = document.getElementsByClassName('mySlides');
+  var x = document.getElementsByClassName('poze-main');
   for (i = 0; i < x.length; i++) {
     x[i].style.display = 'none';
   }
