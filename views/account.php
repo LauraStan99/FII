@@ -1,21 +1,4 @@
-<?php
-require 'controller/inregistrare.php';
-require 'controller/inserareDate-controller.php';
-$numeErr = $prenumeErr = $emailErr = $telefonErr = $adresaErr = $parolaErr = "";
-$nume = $prenume = $email = $telefon = $adresa = $parola = "";
-$date = new Inregistrare();
-$insert = new Insert();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $date->changeLastName($nume, $numeErr);
-  $date->changeFirstName($prenume, $prenumeErr);
-  $date->changeEmail($email, $emailErr);
-  $date->changeAdress($adresa, $adresaErr);
-  $date->changePhone($telefon, $telefonErr);
-  $date->changePassword($parola, $parolaErr);
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="ro">

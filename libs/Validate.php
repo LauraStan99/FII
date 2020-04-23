@@ -1,61 +1,13 @@
-<?php
-class Inregistrare extends Controller
+<?php 
+
+class Validate 
 {
 
-  function __construct()
-  {
-    parent::__construct();
-  }
+public function __construct(){
+}
 
-  public function index()
-  {
-    require 'models/user.php';
-    $numeErr = $prenumeErr = $emailErr = $telefonErr = $adresaErr = $parolaErr = "";
-    $nume = $prenume = $email = $telefon = $adresa = $parola = "";
-    $success_message = "";
-    $user = new User();
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      $this->validateLastName($nume, $numeErr);
-      $this->validateFirstName($prenume, $prenumeErr);
-      $this->validateEmail($email, $emailErr);
-      $this->validateAdress($adresa, $adresaErr);
-      $this->validatePhone($telefon, $telefonErr);
-      $this->validatePassword($parola, $parolaErr);
-    }
-
-    if (isset($_POST["submit"])) {
-      $insert_data = array(
-        'nume' => $_POST["nume"], 'prenume' => $_POST["prenume"], 'email' => $_POST["email"],
-        'telefon' => $_POST["telefon"], 'adresa' => $_POST["adresa"], 'parola' => $_POST["parola"]
-      );
-      if ($numeErr == "" && $prenumeErr == "" && $emailErr == "" && $telefonErr == "" && $adresaErr == ""  && $parolaErr == "") {
-        if ($user->addUser($insert_data)) {
-          $success_message = "Datele au fost introduse cu succes";
-        }
-      } else {
-        $success_message = "Toate campurile campurile trebuie completate conform cerintelor.";
-      }
-    }
-
-    $this->export_message(
-      $numeErr,
-      $prenumeErr,
-      $emailErr,
-      $telefonErr,
-      $adresaErr,
-      $parolaErr,
-      $nume,
-      $prenume,
-      $email,
-      $telefon,
-      $adresa,
-      $parola,
-      $success_message
-    );
-  }
-
-  function validateLastName(&$nume, &$numeErr)
+ function validateLastName(&$nume, &$numeErr)
   {
     if (empty($_POST["nume"])) {
       $numeErr = 'Numele este obligatoriu';
@@ -206,7 +158,7 @@ class Inregistrare extends Controller
     return $data;
   }
 
-  function export_message(
+  function export_message_register(
     $numeErr,
     $prenumeErr,
     $emailErr,
@@ -227,6 +179,6 @@ class Inregistrare extends Controller
       11 => $adresa, 12 => $parola, 13 => $success_message
     );
     extract($messages);
-    require 'views/signIn.php';
+    
   }
 }

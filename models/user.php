@@ -10,4 +10,8 @@ class User extends Model
     {
         return $this->db->insert('utilizatori', $data);
     }
+ /*   public function updateName($name)
+    {
+        return $this->db->update('utilizatori',$name,'nume',$id);
+    }*/
 }
