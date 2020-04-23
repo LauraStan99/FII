@@ -1,21 +1,3 @@
-<?php
-require 'controller/inregistrare.php';
-$numeErr = $prenumeErr = $emailErr = $telefonErr = $adresaErr = $parolaErr = "";
-$nume = $prenume = $email = $telefon = $adresa = $parola = "";
-$date = new Inregistrare();
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-  $date->validateLastName($nume, $numeErr);
-  $date->validateFirstName($prenume, $prenumeErr);
-  $date->validateEmail($email, $emailErr);
-  $date->validateAdress($adresa, $adresaErr);
-  $date->validatePhone($telefon, $telefonErr);
-  $date->validatePassword($parola, $parolaErr);
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="ro">
 
@@ -23,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <title>Checkout | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="public/css/checkout.css" rel="stylesheet" />
+  <link href="<?php echo URL; ?>public/css/checkout.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -32,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   require 'header.php';
   ?>
   <main>
-    <!-- <p>Aveti cumparaturi in valoare de : 100$</p> -->
 
     <div class="main-stanga">
       <h1>Detalii livrare</h1>
