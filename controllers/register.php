@@ -9,20 +9,16 @@ class Register extends Controller
 
   public function index()
   {
-    $this->view->numeErr = ""; 
-    $prenumeErr = $emailErr = $telefonErr = $adresaErr = $parolaErr = "";
-    $nume = $prenume = $email = $telefon = $adresa = $parola = "";
-    $success_message = "";
     $user = new User();
     $valid = new Validate();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      $valid->validateLastName($nume, $this->view->numeErr);
-      $valid->validateFirstName($prenume, $prenumeErr);
-      $valid->validateEmail($email, $emailErr);
-      $valid->validateAdress($adresa, $adresaErr);
-      $valid->validatePhone($telefon, $telefonErr);
-      $valid->validatePassword($parola, $parolaErr);
+      $valid->validateLastName($this->view->nume, $this->view->numeErr);
+      $valid->validateFirstName($this->view->prenume, $this->view->prenumeErr);
+      $valid->validateEmail($this->view->email, $this->view->emailErr);
+      $valid->validateAdress($this->view->adresa, $this->view->adresaErr);
+      $valid->validatePhone($this->view->telefon, $this->view->telefonErr);
+      $valid->validatePassword($this->view->parola, $this->view->parolaErr);
     }
 
     if (isset($_POST["submit"])) {
@@ -30,30 +26,14 @@ class Register extends Controller
         'nume' => $_POST["nume"], 'prenume' => $_POST["prenume"], 'email' => $_POST["email"],
         'telefon' => $_POST["telefon"], 'adresa' => $_POST["adresa"], 'parola' => $_POST["parola"]
       );
-      if ($this->view->numeErr == "" && $prenumeErr == "" && $emailErr == "" && $telefonErr == "" && $adresaErr == ""  && $parolaErr == "") {
+      if ($this->view->numeErr == "" && $this->view->prenumeErr == "" && $this->view->emailErr == "" && $this->view->telefonErr == "" && $this->view->adresaErr == ""  && $this->view->parolaErr == "") {
         if ($user->addUser($insert_data)) {
-          $success_message = "Datele au fost introduse cu succes";
+          $this->view->success_message = "Datele au fost introduse cu succes";
         }
       } else {
-        $success_message = "Toate campurile campurile trebuie completate conform cerintelor.";
+        $this->view->success_message = "Toate campurile campurile trebuie completate conform cerintelor.";
       }
     }
-
-    /*$valid->export_message_register(
-      $numeErr,
-      $prenumeErr,
-      $emailErr,
-      $telefonErr,
-      $adresaErr,
-      $parolaErr,
-      $nume,
-      $prenume,
-      $email,
-      $telefon,
-      $adresa,
-      $parola,
-      $success_message
-    );*/
     $this->view->render('signIn');
   }
 }

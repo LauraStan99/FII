@@ -24,7 +24,7 @@
         Date logare
       </p>
     </div>
-
+    
     <form method="post">
       <div class="linie">
         <label for="inregistrare-nume">
@@ -33,86 +33,77 @@
 
         </label>
         <div class="input">
-          <input type="text" id="inregistrare-nume" name="nume" placeholder="Popescu " value="<?php echo $nume; ?>" />
-          <span class="error" style="color:red">* <?php if (isset($this->numeErr)) {
-                                                    echo $this->numeErr;
-                                                  } ?></span>
+          <input type="text" id="inregistrare-nume" name="nume" placeholder="Popescu " value="<?php if(isset($this->nume)) echo $this->nume; ?>" />
+          <span class="error" style="color:red">* <?php if(isset($numeErr)) echo $this->numeErr; ?></span>
         </div>
       </div>
-      <br />
 
       <div class="linie">
         <label for="inregistrare-prenume">
           <a><img id="register2" src="<?php echo URL; ?>public/poze/register-tw.png" alt="register" />Prenume</a>
         </label>
         <div class="input">
-          <input type="text" id="inregistrare-prenume" name="prenume" placeholder="Daniel" value="<?php echo $prenume; ?>" />
-          <span class="error" style="color:red">* <?php if (isset($prenumeErr)) {
-                                                    echo $prenumeErr;
-                                                  }  ?></span>
+          <input type="text" id="inregistrare-prenume" name="prenume" placeholder="Daniel" value="<?php if(isset($this->prenume)) echo $this->prenume; ?>" />
+          <span class="error" style="color:red">* <?php if(isset($this->prenumeErr)) echo $this->prenumeErr; ?></span>
+
+
         </div>
       </div>
-      <br />
 
       <div class="linie">
         <label for="inregistrare-email">
           <a><img id="email" src="<?php echo URL; ?>public/poze/email-tw.png" alt="email" />Email </a>
         </label>
         <div class="input">
-          <input type="text" id="inregistrare-email" name="email" placeholder="popescu@gmail.com" value="<?php echo $email; ?>" />
-          <span class="error" style="color:red">* <?php if (isset($emailErr)) {
-                                                    echo $emailErr;
-                                                  }  ?></span>
+          <input type="text" id="inregistrare-email" name="email" placeholder="popescu@gmail.com" value="<?php if(isset($this->email)) echo $this->email; ?>" />
+          <span class="error" style="color:red">* <?php if(isset($this->emailErr))
+                                                    echo $this->emailErr;
+                                                    ?></span>
         </div>
       </div>
-      <br />
 
       <div class="linie">
         <label for="inregistrare-telefon">
           <a><img id="telefon" src="<?php echo URL; ?>public/poze/telefon.png" alt="telefon" />Telefon</a>
         </label>
         <div class="input">
-          <input type="text" id="inregistrare-telefon" name="telefon" placeholder=" 07** *** *** " value="<?php echo $telefon; ?>" />
-          <span class="error" style="color:red">* <?php if (isset($telefonErr)) {
-                                                    echo $telefonErr;
-                                                  }  ?></span>
+          <input type="text" id="inregistrare-telefon" name="telefon" placeholder=" 07** *** *** " value="<?php if(isset($this->telefon)){ echo $this->telefon;} ?>" />
+          <span class="error" style="color:red">* <?php if(isset($this->telefonErr))
+                                                    echo $this->telefonErr;
+                                                    ?></span>
         </div>
       </div>
-      <br />
 
       <div class="linie">
         <label for="inregistrare-adresa">
           <a><img id="adresa" src="<?php echo URL; ?>public/poze/adresaCheckout.png" alt="adresa" />Adresa</a>
         </label>
         <div class="input">
-          <input type="text" id="inregistrare-email" name="adresa" placeholder="Str. Primaverii nr.8" value="<?php echo $adresa; ?>" />
-          <span class="error" style="color:red">* <?php if (isset($adresaErr)) {
-                                                    echo $adresaErr;
-                                                  }  ?></span>
+          <input type="text" id="inregistrare-email" name="adresa" placeholder="Str. Primaverii nr.8" value="<?php  if(isset($this->adresa)) echo $this->adresa; ?>" />
+          <span class="error" style="color:red">* <?php if(isset($this->adresaErr))
+                                                    echo $this->adresaErr;
+                                                    ?></span>
         </div>
       </div>
-      <br />
-
       <div class="linie">
         <label for="inregistrare-parola">
           <a><img id="parola" src="<?php echo URL; ?>public/poze/parola-tw.png" alt="parola" />Parola
           </a>
         </label>
         <div class="input">
-          <input type="text" id="inregistrare-parola" name="parola" placeholder="********" value="<?php echo $parola; ?>" />
-          <span class="error" style="color:red">* <?php if (isset($parolaErr)) {
-                                                    echo $parolaErr;
-                                                  }  ?></span>
+          <input type="text" id="inregistrare-parola" name="parola" placeholder="********" value="<?php if(isset($this->parola)) echo $this->parola; ?>" />
+          <span class="error" style="color:red">* <?php if(isset($this->parolaErr))
+                                                    echo $this->parolaErr;
+                                                    ?></span>
         </div>
       </div>
-      <br />
       <button type="submit" name="submit" value="Submit" class="buton-inregistrare">
         Inregistrare
       </button>
       <span class="text-success">
-        <?php if (isset($success_message)) {
-          echo $success_message;
-        }
+        <?php
+          if(isset($this->success_message))
+          echo $this->success_message;
         ?>
       </span>
     </form>
