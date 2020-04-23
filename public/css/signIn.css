@@ -47,7 +47,7 @@ main .linie input[type='text'] {
   width: 50%;
   height: 30px;
   margin-top: 5px;
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
 
 main form .buton-inregistrare {
@@ -60,6 +60,8 @@ main form .buton-inregistrare {
   border: none;
   cursor: pointer;
   font-size: 15px;
+  margin-left: 30px;
+  margin-bottom: 5px;
 }
 
 main form .buton-inregistrare:hover {
@@ -79,12 +81,12 @@ main form .buton-inregistrare:hover {
   #parola {
     margin-left: 20px;
   }
-  main input[type='text'] {
-    margin-left: 20px;
-    width: 100%;
+  main .linie input[type='text'] {
+    width: 85%;
   }
-  main .buton-inregistrare {
-    margin-left: 20px;
-    width: 100%;
+  main form .buton-inregistrare {
+    margin-left: 30px;
+    width: 85%;
+    align-items: center;
   }
 }
