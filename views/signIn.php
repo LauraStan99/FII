@@ -34,7 +34,7 @@
         </label>
         <div class="input">
           <input type="text" id="inregistrare-nume" name="nume" placeholder="Popescu " value="<?php if(isset($this->nume)) echo $this->nume; ?>" />
-          <span class="error" style="color:red">* <?php if(isset($this->numeErr)) echo $this->numeErr; ?></span>
+          <span class="error" style="color:red">* <?php if(isset($numeErr)) echo $this->numeErr; ?></span>
         </div>
       </div>
 
