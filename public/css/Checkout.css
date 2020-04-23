@@ -13,17 +13,12 @@ main {
   flex-wrap: wrap;
   justify-content: space-around;
 }
-main .main-stanga,
-main .main-dreapta {
+main .main-stanga{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 .main-stanga {
-  width: 45%;
-  justify-content: space-around;
-}
-.main-dreapta {
   width: 45%;
   justify-content: space-around;
 }
@@ -73,67 +68,23 @@ main .main-stanga .input {
   flex-wrap: wrap;
 }
 
-main .main-dreapta h2 {
-  font-size: 35px;
-  margin-left: 40px;
-}
-main .main-dreapta input[type='text'] {
-  margin-left: 40px;
-  width: 50%;
-  height: 30px;
-  margin-bottom: 10px;
-}
-main .main-dreapta label {
-  height: 20px;
-  margin-left: 40px;
-}
-main .main-dreapta .metoda-plata {
-  margin-left: 40px;
-  margin-top: 0;
-  margin-right: 15px;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-main .main-dreapta #plaseaza-comanda {
-  background-color: rgb(250, 128, 128);
-  width: 50%;
-  color: black;
-  padding: 14px 10px;
-  text-decoration: none;
-  margin-top: 30px;
-  margin-left: 40px;
-  outline: none;
-  cursor: pointer;
-  border: none;
-}
-
-main .main-dreapta #plaseaza-comanda:hover {
-  background-color: red;
-}
-
 main .main-stanga #inapoi-la-cos:hover {
   background-color: green;
 }
 
 @media screen and (max-width: 800px) {
-  .main-dreapta,
+
   .main-stanga {
     flex-direction: column;
     width: 100%;
   }
 
-  main .main-stanga input[type='text'],
-  main .main-dreapta input[type='text'] {
+  main .main-stanga input[type='text'] {
     width: 90%;
     margin-left: 0px;
     align-self: center;
   }
 
-  main .main-dreapta #plaseaza-comanda {
-    width: 90%;
-    margin-left: 0px;
-    align-self: center;
-  }
 
   main .main-stanga #inapoi-la-cos {
     width: 90%;
@@ -160,22 +111,4 @@ main .main-stanga #inapoi-la-cos:hover {
     text-align: center;
   }
 
-  main .main-dreapta h2 {
-    margin-left: 0px;
-    text-align: center;
-  }
-
-  main .main-dreapta label {
-    margin-left: 20px;
-  }
-  main .main-dreapta .metoda-plata {
-    margin-left: 0px;
-  }
-
-  main .main-dreapta .metoda-plata {
-    text-align: center;
-  }
-  main .main-dreapta #plaseaza-comanda {
-    align-self: center;
-  }
 }

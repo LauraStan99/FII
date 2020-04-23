@@ -1,19 +1,18 @@
 <?php
 
 class Wishlist extends Controller{
-
     function __construct()
     {
-        parent:: __construct();
+        parent::__construct();
     }
 
-    function empty(){
+    function empty()
+    {
         $this->view->render('wishlistEmpty');
     }
 
-    function signed(){
+    function signed()
+    {
         $this->view->render('wishlistSignIn');
     }
 }
-
-?>

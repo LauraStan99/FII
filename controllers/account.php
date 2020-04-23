@@ -7,6 +7,8 @@ class Account extends Controller{
     }
 
     public function index(){
+        
+    $this->view->render('account');
 
     $numeErr = $prenumeErr = $emailErr = $telefonErr = $adresaErr = $parolaErr = "";
     $nume = $prenume = $email = $telefon = $adresa = $parola = "";
@@ -36,9 +38,8 @@ class Account extends Controller{
      }
      $validate->validatePassword($parola,$parolaErr);
      if($parolaErr==null){
-         
+
      }
     }
 
 }
-?>

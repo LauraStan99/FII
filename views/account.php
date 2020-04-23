@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="ro">
 
@@ -18,7 +16,7 @@
   </header>
   <main>
     <div class="titlu">
-      <img id="cont" src="Poze/cont.png" />
+      <img id="cont" src="public/poze/cont.png" />
       <a id="titlu">Contul meu </a>
     </div>
 
