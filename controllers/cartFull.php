@@ -1,6 +1,6 @@
 <?php
 
-class cartFull extends Controller{
+class CartFull extends Controller{
 
     public function __construct(){
         parent::__construct();
@@ -11,4 +11,3 @@ class cartFull extends Controller{
         $this->view->render('cartFull');
     }
 }
-?>

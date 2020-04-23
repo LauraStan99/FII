@@ -59,7 +59,7 @@ main form .buton-inregistrare {
   outline: none;
   border: none;
   cursor: pointer;
-  margin-left:30px;
+  margin-left: 30px;
   font-size: 15px;
   margin-left: 30px;
   margin-bottom: 5px;
@@ -88,6 +88,6 @@ main form .buton-inregistrare:hover {
   main form .buton-inregistrare {
     margin-left: 30px;
     width: 85%;
-    align-items: center;
+    margin-bottom: 5px;
   }
 }
