@@ -18,6 +18,6 @@ class Checkout extends Controller
             $valid->validateCity($this->view->oras, $this->view->orasErr);
             $valid->validateCountry($this->view->tara, $this->view->taraErr);
         }
-        $this->view->render('checkout1');
+        $this->view->render('checkout');
     }
 }
