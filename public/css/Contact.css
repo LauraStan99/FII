@@ -25,8 +25,8 @@ main #contact-nume,
 #contact-telefon,
 #contact-subiect1,
 #contact-mesaj {
-  height: 30px;
-  margin-left: 20px;
+  height: 40px;
+  margin-left: 30px;
 }
 
 main .linie .input {
@@ -35,26 +35,24 @@ main .linie .input {
   flex-wrap: wrap;
 }
 
-main .linie input[type='text'] {
-  margin-left: 20px;
+main select {
+  margin-left: 30px;
   width: 50%;
   height: 50px;
   margin-top: 5px;
   margin-bottom: 10px;
 }
-main .linie input[type='mesaj'] {
+main .linie {
+  display: flex;
+  flex-direction: column;
+}
+main .linie input[type='text'],
+input[type='mesaj'] {
   margin-left: 30px;
   width: 50%;
-  height: 100px;
+  height: 50px;
   margin-top: 5px;
   margin-bottom: 20px;
-}
-main .linie #contact-subiect {
-  margin-left: 20px;
-  width: 35%;
-  height: 40px;
-  margin-bottom: 10px;
-  margin-top: 5px;
 }
 
 main form .buton-formular {
@@ -83,8 +81,19 @@ main form .buton-formular:hover {
   main #contact-subiect,
   main #contact-mesaj[type='mesaj'] {
     width: 90%;
+    margin-left: 20px;
   }
-  main .buton-formular {
+  main form .buton-formular {
     width: 90%;
+    margin-left: 20px;
+  }
+  main #contact-nume,
+  #contact-prenume,
+  #contact-email,
+  #contact-telefon,
+  #contact-subiect1,
+  #contact-mesaj {
+    height: 40px;
+    margin-left: 20px;
   }
 }
