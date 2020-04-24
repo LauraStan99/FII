@@ -1,3 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial;
+  margin: 0;
+}
 main {
   width: 100%;
   display: flex;
@@ -8,11 +15,16 @@ main h2 {
   font-size: 35px;
   margin-left: 40px;
 }
+main .linie {
+  display: flex;
+  flex-direction: column;
+}
 main input[type='text'] {
   margin-left: 40px;
   width: 50%;
-  height: 30px;
-  margin-bottom: 10px;
+  height: 40px;
+  margin-bottom: 20px;
+  margin-top: 5px;
 }
 main label {
   height: 20px;
@@ -26,18 +38,37 @@ main .metoda-plata {
   flex-wrap: wrap;
 }
 main #plaseaza-comanda {
-  background-color: rgb(250, 128, 128);
+  background-color: rgb(143, 255, 152);
   width: 50%;
   color: black;
   padding: 14px 10px;
   text-decoration: none;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-left: 40px;
   outline: none;
   cursor: pointer;
   border: none;
+  margin-bottom: 20px;
 }
 
 main #plaseaza-comanda:hover {
-  background-color: red;
+  background-color: green;
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    flex-direction: column;
+    width: 100%;
+  }
+  main input[type='text'] {
+    width: 90%;
+    margin-left: 10px;
+  }
+  main label {
+    margin-left: 10px;
+  }
+  main #plaseaza-comanda {
+    margin-left: 10px;
+    width: 90%;
+  }
 }

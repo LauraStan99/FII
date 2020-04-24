@@ -177,6 +177,7 @@ class Validate
       }
     }
   }
+
   function test_input($data)
   {
     $data = trim($data);
@@ -185,26 +186,72 @@ class Validate
     return $data;
   }
 
-  function export_message_register(
-    $numeErr,
-    $prenumeErr,
-    $emailErr,
-    $telefonErr,
-    $adresaErr,
-    $parolaErr,
-    $nume,
-    $prenume,
-    $email,
-    $telefon,
-    $adresa,
-    $parola,
-    $success_message
-  ) {
-    $messages = array(
-      1 => $numeErr, 2 => $prenumeErr, 3 => $emailErr, 4 => $telefonErr,
-      5 => $adresaErr, 6 => $parolaErr,  7 => $nume, 8 => $prenume, 9 => $email, 10 => $telefon,
-      11 => $adresa, 12 => $parola, 13 => $success_message
-    );
-    extract($messages);
+  function validateNumeCard(&$numeCard, &$numeCardErr)
+  {
+    if (empty($_POST["numeCard"])) {
+      $numeCardErr = 'Numele este obligatoriu';
+    } else {
+      $numeCard = $this->test_input($_POST["numeCard"]);
+
+      if (!preg_match("/^[a-zA-Z ]*$/", $numeCard)) {
+        $numeCardErr = "Obligatoriu doar litere si spatii";
+      }
+    }
+  }
+  function validateNumarCard(&$numarCard, &$numarCardErr)
+  {
+    if (empty($_POST["numar-card"])) {
+      $numarCardErr = 'Numarul este obligatoriu';
+    } else {
+      $numarCard = $_POST['numar-card'];
+
+      if (!preg_match("/^[0-9 ]*$/", $numarCard) || strlen(str_replace(' ', '', $_POST["numar-card"])) != 16) {
+        $numarCardErr = "Obligatoriu doar numere si spatii";
+      }
+    }
+  }
+  function validateMonthCard(&$lunaCard, &$lunaCardErr)
+  {
+    if (empty($_POST["luna-card"])) {
+      $lunaCardErr = 'Luna este obligatorie';
+    } else {
+
+      $lunaCard = str_replace(' ', '', $_POST["luna-card"]);
+      if (preg_match("/^[0-9]*$/", $lunaCard)) {
+        if (checkdate($lunaCard, '1', '2000') != 1) {
+          $lunaCardErr = "Luna invalida";
+        }
+      } else {
+        $lunaCardErr = "Obligatoriu doar numere";
+      }
+    }
+  }
+  function validateYearCard(&$anCard, &$anCardErr)
+  {
+    if (empty($_POST["an-card"])) {
+      $anCardErr = 'Anul este obligatoriu';
+    } else {
+
+      $anCard = str_replace(' ', '', $_POST["an-card"]);
+      if (preg_match("/^[0-9]*$/", $anCard)) {
+        if (checkdate('01', '1', $anCard) != 1 || strlen($anCard) != 4) {
+          $anCardErr = "Anul este invalid";
+        }
+      } else {
+        $anCardErr = "Obligatoriu doar numere";
+      }
+    }
+  }
+  function validateCvvCard(&$cvvCard, &$cvvCardErr)
+  {
+    if (empty($_POST["CVV-card"])) {
+      $cvvCardErr = 'Codul cvv este obligatoriu';
+    } else {
+
+      $cvvCard = str_replace(' ', '', $_POST["CVV-card"]);
+      if (!preg_match("/^[0-9]*$/", $cvvCard) || strlen($cvvCard) != 3) {
+        $cvvCardErr = "Codul cvv este invalid";
+      }
+    }
   }
 }
