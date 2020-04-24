@@ -6,13 +6,13 @@ body {
   font-family: Arial;
   margin: 0;
 }
-
 main {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
 }
+
 main .favorite {
   flex-direction: row;
   align-self: center;
@@ -30,14 +30,11 @@ main .favorite #inima-favorite {
   margin-right: 5px;
 }
 main p {
-  display: flex;
-  flex-direction: column;
   font: normal;
-  font-size: 15px;
+  font-size: 16px;
   align-self: center;
-  text-align: center;
 }
-main #catre-logare {
+main #inapoi-la-cump {
   background-color: rgb(143, 255, 152);
   width: 35%;
   color: black;
@@ -45,18 +42,20 @@ main #catre-logare {
   text-decoration: none;
   margin-top: 30px;
   outline: none;
-  cursor: pointer;
   font-size: 15px;
+  cursor: pointer;
   border: none;
   align-self: center;
+  margin-bottom: 20px;
 }
+
 @media screen and (max-width: 800px) {
   main {
     flex-direction: column;
     flex-wrap: wrap;
   }
 
-  main #catre-logare {
+  main #inapoi-la-cump {
     width: 90%;
   }
 }
