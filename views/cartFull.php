@@ -6,16 +6,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="<?php echo URL; ?>public/css/cartFull.css" rel="stylesheet">
-
 </head>
+
+<body>
 <header>
   <?php
   require 'header.php';
   ?>
 </header>
-
 <main>
-
+ 
   <table class="tabel-cos">
     <thead>
       <tr>
@@ -81,13 +81,12 @@
   </div>
 </main>
 
-
-
 <footer>
   <?php
   require 'footer.php';
   ?>
 </footer>
+
 </body>
 
 </html>
