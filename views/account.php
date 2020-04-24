@@ -37,12 +37,13 @@
         </label>
       </div>
       <div class="date">
-        <input type="text" id="inregistrare-nume" name="nume" placeholder="Nume nou " value="<?php echo $nume; ?>" />
+        <input type="text" id="inregistrare-nume" name="nume" placeholder="Nume nou " value="<?php if (isset($this->nume)) echo $this->nume; ?>" />
+
         <button class="buton-schimba" type="submit" onclick="window.location.href='#'">
           Schimba
         </button>
-        <span class="error" style="color:red"> <?php if (isset($numeErr)) {
-                                                  echo $numeErr;
+        <span class="error" style="color:red"> <?php if (isset($this->numeErr)) {
+                                                  echo $this->numeErr;
                                                 } ?></span>
       </div>
       <br />
@@ -54,12 +55,12 @@
       </div>
       <div class="date">
 
-        <input type="text" id="inregistrare-prenume" name="prenume" placeholder="Prenume nou ... " value="<?php echo $prenume; ?>" />
+        <input type="text" id="inregistrare-prenume" name="prenume" placeholder="Prenume nou ... " value="<?php if (isset($this->prenume)) echo $this->prenume; ?>" />
         <button class="buton-schimba" type="submit" onclick="window.location.href='#'">
           Schimba
         </button>
-        <span class="error" style="color:red"> <?php if (isset($prenumeErr)) {
-                                                  echo $prenumeErr;
+        <span class="error" style="color:red"> <?php if (isset($this->prenumeErr)) {
+                                                  echo $this->prenumeErr;
                                                 } ?></span>
 
       </div>
@@ -73,12 +74,12 @@
       </div>
       <div class="date">
 
-        <input type="text" id="inregistrare-email" name="email" placeholder="Email nou ..." value="<?php echo $email; ?>" />
+        <input type="text" id="inregistrare-email" name="email" placeholder="Email nou ..." value="<?php if (isset($this->email)) echo $this->email; ?>" />
         <button class="buton-schimba" type="submit" onclick="window.location.href='#'">
           Schimba
         </button>
-        <span class="error" style="color:red"> <?php if (isset($emailErr)) {
-                                                  echo $emailErr;
+        <span class="error" style="color:red"> <?php if (isset($this->emailErr)) {
+                                                  echo $this->emailErr;
                                                 } ?></span>
 
       </div>
@@ -94,12 +95,12 @@
       </div>
       <div class="date">
 
-        <input type="text" id="inregistrare-telefon" name="telefon" placeholder="Numar nou de telefon : ..." value="<?php echo $telefon; ?>" />
+        <input type="text" id="inregistrare-telefon" name="telefon" placeholder="Numar nou de telefon : ..." value="<?php if (isset($this->telefon)) echo $this->telefon; ?>" />
         <button class="buton-schimba" type="submit" onclick="window.location.href='#'">
           Schimba
         </button>
-        <span class="error" style="color:red"> <?php if (isset($telefonErr)) {
-                                                  echo $telefonErr;
+        <span class="error" style="color:red"> <?php if (isset($this->telefonErr)) {
+                                                  echo $this->telefonErr;
                                                 } ?></span>
 
       </div>
@@ -113,12 +114,12 @@
       </div>
       <div class="date">
 
-        <input type="text" id="inregistrare-email" name="adresa" placeholder="Adresa noua ..." value="<?php echo $adresa; ?>" />
+        <input type="text" id="inregistrare-email" name="adresa" placeholder="Adresa noua ..." value="<?php if (isset($this->adresa)) echo $this->adresa; ?>" />
         <button class="buton-schimba" type="submit" onclick="window.location.href='#'">
           Schimba
         </button>
-        <span class="error" style="color:red"> <?php if (isset($adresaErr)) {
-                                                  echo $adresaErr;
+        <span class="error" style="color:red"> <?php if (isset($this->adresaErr)) {
+                                                  echo $this->adresaErr;
                                                 } ?></span>
 
       </div>
@@ -133,12 +134,12 @@
       </div>
       <div class="date">
 
-        <input type="text" id="inregistrare-parola" name="parola" placeholder="Parola noua ********" value="<?php echo $parola; ?>" />
+        <input type="text" id="inregistrare-parola" name="parola" placeholder="Parola noua ********" value="<?php if (isset($this->parola)) echo $this->parola; ?>" />
         <button class="buton-schimba" type="submit" onclick="window.location.href='#'">
           Schimba
         </button>
-        <span class="error" style="color:red"> <?php if (isset($parolaErr)) {
-                                                  echo $parolaErr;
+        <span class="error" style="color:red"> <?php if (isset($this->parolaErr)) {
+                                                  echo $this->parolaErr;
                                                 } ?></span>
       </div>
       <br />

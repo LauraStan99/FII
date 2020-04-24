@@ -1,45 +1,28 @@
 <?php
 
-class Account extends Controller{
+class Account extends Controller
+{
 
-    public function __construct(){
-        parent:: __construct();
+    public function __construct()
+    {
+        parent::__construct();
     }
 
-    public function index(){
-        
-    $this->view->render('account');
+    public function index()
+    {
 
-    $numeErr = $prenumeErr = $emailErr = $telefonErr = $adresaErr = $parolaErr = "";
-    $nume = $prenume = $email = $telefon = $adresa = $parola = "";
+       
 
-     $validate=new Validate();
+        $valid = new Validate();
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-     $validate->validateLastName($nume,$numeErr);
-     if($numeErr==null){
-         //apelare metoda ChangeName
-     }
-     $validate->validateFirstName($prenume,$prenumeErr);
-     if($prenumeErr==null){
+            $valid->validateLastName($this->view->nume, $this->view->numeErr);
+            $valid->validateFirstName($this->view->prenume, $this->view->prenumeErr);
+            $valid->validateEmail($this->view->email, $this->view->emailErr);
+            $valid->validateAdress($this->view->adresa, $this->view->adresaErr);
+            $valid->validatePhone($this->view->telefon, $this->view->telefonErr);
+            $valid->validatePassword($this->view->parola, $this->view->parolaErr);
         }
-     $validate->validateEmail($email,$emailErr);   
-     if($emailErr==null)
-     {
-
-     }
-     $validate->validatePhone($telefon,$telefonErr);
-     if($telefonErr==null){
-
-     }
-     $validate->validateAdress($adresa,$adresaErr);
-     if($adresaErr==null)
-     {
-
-     }
-     $validate->validatePassword($parola,$parolaErr);
-     if($parolaErr==null){
-
-     }
+         $this->view->render('account');
     }
-
 }

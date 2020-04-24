@@ -46,6 +46,10 @@ main .tip-date {
   flex-direction: row;
   flex-wrap: wrap;
 }
+main .date .error {
+  font-size: 20px;
+  margin-left: 10px;
+}
 main #id-nume,
 #id-prenume,
 #id-email,
