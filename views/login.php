@@ -5,7 +5,7 @@
   <title>Logare | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="<?php echo URL; ?>public/css/login.css" rel="stylesheet" />
+  <link href="<?php echo URL; ?>public/css/login1.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -36,6 +36,7 @@
       <button class="buton-stanga" type="button" onclick="window.location.href='<?php echo URL; ?>home'">
         Logare
       </button>
+      <br />
     </div>
     <hr />
     <div class="main-dreapta">
@@ -44,7 +45,7 @@
       </h2>
 
       <button class="buton-dreapta" type="button" onclick="window.location.href='<?php echo URL; ?>register'">
-        CREATI UN CONT ACUM &gt
+        Creati un cont acum &gt
       </button>
 
       <h3>
