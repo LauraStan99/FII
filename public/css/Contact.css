@@ -35,21 +35,26 @@ main .linie .input {
   flex-wrap: wrap;
 }
 
-main .linie input[type='text'],
-select {
+main .linie input[type='text'] {
   margin-left: 20px;
   width: 50%;
-  height: 40px;
-  margin-bottom: 10px;
+  height: 50px;
   margin-top: 5px;
+  margin-bottom: 10px;
 }
-
 main .linie input[type='mesaj'] {
   margin-left: 30px;
   width: 50%;
-  height: 40px;
+  height: 100px;
   margin-top: 5px;
   margin-bottom: 20px;
+}
+main .linie #contact-subiect {
+  margin-left: 20px;
+  width: 35%;
+  height: 40px;
+  margin-bottom: 10px;
+  margin-top: 5px;
 }
 
 main form .buton-formular {

@@ -1,13 +1,14 @@
-<?php 
+<?php
 
-class Validate 
+class Validate
 {
 
-public function __construct(){
-}
+  public function __construct()
+  {
+  }
 
 
- function validateLastName(&$nume, &$numeErr)
+  function validateLastName(&$nume, &$numeErr)
   {
     if (empty($_POST["nume"])) {
       $numeErr = 'Numele este obligatoriu';
@@ -53,6 +54,32 @@ public function __construct(){
       $adresaErr = "Adresa este obligatorie";
     } else {
       $adresa = $this->test_input($_POST["adresa"]);
+    }
+  }
+  function validateCity(&$oras, &$orasErr)
+  {
+    if (empty($_POST["oras"])) {
+      $orasErr = "Orasul este obligatoriu";
+    } else {
+
+      $oras = $this->test_input($_POST["oras"]);
+
+      if (!preg_match("/^[a-zA-Z ]*$/", $oras)) {
+        $orasErr = "Obligatoriu doar litere si spatii";
+      }
+    }
+  }
+  function validateCountry(&$tara, &$taraErr)
+  {
+    if (empty($_POST["tara"])) {
+      $taraErr = "Tara este obligatorie";
+    } else {
+
+      $tara = $this->test_input($_POST["tara"]);
+
+      if (!preg_match("/^[a-zA-Z ]*$/", $tara)) {
+        $taraErr = "Obligatoriu doar litere si spatii";
+      }
     }
   }
 
@@ -179,6 +206,5 @@ public function __construct(){
       11 => $adresa, 12 => $parola, 13 => $success_message
     );
     extract($messages);
-    
   }
 }

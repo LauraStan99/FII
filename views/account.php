@@ -148,6 +148,7 @@
     <button class="buton-inapoi-cump" type="button" onclick="window.location.href='<?php echo URL; ?>home'">
       &lt Inapoi la cumparaturi
     </button>
+    </br>
   </main>
   <footer>
     <?php

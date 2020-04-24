@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0px;
+}
+
+main {
+  width: 100%;
+  display: block;
+  margin-bottom: 0px;
+}
+
+main h1 {
+  font-size: 40px;
+  margin-left: 30px;
+}
+
+main .metoda-livrare p {
+  font-size: 25px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+main #register1,
+#register2,
+#adresa,
+#tara,
+#email,
+#oras {
+  height: 30px;
+  margin-left: 30px;
+}
+
+main .linie .input {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+main .linie input[type='text'] {
+  margin-left: 30px;
+  width: 50%;
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+main form .metoda-plata {
+  font-size: 25px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+main .butoane {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+main .butoane .buton-continua {
+  background-color: rgb(143, 255, 152);
+  width: 25%;
+  color: black;
+  padding: 14px 10px;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+main .butoane .buton-renunta {
+  background-color: rgb(250, 128, 128);
+  width: 25%;
+  color: black;
+  padding: 14px 10px;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+main form .buton-inregistrare:hover {
+  background-color: green;
+}
+
+@media screen and (max-width: 700px) {
+  main {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 2px;
+  }
+
+  main .linie input[type='text'] {
+    width: 90%;
+    margin-left: 5px;
+  }
+  main #register1,
+  #register2,
+  #adresa,
+  #tara,
+  #email,
+  #oras {
+    height: 30px;
+    margin-left: 5px;
+  }
+  main .metoda-plata {
+    margin-left: 5px;
+  }
+  main .butoane {
+    display: flex;
+    flex-direction: column;
+  }
+  main .butoane .buton-renunta {
+    width: 90%;
+    margin-left: 5px;
+  }
+  main .butoane .buton-continua {
+    width: 90%;
+    margin-left: 5px;
+  }
+}

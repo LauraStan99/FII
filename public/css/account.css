@@ -32,6 +32,7 @@ main .date {
 main .titlu {
   margin-top: 20px;
   margin-bottom: 20px;
+  align-self: center;
 }
 
 main .titlu #titlu {

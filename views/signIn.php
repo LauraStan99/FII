@@ -26,37 +26,27 @@
     </div>
 
     <form method="post">
+      
       <div class="linie">
         <label for="inregistrare-nume">
           <a><img id="register1" src="<?php echo URL; ?>public/poze/register-tw.png" alt="register" />Nume
           </a>
-          <a style="color: red;">*</a>
         </label>
         <div class="input">
-<<<<<<< HEAD
           <input type="text" id="inregistrare-nume" name="nume" placeholder="Popescu " value="<?php if (isset($this->nume)) echo $this->nume; ?>" />
           <span class="error" style="color:red">* <?php if (isset($this->numeErr)) echo $this->numeErr; ?></span>
-=======
-          <input type="text" id="inregistrare-nume" name="nume" placeholder="Popescu " value="<?php if(isset($this->nume)) echo $this->nume; ?>" />
-          <span class="error" style="color:red; margin-left:20px;"> <?php if(isset($this->numeErr)) echo $this->numeErr; ?></span>
->>>>>>> 9019ddd60446929c85be9455042ca0b3629953a6
         </div>
       </div>
 
       <div class="linie">
         <label for="inregistrare-prenume">
           <a><img id="register2" src="<?php echo URL; ?>public/poze/register-tw.png" alt="register" />Prenume</a>
-          <a style="color: red;">*</a>
+
         </label>
         <div class="input">
-<<<<<<< HEAD
           <input type="text" id="inregistrare-prenume" name="prenume" placeholder="Daniel" value="<?php if (isset($this->prenume)) echo $this->prenume; ?>" />
           <span class="error" style="color:red">* <?php if (isset($this->prenumeErr)) echo $this->prenumeErr; ?></span>
 
-=======
-          <input type="text" id="inregistrare-prenume" name="prenume" placeholder="Daniel" value="<?php if(isset($this->prenume)) echo $this->prenume; ?>" />
-          <span class="error" style="color:red; margin-left:20px;"> <?php if(isset($this->prenumeErr)) echo $this->prenumeErr; ?></span>
->>>>>>> 9019ddd60446929c85be9455042ca0b3629953a6
 
         </div>
       </div>
@@ -64,7 +54,6 @@
       <div class="linie">
         <label for="inregistrare-email">
           <a><img id="email" src="<?php echo URL; ?>public/poze/email-tw.png" alt="email" />Email </a>
-          <a style="color: red;">*</a>
         </label>
         <div class="input">
           <input type="text" id="inregistrare-email" name="email" placeholder="popescu@gmail.com" value="<?php if (isset($this->email)) echo $this->email; ?>" />
@@ -77,7 +66,7 @@
       <div class="linie">
         <label for="inregistrare-telefon">
           <a><img id="telefon" src="<?php echo URL; ?>public/poze/telefon.png" alt="telefon" />Telefon</a>
-          <a style="color: red;">*</a>
+
         </label>
         <div class="input">
           <input type="text" id="inregistrare-telefon" name="telefon" placeholder=" 07** *** *** " value="<?php if (isset($this->telefon)) {
@@ -92,7 +81,7 @@
       <div class="linie">
         <label for="inregistrare-adresa">
           <a><img id="adresa" src="<?php echo URL; ?>public/poze/adresaCheckout.png" alt="adresa" />Adresa</a>
-          <a style="color: red;">*</a>
+
         </label>
         <div class="input">
           <input type="text" id="inregistrare-email" name="adresa" placeholder="Str. Primaverii nr.8" value="<?php if (isset($this->adresa)) echo $this->adresa; ?>" />
@@ -105,7 +94,7 @@
         <label for="inregistrare-parola">
           <a><img id="parola" src="<?php echo URL; ?>public/poze/parola-tw.png" alt="parola" />Parola
           </a>
-          <a style="color: red;">*</a>
+
         </label>
         <div class="input">
           <input type="text" id="inregistrare-parola" name="parola" placeholder="********" value="<?php if (isset($this->parola)) echo $this->parola; ?>" />

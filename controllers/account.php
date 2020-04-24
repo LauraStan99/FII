@@ -10,19 +10,16 @@ class Account extends Controller
 
     public function index()
     {
-
-       
-
         $valid = new Validate();
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-            $valid->validateLastName($this->view->nume, $this->view->numeErr);
-            $valid->validateFirstName($this->view->prenume, $this->view->prenumeErr);
-            $valid->validateEmail($this->view->email, $this->view->emailErr);
-            $valid->validateAdress($this->view->adresa, $this->view->adresaErr);
-            $valid->validatePhone($this->view->telefon, $this->view->telefonErr);
-            $valid->validatePassword($this->view->parola, $this->view->parolaErr);
+            $valid->changeLastName($this->view->nume, $this->view->numeErr);
+            $valid->changeFirstName($this->view->prenume, $this->view->prenumeErr);
+            $valid->changeEmail($this->view->email, $this->view->emailErr);
+            $valid->changeAdress($this->view->adresa, $this->view->adresaErr);
+            $valid->changePhone($this->view->telefon, $this->view->telefonErr);
+            $valid->changePassword($this->view->parola, $this->view->parolaErr);
         }
-         $this->view->render('account');
+        $this->view->render('account');
     }
 }
