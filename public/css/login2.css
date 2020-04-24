@@ -30,35 +30,36 @@ main .main-stanga h1 {
   font-size: 35px;
   align-self: center;
   margin-bottom: 20px;
+  align-self: center;
+}
+main .main-stanga form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 90px;
 }
 
-main .main-stanga #email,
+main .main-stanga form .linie #email,
 #parola {
   height: 20px;
-  margin-left: 80px;
-  align-items: center;
 }
 
-main .main-stanga input[type='text'] {
-  margin-left: 0px;
-  width: 70%;
+main .main-stanga form .linie .input #logare-parola,
+#logare-email {
+  width: 80%;
   height: 40px;
   margin-bottom: 10px;
   margin-top: 10px;
-  align-self: center;
 }
 main .main-stanga .buton-stanga {
   background-color: rgb(143, 255, 152);
-  width: 70%;
+  width: 80%;
   color: black;
   padding: 14px 10px;
   text-decoration: none;
   margin-top: 30px;
-  margin-left: 0px;
   outline: none;
   border: none;
   cursor: pointer;
-  align-self: center;
   font-size: 15px;
 }
 

@@ -5,7 +5,7 @@
   <title>Logare | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="<?php echo URL; ?>public/css/login.css" rel="stylesheet" />
+  <link href="<?php echo URL; ?>public/css/login2.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -19,24 +19,31 @@
       <h1>
         Am deja un cont !
       </h1>
-
-      <label for="logare-email">
-        <a><img id="email" src="<?php echo URL; ?>public/poze/email-tw.png" alt="email" />
-          Email
-        </a>
-      </label>
-      <input type="text" id="logare-email" name="email" placeholder="popescu@gmail.com" />
-
-      <label for="logare-parola">
-        <a><img id="parola" src="<?php echo URL; ?>public/poze/parola-tw.png" alt="log-parola" />Parola
-        </a>
-      </label>
-      <input type="text" id="logare-parola" name="parola" placeholder="********" />
-
-      <button class="buton-stanga" type="button" onclick="window.location.href='<?php echo URL; ?>home'">
-        Logare
-      </button>
-      <br />
+      <form method="post">
+        <div class="linie">
+          <label for="logare-email">
+            <a><img id="email" src="<?php echo URL; ?>public/poze/email-tw.png" alt="email" />
+              Email
+            </a>
+          </label>
+          <div class="input">
+            <input type="text" id="logare-email" name="email" placeholder="popescu@gmail.com" />
+          </div>
+        </div>
+        <div class="linie">
+          <label for="logare-parola">
+            <a><img id="parola" src="<?php echo URL; ?>public/poze/parola-tw.png" alt="log-parola" />Parola
+            </a>
+          </label>
+          <div class="input">
+            <input type="text" id="logare-parola" name="parola" placeholder="********" />
+          </div>
+        </div>
+        <button class="buton-stanga" type="submit" onclick="window.location.href='<?php echo URL; ?>home'">
+          Logare
+        </button>
+        <br />
+      </form>
     </div>
     <hr />
     <div class="main-dreapta">
