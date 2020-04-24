@@ -115,7 +115,7 @@
         </div>
       </div>
 
-      <button class="buton-formular" type="submit" onclick="window.location.href='#'">
+      <button class="buton-formular" type="submit" onclick="window.location.href=''">
         Trimiteti
       </button>
     </form>
