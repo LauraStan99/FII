@@ -6,13 +6,13 @@ body {
   font-family: Arial;
   margin: 0;
 }
+
 main {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
 }
-
 main .favorite {
   flex-direction: row;
   align-self: center;
@@ -30,11 +30,14 @@ main .favorite #inima-favorite {
   margin-right: 5px;
 }
 main p {
+  display: flex;
+  flex-direction: column;
   font: normal;
-  font-size: 16px;
+  font-size: 15px;
   align-self: center;
+  text-align: center;
 }
-main #inapoi-la-cump {
+main #catre-logare {
   background-color: rgb(143, 255, 152);
   width: 35%;
   color: black;
@@ -42,19 +45,19 @@ main #inapoi-la-cump {
   text-decoration: none;
   margin-top: 30px;
   outline: none;
-  font-size: 15px;
   cursor: pointer;
+  font-size: 15px;
   border: none;
   align-self: center;
+  margin-bottom: 20px;
 }
-
 @media screen and (max-width: 800px) {
   main {
     flex-direction: column;
     flex-wrap: wrap;
   }
 
-  main #inapoi-la-cump {
+  main #catre-logare {
     width: 90%;
   }
 }
