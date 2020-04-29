@@ -21,6 +21,8 @@ class Register extends Controller
       $valid->validatePassword($this->view->parola, $this->view->parolaErr);
     }
 
+    
+
     if (isset($_POST["submit"])) {
       $insert_data = array(
         'nume' => $_POST["nume"], 'prenume' => $_POST["prenume"], 'email' => $_POST["email"],

@@ -63,7 +63,7 @@ class Router
         if (file_exists($file)) {
             require $file;
             $this->controller = new $this->url[0];
-            //  $this->controller->loadModel($this->url[0]);
+            $this->controller->loadModel($this->url[0]);
         } else {
             $this->error();
         }

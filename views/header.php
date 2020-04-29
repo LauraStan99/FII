@@ -1,3 +1,7 @@
+<?php
+
+Session::init(); ?>
+
 <!DOCTYPE html>
 <html lang="ro">
 
@@ -24,9 +28,16 @@
                 </div>
 
                 <div class="cont">
-                    <a class="link cont" href="#" title="Cont">
-                        <img class="logo-cont" src="<?php echo URL; ?>public/poze/cont-tw.png" alt="Cont" />
-                    </a>
+                   <?php if (Session::get('loggedIn') ==false) : ?>
+                        <a class="link cont" href="<?php echo URL; ?>login" title="Cont">
+                            <img class="logo-cont" src="<?php echo URL; ?>public/poze/cont-tw.png" alt="Cont" />
+                        </a>
+                    <?php endif; ?>
+                    <?php if (Session::get('loggedIn') ==true) : ?>
+                        <a class="link cont" href="<?php echo URL; ?>account" title="Cont">
+                            <img class="logo-cont" src="<?php echo URL; ?>public/poze/cont-tw.png" alt="Cont" />
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
 

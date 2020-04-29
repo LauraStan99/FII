@@ -19,7 +19,7 @@
       <h1>
         Am deja un cont !
       </h1>
-      <form method="post">
+      <form method="post" action="login/run">
         <div class="linie">
           <label for="logare-email">
             <a><img id="email" src="<?php echo URL; ?>public/poze/email-tw.png" alt="email" />
@@ -36,12 +36,18 @@
             </a>
           </label>
           <div class="input">
-            <input type="text" id="logare-parola" name="parola" placeholder="********" />
+            <input type="password" id="logare-parola" name="parola" placeholder="********" />
           </div>
         </div>
+        <?php
+        if (isset($_GET['msg']) && $_GET['msg'] == 'failed') {
+          echo "Email sau parola incorecta!";
+        }
+        ?>
         <button class="buton-stanga" type="submit" onclick="window.location.href='<?php echo URL; ?>home'">
           Logare
         </button>
+
         <br />
       </form>
     </div>

@@ -97,7 +97,7 @@
           <a style="color: red;">*</a>
         </label>
         <div class="input">
-          <input type="text" id="inregistrare-parola" name="parola" placeholder="********" value="<?php if (isset($this->parola)) echo $this->parola; ?>" />
+          <input type="password" id="inregistrare-parola" name="parola" placeholder="********" value="<?php if (isset($this->parola)) echo $this->parola; ?>" />
           <span class="error" style="color:red; margin-left:20px;"> <?php if (isset($this->parolaErr))
                                                     echo $this->parolaErr;
                                                   ?></span>

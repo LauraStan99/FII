@@ -2,7 +2,7 @@
 
 class Database
 {
-    private $con;
+    public  $con;
 
     public function __construct()
     {

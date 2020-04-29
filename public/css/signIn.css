@@ -40,7 +40,8 @@ main .linie .input {
   flex-wrap: wrap;
 }
 
-main .linie input[type="text"] {
+main .linie input[type="text"],
+input[type="password"] {
   margin-left: 20px;
   width: 50%;
   height: 40px;
@@ -72,7 +73,7 @@ main form .buton-inregistrare:hover {
     width: 100%;
   }
 
-  main .linie input[type="text"] {
+  main .linie input[type="text"] ,input[type="password"]{
     width: 90%;
   }
   main form .buton-inregistrare {

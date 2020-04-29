@@ -70,7 +70,8 @@ main #register1,
   height: 20px;
 }
 
-main input[type='text'] {
+main input[type='text'],
+input[type='password'] {
   width: 40%;
   height: 30px;
   margin-top: 5px;
@@ -145,7 +146,7 @@ main .buron-inapoi-cump:hover {
     margin-left: 0px;
     width: 87%;
   }
-  main .date input[type='text'] {
+  main .date input[type='text'],input[type="password"] {
     margin-left: 20px;
     width: 60%;
   }

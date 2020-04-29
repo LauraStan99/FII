@@ -102,7 +102,9 @@ class Validate
     if (empty($_POST["parola"])) {
       $parolaErr = "Parola este obligatorie";
     } else {
+
       $parola = $this->test_input($_POST["parola"]);
+
 
       if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $parola)) {
         $parolaErr = "Obligatoriu minim cate una din: numere, litere si caractere speciale";
@@ -118,6 +120,7 @@ class Validate
       $mesaj = $this->test_input($_POST["mesaj"]);
     }
   }
+
   function changeLastName(&$nume, &$numeErr)
   {
     if (!empty($_POST["nume"])) {
@@ -125,7 +128,7 @@ class Validate
 
       if (!preg_match("/^[a-zA-Z ]*$/", $nume)) {
         $numeErr = 'Obligatoriu doar litere si spatii';
-      }
+      } 
     }
   }
 

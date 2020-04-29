@@ -5,7 +5,7 @@
   <title>Cont | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="<?php echo URL; ?>public/css/account.css" rel="stylesheet" />
+  <link href="<?php echo URL; ?>public/css/account1.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -22,7 +22,7 @@
 
     <div>
       <h1>
-        Bine ati venit!
+        Bine ai venit , <?php echo Session::get('nume') . ' ' . Session::get('prenume'); ?> !
       </h1>
       <hr />
       <p>
@@ -32,14 +32,14 @@
     <form method="post">
       <div class="tip-date">
         <label for="inregistrare-nume">
-          <a id="id-nume"><img id="register1" src="<?php echo URL; ?>public/poze/register-tw.png" alt="register" />Nume : Popescu
+          <a id="id-nume"><img id="register1" src="<?php echo URL; ?>public/poze/register-tw.png" alt="register" />Nume : <?php echo Session::get('nume'); ?>
           </a>
         </label>
       </div>
       <div class="date">
         <input type="text" id="inregistrare-nume" name="nume" placeholder="Nume nou " value="<?php if (isset($this->nume)) echo $this->nume; ?>" />
 
-        <button class="buton-schimba" type="submit" onclick="window.location.href='#'">
+        <button class="buton-schimba" type="submit">
           Schimba
         </button>
         <span class="error" style="color:red"> <?php if (isset($this->numeErr)) {
@@ -50,7 +50,7 @@
 
       <div class="tip-date">
         <label for="inregistrare-prenume">
-          <a id="id-prenume"><img id="register2" src="<?php echo URL; ?>public/poze/register-tw.png" alt="register" />Prenume : Daniel</a>
+          <a id="id-prenume"><img id="register2" src="<?php echo URL; ?>public/poze/register-tw.png" alt="register" />Prenume : <?php echo Session::get('prenume'); ?></a>
         </label>
       </div>
       <div class="date">
@@ -68,8 +68,7 @@
 
       <div class="tip-date">
         <label for="inregistrare-email">
-          <a id="id-email"><img id="email" src="<?php echo URL; ?>public/poze/email-tw.png" alt="email" />Email :
-            popescu@gmail.com</a>
+          <a id="id-email"><img id="email" src="<?php echo URL; ?>public/poze/email-tw.png" alt="email" />Email : <?php echo Session::get('email'); ?></a>
         </label>
       </div>
       <div class="date">
@@ -88,8 +87,7 @@
 
       <div class="tip-date">
         <label for="inregistrare-telefon">
-          <a id="id-telefon"><img id="telefon" src="<?php echo URL; ?>public/poze/telefon.png" alt="telefon" />Telefon :
-            0765 234 567
+          <a id="id-telefon"><img id="telefon" src="<?php echo URL; ?>public/poze/telefon.png" alt="telefon" />Telefon : <?php echo Session::get('telefon'); ?>
           </a>
         </label>
       </div>
@@ -109,7 +107,7 @@
 
       <div class="tip-date">
         <label for="inregistrare-adresa">
-          <a id="id-adresa"><img id="adresa" src="<?php echo URL; ?>public/poze/adresaCheckout.png" alt="adresa" />Adresa : Str. Primaverii nr.8</a>
+          <a id="id-adresa"><img id="adresa" src="<?php echo URL; ?>public/poze/adresaCheckout.png" alt="adresa" />Adresa : <?php echo Session::get('adresa'); ?></a>
         </label>
       </div>
       <div class="date">
@@ -128,13 +126,12 @@
 
       <div class="tip-date">
         <label for="inregistrare-parola">
-          <a id="id-parola"><img id="parola" src="<?php echo URL; ?>public/poze/parola-tw.png" alt="parola" />Parola :
-            12345678</a>
+          <a id="id-parola"><img id="parola" src="<?php echo URL; ?>public/poze/parola-tw.png" alt="parola" />Parola :********</a>
         </label>
       </div>
       <div class="date">
 
-        <input type="text" id="inregistrare-parola" name="parola" placeholder="Parola noua ********" value="<?php if (isset($this->parola)) echo $this->parola; ?>" />
+        <input type="password" id="inregistrare-parola" name="parola" placeholder="Parola noua ********" value="<?php if (isset($this->parola)) echo $this->parola; ?>" />
         <button class="buton-schimba" type="submit" onclick="window.location.href='#'">
           Schimba
         </button>
@@ -143,6 +140,10 @@
                                                 } ?></span>
       </div>
       <br />
+      <?php
+      if (isset($this->success_message))
+        echo $this->success_message;
+      ?>
     </form>
 
     <button class="buton-inapoi-cump" type="button" onclick="window.location.href='<?php echo URL; ?>home'">
