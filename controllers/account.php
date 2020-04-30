@@ -12,7 +12,7 @@ class Account extends Controller
     {
         $valid = new Validate();
         $user = new User();
-        
+
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $valid->changeLastName($this->view->nume, $this->view->numeErr);
@@ -22,13 +22,20 @@ class Account extends Controller
             $valid->changePhone($this->view->telefon, $this->view->telefonErr);
             $valid->changePassword($this->view->parola, $this->view->parolaErr);
         }
-      
+        /*
            if($user->updateName($this->view->nume)) {
                 $this->view->success_message = "Datele au fost introduse cu succes";
             } else {
-                $this->view->success_message = "Toate campurile campurile trebuie completate conform cerintelor.";
-            }
-        
+             //   $this->view->success_message = "Toate campurile campurile trebuie completate conform cerintelor.";
+            }*/
+
         $this->view->render('account');
+    }
+    public function logout()
+    {
+        Session::set('loggedIn', false);
+        Session::destroy();
+        header('location: ' . URL . 'login');
+        exit;
     }
 }

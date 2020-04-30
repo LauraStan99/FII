@@ -28,16 +28,17 @@ Session::init(); ?>
                 </div>
 
                 <div class="cont">
-                   <?php if (Session::get('loggedIn') ==false) : ?>
-                        <a class="link cont" href="<?php echo URL; ?>login" title="Cont">
-                            <img class="logo-cont" src="<?php echo URL; ?>public/poze/cont-tw.png" alt="Cont" />
-                        </a>
-                    <?php endif; ?>
-                    <?php if (Session::get('loggedIn') ==true) : ?>
+
+                    <?php if (Session::get('loggedIn') == true) : ?>
                         <a class="link cont" href="<?php echo URL; ?>account" title="Cont">
                             <img class="logo-cont" src="<?php echo URL; ?>public/poze/cont-tw.png" alt="Cont" />
                         </a>
+                    <?php else: ?>
+                    <a class="link cont" href="<?php echo URL; ?>login" title="Cont">
+                        <img class="logo-cont" src="<?php echo URL; ?>public/poze/cont-tw.png" alt="Cont" />
+                    </a>
                     <?php endif; ?>
+
                 </div>
             </div>
 
@@ -47,6 +48,7 @@ Session::init(); ?>
                     <a href="<?php echo URL; ?>home" title="logo-nume"><img class="logo-nume" src="<?php echo URL; ?>public/poze/logo-nume.png" alt="logo-nume" /></a>
                 </div>
             </div>
+
         </div>
     </header>
 

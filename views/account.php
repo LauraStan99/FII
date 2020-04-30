@@ -5,7 +5,7 @@
   <title>Cont | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="<?php echo URL; ?>public/css/account1.css" rel="stylesheet" />
+  <link href="<?php echo URL; ?>public/css/account.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -24,6 +24,10 @@
       <h1>
         Bine ai venit , <?php echo Session::get('nume') . ' ' . Session::get('prenume'); ?> !
       </h1>
+      <?php if (Session::get('loggedIn') == true) : ?>
+        <button type="button" class="logout" onclick="window.location.href='<?php echo URL; ?>account/logout' ">Deconecteaza-te</button>
+      <?php endif; ?>
+
       <hr />
       <p>
         Date personale:
@@ -39,9 +43,6 @@
       <div class="date">
         <input type="text" id="inregistrare-nume" name="nume" placeholder="Nume nou " value="<?php if (isset($this->nume)) echo $this->nume; ?>" />
 
-        <button class="buton-schimba" type="submit">
-          Schimba
-        </button>
         <span class="error" style="color:red"> <?php if (isset($this->numeErr)) {
                                                   echo $this->numeErr;
                                                 } ?></span>
@@ -56,9 +57,7 @@
       <div class="date">
 
         <input type="text" id="inregistrare-prenume" name="prenume" placeholder="Prenume nou ... " value="<?php if (isset($this->prenume)) echo $this->prenume; ?>" />
-        <button class="buton-schimba" type="submit" onclick="window.location.href='#'">
-          Schimba
-        </button>
+
         <span class="error" style="color:red"> <?php if (isset($this->prenumeErr)) {
                                                   echo $this->prenumeErr;
                                                 } ?></span>
@@ -74,9 +73,7 @@
       <div class="date">
 
         <input type="text" id="inregistrare-email" name="email" placeholder="Email nou ..." value="<?php if (isset($this->email)) echo $this->email; ?>" />
-        <button class="buton-schimba" type="submit" onclick="window.location.href='#'">
-          Schimba
-        </button>
+
         <span class="error" style="color:red"> <?php if (isset($this->emailErr)) {
                                                   echo $this->emailErr;
                                                 } ?></span>
@@ -94,9 +91,7 @@
       <div class="date">
 
         <input type="text" id="inregistrare-telefon" name="telefon" placeholder="Numar nou de telefon : ..." value="<?php if (isset($this->telefon)) echo $this->telefon; ?>" />
-        <button class="buton-schimba" type="submit" onclick="window.location.href='#'">
-          Schimba
-        </button>
+
         <span class="error" style="color:red"> <?php if (isset($this->telefonErr)) {
                                                   echo $this->telefonErr;
                                                 } ?></span>
@@ -113,9 +108,7 @@
       <div class="date">
 
         <input type="text" id="inregistrare-email" name="adresa" placeholder="Adresa noua ..." value="<?php if (isset($this->adresa)) echo $this->adresa; ?>" />
-        <button class="buton-schimba" type="submit" onclick="window.location.href='#'">
-          Schimba
-        </button>
+
         <span class="error" style="color:red"> <?php if (isset($this->adresaErr)) {
                                                   echo $this->adresaErr;
                                                 } ?></span>
@@ -132,9 +125,7 @@
       <div class="date">
 
         <input type="password" id="inregistrare-parola" name="parola" placeholder="Parola noua ********" value="<?php if (isset($this->parola)) echo $this->parola; ?>" />
-        <button class="buton-schimba" type="submit" onclick="window.location.href='#'">
-          Schimba
-        </button>
+
         <span class="error" style="color:red"> <?php if (isset($this->parolaErr)) {
                                                   echo $this->parolaErr;
                                                 } ?></span>
@@ -144,6 +135,10 @@
       if (isset($this->success_message))
         echo $this->success_message;
       ?>
+
+      <button class="buton-schimba" type="submit" onclick="window.location.href='<?php echo URL; ?>account'">
+        Schimba
+      </button>
     </form>
 
     <button class="buton-inapoi-cump" type="button" onclick="window.location.href='<?php echo URL; ?>home'">

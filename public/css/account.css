@@ -17,7 +17,20 @@ main {
 main h1 {
   margin-left: 30px;
 }
-
+main .logout {
+  background-color: rgb(250, 128, 128);
+  width: 10%;
+  height: 31px;
+  color: black;
+  margin-top: 5px;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+  border: none;
+  display: block;
+  margin-left: 30px;
+}
 main p {
   margin-left: 30px;
   font-size: 30px;
@@ -80,7 +93,7 @@ input[type='password'] {
 }
 main .buton-schimba {
   background-color: rgb(250, 128, 128);
-  width: 10%;
+  width: 40%;
   height: 31px;
   color: black;
   margin-top: 5px;
@@ -95,7 +108,7 @@ main .buton-schimba {
 
 main .buton-inapoi-cump {
   background-color: rgb(143, 255, 152);
-  width: 52%;
+  width: 40%;
   color: black;
   padding: 14px 10px;
   text-decoration: none;
@@ -146,7 +159,8 @@ main .buron-inapoi-cump:hover {
     margin-left: 0px;
     width: 87%;
   }
-  main .date input[type='text'],input[type="password"] {
+  main .date input[type='text'],
+  input[type='password'] {
     margin-left: 20px;
     width: 60%;
   }
