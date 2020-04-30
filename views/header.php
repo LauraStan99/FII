@@ -1,13 +1,13 @@
-<?php
-
-Session::init(); ?>
-
+<?php Session::init(); ?>
 <!DOCTYPE html>
 <html lang="ro">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="cache-control" content="no-cache,no-store,must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
     <link href="<?php echo URL; ?>public/css/header.css" rel="stylesheet" />
 </head>
 
@@ -28,15 +28,13 @@ Session::init(); ?>
                 </div>
 
                 <div class="cont">
-
+                    <a class="link cont" href="<?php echo URL; ?>login" title="Cont">
+                        <img class="logo-cont" src="<?php echo URL; ?>public/poze/cont-tw.png" alt="Cont" />
+                    </a>
                     <?php if (Session::get('loggedIn') == true) : ?>
                         <a class="link cont" href="<?php echo URL; ?>account" title="Cont">
                             <img class="logo-cont" src="<?php echo URL; ?>public/poze/cont-tw.png" alt="Cont" />
                         </a>
-                    <?php else: ?>
-                    <a class="link cont" href="<?php echo URL; ?>login" title="Cont">
-                        <img class="logo-cont" src="<?php echo URL; ?>public/poze/cont-tw.png" alt="Cont" />
-                    </a>
                     <?php endif; ?>
 
                 </div>

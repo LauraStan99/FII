@@ -33,9 +33,7 @@ class Account extends Controller
     }
     public function logout()
     {
-        Session::set('loggedIn', false);
         Session::destroy();
         header('location: ' . URL . 'login');
-        exit;
     }
 }

@@ -29,6 +29,7 @@ class Login_Model extends Model
                 Session::set('parola', $inreg['parola']);
                 Session::set('loggedIn',true);
                 header('location: ../home');
+                header('Cache-Control: no-cache, no-store, must-revalidate');
             } else {
                 header('location: ../login?msg=failed');
             }

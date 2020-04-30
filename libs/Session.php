@@ -6,7 +6,6 @@ class Session
 	public static function init()
 	{
 		@session_start();
-		Session::set('loggedIn', "logged");
 	}
 
 	public static function set($key, $value)
@@ -22,15 +21,11 @@ class Session
 
 	public static function destroy()
 	{
-		unset($_SESSION["nume"]);
-		unset($_SESSION["prenume"]);
-		unset($_SESSION["email"]);
-		unset($_SESSION["adresa"]);
-		unset($_SESSION["parola"]);
-		unset($_SESSION["telefon"]);
-		unset($_SESSION["loggedIn"]);
-		unset($_SESSION["id_utilizator"]);
-		
+		if (!isset($_SESSION))
+		{
+			session_start();
+		}
+		session_unset();
 		session_destroy();
 	}
 }

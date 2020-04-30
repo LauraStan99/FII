@@ -8,6 +8,6 @@ require 'libs/Validate.php';
 require 'models/user.php';
 require 'libs/Session.php';
 
-define('URL', 'http://localhost:82/FII/');
+define('URL', 'http://localhost/FII/');
 $router = new Router();
 $router->init();
