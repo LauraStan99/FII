@@ -22,7 +22,7 @@
 
     <div>
       <h1>
-        Bine ai venit , <?php if(Session::get('nume') != null && Session::get('prenume') != null) echo Session::get('nume') . ' ' . Session::get('prenume'); ?> !
+        Bine ai venit , <?php if (Session::get('nume') != null && Session::get('prenume') != null) echo Session::get('nume') . ' ' . Session::get('prenume'); ?> !
       </h1>
       <?php if (Session::get('loggedIn') == true) : ?>
         <button type="button" class="logout" onclick="window.location.href='<?php echo URL; ?>account/logout' ">Deconecteaza-te</button>
@@ -136,7 +136,7 @@
         echo $this->success_message;
       ?>
 
-      <button class="buton-schimba" type="submit" onclick="window.location.href='<?php echo URL; ?>account'">
+      <button class="buton-schimba" type="submit">
         Schimba
       </button>
     </form>

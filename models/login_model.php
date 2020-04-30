@@ -9,8 +9,8 @@ class Login_Model extends Model
 
     public function run()
     {
-
-        $string = 'SELECT * from utilizatori where email=' . "'" . $_POST['email'] . "'" . '  and parola=' . "'" . $_POST['parola'] . "'";
+        $parola = Hash::create('sha256', $_POST['parola'], HASH_PASSWORD_KEY);
+        $string = 'SELECT * from utilizatori where email=' . "'" . $_POST['email'] . "'" . '  and parola=' . "'" . $parola . "'";
 
         if (!($rez = $this->db->con->query($string))) {
             die('A survenit o eroare la interogare');
@@ -27,7 +27,8 @@ class Login_Model extends Model
                 Session::set('email', $inreg['email']);
                 Session::set('telefon', $inreg['telefon']);
                 Session::set('parola', $inreg['parola']);
-                Session::set('loggedIn',true);
+                Session::set('loggedIn', true);
+                Session::set('cart', true);
                 header('location: ../home');
                 header('Cache-Control: no-cache, no-store, must-revalidate');
             } else {

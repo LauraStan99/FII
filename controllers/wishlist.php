@@ -1,6 +1,7 @@
 <?php
 
-class Wishlist extends Controller{
+class Wishlist extends Controller
+{
     function __construct()
     {
         parent::__construct();
@@ -11,8 +12,8 @@ class Wishlist extends Controller{
         $this->view->render('wishlistEmpty');
     }
 
-    function signed()
+    function unsigned()
     {
-        $this->view->render('wishlistSignIn');
+        $this->view->render('wishlist');
     }
 }

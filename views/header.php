@@ -8,7 +8,7 @@
     <meta http-equiv="cache-control" content="no-cache,no-store,must-revalidate">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="0">
-    <link href="<?php echo URL; ?>public/css/header.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/header1.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -16,15 +16,53 @@
         <div class="header-navigation">
             <div class="header-right">
                 <div class="favorite">
-                    <a class="link-favorite" href="#" title="Lista de dorinte">
-                        <img class="logo-favorite" src="<?php echo URL; ?>public/poze/logo-favorite-tw.png" alt="Favorite" />
-                    </a>
+
+                    <img class="trigger-fav" src="<?php echo URL; ?>public/poze/logo-favorite-tw.png" alt="Favorite" />
+                    <div class="modal-fav">
+                        <div class="modal-content-fav">
+                            <span class="close-button-fav">&times;</span>
+                            <h1>Trebuie sa fiti logat pentru a vizualiza produsele favorite!</h1>
+                        </div>
+                    </div>
+                    
+                    <script type="text/javascript" src="<?php echo URL; ?>public/js/modal-fav.js"></script>
+
+                    <?php if (Session::get('loggedIn') == true) : ?>
+                        <a class="link-favorite" href="<?php echo URL; ?>wishlist/empty" title="Lista de dorinte">
+                            <img class="logo-favorite" src="<?php echo URL; ?>public/poze/logo-favorite-tw.png" alt="Favorite" />
+                        </a>
+                    <?php endif; ?>
                 </div>
 
                 <div class="cos">
-                    <a class="link cos" href="#" title="Cos cumparaturi">
-                        <img class="logo-cos" src="<?php echo URL; ?>public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
-                    </a>
+
+                    <img class="trigger" src="<?php echo URL; ?>public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
+                    <div class="modal">
+                        <div class="modal-content">
+                            <span class="close-button">&times;</span>
+                            <h1>Trebuie sa fiti logat pentru a adauga produse in cos!</h1>
+                        </div>
+                    </div>
+                    <script type="text/javascript" src="<?php echo URL; ?>public/js/modal.js"></script>
+
+                    <?php if (Session::get('loggedIn') == true) : ?>
+                        <?php if (Session::get('cart') == true) : ?>
+                            <img class="trigger-cartEmpty" src="<?php echo URL; ?>public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
+                            <div class="modal-cartEmpty">
+                                <div class="modal-content-cartEmpty">
+                                    <span class="close-button-cartEmpty">&times;</span>
+                                    <h1>Cosul este gol!</h1>
+                                </div>
+                            </div>
+                            <script type="text/javascript" src="<?php echo URL; ?>public/js/modal-cartEmpty.js"></script>
+
+
+                        <?php else : ?>
+                            <a class="link cos" href="<?php echo URL; ?>cart" title="Cos cumparaturi">
+                                <img class="logo-cos" src="<?php echo URL; ?>public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
+                            </a>
+                        <?php endif; ?>
+                    <?php endif; ?>
                 </div>
 
                 <div class="cont">
@@ -48,6 +86,7 @@
             </div>
 
         </div>
+
     </header>
 
     <div class="navbar">
