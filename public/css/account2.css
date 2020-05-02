@@ -159,16 +159,19 @@ main .buron-inapoi-cump:hover {
   }
   main .buton-schimba {
     margin-left: 20px;
-    width: 22%;
+    width: 90%;
     text-align: center;
   }
   main .buton-inapoi-cump {
-    margin-left: 0px;
-    width: 87%;
+    margin-left: 20px;
+    width: 90%;
+  }
+  main .logout{
+    width:40%;
   }
   main .date input[type='text'],
   input[type='password'] {
     margin-left: 20px;
-    width: 60%;
+    width: 90%;
   }
 }

@@ -5,7 +5,7 @@
   <title>Cont | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="<?php echo URL; ?>public/css/account1.css" rel="stylesheet" />
+  <link href="<?php echo URL; ?>public/css/account2.css" rel="stylesheet" />
 </head>
 
 <body>
