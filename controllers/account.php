@@ -18,16 +18,22 @@ class Account extends Controller
             $valid->changeLastName($this->view->nume, $this->view->numeErr);
             $valid->changeFirstName($this->view->prenume, $this->view->prenumeErr);
             $valid->changeEmail($this->view->email, $this->view->emailErr);
-            $valid->changeAdress($this->view->adresa, $this->view->adresaErr);
+            $valid->changeAddress($this->view->adresa, $this->view->adresaErr);
             $valid->changePhone($this->view->telefon, $this->view->telefonErr);
             $valid->changePassword($this->view->parola, $this->view->parolaErr);
         }
-        
-         if (isset($_POST["submit"])) {
-           if($user->updateName($this->view->nume)) {
-                $this->view->success_message = "Datele au fost introduse cu succes";
-            } else {
-             //   $this->view->success_message = "Toate campurile campurile trebuie completate conform cerintelor.";
+        if (isset($_POST["submit"])) {                 
+
+            if(isset($this->view->nume)) $user->updateName($this->view->nume);
+            if(isset($this->view->prenume)) $user->updatePrenume($this->view->prenume);
+            if(isset($this->view->email)) $user->updateEmail($this->view->email);
+            if(isset($this->view->adresa)) $user->updateAddress($this->view->adresa);
+            if(isset($this->view->telefon)) $user->updatePhone($this->view->telefon);
+            if(isset($this->view->parola)) $user->updatePassword($this->view->parola);
+
+            if ($this->view->numeErr == "" && $this->view->prenumeErr == "" && $this->view->emailErr == "" && $this->view->telefonErr == "" && $this->view->adresaErr == ""  && $this->view->parolaErr == "")
+            {
+                $this->view->success_message = "Datele au fost actualizate cu succes.";
             }
         }
 

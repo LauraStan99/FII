@@ -5,7 +5,7 @@
   <title>Cont | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="<?php echo URL; ?>public/css/account.css" rel="stylesheet" />
+  <link href="<?php echo URL; ?>public/css/account1.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -17,12 +17,17 @@
   <main>
     <div class="titlu">
       <img id="cont" src="<?php echo URL; ?>public/poze/cont.png" />
-      <a id="titlu">Contul meu </a>
+      <a class="text-titlu">Contul meu </a>
     </div>
 
     <div>
       <h1>
-        Bine ai venit , <?php if (Session::get('nume') != null && Session::get('prenume') != null) echo Session::get('nume') . ' ' . Session::get('prenume'); ?> !
+        Bine ai venit, <?php if(isset($this->nume)) echo $this->nume . ' ';
+                              else  echo  Session::get('nume') . ' ';
+                              if(isset($this->prenume)) echo $this->prenume;
+                              else  echo  Session::get('prenume');                       
+                        ?>
+                               
       </h1>
       <?php if (Session::get('loggedIn') == true) : ?>
         <button type="button" class="logout" onclick="window.location.href='<?php echo URL; ?>account/logout' ">Deconecteaza-te</button>
@@ -36,12 +41,13 @@
     <form method="post">
       <div class="tip-date">
         <label for="inregistrare-nume">
-          <a id="id-nume"><img id="register1" src="<?php echo URL; ?>public/poze/register-tw.png" alt="register" />Nume : <?php echo Session::get('nume'); ?>
+          <a id="id-nume"><img id="register1" src="<?php echo URL; ?>public/poze/register-tw.png" alt="register" />Nume : <?php if(isset($this->nume)) {echo $this->nume; SESSION::set('nume', $this->nume);}
+                                                                                                                            else  echo  Session::get('nume'); ?>
           </a>
         </label>
       </div>
       <div class="date">
-        <input type="text" id="inregistrare-nume" name="nume" placeholder="Nume nou " value="<?php if (isset($this->nume)) echo $this->nume; ?>" />
+        <input type="text" id="inregistrare-nume" name="nume" placeholder="Nume nou ..." value="<?php if (isset($this->nume)) echo $this->nume; ?>" />
 
         <span class="error" style="color:red"> <?php if (isset($this->numeErr)) {
                                                   echo $this->numeErr;
@@ -51,7 +57,8 @@
 
       <div class="tip-date">
         <label for="inregistrare-prenume">
-          <a id="id-prenume"><img id="register2" src="<?php echo URL; ?>public/poze/register-tw.png" alt="register" />Prenume : <?php echo Session::get('prenume'); ?></a>
+          <a id="id-prenume"><img id="register2" src="<?php echo URL; ?>public/poze/register-tw.png" alt="register" />Prenume : <?php if(isset($this->prenume)) {echo $this->prenume; SESSION::set('prenume', $this->prenume);}
+                                                                                                                                else  echo  Session::get('prenume'); ?></a>
         </label>
       </div>
       <div class="date">
@@ -67,7 +74,8 @@
 
       <div class="tip-date">
         <label for="inregistrare-email">
-          <a id="id-email"><img id="email" src="<?php echo URL; ?>public/poze/email-tw.png" alt="email" />Email : <?php echo Session::get('email'); ?></a>
+          <a id="id-email"><img id="email" src="<?php echo URL; ?>public/poze/email-tw.png" alt="email" />Email : <?php if(isset($this->email)) {echo $this->email; SESSION::set('email', $this->email);}
+                                                                                                                  else  echo  Session::get('email'); ?></a>
         </label>
       </div>
       <div class="date">
@@ -84,13 +92,14 @@
 
       <div class="tip-date">
         <label for="inregistrare-telefon">
-          <a id="id-telefon"><img id="telefon" src="<?php echo URL; ?>public/poze/telefon.png" alt="telefon" />Telefon : <?php echo Session::get('telefon'); ?>
+          <a id="id-telefon"><img id="telefon" src="<?php echo URL; ?>public/poze/telefon.png" alt="telefon" />Telefon : <?php if(isset($this->telefon)) {echo $this->telefon; SESSION::set('telefon', $this->telefon);}
+                                                                                                                          else  echo  Session::get('telefon'); ?>
           </a>
         </label>
       </div>
       <div class="date">
 
-        <input type="text" id="inregistrare-telefon" name="telefon" placeholder="Numar nou de telefon : ..." value="<?php if (isset($this->telefon)) echo $this->telefon; ?>" />
+        <input type="text" id="inregistrare-telefon" name="telefon" placeholder="Numar nou de telefon ..." value="<?php if (isset($this->telefon)) echo $this->telefon; ?>" />
 
         <span class="error" style="color:red"> <?php if (isset($this->telefonErr)) {
                                                   echo $this->telefonErr;
@@ -102,7 +111,8 @@
 
       <div class="tip-date">
         <label for="inregistrare-adresa">
-          <a id="id-adresa"><img id="adresa" src="<?php echo URL; ?>public/poze/adresaCheckout.png" alt="adresa" />Adresa : <?php echo Session::get('adresa'); ?></a>
+          <a id="id-adresa"><img id="adresa" src="<?php echo URL; ?>public/poze/adresaCheckout.png" alt="adresa" />Adresa : <?php if(isset($this->adresa)) {echo $this->adresa; SESSION::set('adresa', $this->adresa);}
+                                                                                                                              else  echo  Session::get('adresa'); ?></a>
         </label>
       </div>
       <div class="date">
@@ -124,21 +134,25 @@
       </div>
       <div class="date">
 
-        <input type="password" id="inregistrare-parola" name="parola" placeholder="Parola noua ********" value="<?php if (isset($this->parola)) echo $this->parola; ?>" />
+        <input type="password" id="inregistrare-parola" name="parola" placeholder="Parola noua ..." value="<?php if (isset($this->parola)) echo $this->parola; ?>" />
 
         <span class="error" style="color:red"> <?php if (isset($this->parolaErr)) {
                                                   echo $this->parolaErr;
                                                 } ?></span>
       </div>
       <br />
-      <?php
-      if (isset($this->success_message))
-        echo $this->success_message;
-      ?>
-
-      <button class="buton-schimba" type="submit">
+      
+      <div class = "button">
+      <button class="buton-schimba" type="submit" name="submit" value="Submit">
         Schimba
       </button>
+      <span class="text-success" style="margin-left:20px; margin-top:10px;">
+        <?php
+        if (isset($this->success_message))
+          echo $this->success_message;
+        ?>
+      </span>
+      </div>
     </form>
 
     <button class="buton-inapoi-cump" type="button" onclick="window.location.href='<?php echo URL; ?>home'">

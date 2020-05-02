@@ -48,7 +48,7 @@ class Validate
     }
   }
 
-  function validateAdress(&$adresa, &$adresaErr)
+  function validateAddress(&$adresa, &$adresaErr)
   {
     if (empty($_POST["adresa"])) {
       $adresaErr = "Adresa este obligatorie";
@@ -153,7 +153,7 @@ class Validate
     }
   }
 
-  function changeAdress(&$adresa, &$adresaErr)
+  function changeAddress(&$adresa, &$adresaErr)
   {
     if (!empty($_POST["adresa"])) {
       $adresa = $this->test_input($_POST["adresa"]);

@@ -12,7 +12,58 @@ class User extends Model
     }
     public function updateName($name)
     {
+        if (!isset($_SESSION))
+		{
+			session_start();
+		}
         $id = Session::get('id_utilizator');
         return $this->db->update('utilizatori', 'nume', $name, $id);
+    }
+
+    public function updatePrenume($prenume)
+    {
+        if (!isset($_SESSION))
+		{
+			session_start();
+		}
+        $id = Session::get('id_utilizator');
+        return $this->db->update('utilizatori', 'prenume', $prenume, $id);
+    }
+
+    public function updateEmail($email)
+    {
+        if (!isset($_SESSION))
+		{
+			session_start();
+		}
+        $id = Session::get('id_utilizator');
+        return $this->db->update('utilizatori', 'email', $email, $id);
+    }
+
+    public function updatePhone($phone){
+        if (!isset($_SESSION))
+		{
+			session_start();
+		}
+        $id = Session::get('id_utilizator');
+        return $this->db->update('utilizatori', 'telefon', $phone, $id);
+    }
+
+    public function updateAddress($address){
+        if (!isset($_SESSION))
+		{
+			session_start();
+		}
+        $id = Session::get('id_utilizator');
+        return $this->db->update('utilizatori', 'adresa', $address, $id);
+    }
+
+    public function updatePassword($password){
+        if (!isset($_SESSION))
+		{
+			session_start();
+		}
+        $id = Session::get('id_utilizator');
+        return $this->db->update('utilizatori', 'parola', HASH::create('sha256',$password, HASH_PASSWORD_KEY), $id);
     }
 }

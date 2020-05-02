@@ -29,8 +29,8 @@ class Database
 
     public function update($table_name, $col, $data, $id)
     {
-        $string = "UPDATE " . $table_name . " SET " . $col . " = '" . $data . "' WHERE id = " . $id;
-        if (mysqli_query($this->con, $string)) return true;
+        $string = "UPDATE " . $table_name . " SET " . $col . " ='" . $data . "' WHERE id_utilizator =" . $id;
+        if ($this->con->query($string) === TRUE) return true;
         else  return false;
     }
 }

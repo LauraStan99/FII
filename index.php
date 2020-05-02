@@ -8,7 +8,7 @@ require 'libs/Validate.php';
 require 'models/user.php';
 require 'libs/Session.php';
 require 'libs/Hash.php';
-define('URL', 'http://localhost:82/FII/');
+define('URL', 'http://localhost/FII/');
 define('HASH_PASSWORD_KEY', 'catsFLYhigh2000miles');
 $router = new Router();
 $router->init();

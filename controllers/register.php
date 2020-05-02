@@ -16,7 +16,7 @@ class Register extends Controller
       $valid->validateLastName($this->view->nume, $this->view->numeErr);
       $valid->validateFirstName($this->view->prenume, $this->view->prenumeErr);
       $valid->validateEmail($this->view->email, $this->view->emailErr);
-      $valid->validateAdress($this->view->adresa, $this->view->adresaErr);
+      $valid->validateAddress($this->view->adresa, $this->view->adresaErr);
       $valid->validatePhone($this->view->telefon, $this->view->telefonErr);
       $valid->validatePassword($this->view->parola, $this->view->parolaErr);
     }
