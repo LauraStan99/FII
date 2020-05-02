@@ -33,4 +33,13 @@ class Database
         if ($this->con->query($string) === TRUE) return true;
         else  return false;
     }
+
+    public function select($table_name,$gender,$category) {
+      
+        $string="SELECT * FROM ".$table_name." WHERE gen='".$gender."' and categorie='".$category."'";  
+       if( ($result = $this->con->query($string)) )
+       return $result;
+       else 
+       return false;
+    }
 }
