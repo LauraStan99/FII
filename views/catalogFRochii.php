@@ -21,7 +21,7 @@
 
         while ($row = mysqli_fetch_array($this->result)) {
         ?>
-            <div class="row">
+            
                 <div class="column">
                     <div class="card">
                         <img src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png" alt="Denim Jeans" style="width:70% ; height:70%;">
@@ -31,6 +31,7 @@
                         <p><button>Adauga in cos</button></p>
                     </div>
                 </div>
+
             <?php  } ?>
 
 
