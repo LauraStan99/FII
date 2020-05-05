@@ -67,6 +67,13 @@ main form .buton-inregistrare:hover {
   background-color: green;
 }
 
+main .error{
+  color:red;
+  margin-left: 20px;
+}
+main .neccessary{
+  color:red;
+}
 @media screen and (max-width: 700px) {
   main {
     flex-direction: column;

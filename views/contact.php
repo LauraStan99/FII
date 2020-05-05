@@ -47,22 +47,22 @@
       <div class="linie">
         <label for="contact-nume">
           <a><img id="contact-nume" src="<?php echo URL; ?>public/poze/register-tw.png" alt="contact-nume" />Nume </a>
-          <a style="color: red;">*</a>
+          <a class="neccessary">*</a>
         </label>
         <div class="input">
           <input type="text" id="contact-nume" name="nume" placeholder="Popescu" value="<?php if (isset($this->nume)) echo $this->nume; ?>" />
-          <span class="error" style="color:red; margin-left:20px;"> <?php if (isset($this->numeErr)) echo $this->numeErr; ?></span>
+          <span class="error"> <?php if (isset($this->numeErr)) echo $this->numeErr; ?></span>
         </div>
       </div>
 
       <div class="linie">
         <label for="contact-prenume">
           <a><img id="contact-prenume" src="<?php echo URL; ?>public/poze/register-tw.png" alt="contact-nume" />Prenume</a>
-          <a style="color: red;">*</a>
+          <a class="neccessary">*</a>
         </label>
         <div class="input">
           <input type="text" id="contact-prenume" name="prenume" placeholder=" Daniel" value="<?php if (isset($this->prenume)) echo $this->prenume; ?>" />
-          <span class="error" style="color:red; margin-left:20px;"> <?php if (isset($this->prenumeErr)) echo $this->prenumeErr; ?></span>
+          <span class="error" > <?php if (isset($this->prenumeErr)) echo $this->prenumeErr; ?></span>
         </div>
       </div>
 
@@ -70,11 +70,11 @@
         <label for="contact-email">
           <a><img id="contact-email" src="<?php echo URL; ?>public/poze/email-tw.png" alt="contact-email" />Email
           </a>
-          <a style="color: red;">*</a>
+          <a class="neccessary">*</a>
         </label>
         <div class="input">
           <input type="text" id="contact-email" name="email" placeholder="popescu@gmai.com" value="<?php if (isset($this->email)) echo $this->email; ?>" />
-          <span class="error" style="color:red; margin-left:20px;"> <?php if (isset($this->emailErr)) echo $this->emailErr; ?></span>
+          <span class="error" > <?php if (isset($this->emailErr)) echo $this->emailErr; ?></span>
         </div>
       </div>
 
@@ -82,11 +82,11 @@
         <label for="contact-telefon">
           <a><img id="contact-telefon" src="<?php echo URL; ?>public/poze/telefon.png" alt="contact-telefon" />Telefon
           </a>
-          <a style="color: red;">*</a>
+          <a class="neccessary">*</a>
         </label>
         <div class="input">
           <input type="text" id="contact-telefon" name="telefon" placeholder="0755-666-777" value="<?php if (isset($this->telefon)) echo $this->telefon; ?>" />
-          <span class="error" style="color:red; margin-left:20px;"> <?php if (isset($this->telefonErr)) echo $this->telefonErr; ?></span>
+          <span class="error"  > <?php if (isset($this->telefonErr)) echo $this->telefonErr; ?></span>
         </div>
       </div>
 
@@ -107,11 +107,11 @@
         <label for="contact-mesaj">
           <a><img id="contact-mesaj" src="<?php echo URL; ?>public/poze/mesaj.png" alt="contact-mesaj" />Mesajul dvs.
           </a>
-          <a style="color: red;">*</a>
+          <a class="neccessary">*</a>
         </label>
         <div class="input">
           <input type="mesaj" id="contact-mesaj" name="mesaj" value="<?php if (isset($this->mesaj)) echo $this->mesaj; ?>" />
-          <span class="error" style="color:red; margin-left:20px;"> <?php if (isset($this->mesajErr)) echo $this->mesajErr; ?></span>
+          <span class="error"  > <?php if (isset($this->mesajErr)) echo $this->mesajErr; ?></span>
         </div>
       </div>
 

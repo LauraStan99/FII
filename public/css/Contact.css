@@ -72,7 +72,13 @@ main form .buton-formular {
 main form .buton-formular:hover {
   background-color: green;
 }
-
+main .error{
+  color:red;
+  margin-left: 20px;
+}
+main .neccessary{
+  color:red;
+}
 @media screen and (max-width: 700px) {
   main #contact-nume[type='text'],
   main #contact-prenume[type='text'],
