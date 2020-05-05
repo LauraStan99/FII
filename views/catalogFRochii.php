@@ -111,19 +111,32 @@
                 </form>
             </div>
             <?php
-            while ($row = $this->result->fetch()) {
+                
+                $url = "http://localhost/FII/libs/Api.php?gen=femei";
+                
+                $client = curl_init($url);
+                curl_setopt($client,CURLOPT_RETURNTRANSFER,true);
+                $response = curl_exec($client);
+                $result= json_decode($response);
+                foreach($result as $row=>$value)
+                {
             ?>
+
                 <div class="column">
                     <div class="card">
-                        <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png" alt="Denim Jeans">
-                        <h1><?php echo  $row['nume']; ?></h1>
-                        <p class="price"><?php echo  $row['pret']; ?> lei</p>
-                        <p><?php echo  $row['descriere']; ?></p>
+                        <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $value->imagine; ?>.png" alt="Denim Jeans">
+                        <h1><?php echo  $value->nume; ?></h1>
+                        <p class="price"><?php echo  $value->pret; ?> lei</p>
+                        <p><?php echo  $value->descriere; ?></p>
                         <p><button>Adauga in cos</button></p>
                     </div>
                 </div>
 
-            <?php  } ?>
+            <?php
+                }
+                ?>
+
+            
         </div>
 
 

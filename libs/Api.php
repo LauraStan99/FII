@@ -1,11 +1,4 @@
 <?php
-require 'config.php';
- spl_autoload_register(function ($class) {
-	require LIBS . $class .".php";
-});
-require 'models/user.php';
-$bootstrap = new Bootstrap();
-$bootstrap->init();
 header("Content-Type:application/json");
 if (isset($_GET['gen']) && $_GET['gen']!="") {
 $con = new PDO('mysql:host=localhost:3308;dbname=impressed', 'dba', 'sql');
