@@ -11,12 +11,12 @@ class Login_Model extends Model
     {
         $parola = Hash::create('sha256', $_POST['parola'], HASH_PASSWORD_KEY);
         $string = 'SELECT * from utilizatori where email=' . "'" . $_POST['email'] . "'" . '  and parola=' . "'" . $parola . "'";
-
-        if (!($rez = $this->db->con->query($string))) {
+        $stmt = $this->db->con->prepare($string);
+        if (!($stmt->execute())) {
             die('A survenit o eroare la interogare');
         } else {
-
-            $inreg = $rez->fetch_assoc();
+            
+            $inreg = $stmt->fetch();
 
             if ($inreg['id_utilizator'] != null) {
                 Session::init();

@@ -1,6 +1,6 @@
 <?php
 
-class Router
+class Bootstrap
 {
     private $url = null;
     private $controller = null;

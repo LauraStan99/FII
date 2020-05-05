@@ -84,6 +84,15 @@ main #register1,
   height: 20px;
 }
 
+.error{
+  color:red;
+}
+
+.text-succes{
+  margin-left:20px;
+  margin-top:10px;
+}
+
 main input[type='text'],
 input[type='password'] {
   width: 40%;

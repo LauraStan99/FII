@@ -14,7 +14,7 @@ class Checkout extends Controller
             $valid->validateLastName($this->view->nume, $this->view->numeErr);
             $valid->validateFirstName($this->view->prenume, $this->view->prenumeErr);
             $valid->validateEmail($this->view->email, $this->view->emailErr);
-            $valid->validateAdress($this->view->adresa, $this->view->adresaErr);
+            $valid->validateAddress($this->view->adresa, $this->view->adresaErr);
             $valid->validateCity($this->view->oras, $this->view->orasErr);
             $valid->validateCountry($this->view->tara, $this->view->taraErr);
         }

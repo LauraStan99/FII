@@ -111,11 +111,11 @@
                 </form>
             </div>
             <?php
-            while ($row = mysqli_fetch_array($this->result)) {
+            while ($row = $this->result->fetch()) {
             ?>
                 <div class="column">
                     <div class="card">
-                        <img src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png" alt="Denim Jeans" style="width:70% ; height:70%;">
+                        <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png" alt="Denim Jeans">
                         <h1><?php echo  $row['nume']; ?></h1>
                         <p class="price"><?php echo  $row['pret']; ?> lei</p>
                         <p><?php echo  $row['descriere']; ?></p>
