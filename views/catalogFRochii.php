@@ -122,6 +122,7 @@
                         <p><button>Adauga in cos</button></p>
                     </div>
                 </div>
+
             <?php  } ?>
         </div>
 
