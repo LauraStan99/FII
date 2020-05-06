@@ -98,11 +98,11 @@ main {
 .card {
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
   max-width: 400px;
-  margin: auto;
   text-align: center;
   font-family: arial;
   padding: 10px;
   background-color: #f1f1f1;
+  margin-bottom:10px;
 }
 
 .price {

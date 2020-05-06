@@ -5,7 +5,7 @@
     <title>Produse Femei | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="<?php echo URL; ?>public/css/products.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/products1.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -51,6 +51,11 @@
                     <a> <img src="<?php echo URL; ?>public/poze/black.png" alt="black" /></a>
                     <a> <img src="<?php echo URL; ?>public/poze/white.png" alt="white" /> </a>
                     <a> <img src="<?php echo URL; ?>public/poze/green.png" alt="green" /> </a>
+                    <a> <img src="<?php echo URL; ?>public/poze/brown.png" alt="brown" /> </a>
+                    <a> <img src="<?php echo URL; ?>public/poze/nude.png" alt="nude" /> </a>
+                    <a> <img src="<?php echo URL; ?>public/poze/orange.png" alt="orange" /> </a>
+                    <a> <img src="<?php echo URL; ?>public/poze/pink.png" alt="pink" /> </a>
+                    <a> <img src="<?php echo URL; ?>public/poze/purple.png" alt="purple" /> </a>
                 </div>
 
             </div>
@@ -112,15 +117,16 @@
 
                 <?php
 
-                (isset($_POST['tip-ordonare'])) ? $ordonare = $_POST['tip-ordonare'] : $ordonare = 1;
+                (isset($_GET['tip-ordonare'])) ? $ordonare = $_GET['tip-ordonare'] : $ordonare = 1;
                 ?>
 
                 <form>
                     <select id="ordonare" name="tip-ordonare">
-                        <option <?php if ($ordonare == 1) echo 'a fost ales nr 1'; ?> value="1">Cele mai populare</option>
-                        <option <?php if ($ordonare == 2) echo 'a fost ales nr 2'; ?>value="2">Sortare alfabetica</option>
+                        <option <?php if ($ordonare == 1)?> value="1">Cele mai populare</option>
+                        <option <?php if ($ordonare == 2) header('location:../login'); ?>value="2">Sortare alfabetica</option>
                         <option <?php if ($ordonare == 3) echo 'a fost ales nr 3'; ?>value="3">Pret crescator</option>
                         <option <?php if ($ordonare == 4) echo 'a fost ales nr 4'; ?>value="4">Pret descrescator</option>
+                        <input type = "submit" ></input>
                     </select>
 
                 </form>

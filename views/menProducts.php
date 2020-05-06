@@ -5,7 +5,7 @@
     <title>Produse Barbati | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="<?php echo URL; ?>public/css/products.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/products1.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -45,12 +45,17 @@
             <div class="colors">
                 <h1> CULOARE </h1>
                 <div class="icons-colors">
-                    <a> <img src="<?php echo URL; ?>public/poze/red.png" alt="red" /> </a>
+                <a> <img src="<?php echo URL; ?>public/poze/red.png" alt="red" /> </a>
                     <a> <img src="<?php echo URL; ?>public/poze/yellow.png" alt="yellow" /></a>
                     <a> <img src="<?php echo URL; ?>public/poze/blue.png" alt="blue" /></a>
                     <a> <img src="<?php echo URL; ?>public/poze/black.png" alt="black" /></a>
                     <a> <img src="<?php echo URL; ?>public/poze/white.png" alt="white" /> </a>
                     <a> <img src="<?php echo URL; ?>public/poze/green.png" alt="green" /> </a>
+                    <a> <img src="<?php echo URL; ?>public/poze/brown.png" alt="brown" /> </a>
+                    <a> <img src="<?php echo URL; ?>public/poze/nude.png" alt="nude" /> </a>
+                    <a> <img src="<?php echo URL; ?>public/poze/orange.png" alt="orange" /> </a>
+                    <a> <img src="<?php echo URL; ?>public/poze/pink.png" alt="pink" /> </a>
+                    <a> <img src="<?php echo URL; ?>public/poze/purple.png" alt="purple" /> </a>
                 </div>
 
             </div>
@@ -134,7 +139,6 @@
                         <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png" alt="Denim Jeans">
                         <h1><?php echo  $row['nume']; ?></h1>
                         <p class="price"><?php echo  $row['pret']; ?> lei</p>
-                        <p><?php echo  $row['descriere']; ?></p>
                         <p><button>Adauga in cos</button></p>
                     </div>
                 </div>

@@ -33,4 +33,6 @@ class Produse extends Controller{
         $this->view->render('childrenProducts');
     }
 
+    
+
 }
