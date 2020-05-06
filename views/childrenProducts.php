@@ -2,10 +2,10 @@
 <html lang="ro">
 
 <head>
-    <title>Cont | Impressed</title>
+    <title>Produse Copii | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="<?php echo URL; ?>public/css/catalogFRochii1.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/products.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -90,7 +90,17 @@
 
         <div class="products">
 
-            <h2>ROCHII</h2>
+            <h2>
+                <?php
+                     if($this->category == "blugi") echo "Blugi";
+                     else if($this->category == "bluze") echo "Bluze";
+                     else if($this->category == "fuste") echo "Fuste";
+                     else if($this->category == "rochii") echo "Rochii";
+                     else if($this->category == "pantaloni") echo "Pantaloni";
+                     else if($this->category == "tricouri") echo "Tricouri";
+                     else if($this->category == "salopete") echo "Salopete";
+                ?>
+            </h2>
             <hr>
             <div class="sortare">
                 <p>Ordoneaza dupa: </p>
@@ -111,8 +121,10 @@
                 </form>
             </div>
             <?php
-            while ($row = $this->result->fetch()) {
+                
+                while($row = $this->result->fetch()){
             ?>
+
                 <div class="column">
                     <div class="card">
                         <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png" alt="Denim Jeans">
@@ -123,7 +135,11 @@
                     </div>
                 </div>
 
-            <?php  } ?>
+            <?php
+                }
+                ?>
+
+            
         </div>
 
 
