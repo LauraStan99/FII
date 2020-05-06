@@ -58,13 +58,19 @@
             <div class="fabrics">
                 <h1>MATERIAL</h1>
                 <div class="check-fabrics">
-                    <label><input type="checkbox" /> bumbac</label>
+                <label><input type="checkbox" /> bumbac</label>
                     <label><input type="checkbox" /> matase</label>
-                    <label><input type="checkbox" /> sintetic</label>
+                    <label><input type="checkbox" /> vascoza</label>
                     <label><input type="checkbox" /> catifea</label>
                     <label><input type="checkbox" /> satin</label>
                     <label><input type="checkbox" /> stofa</label>
-                    <label><input type="checkbox" /> blug</label>
+                    <label><input type="checkbox" /> denim</label>
+                    <label><input type="checkbox" /> sifon</label>
+                    <label><input type="checkbox" /> poliester</label>
+                    <label><input type="checkbox" /> tul</label>
+                    <label><input type="checkbox" /> poliamida</label>
+                    <label><input type="checkbox" /> piele</label>
+                    <label><input type="checkbox" /> in</label>
                 </div>
 
             </div>
@@ -74,10 +80,9 @@
                 <div class="check-occasions">
                     <label><input type="checkbox" /> casual</label>
                     <label><input type="checkbox" /> sport</label>
-                    <label><input type="checkbox" /> bussines</label>
+                    <label><input type="checkbox" /> business</label>
                     <label><input type="checkbox" /> festival</label>
                     <label><input type="checkbox" /> cocktail</label>
-                    <label><input type="checkbox" /> aniversare</label>
                     <label><input type="checkbox" /> bal</label>
                 </div>
 
