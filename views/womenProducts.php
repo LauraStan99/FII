@@ -92,13 +92,13 @@
 
             <h2>
                 <?php
-                    if($this->category == "blugi") echo "Blugi";
-                    else if($this->category == "rochii") echo "Rochii";
-                    else if($this->category == "bluze") echo "Bluze";
-                    else if($this->category == "camasi") echo "Camasi";
-                    else if($this->category == "fuste") echo "Fuste";
-                    else if($this->category == "jachete") echo "Jachete";
-                    else if($this->category == "pantaloni") echo "Pantaloni";
+                if ($this->category == "blugi") echo "Blugi";
+                else if ($this->category == "rochii") echo "Rochii";
+                else if ($this->category == "bluze") echo "Bluze";
+                else if ($this->category == "camasi") echo "Camasi";
+                else if ($this->category == "fuste") echo "Fuste";
+                else if ($this->category == "jachete") echo "Jachete";
+                else if ($this->category == "pantaloni") echo "Pantaloni";
                 ?>
             </h2>
             <hr>
@@ -121,8 +121,8 @@
                 </form>
             </div>
             <?php
-                
-                while($row = $this->result->fetch()){
+
+            while ($row = $this->result->fetch()) {
             ?>
 
                 <div class="column">
@@ -130,16 +130,15 @@
                         <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png" alt="Denim Jeans">
                         <h1><?php echo  $row['nume']; ?></h1>
                         <p class="price"><?php echo  $row['pret']; ?> lei</p>
-                        <p><?php echo  $row['descriere']; ?></p>
                         <p><button>Adauga in cos</button></p>
                     </div>
                 </div>
 
             <?php
-                }
-                ?>
+            }
+            ?>
 
-            
+
         </div>
 
 
