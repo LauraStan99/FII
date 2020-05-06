@@ -30,18 +30,6 @@
                 </div>
             </div>
             <hr>
-            <div class="size">
-                <h1>MARIME</h1>
-                <div class="check-size">
-                    <label><input type="checkbox" />XS/34</label>
-                    <label><input type="checkbox" />S/36</label>
-                    <label><input type="checkbox" />M/38</label>
-                    <label><input type="checkbox" />L/40</label>
-                    <label><input type="checkbox" />XL/42</label>
-                    <label><input type="checkbox" />XXL/44</label>
-                </div>
-            </div>
-            <hr>
             <div class="colors">
                 <h1> CULOARE </h1>
                 <div class="icons-colors">
