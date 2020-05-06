@@ -74,7 +74,7 @@
                 <div class="check-occasions">
                     <label><input type="checkbox" /> casual</label>
                     <label><input type="checkbox" /> sport</label>
-                    <label><input type="checkbox" /> bussines</label>
+                    <label><input type="checkbox" /> business</label>
                     <label><input type="checkbox" /> festival</label>
                     <label><input type="checkbox" /> cocktail</label>
                     <label><input type="checkbox" /> aniversare</label>
