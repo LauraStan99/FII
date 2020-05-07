@@ -14,7 +14,7 @@ main {
 
 main .imagine-produs {
   width: 50%;
-  margin-top:30px;
+  margin-top: 30px;
 }
 main .imagine-produs #imagine {
   width: 400px;
@@ -22,17 +22,37 @@ main .imagine-produs #imagine {
   margin-left: 100px;
 }
 main .detalii {
-  margin-top:30px;
+  margin-top: 30px;
   width: 45%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-
 }
-main .detalii h1,
-p {
-  font-family: 'Pacifico', Arial, sans-serif;
+main .detalii h1 {
+  font-family: 'Alegreya', serif;
   font-size: 30px;
+}
+main .detalii p {
+  font-family: 'Alegreya', serif;
+  font-size: 20px;
+}
+main .detalii .pret {
+  display: flex;
+  flex-direction: row;
+  display: 100%;
+}
+main .detalii .pret .valoare {
+  width: 80%;
+}
+main .detalii .pret .stock {
+  width: 20%;
+}
+main .detalii .pret .stock #inStock {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  margin-top: 15px;
 }
 main .detalii .butoane-marime {
   flex-direction: column;
@@ -73,9 +93,9 @@ main .detalii #adauga-favorite {
   height: 50px;
   margin-top: 30px;
 }
-main .descriere-produs{
+main .descriere-produs {
   width: 100%;
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
 main .descriere-produs h1 {
@@ -83,8 +103,6 @@ main .descriere-produs h1 {
   font-size: 30px;
 }
 main .descriere-produs p {
-   font-size: 15px;
-   margin-left: 20px;
+  font-size: 15px;
+  margin-left: 20px;
 }
-
-
