@@ -48,6 +48,7 @@
                 <h1>Material și îngrijire</h1>
                 <p>Material : <?php echo  $row['material']; ?></p>
                 <img id="imagine" src="<?php echo URL; ?>public/poze/indicatiiIngrijire.png">
+                
             </div>
         <?php } ?>
     </main>
