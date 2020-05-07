@@ -87,4 +87,11 @@ main .descriere-produs p {
    margin-left: 20px;
 }
 
+main .descriere-produs #imagine{
+  width:220px;
+  height:50px;
+  margin-left:10px;
+  margin-bottom: 20px;
+}
+
 
