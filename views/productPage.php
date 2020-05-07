@@ -5,20 +5,27 @@
     <title>Detalii produs | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../public/css/product.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>/public/css/product1.css" rel="stylesheet" />
 </head>
 
 <body>
+<?php
+    require 'header.php';
+    ?>
 
     <main>
+        <?php
+            while ($row = $this->result->fetch()) {
+                ?>
         <div class="imagine-produs">
-            <img id="imagine" src="../public/poze/c-fuste10.png">
+            <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
         </div>
         <div class="detalii">
 
-            <h1>Fusta vaporoasa</h1>
-            <p>Pret : 70 lei</p>
-            <p>Culoare : rosu </p>
+            <h1><?php echo  $row['nume']; ?></h1>
+            <hr>
+            <p>Pret : <?php echo  $row['pret']; ?> lei</p>
+            <p>Culoare : <?php echo  $row['culoare']; ?> </p>
             <p>Marime : ... </p>
             <div class="butoane-marime">
                 <button id="buton">XS/34</button>
@@ -36,12 +43,12 @@
         </div>
         <div class="descriere-produs">
             <h1>Descriere</h1>
-            <p>Fustă midi confortabilă confecționată din material din bumbac ușor elastic cu imprimeu floral colorat. Are fason cloș, cu talia înaltă evidențiată cu cordon cu cataramă în talie. Fusta se încheie cu fermoar la spate.
-                Modelul din imagine are 177 cm înălțime și prezintă mărimea 36. Lungimea fustei pentru această mărime este de 65 cm.</p>
+            <p><?php echo  $row['descriere']; ?></p>
             </br>
             <h1>Material și îngrijire</h1>
-            <p>Material : bumbac</p>
+            <p>Material : <?php echo  $row['material']; ?></p>
         </div>
+            <?php } ?>
     </main>
 
     <?php
