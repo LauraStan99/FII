@@ -99,10 +99,17 @@ main .descriere-produs {
   flex-direction: column;
 }
 main .descriere-produs h1 {
-  font-family: 'Pacifico', Arial, sans-serif;
+  font-family: 'Alegreya', serif;
   font-size: 30px;
+  margin-left: 50px;
 }
 main .descriere-produs p {
-  font-size: 15px;
-  margin-left: 20px;
+  font-family: 'Alegreya', serif;
+  font-size: 20px;
+  margin-left: 60px;
+}
+main .descriere-produs #imagine {
+  width: 200px;
+  height: 50px;
+  margin-left: 45px;
 }
