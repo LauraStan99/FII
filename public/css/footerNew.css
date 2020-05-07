@@ -1,0 +1,95 @@
+.footer {
+  background-color: black;
+  text-align: left;
+  width: 100%;
+  font: bold 16px sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer .footer-stanga,
+.footer .footer-dreapta,
+.footer .footer-centru {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .footer-stanga {
+  width: 35%;
+}
+
+.footer-stanga #logo {
+  width: 100px;
+}
+
+.footer-stanga #logo-nume {
+  width: 300px;
+}
+
+.footer .footer-links a {
+  color: white;
+  font-size: 25px;
+  font-family: 'Alegreya', serif;
+}
+
+.footer .nume-companie {
+  font-size: 20px;
+}
+
+.footer .footer-centru {
+  width: 35%;
+  margin-top: 25px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+}
+.footer .footer-centru .locatie img,
+.footer .footer-centru .telefon img,
+.footer .footer-centru .mail img {
+  width: 35px;
+}
+
+.footer .footer-centru .locatie p,
+.footer .footer-centru .telefon p,
+.footer .footer-centru .mail p {
+  align-self: left;
+  font-family: 'Alegreya', serif;
+  color: white;
+  font-size: 20px;
+}
+
+.footer .footer-dreapta {
+  align-items: center;
+  width: 25%;
+  margin-top: 5px;
+}
+
+.footer .footer-dreapta p {
+  text-align: center;
+  color: white;
+  font-family: 'Alegreya', serif;
+  font-size: 20px;
+}
+
+.footer .footer-dreapta .footer-icons #facebook,
+.footer .footer-dreapta .footer-icons #instagram,
+.footer .footer-dreapta .footer-icons #git,
+.footer .footer-dreapta .footer-icons #youtube {
+  width: 35px;
+}
+
+@media screen and (max-width: 700px) {
+  .footer {
+    font: bold 15px sans-serif;
+  }
+  .footer .footer-stanga,
+  .footer .footer-dreapta,
+  .footer .footer-centru {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+    align-items: center;
+  }
+}

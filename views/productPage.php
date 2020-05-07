@@ -57,13 +57,16 @@
 
             </div>
             <div class="descriere-produs">
+                <div>
+                    <hr class="limita-descriere">
+                </div>
                 <h1>Descriere</h1>
                 <p><?php echo  $row['descriere']; ?></p>
                 </br>
                 <h1>Material și îngrijire</h1>
                 <p>Material : <?php echo  $row['material']; ?></p>
                 <img id="imagine" src="<?php echo URL; ?>public/poze/indicatiiIngrijire.png">
-                
+
             </div>
         <?php } ?>
     </main>

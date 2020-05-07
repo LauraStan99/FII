@@ -113,7 +113,7 @@ header .header-left {
 }
 
 .navbar {
-  background-color: rgb(243, 199, 255);
+  background-color: black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -127,9 +127,9 @@ header .header-left {
 
 input[type='submit'] {
   margin-left: 0px;
-  background: black;
+  background: rgba(184, 182, 184, 0.952);
   border: 0;
-  color: white;
+  color: black;
 }
 
 .femei,
@@ -147,7 +147,7 @@ input[type='submit'] {
   font-size: 16px;
   border: none;
   outline: none;
-  color: black;
+  color: white;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
@@ -157,7 +157,7 @@ input[type='submit'] {
 .femei-buton:hover,
 .barbati-buton:hover,
 .copii-buton:hover {
-  background-color: rgba(243, 226, 247, 0.952);
+  background-color: rgba(71, 70, 71, 0.952);
 }
 
 .femei-continut,
@@ -185,7 +185,7 @@ input[type='submit'] {
 .femei-continut a:hover,
 .barbati-continut a:hover,
 .copii-continut a:hover {
-  background-color: rgba(243, 226, 247, 0.952);
+  background-color: rgba(184, 182, 184, 0.952);
 }
 
 .show {

@@ -81,6 +81,7 @@ main .detalii #adauga-cos {
   height: 50px;
   margin-top: 30px;
 }
+
 main .detalii #adauga-favorite {
   color: white;
   background-color: red;
@@ -93,6 +94,16 @@ main .detalii #adauga-favorite {
   height: 50px;
   margin-top: 30px;
 }
+main .detalii #adauga-cos:hover,
+main .detalii #adauga-favorite:hover,
+main .detalii .butoane-marime #buton:hover {
+  opacity: 0.7;
+}
+main .descriere-produs hr.limita-descriere {
+  border-top: 1px dashed black;
+  width: 90%;
+}
+
 main .descriere-produs {
   width: 100%;
   display: flex;
@@ -101,12 +112,13 @@ main .descriere-produs {
 main .descriere-produs h1 {
   font-family: 'Alegreya', serif;
   font-size: 30px;
-  margin-left: 50px;
+  margin-left: 60px;
 }
 main .descriere-produs p {
   font-family: 'Alegreya', serif;
   font-size: 20px;
   margin-left: 60px;
+  margin-right: 60px;
 }
 main .descriere-produs #imagine {
   width: 200px;

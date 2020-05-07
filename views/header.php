@@ -8,7 +8,7 @@
     <meta http-equiv="cache-control" content="no-cache,no-store,must-revalidate">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="0">
-    <link href="<?php echo URL; ?>public/css/header1.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/headerNew.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -80,7 +80,7 @@
 
             <div class="header-left">
                 <div class="link-nume">
-                    <a href="<?php echo URL; ?>home" title="logo"><img class="logo" src="<?php echo URL; ?>public/poze/logo.png" alt="logo" /></a>
+                    <a href="<?php echo URL; ?>home" title="logo"><img class="logo" src="<?php echo URL; ?>public/poze/logoHeader.png" alt="logo" /></a>
                     <a href="<?php echo URL; ?>home" title="logo-nume"><img class="logo-nume" src="<?php echo URL; ?>public/poze/logo-nume.png" alt="logo-nume" /></a>
                 </div>
             </div>
