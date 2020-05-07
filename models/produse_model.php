@@ -26,4 +26,8 @@ class Produse_model extends Model
         return $this->db->selectOrderBy('produse',$gender,$category,$order,$filter);
     }
 
+    public function selectProduct($id_product){
+        return $this->db->selectOne('produse', $id_product);
+    }
+
 }

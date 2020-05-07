@@ -56,4 +56,12 @@ class Produse extends Controller
         $this->view->category = $category;
         $this->view->render('childrenProducts');
     }
+
+    public function produs($id_product){
+        $product = new produse_model();
+        $this->view->result = $product->selectProduct($id_product);
+        $this->view->render('productPage');
+    }
+
+
 }

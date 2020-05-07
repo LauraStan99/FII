@@ -55,4 +55,11 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
+
+    public function selectOne($table_name, $id_product){
+        $string="SELECT * FROM ".$table_name." WHERE id_produs='".$id_product."'";  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
 }

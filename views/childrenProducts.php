@@ -134,7 +134,9 @@
 
                     <div class="column">
                         <div class="card">
-                            <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png" alt="Denim Jeans">
+                            <a href="<?php echo URL . 'produse/produs/' . $row['id_produs'] ?>">
+                                <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
+                            </a>
                             <h1><?php echo  $row['nume']; ?></h1>
                             <p class="price"><?php echo  $row['pret']; ?> lei</p>
                             <p><button>Adauga in cos</button></p>
