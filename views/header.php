@@ -24,7 +24,7 @@
                             <h1>Trebuie sa fiti logat pentru a vizualiza produsele favorite!</h1>
                         </div>
                     </div>
-                    
+
                     <script type="text/javascript" src="<?php echo URL; ?>public/js/modal-fav.js"></script>
 
                     <?php if (Session::get('loggedIn') == true) : ?>
@@ -94,13 +94,13 @@
         <div class="femei">
             <button class="femei-buton" onclick="selectWoman()">FEMEI</button>
             <div class="femei-continut" id="DropF">
-                <a href="#">Blugi</a>
-                <a href="#">Bluze</a>
-                <a href="#">Camasi</a>
-                <a href="#">Fuste</a>
-                <a href="#">Jachete</a>
-                <a href="#">Pantaloni</a>
-                <a href="#">Rochii</a>
+                <a href="<?php echo URL; ?>produse/femei/blugi">Blugi</a>
+                <a href="<?php echo URL; ?>produse/femei/bluze">Bluze</a>
+                <a href="<?php echo URL; ?>produse/femei/camasi">Camasi</a>
+                <a href="<?php echo URL; ?>produse/femei/fuste">Fuste</a>
+                <a href="<?php echo URL; ?>produse/femei/jachete">Jachete</a>
+                <a href="<?php echo URL; ?>produse/femei/pantaloni">Pantaloni</a>
+                <a href="<?php echo URL; ?>produse/femei/rochii">Rochii</a>
             </div>
         </div>
 
@@ -108,25 +108,25 @@
         <div class="barbati">
             <button class="barbati-buton" onclick="selectMen()">BARBATI</button>
             <div class="barbati-continut" id="DropB">
-                <a href="#">Blugi</a>
-                <a href="#">Bluze</a>
-                <a href="#">Camasi</a>
-                <a href="#">Jachete</a>
-                <a href="#">Pantaloni</a>
-                <a href="#">Tricouri</a>
+                <a href="<?php echo URL; ?>produse/barbati/blugi">Blugi</a>
+                <a href="<?php echo URL; ?>produse/barbati/bluze">Bluze</a>
+                <a href="<?php echo URL; ?>produse/barbati/camasi">Camasi</a>
+                <a href="<?php echo URL; ?>produse/barbati/jachete">Jachete</a>
+                <a href="<?php echo URL; ?>produse/barbati/pantaloni">Pantaloni</a>
+                <a href="<?php echo URL; ?>produse/barbati/tricouri">Tricouri</a>
             </div>
         </div>
 
         <div class="copii">
             <button class="copii-buton" onclick="selectChildren()">COPII</button>
             <div class="copii-continut" id="DropC">
-                <a href="#">Blugi</a>
-                <a href="#">Bluze</a>
-                <a href="#">Fuste</a>
-                <a href="#">Pantaloni</a>
-                <a href="#">Rochii</a>
-                <a href="#">Tricouri</a>
-                <a href="#">Salopete</a>
+                <a href="<?php echo URL; ?>produse/copii/blugi">Blugi</a>
+                <a href="<?php echo URL; ?>produse/copii/bluze">Bluze</a>
+                <a href="<?php echo URL; ?>produse/copii/fuste">Fuste</a>
+                <a href="<?php echo URL; ?>produse/copii/pantaloni">Pantaloni</a>
+                <a href="<?php echo URL; ?>produse/copii/rochii">Rochii</a>
+                <a href="<?php echo URL; ?>produse/copii/tricouri">Tricouri</a>
+                <a href="<?php echo URL; ?>produse/copii/salopete">Salopete</a>
             </div>
         </div>
         <script src="<?php echo URL; ?>public/js/navbar.js"> </script>

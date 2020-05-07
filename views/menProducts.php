@@ -5,7 +5,7 @@
     <title>Produse Barbati | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="<?php echo URL; ?>public/css/products1.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/productsNew.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -45,7 +45,7 @@
             <div class="colors">
                 <h1> CULOARE </h1>
                 <div class="icons-colors">
-                <a> <img src="<?php echo URL; ?>public/poze/red.png" alt="red" /> </a>
+                    <a> <img src="<?php echo URL; ?>public/poze/red.png" alt="red" /> </a>
                     <a> <img src="<?php echo URL; ?>public/poze/yellow.png" alt="yellow" /></a>
                     <a> <img src="<?php echo URL; ?>public/poze/blue.png" alt="blue" /></a>
                     <a> <img src="<?php echo URL; ?>public/poze/black.png" alt="black" /></a>
@@ -63,7 +63,7 @@
             <div class="fabrics">
                 <h1>MATERIAL</h1>
                 <div class="check-fabrics">
-                <label><input type="checkbox" /> bumbac</label>
+                    <label><input type="checkbox" /> bumbac</label>
                     <label><input type="checkbox" /> matase</label>
                     <label><input type="checkbox" /> vascoza</label>
                     <label><input type="checkbox" /> catifea</label>
@@ -97,59 +97,58 @@
             <button type="submit" class="aplica">Aplica</button>
         </div>
 
+        <div class="page">
 
-        <div class="products">
+            <div class="order">
+                <h2>
+                    <?php
+                    if ($this->category == "blugi") echo "Blugi";
+                    else if ($this->category == "bluze") echo "Bluze";
+                    else if ($this->category == "camasi") echo "Camasi";
+                    else if ($this->category == "tricouri") echo "Tricouri";
+                    else if ($this->category == "jachete") echo "Jachete";
+                    else if ($this->category == "pantaloni") echo "Pantaloni";
+                    ?>
 
-            <h2>
-                <?php
-                     if($this->category == "blugi") echo "Blugi";
-                     else if($this->category == "bluze") echo "Bluze";
-                     else if($this->category == "camasi") echo "Camasi";
-                     else if($this->category == "jachete") echo "Jachete";
-                     else if($this->category == "pantaloni") echo "Pantaloni";
-                     else if($this->category == "tricouri") echo "Tricouri";
-                ?>
-            </h2>
-            <hr>
-            <div class="sortare">
-                <p>Ordoneaza dupa: </p>
-
-                <?php
-
-                (isset($_POST['tip-ordonare'])) ? $ordonare = $_POST['tip-ordonare'] : $ordonare = 1;
-                ?>
-
-                <form>
-                    <select id="ordonare" name="tip-ordonare">
-                        <option <?php if ($ordonare == 1) echo 'a fost ales nr 1'; ?> value="1">Cele mai populare</option>
-                        <option <?php if ($ordonare == 2) echo 'a fost ales nr 2'; ?>value="2">Sortare alfabetica</option>
-                        <option <?php if ($ordonare == 3) echo 'a fost ales nr 3'; ?>value="3">Pret crescator</option>
-                        <option <?php if ($ordonare == 4) echo 'a fost ales nr 4'; ?>value="4">Pret descrescator</option>
-                    </select>
-
-                </form>
-            </div>
-            <?php
-                
-                while($row = $this->result->fetch()){
-            ?>
-
-                <div class="column">
-                    <div class="card">
-                        <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png" alt="Denim Jeans">
-                        <h1><?php echo  $row['nume']; ?></h1>
-                        <p class="price"><?php echo  $row['pret']; ?> lei</p>
-                        <p><button>Adauga in cos</button></p>
+                    <hr>
+                </h2>
+                <div class="sortare">
+                    <button class="sortare-buton" onclick="Order()">Ordoneaza dupa ▼</button>
+                    <div class="sortare-continut" id="ordonare">
+                        <a href="">Cele mai populare</a>
+                        <a href="<?php echo URL . 'produse/barbatiOrder/' . $this->category . '/nume/asc' ?>">Ordonare alfabetica</a>
+                        <a href="<?php echo URL . 'produse/barbatiOrder/' . $this->category . '/pret/asc' ?>">Pret crescator</a>
+                        <a href="<?php echo URL . 'produse/barbatiOrder/' . $this->category . '/pret/desc' ?>">Pret descrescator</a>
                     </div>
-                </div>
 
-            <?php
+                </div>
+                <script src="<?php echo URL; ?>public/js/order.js"> </script>
+
+            </div>
+            <div class="products">
+                <?php
+
+                while ($row = $this->result->fetch()) {
+                ?>
+
+                    <div class="column">
+                        <div class="card">
+                            <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png" alt="Denim Jeans">
+                            <h1><?php echo  $row['nume']; ?></h1>
+                            <p class="price"><?php echo  $row['pret']; ?> lei</p>
+                            <p><button>Adauga in cos</button></p>
+                        </div>
+                    </div>
+
+                <?php
                 }
                 ?>
 
-            
-        </div>
 
+            </div>
+
+
+        </div>
 
     </main>
     <footer>

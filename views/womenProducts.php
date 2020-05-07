@@ -5,7 +5,7 @@
     <title>Produse Femei | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="<?php echo URL; ?>public/css/products1.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/productsNew.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -97,61 +97,59 @@
             <button type="submit" class="aplica">Aplica</button>
         </div>
 
+        <div class="page">
 
-        <div class="products">
+            <div class="order">
+                <h2>
+                    <?php
+                    if ($this->category == "blugi") echo "Blugi";
+                    else if ($this->category == "rochii") echo "Rochii";
+                    else if ($this->category == "bluze") echo "Bluze";
+                    else if ($this->category == "camasi") echo "Camasi";
+                    else if ($this->category == "fuste") echo "Fuste";
+                    else if ($this->category == "jachete") echo "Jachete";
+                    else if ($this->category == "pantaloni") echo "Pantaloni";
+                    ?>
 
-            <h2>
-                <?php
-                if ($this->category == "blugi") echo "Blugi";
-                else if ($this->category == "rochii") echo "Rochii";
-                else if ($this->category == "bluze") echo "Bluze";
-                else if ($this->category == "camasi") echo "Camasi";
-                else if ($this->category == "fuste") echo "Fuste";
-                else if ($this->category == "jachete") echo "Jachete";
-                else if ($this->category == "pantaloni") echo "Pantaloni";
-                ?>
-            </h2>
-            <hr>
-            <div class="sortare">
-                <p>Ordoneaza dupa: </p>
-
-                <?php
-
-                (isset($_GET['tip-ordonare'])) ? $ordonare = $_GET['tip-ordonare'] : $ordonare = 1;
-                ?>
-
-                <form>
-                    <select id="ordonare" name="tip-ordonare">
-                        <option <?php if ($ordonare == 1)?> value="1">Cele mai populare</option>
-                        <option <?php if ($ordonare == 2) header('location:../login'); ?>value="2">Sortare alfabetica</option>
-                        <option <?php if ($ordonare == 3) echo 'a fost ales nr 3'; ?>value="3">Pret crescator</option>
-                        <option <?php if ($ordonare == 4) echo 'a fost ales nr 4'; ?>value="4">Pret descrescator</option>
-                        <input type = "submit" ></input>
-                    </select>
-
-                </form>
-            </div>
-            <?php
-
-            while ($row = $this->result->fetch()) {
-            ?>
-
-                <div class="column">
-                    <div class="card">
-                        <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png" alt="Denim Jeans">
-                        <h1><?php echo  $row['nume']; ?></h1>
-                        <p class="price"><?php echo  $row['pret']; ?> lei</p>
-                        <p><button>Adauga in cos</button></p>
+                    <hr>
+                </h2>
+                <div class="sortare">
+                    <button class="sortare-buton" onclick="Order()">Ordoneaza dupa ▼</button>
+                    <div class="sortare-continut" id="ordonare">
+                        <a href="">Cele mai populare</a>
+                        <a href="<?php echo URL . 'produse/femeiOrder/' . $this->category . '/nume/asc' ?>">Ordonare alfabetica</a>
+                        <a href="<?php echo URL . 'produse/femeiOrder/' . $this->category . '/pret/asc' ?>">Pret crescator</a>
+                        <a href="<?php echo URL . 'produse/femeiOrder/' . $this->category . '/pret/desc' ?>">Pret descrescator</a>
                     </div>
-                </div>
 
-            <?php
-            }
-            ?>
+                </div>
+                <script src="<?php echo URL; ?>public/js/order.js"> </script>
+
+            </div>
+            <div class="products">
+                <?php
+
+                while ($row = $this->result->fetch()) {
+                ?>
+
+                    <div class="column">
+                        <div class="card">
+                            <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png" alt="Denim Jeans">
+                            <h1><?php echo  $row['nume']; ?></h1>
+                            <p class="price"><?php echo  $row['pret']; ?> lei</p>
+                            <p><button>Adauga in cos</button></p>
+                        </div>
+                    </div>
+
+                <?php
+                }
+                ?>
+
+
+            </div>
 
 
         </div>
-
 
     </main>
     <footer>

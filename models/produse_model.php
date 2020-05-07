@@ -22,4 +22,8 @@ class Produse_model extends Model
     {
         return $this->db->select('produse', 'copii', $category);
     }
+    public function selectOrder($gender,$category,$order,$filter) {
+        return $this->db->selectOrderBy('produse',$gender,$category,$order,$filter);
+    }
+
 }
