@@ -23,9 +23,24 @@
             <div class="detalii">
 
                 <h1><?php echo  $row['nume']; ?></h1>
-                <hr>
-                <p>Pret : <?php echo  $row['pret']; ?> lei</p>
+                <div>
+                    <hr>
+                </div>
+                <div class="pret">
+                    <div class="valoare">
+                        <p>Pret : <?php echo  $row['pret']; ?> lei</p>
+                    </div>
+                    <div class="stock">
+                        <img id="inStock" src="<?php echo URL; ?>public/poze/inStock.png">
+                    </div>
+                </div>
+                <div>
+                    <hr>
+                </div>
                 <p>Culoare : <?php echo  $row['culoare']; ?> </p>
+                <div>
+                    <hr>
+                </div>
                 <p>Marime : ... </p>
                 <div class="butoane-marime">
                     <button id="buton">XS/34</button>
