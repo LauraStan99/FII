@@ -125,3 +125,72 @@ main .descriere-produs #imagine {
   height: 50px;
   margin-left: 45px;
 }
+@media screen and (max-width: 1050px) {
+  main .imagine-produs #imagine {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 820px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main .imagine-produs,
+  main .detalii {
+    width: 100%;
+  }
+  main .imagine-produs #imagine {
+    width: 60%;
+    position: relative;
+    align-content: center;
+  }
+  main .detalii .pret {
+    flex-direction: column;
+  }
+  main .detalii .pret .stock #inStock {
+    width: 100px;
+    height: 30px;
+  }
+  main .detalii h1 {
+    text-align: center;
+  }
+  main .detalii #adauga-cos,
+  main .detalii #adauga-favorite {
+    align-self: center;
+  }
+  main .descriere-produs h1 {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 500px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  main .imagine-produs,
+  main .detalii {
+    width: 100%;
+  }
+  main .imagine-produs #imagine {
+    margin-left: 0;
+    width: 100%;
+  }
+  main .detalii h1 {
+    text-align: center;
+  }
+  main .detalii #adauga-cos,
+  main .detalii #adauga-favorite {
+    align-self: center;
+  }
+  main .detalii .pret {
+    flex-direction: column;
+  }
+  main .detalii .pret .stock #inStock {
+    width: 100px;
+    height: 30px;
+  }
+  main .descriere-produs h1 {
+    text-align: center;
+  }
+}
