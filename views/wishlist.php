@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="<?php echo URL; ?>public/css/wishlist.css" rel="stylesheet" />
 </head>
-
-<body>
-    <?php
+<?php
     require 'header.php';
     ?>
+<body>
+    
     <main>
         <h1>Favorite</h1>
         <div>
@@ -21,7 +21,8 @@
             ?>
                 <div class="produse-favorite">
                     <div class="imagine-produs">
-                        <img id="produs" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png"> </div>
+                        <img id="produs" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png"> 
+                    </div>
                     <div class="detalii-produs">
                         <h2><?php echo $row['nume']; ?> </h2>
                         <p>Material :<?php echo $row['material']; ?> </p>

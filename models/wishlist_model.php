@@ -16,7 +16,7 @@ class Wishlist_model extends Model
         $result = $this->db->select_list('wishlist', $id);
         $i = 0;
         while($row = $result->fetch()){
-            $products[$i] = $row['id_produs'];
+            $products=array( $i => $row['id_produs'],);
             $i = $i + 1;
         }
         return $this->db->selectByArray('produse', $products);

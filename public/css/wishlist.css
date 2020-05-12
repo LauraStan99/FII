@@ -23,13 +23,16 @@ main h1 {
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  margin-bottom: 100px;
 }
 .produse-favorite .imagine-produs {
-  width: 30%;
+  width: 30%; 
+
 }
 .imagine-produs #produs {
   margin-top: 20px;
   width: 40%;
+ 
 }
 .produse-favorite .detalii-produs,
 .produse-favorite .adauga-produs {
@@ -83,5 +86,7 @@ main h1 {
   .produse-favorite .adauga-produs {
     width: 100%;
   }
-  
+  .produse-favorite{
+      margin-bottom: 100px;
+  }
 }
