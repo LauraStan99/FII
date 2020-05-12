@@ -14,10 +14,10 @@ class Wishlist_model extends Model
         }
         $id = Session::get('id_utilizator');
         $result = $this->db->select_list('wishlist', $id);
+        $i = 0;
         while($row = $result->fetch()){
-            $products = array(
-                'id_produs' => $row['id_produs'],
-            );
+            $products[$i] = $row['id_produs'];
+            $i = $i + 1;
         }
         return $this->db->selectByArray('produse', $products);
         
