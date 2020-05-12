@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+main {
+  flex-direction: row;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.tabel {
+  width: 70%;
+}
+.tabel th {
+  font-size: 1.5rem;
+}
+.tabel .articol {
+  width: 30%;
+}
+.tabel .descriere {
+  width: 20%;
+}
+.tabel .cantitate {
+  width: 20%;
+}
+.tabel .pret {
+  width: 10%;
+}
+.tabel .total {
+  width: 10%;
+}
+.totalFinal {
+  width: 30%;
+  height: 200px;
+  border: 2px solid #000000;
+  margin-top: 10px;
+}
+.tabel td {
+  text-align: center;
+}
+.tabel #produs {
+  width: 50%;
+}

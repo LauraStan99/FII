@@ -1,5 +1,6 @@
 <?php
 
+
 class Cart extends Controller
 {
 
@@ -11,7 +12,9 @@ class Cart extends Controller
 
     public function index()
     {
+
+        $wishlist = new Wishlist_model();
+        $this->view->result = $wishlist->selectWishlistProducts();
         $this->view->render('cartFull');
     }
-   
 }
