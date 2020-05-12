@@ -13,8 +13,8 @@ class Wishlist extends Controller
     }
 
     function index(){
-       // $wishlist = new Wishlist_model();
-        //$this->view->result = $wishlist->selectWishlistProducts();
+        $wishlist = new Wishlist_model();
+        $this->view->result = $wishlist->selectWishlistProducts();
         $this->view->render('wishlist');
     }
 }

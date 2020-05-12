@@ -5,7 +5,7 @@
     <title>Favorite | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../public/css/wishlist.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/wishlist.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -20,21 +20,18 @@
             while ($row = $this->result->fetch()) {
             ?>
                 <div class="produse-favorite">
-
-
                     <div class="imagine-produs">
-                        <img id="produs" src="../public/poze/b-bluze7.png" />
-                    </div>
+                        <img id="produs" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png"> </div>
                     <div class="detalii-produs">
-                        <h2>Denumire </h2>
-                        <p>Material :<?php echo $row['id_produs']; ?> </p>
-                        <p>Culoare : </p>
-                        <p>Marime</p>
+                        <h2><?php echo $row['nume']; ?> </h2>
+                        <p>Material :<?php echo $row['material']; ?> </p>
+                        <p>Culoare : <?php echo $row['culoare']; ?></p>
+                        <p>Marime : </p>
                     </div>
                     <div class="adauga-produs">
                         <a class="sterge-produs">X Sterge produs</a>
                         <p>Disponibilitate: <a class="stock">in stock</a></p>
-                        <a>Pret : </a>
+                        <a>Pret : <?php echo $row['pret']; ?> </a>
                         <button class="adauga-in-cos">Adauga in cos</button>
                     </div>
 
