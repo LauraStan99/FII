@@ -62,4 +62,11 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
+
+    public function select_list($table_name, $id){
+        $string="SELECT * FROM ".$table_name." WHERE id_utilizator='".$id."'";  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
 }
