@@ -8,10 +8,11 @@
     <link href="<?php echo URL; ?>public/css/wishlist.css" rel="stylesheet" />
 </head>
 <?php
-    require 'header.php';
-    ?>
+require 'header.php';
+?>
+
 <body>
-    
+
     <main>
         <h1>Favorite</h1>
         <div>
@@ -21,13 +22,13 @@
             ?>
                 <div class="produse-favorite">
                     <div class="imagine-produs">
-                        <img id="produs" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png"> 
+                        <img id="produs" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
                     </div>
                     <div class="detalii-produs">
                         <h2><?php echo $row['nume']; ?> </h2>
                         <a>Material :<?php echo $row['material']; ?> </a>
                         <a>Culoare : <?php echo $row['culoare']; ?></a>
-                        <a>Marime : </a>
+                        <a>Marime :</a>
                     </div>
                     <div class="adauga-produs">
                         <a class="sterge-produs">X Sterge produs</a>
@@ -37,11 +38,10 @@
                     </div>
 
                 </div>
-                
+
             <?php } ?>
 
     </main>
-
     <?php
     require 'footer.php';
     ?>

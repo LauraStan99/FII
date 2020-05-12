@@ -41,19 +41,22 @@
                 <div>
                     <hr>
                 </div>
-                <p>Marime : ... </p>
+                <p>Marime :<?php if (isset($_GET['size'])) echo $_GET['size'];
+                            else echo 'Alegeti o marime!'; ?></p>
                 <div class="butoane-marime">
-                    <button id="buton">XS/34</button>
-                    <button id="buton">S/36</button>
-                    <button id="buton">M/38</button>
-                    <button id="buton">L/40</button>
-                    <button id="buton">XL/42</button>
-                    <button id="buton">XXL/44</button>
+                    <form method="POST">
+                        <button id="buton" name="XS">XS/34</button>
+                        <button id="buton" name="S">S/36</button>
+                        <button id="buton" name="M">M/38</button>
+                        <button id="buton" name="L">L/40</button>
+                        <button id="buton" name="XL">XL/42</button>
+                        <button id="buton" name="XXL">XXL/44</button>
+                    </form>
                 </div>
                 </br>
                 <form method="POST">
-                    <button type="submit" name = "adauga-cos" id="adauga-cos">Adauga in cos</button>
-                    <button type="submit" name = "adauga-favorite" id="adauga-favorite">Adauga la favorite </button>
+                    <button type="submit" name="adauga-cos" id="adauga-cos">Adauga in cos</button>
+                    <button type="submit" name="adauga-favorite" id="adauga-favorite">Adauga la favorite </button>
                 </form>
             </div>
             <div class="descriere-produs">

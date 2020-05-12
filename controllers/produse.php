@@ -57,20 +57,39 @@ class Produse extends Controller
         $this->view->render('childrenProducts');
     }
 
-    public function produs($id_product){
+    public function produs($id_product)
+    {
         $product = new produse_model();
         $buton = new butoane_model();
         $this->view->result = $product->selectProduct($id_product);
+
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            if(isset($_POST['adauga-favorite'])){
-                $buton->addToWishlist($id_product);
+            if (isset($_POST['S'])) {
+                header('location: ../produs/' . $id_product . '?size=S');
+            } else if (isset($_POST['M'])) {
+                header('location: ../produs/' . $id_product . '?size=M');
+            } else if (isset($_POST['L'])) {
+                header('location: ../produs/' . $id_product . '?size=L');
+            } else if (isset($_POST['XL'])) {
+                header('location: ../produs/' . $id_product . '?size=XL');
+            } else if (isset($_POST['XXL'])) {
+                header('location: ../produs/' . $id_product . '?size=XXL');
+            } else if (isset($_POST['XS'])) {
+                header('location: ../produs/' . $id_product . '?size=XS');
             }
-            else if(isset($_POST['adauga-cos'])){
-                $buton->addToCart($id_product);
+            if (isset($_POST['adauga-cos'])) {
+                if (isset($_GET['size'])) {
+                    $buton->addToCart($id_product, $_GET['size']);
+                }
+            }
+            if (isset($_POST['adauga-favorite'])) {
+
+                if (isset($_GET['size'])) {
+                    $buton->addToWishlist($id_product, $_GET['size']);
+                }
             }
         }
+        
         $this->view->render('productPage');
     }
-
-
 }

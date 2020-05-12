@@ -14,7 +14,7 @@ main {
   width: 100%;
 }
 main h1 {
-  font-size: 0.8rem;
+  font-size: 2rem;
   text-align: center;
   font: bold;
 }
@@ -48,10 +48,10 @@ main h1 {
 .adauga-produs .sterge-produs {
   margin-top: 40px;
   color: red;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .adauga-produs a {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .adauga-produs .stock {
   margin-top: 20px;
@@ -113,9 +113,11 @@ main h1 {
   }
   .produse-favorite .detalii-produs h2,a{
     text-align: center;
+    font-size: 1 rem;
   }
   .produse-favorite .adauga-produs a,p{
     text-align: center;
+    font-size: 20px;
   }
   .adauga-produs .adauga-in-cos{
       width: 90%;
