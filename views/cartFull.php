@@ -20,6 +20,7 @@
 
       <table>
         <tr>
+          <th class="sterge-produs"></th>
           <th class="articol">Articol</th>
           <th class="descriere">Descriere</th>
           <th class="cantitate">Cantitate</th>
@@ -32,6 +33,10 @@
         ?>
           <tr>
             <td>
+              <button class="buton-stergere">Sterge</button>
+
+            </td>
+            <td>
               <img id="produs" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
             </td>
             <td><?php echo $row['descriere']; ?></td>
@@ -40,9 +45,11 @@
             <td>Total </td>
 
           </tr>
+
         <?php } ?>
+
       </table>
-      <hr>
+
     </div>
     <div class="totalFinal">
       <p>Total</p>
