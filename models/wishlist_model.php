@@ -13,6 +13,13 @@ class Wishlist_model extends Model
             session_start();
         }
         $id = Session::get('id_utilizator');
-        return $this->db->select_list('wishlist', $id);
+        $result = $this->db->select_list('wishlist', $id);
+        while($row = $result->fetch()){
+            $products = array(
+                'id_produs' => $row['id_produs']
+            );
+        }
+        return $this->db->selectByArray('produse', $products);
+        
     }
 }

@@ -12,7 +12,7 @@ class Wishlist extends Controller
         $this->view->render('wishlistEmpty');
     }
 
-    function favorite(){
+    function index(){
         $wishlist = new Wishlist_model();
         $this->view->result = $wishlist->selectWishlistProducts();
         $this->view->render('wishlist');
