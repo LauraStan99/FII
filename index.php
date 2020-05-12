@@ -5,6 +5,7 @@ require 'config.php';
 });
 require 'models/user.php';
 require 'models/butoane_model.php';
+require 'models/wishlist_model.php';
 $bootstrap = new Bootstrap();
 $bootstrap->init();
 ?>

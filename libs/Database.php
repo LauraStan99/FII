@@ -71,10 +71,10 @@ class Database extends PDO
     }
 
     public function selectByArray($table_name, $data){
-        $string = "SELECT * FROM " . $table_name . " WHERE id IN";
-        $string .= "('" . implode("','", array_values($data)) . "')";
+        $string = "SELECT * FROM " . $table_name . " WHERE id_produs IN";
+        $string .= "(" . implode("','", array_values($data)) . ")";
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return true;
+        if ($stmt->execute()) return $stmt;
         else return false;
     }
 }
