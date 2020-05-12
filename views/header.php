@@ -27,11 +27,20 @@
 
                     <script type="text/javascript" src="<?php echo URL; ?>public/js/modal-fav.js"></script>
 
-                    <?php if (Session::get('loggedIn') == true) : ?>
-                        <a class="link-favorite" href="<?php echo URL; ?>wishlist/empty" title="Lista de dorinte">
+                    <?php if (Session::get('loggedIn') == true) { ?>
+                        <?php if(Session::get('wishlist') == true){ ?>
+                        <a class="link-favorite" href="<?php echo URL; ?>wishlist" title="Lista de dorinte">
                             <img class="logo-favorite" src="<?php echo URL; ?>public/poze/logo-favorite-tw.png" alt="Favorite" />
                         </a>
-                    <?php endif; ?>
+                        <?php } 
+                        else { ?>
+                            <a class="link-favorite" href="<?php echo URL; ?>wishlist/empty" title="Lista de dorinte">
+                            <img class="logo-favorite" src="<?php echo URL; ?>public/poze/logo-favorite-tw.png" alt="Favorite" />
+                        </a>
+                        <?php } ?>    
+                    <?php } ?>
+
+
                 </div>
 
                 <div class="cos">

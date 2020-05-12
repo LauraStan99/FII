@@ -28,7 +28,30 @@ class Login_Model extends Model
                 Session::set('telefon', $inreg['telefon']);
                 Session::set('parola', $inreg['parola']);
                 Session::set('loggedIn', true);
-                Session::set('cart', true);
+                
+                $query = 'SELECT * FROM wishlist WHERE id_utilizator='.$inreg['id_utilizator'];
+                $stmt_query = $this->db->con->prepare($query);
+                $stmt_query->execute();
+                $row = $stmt_query->fetch(); 
+                if($row['id_produs'] != null ){
+                    Session::set('wishlist', true);
+                }
+                else{
+                    Session::set('wishlist', false);
+                }
+
+                $query = 'SELECT * FROM cart WHERE id_utilizator='.$inreg['id_utilizator'];
+                $stmt_query = $this->db->con->prepare($query);
+                $stmt_query->execute();
+                $row = $stmt_query->fetch(); 
+                if($row['id_produs'] != null ){
+                    Session::set('cart', true);
+                }
+                else{
+                    Session::set('cart', false);
+                }
+                
+               
                 header('location: ../home');
                 header('Cache-Control: no-cache, no-store, must-revalidate');
             } else {
