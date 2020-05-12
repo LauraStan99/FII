@@ -14,7 +14,7 @@ main {
   width: 100%;
 }
 main h1 {
-  font-size: 20px;
+  font-size: 0.8rem;
   text-align: center;
   font: bold;
 }
@@ -26,13 +26,13 @@ main h1 {
   margin-bottom: 100px;
 }
 .produse-favorite .imagine-produs {
-  width: 30%; 
-
+  width: 30%;
 }
 .imagine-produs #produs {
   margin-top: 20px;
-  width: 40%;
- 
+  width: 45%;
+  height: auto;
+  margin-left: 8vw;
 }
 .produse-favorite .detalii-produs,
 .produse-favorite .adauga-produs {
@@ -50,7 +50,7 @@ main h1 {
   color: red;
   font-size: 0.8rem;
 }
-.adauga-produs p {
+.adauga-produs a {
   font-size: 0.8rem;
 }
 .adauga-produs .stock {
@@ -70,8 +70,27 @@ main h1 {
   height: 50px;
   margin-top: 30px;
 }
-
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1000px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  .produse-favorite {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .produse-favorite .imagine-produs #produs {
+    margin-top: 20px;
+    width: 70%;
+    height: auto;
+    margin-left: 2vw;
+  }
+  .produse-favorite .detalii-produs h1 {
+    font-size: 0.8 rem;
+  }
+}
+@media screen and (max-width: 600px) {
   main {
     display: flex;
     flex-direction: column;
@@ -86,7 +105,23 @@ main h1 {
   .produse-favorite .adauga-produs {
     width: 100%;
   }
-  .produse-favorite{
-      margin-bottom: 100px;
+  .produse-favorite .imagine-produs #produs {
+    margin-top: 20px;
+    width: 70%;
+    height: auto;
+    margin-left: 15vw;
+  }
+  .produse-favorite .detalii-produs h2,a{
+    text-align: center;
+  }
+  .produse-favorite .adauga-produs a,p{
+    text-align: center;
+  }
+  .adauga-produs .adauga-in-cos{
+      width: 90%;
+      margin-left: 4vw;
+  }
+  .produse-favorite {
+    margin-bottom: 100px;
   }
 }

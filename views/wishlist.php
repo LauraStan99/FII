@@ -25,9 +25,9 @@
                     </div>
                     <div class="detalii-produs">
                         <h2><?php echo $row['nume']; ?> </h2>
-                        <p>Material :<?php echo $row['material']; ?> </p>
-                        <p>Culoare : <?php echo $row['culoare']; ?></p>
-                        <p>Marime : </p>
+                        <a>Material :<?php echo $row['material']; ?> </a>
+                        <a>Culoare : <?php echo $row['culoare']; ?></a>
+                        <a>Marime : </a>
                     </div>
                     <div class="adauga-produs">
                         <a class="sterge-produs">X Sterge produs</a>
@@ -37,6 +37,7 @@
                     </div>
 
                 </div>
+                
             <?php } ?>
 
     </main>
