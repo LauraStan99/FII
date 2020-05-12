@@ -59,7 +59,16 @@ class Produse extends Controller
 
     public function produs($id_product){
         $product = new produse_model();
+        $buton = new butoane_model();
         $this->view->result = $product->selectProduct($id_product);
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            if(isset($_POST['adauga-favorite'])){
+                $buton->addToWishlist($id_product);
+            }
+            else if(isset($_POST['adauga-cos'])){
+                $buton->addToCart($id_product);
+            }
+        }
         $this->view->render('productPage');
     }
 

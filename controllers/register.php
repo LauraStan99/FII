@@ -26,7 +26,7 @@ class Register extends Controller
     if (isset($_POST["submit"])) {
       $insert_data = array(
         'nume' => $_POST["nume"], 'prenume' => $_POST["prenume"], 'email' => $_POST["email"],
-        'telefon' => $_POST["telefon"], 'adresa' => $_POST["adresa"], 'parola' => Hash::create('sha256', $_POST['parola'],HASH_PASSWORD_KEY)
+        'telefon' => $_POST["telefon"], 'adresa' => $_POST["adresa"], 'parola' => Hash::create('sha256', $_POST['parola'],HASH_PASSWORD_KEY), 'tip_utilizator' => 'user'
 
       );
       if ($this->view->numeErr == "" && $this->view->prenumeErr == "" && $this->view->emailErr == "" && $this->view->telefonErr == "" && $this->view->adresaErr == ""  && $this->view->parolaErr == "") {

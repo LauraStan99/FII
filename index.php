@@ -4,6 +4,7 @@ require 'config.php';
 	require LIBS . $class .".php";
 });
 require 'models/user.php';
+require 'models/butoane_model.php';
 $bootstrap = new Bootstrap();
 $bootstrap->init();
 ?>

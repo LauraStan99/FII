@@ -158,9 +158,11 @@ main .descriere-produs #imagine {
   main .detalii #adauga-cos,
   main .detalii #adauga-favorite {
     align-self: center;
+    width:80%;
   }
   main .descriere-produs h1 {
     text-align: center;
+    margin-left:0px
   }
 }
 @media screen and (max-width: 500px) {
@@ -182,6 +184,7 @@ main .descriere-produs #imagine {
   main .detalii #adauga-cos,
   main .detalii #adauga-favorite {
     align-self: center;
+    width:80%;
   }
   main .detalii .pret {
     flex-direction: column;
@@ -192,5 +195,6 @@ main .descriere-produs #imagine {
   }
   main .descriere-produs h1 {
     text-align: center;
+    margin-left:0px;
   }
 }
