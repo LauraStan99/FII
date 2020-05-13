@@ -36,8 +36,17 @@
               <img id="produs" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
             </td>
             <td><?php echo $row['descriere']; ?></td>
-            <td>3</td>
+
+            <td class="cantitate">
+              <form>
+                <button class="butonMinus">-</button>
+                <input type="text" value="1" name="quantity">
+                <button class="butonPlus">+</button>
+              </form>
+            </td>
+
             <td><?php echo $row['pret']; ?></td>
+
             <td>
               <button class="x-sterge">X</button>
             </td>
