@@ -1,19 +1,19 @@
 <?php
-class Wishlist_model extends Model
+class Cart_model extends Model
 {
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function selectWishlistProducts()
+    public function selectCartProducts()
     {
         if (!isset($_SESSION))
         {
             session_start();
         }
         $id = Session::get('id_utilizator');
-        $result = $this->db->select_list('wishlist', $id);
+        $result = $this->db->select_list('cos', $id);
         $products = array();
         while($row = $result->fetch()){
             array_push($products, $row['id_produs']);

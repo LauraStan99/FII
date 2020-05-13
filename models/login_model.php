@@ -15,7 +15,7 @@ class Login_Model extends Model
         if (!($stmt->execute())) {
             die('A survenit o eroare la interogare');
         } else {
-            
+
             $inreg = $stmt->fetch();
 
             if ($inreg['id_utilizator'] != null) {
@@ -28,30 +28,27 @@ class Login_Model extends Model
                 Session::set('telefon', $inreg['telefon']);
                 Session::set('parola', $inreg['parola']);
                 Session::set('loggedIn', true);
-                
-                $query = 'SELECT * FROM wishlist WHERE id_utilizator='.$inreg['id_utilizator'];
-                $stmt_query = $this->db->con->prepare($query);
-                $stmt_query->execute();
-                $row = $stmt_query->fetch(); 
-                if($row['id_produs'] != null ){
+
+                $query1 = 'SELECT * FROM wishlist WHERE id_utilizator=' . $inreg['id_utilizator'];
+                $stmt_query1 = $this->db->con->prepare($query1);
+                $stmt_query1->execute();
+                $row1 = $stmt_query1->fetch();
+                if ($row1['id_produs'] != null) {
                     Session::set('wishlist', true);
-                }
-                else{
+                } else {
                     Session::set('wishlist', false);
                 }
 
-                $query = 'SELECT * FROM cart WHERE id_utilizator='.$inreg['id_utilizator'];
-                $stmt_query = $this->db->con->prepare($query);
-                $stmt_query->execute();
-                $row = $stmt_query->fetch(); 
-                if($row['id_produs'] != null ){
+                $query2 = 'SELECT * FROM cart WHERE id_utilizator=' . $inreg['id_utilizator'];
+                $stmt_query2 = $this->db->con->prepare($query2);
+                $stmt_query2->execute();
+                $row2 = $stmt_query2->fetch();
+                if ($row2['id_produs'] != null) {
                     Session::set('cart', true);
-                }
-                else{
+                } else {
                     Session::set('cart', false);
                 }
-                
-               
+
                 header('location: ../home');
                 header('Cache-Control: no-cache, no-store, must-revalidate');
             } else {

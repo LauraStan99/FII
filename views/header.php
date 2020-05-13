@@ -55,7 +55,7 @@
                     <script type="text/javascript" src="<?php echo URL; ?>public/js/modal.js"></script>
 
                     <?php if (Session::get('loggedIn') == true) : ?>
-                        <?php if (Session::get('cart') == true) : ?>
+                        <?php if (Session::get('cart') == false) : ?>
                             <img class="trigger-cartEmpty" src="<?php echo URL; ?>public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
                             <div class="modal-cartEmpty">
                                 <div class="modal-content-cartEmpty">
@@ -72,6 +72,7 @@
                             </a>
                         <?php endif; ?>
                     <?php endif; ?>
+
                 </div>
 
                 <div class="cont">

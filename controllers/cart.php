@@ -12,9 +12,8 @@ class Cart extends Controller
 
     public function index()
     {
-
-        $wishlist = new Wishlist_model();
-        $this->view->result = $wishlist->selectWishlistProducts();
+        $cart = new Cart_model();
+        $this->view->result = $cart->selectCartProducts();
         $this->view->render('cartFull');
     }
 }
