@@ -89,7 +89,7 @@
             <div class="header-left">
                 <div class="link-nume">
                     <a href="<?php echo URL; ?>home" title="logo"><img class="logo" src="<?php echo URL; ?>public/poze/logoHeader.png" alt="logo" /></a>
-                    <a href="<?php echo URL; ?>home" title="logo-nume"><img class="logo-nume" src="<?php echo URL; ?>public/poze/logo-nume.png" alt="logo-nume" /></a>
+                    <a href="<?php echo URL; ?>home" title="logo-nume"><img class="logo-nume" src="<?php echo URL; ?>public/poze/tw-numeLogo.png" alt="logo-nume" /></a>
                 </div>
             </div>
 
