@@ -5,7 +5,7 @@
     <title>Favorite | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="<?php echo URL; ?>public/css/wishList.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/wish.css" rel="stylesheet" />
 </head>
 <?php
 require 'header.php';
@@ -13,7 +13,7 @@ require 'header.php';
 
 <body>
 
-    <main>
+    <main class = "main">
         <h1>Favorite</h1>
         <div>
             <hr>
@@ -54,9 +54,12 @@ require 'header.php';
             </table>
 
     </main>
+    
+    <footer>
     <?php
     require 'footer.php';
     ?>
+    </footer>
 
 
 </html>
