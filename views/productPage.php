@@ -41,7 +41,7 @@
                 <div>
                     <hr>
                 </div>
-                <p>Marime :<?php if (isset($_GET['size'])) echo $_GET['size'];
+                <p>Marime: <?php if (isset($_GET['size'])) echo $_GET['size'];
                             else echo 'Alegeti o marime!'; ?></p>
                 <div class="butoane-marime">
                     <form method="POST">

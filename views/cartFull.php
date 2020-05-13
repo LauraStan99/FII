@@ -33,7 +33,9 @@
         ?>
           <tr>
             <td>
-              <img id="produs" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
+              <a href="<?php echo URL . 'produse/produs/' . $row['id_produs'] ?>">
+                <img id="produs" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
+              </a>
             </td>
             <td><?php echo $row['descriere']; ?></td>
 
@@ -48,7 +50,8 @@
             <td><?php echo $row['pret']; ?></td>
 
             <td>
-              <button class="x-sterge">X</button>
+              <form method = "POST">
+              <button formaction="<?php echo URL;?>cart?id=<?php echo $row['id_produs']?>" type = "submit" name = "x-sterge" class="x-sterge">X</button>
             </td>
 
           </tr>

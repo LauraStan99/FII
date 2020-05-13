@@ -32,6 +32,14 @@ class Database extends PDO
         else return false;
     }
 
+    public function delete2($table_name, $col1, $data1, $col2, $data2)
+    {
+        $string = "DELETE FROM " . $table_name . " WHERE " . $col1 . "='" . $data1 . "' and ". $col2 . "='" . $data2 . "'";
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return true;
+        else return false;
+    }
+
     public function update($table_name, $col, $data, $id)
     {
         $string = "UPDATE " . $table_name . " SET " . $col . " ='" . $data . "' WHERE id_utilizator =" . $id;
@@ -65,6 +73,13 @@ class Database extends PDO
 
     public function select_list($table_name, $id){
         $string="SELECT * FROM ".$table_name." WHERE id_utilizator='".$id."'";  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
+    public function select_count($table_name, $id){
+        $string="SELECT count(*) FROM ".$table_name." WHERE id_utilizator='".$id."'";  
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;

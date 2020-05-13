@@ -39,7 +39,7 @@ class Login_Model extends Model
                     Session::set('wishlist', false);
                 }
 
-                $query2 = 'SELECT * FROM cart WHERE id_utilizator=' . $inreg['id_utilizator'];
+                $query2 = 'SELECT * FROM cos WHERE id_utilizator=' . $inreg['id_utilizator'];
                 $stmt_query2 = $this->db->con->prepare($query2);
                 $stmt_query2->execute();
                 $row2 = $stmt_query2->fetch();

@@ -39,5 +39,25 @@
         public function selectProductDetails($id_product){
             return $this->db->selectOne('produse', $id_product);
         }
+
+        public function deleteFromCart($id_product){
+            if (!isset($_SESSION))
+            {
+                session_start();
+            }
+            $id = Session::get('id_utilizator');
+            return $this->db->delete2('cos', 'id_utilizator', $id, 'id_produs', $id_product);
+        }
+
+        public function countProductsCart(){
+            if (!isset($_SESSION))
+            {
+                session_start();
+            }
+            $id = Session::get('id_utilizator');
+            $result = $this->db->select_count('cos', $id);
+            $row = $result->fetch();
+            return $row['count(*)'];
+        }
     }
 ?>
