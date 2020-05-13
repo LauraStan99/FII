@@ -13,23 +13,25 @@ class Cart extends Controller
     public function index()
     {
         $cart = new Cart_model();
+        $buton = new Butoane_model();
+        $count = $buton->countProductsCart();
         $this->view->result = $cart->selectCartProducts();
-        if(isset($_POST['x-sterge'])){
-            if(isset($_GET['id']))
-            {
-                $buton = new Butoane_model();
-                $count = $buton->countProductsCart();
+        if (isset($_POST['x-sterge'])) {
+            if (isset($_GET['id'])) {
                 $buton->deleteFromCart($_GET['id']);
-                if($count == 1){
+                if ($count == 1) {
                     header('location: ' . URL . 'home');
-                }
-                else{
+                    Session::set('cart', false);
+                } else {
                     header('location: ' . URL . 'cart');
+                    Session::set('cart', true);
                 }
-                
-                
             }
         }
-        $this->view->render('cartFull');
+        if ($count > 0) {
+            $this->view->render('cartFull');
+        } else {
+            $this->view->render('wishlistEmpty');
+        }
     }
 }

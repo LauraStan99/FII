@@ -55,25 +55,21 @@
                     <script type="text/javascript" src="<?php echo URL; ?>public/js/modal.js"></script>
 
                     <?php if (Session::get('loggedIn') == true) { ?>
-                        <?php if (Session::get('cart') == false) { ?>
-                            <img class="trigger-cartEmpty" src="<?php echo URL; ?>public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
+                        
+                        <!--    
+                        <img class="trigger-cartEmpty" src="<?php /*echo URL;*/ ?>public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
                             <div class="modal-cartEmpty">
                                 <div class="modal-content-cartEmpty">
                                     <span class="close-button-cartEmpty">&times;</span>
                                     <h1>Cosul este gol!</h1>
                                 </div>
                             </div>
-                            <script type="text/javascript" src="<?php echo URL; ?>public/js/modal-cartEmpty.js"></script>
-
-
-                        <?php }
-                        
-                        else { ?>
-                            <a class="link cos" href="<?php echo URL; ?>cart" title="Cos cumparaturi">
-                                <img class="logo-cos" src="<?php echo URL; ?>public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
-                            </a>
+                            <script type="text/javascript" src="<?php /*echo URL;*/ ?>public/js/modal-cartEmpty.js"></script>
+                        -->
+                        <a class="link cos" href="<?php echo URL; ?>cart" title="Cos cumparaturi">
+                            <img class="logo-cos" src="<?php echo URL; ?>public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
+                        </a>
                         <?php }?>
-                        <?php } ?>
 
                 </div>
 
