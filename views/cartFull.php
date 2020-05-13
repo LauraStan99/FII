@@ -38,8 +38,17 @@
               </a>
             </td>
             <td><?php echo $row['descriere']; ?></td>
-            <td>3</td>
+
+            <td class="cantitate">
+              <form>
+                <button class="butonMinus">-</button>
+                <input type="text" value="1" name="quantity">
+                <button class="butonPlus">+</button>
+              </form>
+            </td>
+
             <td><?php echo $row['pret']; ?></td>
+
             <td>
               <form method = "POST">
               <button formaction="<?php echo URL;?>cart?id=<?php echo $row['id_produs']?>" type = "submit" name = "x-sterge" class="x-sterge">X</button>
