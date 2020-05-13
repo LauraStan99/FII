@@ -54,8 +54,8 @@
                     </div>
                     <script type="text/javascript" src="<?php echo URL; ?>public/js/modal.js"></script>
 
-                    <?php if (Session::get('loggedIn') == true) : ?>
-                        <?php if (Session::get('cart') == false) : ?>
+                    <?php if (Session::get('loggedIn') == true) { ?>
+                        <?php if (Session::get('cart') == false) { ?>
                             <img class="trigger-cartEmpty" src="<?php echo URL; ?>public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
                             <div class="modal-cartEmpty">
                                 <div class="modal-content-cartEmpty">
@@ -66,12 +66,14 @@
                             <script type="text/javascript" src="<?php echo URL; ?>public/js/modal-cartEmpty.js"></script>
 
 
-                        <?php else : ?>
+                        <?php }
+                        
+                        else { ?>
                             <a class="link cos" href="<?php echo URL; ?>cart" title="Cos cumparaturi">
                                 <img class="logo-cos" src="<?php echo URL; ?>public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
                             </a>
-                        <?php endif; ?>
-                    <?php endif; ?>
+                        <?php }?>
+                        <?php } ?>
 
                 </div>
 
