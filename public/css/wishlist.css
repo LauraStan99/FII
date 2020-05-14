@@ -18,7 +18,19 @@ body {
   text-align: center;
   font: bold;
 }
+table {
+  width: 97%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid black;
+  margin-bottom: 20vh;
+  margin-top: 5vh;
+  margin-left: 2vw;
 
+}
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 table .articol,
 .add {
   width: 30%;
@@ -26,9 +38,7 @@ table .articol,
 table .detalii {
   width: 40%;
 }
-table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
+
 #produs {
   margin-top: 20px;
   width: 45%;
@@ -81,12 +91,13 @@ table tr:nth-child(even) {
   a {
     font-size: 0.8rem;
   }
-  .stergere a,p{
+  .stergere a,
+  p {
     font-size: 0.8rem;
   }
-  .stergere .adauga-in-cos{
+  .stergere .adauga-in-cos {
     width: 100%;
-    font-size: 0.7rem ;
+    font-size: 0.7rem;
     margin-top: 10px;
     height: 20px;
   }
