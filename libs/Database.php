@@ -48,6 +48,21 @@ class Database extends PDO
         else return false;
     }
 
+    public function update3($table_name, $col1, $data1, $col2, $data2, $col3, $data3, $col4, $data4)
+    {
+        $string = "UPDATE ".$table_name." SET ".$col1." ='".$data1."' WHERE ".$col2 ."='".$data2."' AND ".$col3."='".$data3."' AND ".$col4."='".$data4."'";
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return true;
+        else return false;
+    }
+
+    public function select1($table_name, $col, $data){
+        $string="SELECT * FROM ".$table_name." WHERE ".$col."='".$data."'";  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
     public function select2($table_name,$col1,$data1,$col2,$data2) {
       
         $string="SELECT * FROM ".$table_name." WHERE ".$col1."='".$data1."' and ".$col2."='".$data2."'";  
@@ -56,16 +71,25 @@ class Database extends PDO
         else return false;
     }
 
-    public function selectOrderBy2($table_name,$col1,$data1,$col2,$data2,$order,$filter) {
+    public function selectCount3($table_name,$col1,$data1,$col2,$data2,$col3,$data3) {
       
-        $string="SELECT * FROM ".$table_name." WHERE ".$col1."='".$data1."' and ".$col2."='".$data2."' order by ".$order." ".$filter;  
+        $string="SELECT count(*) FROM ".$table_name." WHERE ".$col1."='".$data1."' and ".$col2."='".$data2."' and ".$col3."='".$data3."'";  
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;
     }
 
-    public function select1($table_name, $col, $data){
-        $string="SELECT * FROM ".$table_name." WHERE ".$col."='".$data."'";  
+    public function select3($table_name,$col1,$data1,$col2,$data2,$col3,$data3) {
+      
+        $string="SELECT * FROM ".$table_name." WHERE ".$col1."='".$data1."' and ".$col2."='".$data2."' and ".$col3."='".$data3."'";  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
+    public function selectOrderBy2($table_name,$col1,$data1,$col2,$data2,$order,$filter) {
+      
+        $string="SELECT * FROM ".$table_name." WHERE ".$col1."='".$data1."' and ".$col2."='".$data2."' order by ".$order." ".$filter;  
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;
@@ -81,6 +105,13 @@ class Database extends PDO
     public function selectByArray($table_name, $col, $data){
         $string = "SELECT * FROM " . $table_name . " WHERE ".$col." IN";
         $string .= "(" . implode(",", array_values($data)) . ")";
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
+    public function selectJoin($table_name1, $table_name2, $col1, $col2, $col3, $data){
+        $string = "SELECT * FROM " . $table_name1 . " JOIN ".$table_name2." ON ".$table_name1.".".$col1."=".$table_name2.".".$col2." WHERE ".$table_name1.".".$col3."='".$data."'";
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;

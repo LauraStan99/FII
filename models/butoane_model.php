@@ -59,5 +59,28 @@
             $row = $result->fetch();
             return $row['count(*)'];
         }
+
+        public function selectProductCart($id_product, $size){
+            if (!isset($_SESSION))
+            {
+                session_start();
+            }
+            $id = Session::get('id_utilizator');
+            $result = $this->db->selectCount3('cos', 'id_utilizator', $id, 'id_produs', $id_product, 'marime', $size);
+            $row = $result->fetch();
+            return $row['count(*)'];
+        }
+
+        public function addQuantity($id_product, $size){
+            if (!isset($_SESSION))
+            {
+                session_start();
+            }
+            $id = Session::get('id_utilizator');
+            $result = $this->db->select3('cos', 'id_utilizator', $id, 'id_produs', $id_product, 'marime', $size);
+            $row = $result->fetch();
+            $newQuantity = $row['cantitate']+1;
+            return $this->db->update3('cos', 'cantitate', $newQuantity, 'id_utilizator', $id, 'id_produs', $id_product, 'marime', $size);
+        }
     }
 ?>

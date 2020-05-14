@@ -79,7 +79,27 @@ class Produse extends Controller
             }
             if (isset($_POST['adauga-cos'])) {
                 if (isset($_GET['size'])) {
-                    $buton->addToCart($id_product, $_GET['size']);
+                    $count = $buton->selectProductCart($id_product, $_GET['size']);
+                    if($count != 0)
+                    {
+                        $buton->addQuantity($id_product, $_GET['size']);     
+                    }
+                    else
+                    {
+                        $buton->addToCart($id_product, $_GET['size']);
+                    }
+                }
+                else
+                {
+                    $count = $buton->selectProductCart($id_product, 'XS');
+                    if($count != 0)
+                    {
+                        $buton->addQuantity($id_product, 'XS');     
+                    }
+                    else
+                    {
+                        $buton->addToCart($id_product, 'XS');
+                    }
                 }
             }
             if (isset($_POST['adauga-favorite'])) {
@@ -87,9 +107,28 @@ class Produse extends Controller
                 if (isset($_GET['size'])) {
                     $buton->addToWishlist($id_product, $_GET['size']);
                 }
+                else
+                {
+                    $buton->addToWishlist($id_product, 'XS');
+                }
             }
         }
         
         $this->view->render('productPage');
+    }
+
+    public function addToCart($id_product){
+
+        $button = new Butoane_model();
+        $count = $button->selectProductCart($id_product, 'XS');
+        if($count != 0)
+        {
+            $button->addQuantity($id_product, 'XS');     
+        }
+        else
+        {
+            $button->addToCart($id_product, 'XS');
+        }
+        header('location: ' . URL . 'cart');
     }
 }

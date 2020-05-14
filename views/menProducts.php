@@ -138,7 +138,9 @@
                             </a>
                             <h1><?php echo  $row['nume']; ?></h1>
                             <p class="price"><?php echo  $row['pret']; ?> lei</p>
-                            <p><button>Adauga in cos</button></p>
+                            <form method="POST">
+                            <button name = "adauga-cos" type="submit" formaction="<?php echo URL; ?>produse/addToCart/<?php echo $row['id_produs'] ?>">Adauga in cos</button>
+                            </form>                        
                         </div>
                     </div>
 

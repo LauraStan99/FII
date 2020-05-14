@@ -13,12 +13,7 @@ class Cart_model extends Model
             session_start();
         }
         $id = Session::get('id_utilizator');
-        $result = $this->db->select1('cos', 'id_utilizator',$id);
-        $products = array();
-        while($row = $result->fetch()){
-            array_push($products, $row['id_produs']);
-        }
-        return $this->db->selectByArray('produse', 'id_produs', $products);
+        return $result = $this->db->selectJoin('cos', 'produse', 'id_produs', 'id_produs', 'id_utilizator', $id);
     }
 
     public function selectCartTotalPrice(){

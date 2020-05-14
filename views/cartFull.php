@@ -5,7 +5,7 @@
   <title>Cos | Impressed</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="<?php echo URL; ?>public/css/cartNew.css" rel="stylesheet">
+  <link href="<?php echo URL; ?>public/css/cart.css" rel="stylesheet">
 </head>
 
 <body>
@@ -43,7 +43,7 @@
                 </a>
               </td>
               <td><?php echo $row['nume']; ?></td>
-              <td>S</td>
+              <td><?php echo $row['marime']; ?></td>
 
               <td class="cantitate">
                 <form>
@@ -58,6 +58,7 @@
               <td>
                 <form method="POST">
                   <button formaction="<?php echo URL; ?>cart?id=<?php echo $row['id_produs'] ?>" type="submit" name="x-sterge" class="x-sterge">X</button>
+                <form>
               </td>
 
             </tr>
@@ -68,10 +69,10 @@
 
       </div>
       <div class="totalFinal">
-        <p>Subtotal </p>
-        <p>Cost transport </p>
+        <p>Subtotal: <?php echo $this->totalPrice; ?> lei </p>
+        <p>Cost transport: 20 lei </p>
 
-        <p> Totalul comenzii </p>
+        <p> Totalul comenzii: <?php echo $this->totalPrice+20; ?> lei </p>
 
         <button id="finalizare-comanda" type="button" onclick="window.location.href='<?php echo URL; ?>checkout'">
           Catre finalizare ►

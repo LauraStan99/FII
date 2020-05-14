@@ -35,9 +35,9 @@ require 'header.php';
                         <td class="detalii-produs">
 
                             <h2><?php echo $row['nume']; ?> </h2>
-                            <a>Material :<?php echo $row['material']; ?> </a>
+                            <a>Material : <?php echo $row['material']; ?> </a>
                             <a>Culoare : <?php echo $row['culoare']; ?></a>
-                            <a>Marime :</a>
+                            <a>Marime : <?php echo $row['marime']; ?></a>
 
                         </td>
                         <td>
