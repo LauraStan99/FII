@@ -23,7 +23,7 @@ class Database extends PDO
         else return false;
     }
 
-    public function delete($table_name, $col, $data)
+    public function delete1($table_name, $col, $data)
     {
 
         $string = "DELETE FROM " . $table_name . " WHERE " . $col . "='" . $data . "'";
@@ -40,53 +40,46 @@ class Database extends PDO
         else return false;
     }
 
-    public function update($table_name, $col, $data, $id)
+    public function update($table_name, $col1, $data1, $col2, $data2)
     {
-        $string = "UPDATE " . $table_name . " SET " . $col . " ='" . $data . "' WHERE id_utilizator =" . $id;
+        $string = "UPDATE ".$table_name." SET ".$col1." ='".$data1."' WHERE ".$col2 ."='".$data2."'";
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return true;
         else return false;
     }
 
-    public function select($table_name,$gender,$category) {
+    public function select2($table_name,$col1,$data1,$col2,$data2) {
       
-        $string="SELECT * FROM ".$table_name." WHERE gen='".$gender."' and categorie='".$category."'";  
+        $string="SELECT * FROM ".$table_name." WHERE ".$col1."='".$data1."' and ".$col2."='".$data2."'";  
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;
     }
 
-    public function selectOrderBy($table_name,$gender,$category,$order,$filter) {
+    public function selectOrderBy2($table_name,$col1,$data1,$col2,$data2,$order,$filter) {
       
-        $string="SELECT * FROM ".$table_name." WHERE gen='".$gender."' and categorie='".$category."' order by ".$order." ".$filter;  
+        $string="SELECT * FROM ".$table_name." WHERE ".$col1."='".$data1."' and ".$col2."='".$data2."' order by ".$order." ".$filter;  
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;
     }
 
-    public function selectOne($table_name, $id_product){
-        $string="SELECT * FROM ".$table_name." WHERE id_produs='".$id_product."'";  
+    public function select1($table_name, $col, $data){
+        $string="SELECT * FROM ".$table_name." WHERE ".$col."='".$data."'";  
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;
     }
 
-    public function select_list($table_name, $id){
-        $string="SELECT * FROM ".$table_name." WHERE id_utilizator='".$id."'";  
+    public function select_count($table_name, $col, $data){
+        $string="SELECT count(*) FROM ".$table_name." WHERE ".$col."='".$data."'";  
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;
     }
 
-    public function select_count($table_name, $id){
-        $string="SELECT count(*) FROM ".$table_name." WHERE id_utilizator='".$id."'";  
-        $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
-        else return false;
-    }
-
-    public function selectByArray($table_name, $data){
-        $string = "SELECT * FROM " . $table_name . " WHERE id_produs IN";
+    public function selectByArray($table_name, $col, $data){
+        $string = "SELECT * FROM " . $table_name . " WHERE ".$col." IN";
         $string .= "(" . implode(",", array_values($data)) . ")";
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
