@@ -37,7 +37,7 @@
         }
 
         public function selectProductDetails($id_product){
-            return $this->db->selectOne('produse', $id_product);
+            return $this->db->select1('produse', 'id_produs', $id_product);
         }
 
         public function deleteFromCart($id_product){
@@ -55,7 +55,7 @@
                 session_start();
             }
             $id = Session::get('id_utilizator');
-            $result = $this->db->select_count('cos', $id);
+            $result = $this->db->select_count('cos', 'id_utilizator', $id);
             $row = $result->fetch();
             return $row['count(*)'];
         }

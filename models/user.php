@@ -17,7 +17,7 @@ class User extends Model
 			session_start();
 		}
         $id = Session::get('id_utilizator');
-        return $this->db->update('utilizatori', 'nume', $name, $id);
+        return $this->db->update('utilizatori', 'nume', $name, 'id_utilizator',$id);
     }
 
     public function updatePrenume($prenume)
@@ -27,7 +27,7 @@ class User extends Model
 			session_start();
 		}
         $id = Session::get('id_utilizator');
-        return $this->db->update('utilizatori', 'prenume', $prenume, $id);
+        return $this->db->update('utilizatori', 'prenume', $prenume, 'id_utilizator', $id);
     }
 
     public function updateEmail($email)
@@ -37,7 +37,7 @@ class User extends Model
 			session_start();
 		}
         $id = Session::get('id_utilizator');
-        return $this->db->update('utilizatori', 'email', $email, $id);
+        return $this->db->update('utilizatori', 'email', $email, 'id_utilizator', $id);
     }
 
     public function updatePhone($phone){
@@ -46,7 +46,7 @@ class User extends Model
 			session_start();
 		}
         $id = Session::get('id_utilizator');
-        return $this->db->update('utilizatori', 'telefon', $phone, $id);
+        return $this->db->update('utilizatori', 'telefon', $phone, 'id_utilizator', $id);
     }
 
     public function updateAddress($address){
@@ -55,7 +55,7 @@ class User extends Model
 			session_start();
 		}
         $id = Session::get('id_utilizator');
-        return $this->db->update('utilizatori', 'adresa', $address, $id);
+        return $this->db->update('utilizatori', 'adresa', $address, 'id_utilizator', $id);
     }
 
     public function updatePassword($password){
@@ -64,6 +64,6 @@ class User extends Model
 			session_start();
 		}
         $id = Session::get('id_utilizator');
-        return $this->db->update('utilizatori', 'parola', HASH::create('sha256',$password, HASH_PASSWORD_KEY), $id);
+        return $this->db->update('utilizatori', 'parola', HASH::create('sha256',$password, HASH_PASSWORD_KEY), 'id_utilizator', $id);
     }
 }

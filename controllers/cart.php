@@ -9,7 +9,6 @@ class Cart extends Controller
         parent::__construct();
     }
 
-
     public function index()
     {
         $cart = new Cart_model();
@@ -29,6 +28,8 @@ class Cart extends Controller
             }
         }
         if ($count > 0) {
+            $totalPrice = $cart->selectCartTotalPrice();
+            $this->view->totalPrice = $totalPrice;
             $this->view->render('cartFull');
         } else {
             $this->view->render('wishlistEmpty');

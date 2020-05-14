@@ -62,7 +62,7 @@
 
     </div>
     <div class="totalFinal">
-      <p>Total</p>
+      <p>Total: <?php echo $this->totalPrice; ?></p>
     </div>
 
 
