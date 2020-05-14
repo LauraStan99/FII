@@ -29,8 +29,8 @@
             $row = $result->fetch();
             $id = Session::get('id_utilizator');
             $insert_data = array(
-                'id_utilizator' => $id,'id_produs' => $id_product, 'cantitate' => 1, 'pret' => $row['pret'],
-                'marime'=>$size
+                'id_utilizator' => $id,'id_produs' => $id_product, 'cantitate' => 1, 'pretTotal' => $row['pret'],
+                'marime'=>$size, 'pret'=>$row['pret']
                 
             );
             return $this->db->insert('cos', $insert_data);
@@ -40,13 +40,13 @@
             return $this->db->select1('produse', 'id_produs', $id_product);
         }
 
-        public function deleteFromCart($id_product){
+        public function deleteFromCart($id_product,$size){
             if (!isset($_SESSION))
             {
                 session_start();
             }
             $id = Session::get('id_utilizator');
-            return $this->db->delete2('cos', 'id_utilizator', $id, 'id_produs', $id_product);
+            return $this->db->delete3('cos', 'id_utilizator', $id, 'id_produs', $id_product,'marime', $size);
         }
 
         public function countProductsCart(){
@@ -80,7 +80,34 @@
             $result = $this->db->select3('cos', 'id_utilizator', $id, 'id_produs', $id_product, 'marime', $size);
             $row = $result->fetch();
             $newQuantity = $row['cantitate']+1;
-            return $this->db->update3('cos', 'cantitate', $newQuantity, 'id_utilizator', $id, 'id_produs', $id_product, 'marime', $size);
+            $newPrice = $newQuantity*$row['pret'];
+            return $this->db->update3('cos', 'cantitate', $newQuantity, 'pretTotal', $newPrice,'id_utilizator', $id, 'id_produs', $id_product, 'marime', $size);
         }
+
+        public function subtractQuantity($id_product, $size){
+            if (!isset($_SESSION))
+            {
+                session_start();
+            }
+            $id = Session::get('id_utilizator');
+            $result = $this->db->select3('cos', 'id_utilizator', $id, 'id_produs', $id_product, 'marime', $size);
+            $row = $result->fetch();
+            $newQuantity = $row['cantitate']-1;
+            $newPrice = $newQuantity*$row['pret'];
+            return $this->db->update3('cos', 'cantitate', $newQuantity, 'pretTotal', $newPrice,'id_utilizator', $id, 'id_produs', $id_product, 'marime', $size);
+        }
+
+        public function getQuantity($id_product, $size){
+            if (!isset($_SESSION))
+            {
+                session_start();
+            }
+            $id = Session::get('id_utilizator');
+            $result = $this->db->select3('cos', 'id_utilizator', $id, 'id_produs', $id_product, 'marime', $size);
+            $row = $result->fetch();
+            return $row['cantitate'];
+        }
+        
+
     }
 ?>

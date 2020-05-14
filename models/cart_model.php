@@ -25,7 +25,7 @@ class Cart_model extends Model
         $result = $this->db->select1('cos', 'id_utilizator', $id);
         $total = 0;
         while($row = $result->fetch()){
-            $total = $total + $row['pret']*$row['cantitate'];
+            $total = $total + $row['pretTotal'];
         }
         return $total;
     }

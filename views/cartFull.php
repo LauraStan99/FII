@@ -46,18 +46,18 @@
               <td><?php echo $row['marime']; ?></td>
 
               <td class="cantitate">
-                <form>
-                  <button class="butonMinus">-</button>
-                  <input type="text" value="1" name="quantity">
-                  <button class="butonPlus">+</button>
+                <form method="POST">
+                  <button formaction="<?php echo URL; ?>cart?id=<?php echo $row['id_produs'] ?>&marime=<?php echo $row['marime'] ?>" name ="buttonMinus" class="butonMinus">-</button>
+                  <input type="text" value=<?php echo $row['cantitate']; ?> name="quantity">
+                  <button formaction="<?php echo URL; ?>cart?id=<?php echo $row['id_produs'] ?>&marime=<?php echo $row['marime'] ?>" name = "buttonPlus" class="butonPlus">+</button>
                 </form>
               </td>
 
-              <td><?php echo $row['pret']; ?> lei</td>
+              <td><?php echo $row['pretTotal']; ?> lei</td>
 
               <td>
                 <form method="POST">
-                  <button formaction="<?php echo URL; ?>cart?id=<?php echo $row['id_produs'] ?>" type="submit" name="x-sterge" class="x-sterge">X</button>
+                  <button formaction="<?php echo URL; ?>cart?id=<?php echo $row['id_produs'] ?>&marime=<?php echo $row['marime'] ?>" type="submit" name="x-sterge" class="x-sterge">X</button>
                 <form>
               </td>
 

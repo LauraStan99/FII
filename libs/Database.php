@@ -40,6 +40,14 @@ class Database extends PDO
         else return false;
     }
 
+    public function delete3($table_name, $col1, $data1, $col2, $data2, $col3, $data3)
+    {
+        $string = "DELETE FROM " . $table_name . " WHERE " . $col1 . "='" . $data1 . "' and ". $col2 . "='" . $data2 . "' and ".$col3 . "='".$data3."'";
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return true;
+        else return false;
+    }
+
     public function update($table_name, $col1, $data1, $col2, $data2)
     {
         $string = "UPDATE ".$table_name." SET ".$col1." ='".$data1."' WHERE ".$col2 ."='".$data2."'";
@@ -48,9 +56,9 @@ class Database extends PDO
         else return false;
     }
 
-    public function update3($table_name, $col1, $data1, $col2, $data2, $col3, $data3, $col4, $data4)
+    public function update3($table_name, $col1, $data1, $col2, $data2, $col3, $data3, $col4, $data4, $col5, $data5)
     {
-        $string = "UPDATE ".$table_name." SET ".$col1." ='".$data1."' WHERE ".$col2 ."='".$data2."' AND ".$col3."='".$data3."' AND ".$col4."='".$data4."'";
+        $string = "UPDATE ".$table_name." SET ".$col1." ='".$data1."' , ".$col2." ='".$data2."' WHERE ".$col3 ."='".$data3."' AND ".$col4."='".$data4."' AND ".$col5."='".$data5."'";
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return true;
         else return false;

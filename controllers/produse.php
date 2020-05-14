@@ -117,7 +117,7 @@ class Produse extends Controller
         $this->view->render('productPage');
     }
 
-    public function addToCart($id_product){
+    public function addToCartWomenPage($id_product, $category){
 
         $button = new Butoane_model();
         $count = $button->selectProductCart($id_product, 'XS');
@@ -129,6 +129,36 @@ class Produse extends Controller
         {
             $button->addToCart($id_product, 'XS');
         }
-        header('location: ' . URL . 'cart');
+        header('location: ' . URL . 'produse/femei/'.$category);
+    }
+
+    public function addToCartMenPage($id_product, $category){
+
+        $button = new Butoane_model();
+        $count = $button->selectProductCart($id_product, 'XS');
+        if($count != 0)
+        {
+            $button->addQuantity($id_product, 'XS');     
+        }
+        else
+        {
+            $button->addToCart($id_product, 'XS');
+        }
+        header('location: ' . URL . 'produse/barbati/'.$category);
+    }
+
+    public function addToCartChildrenPage($id_product, $category){
+
+        $button = new Butoane_model();
+        $count = $button->selectProductCart($id_product, 'XS');
+        if($count != 0)
+        {
+            $button->addQuantity($id_product, 'XS');     
+        }
+        else
+        {
+            $button->addToCart($id_product, 'XS');
+        }
+        header('location: ' . URL . 'produse/copii/'.$category);
     }
 }

@@ -45,7 +45,9 @@ require 'header.php';
                                 <a class="sterge-produs">X Sterge produs</a>
                                 <p>Disponibilitate: <a class="stock">in stock</a></p>
                                 <a>Pret : <?php echo $row['pret']; ?> </a>
-                                <button class="adauga-in-cos">Adauga in cos</button>
+                                <form method="POST">
+                                <button name = "adauga-cos" type="submit" formaction="<?php echo URL; ?>produse/addToCartMenPage/<?php echo $row['id_produs'] ?>/<?php echo $this->category ?>">Adauga in cos</button>
+                                </form>
                             </div>
                         </td>
                     </tr>
