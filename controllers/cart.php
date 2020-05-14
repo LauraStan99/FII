@@ -49,4 +49,6 @@ class Cart extends Controller
             $this->view->render('cartEmpty');
         }
     }
+
+    
 }

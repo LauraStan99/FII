@@ -49,6 +49,15 @@
             return $this->db->delete3('cos', 'id_utilizator', $id, 'id_produs', $id_product,'marime', $size);
         }
 
+        public function deleteFromWishlist($id_product,$size){
+            if (!isset($_SESSION))
+            {
+                session_start();
+            }
+            $id = Session::get('id_utilizator');
+            return $this->db->delete3('wishlist', 'id_utilizator', $id, 'id_produs', $id_product,'marime', $size);
+        }
+
         public function countProductsCart(){
             if (!isset($_SESSION))
             {
@@ -56,6 +65,17 @@
             }
             $id = Session::get('id_utilizator');
             $result = $this->db->select_count('cos', 'id_utilizator', $id);
+            $row = $result->fetch();
+            return $row['count(*)'];
+        }
+
+        public function countProductsWishlist(){
+            if (!isset($_SESSION))
+            {
+                session_start();
+            }
+            $id = Session::get('id_utilizator');
+            $result = $this->db->select_count('wishlist', 'id_utilizator', $id);
             $row = $result->fetch();
             return $row['count(*)'];
         }

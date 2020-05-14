@@ -30,7 +30,9 @@ require 'header.php';
                 ?>
                     <tr>
                         <td>
-                            <img id="produs" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
+                            <a href="<?php echo URL . 'produse/produs/' . $row['id_produs'] ?>">
+                                <img id="produs" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
+                            </a>
                         </td>
                         <td class="detalii-produs">
 
@@ -42,11 +44,11 @@ require 'header.php';
                         </td>
                         <td>
                             <div class="stergere">
-                                <a class="sterge-produs">X Sterge produs</a>
+                                <a class="sterge-produs" href = "<?php echo URL; ?>wishlist/deleteFromWishlist/<?php echo $row['id_produs'] ?>/<?php echo $row['marime'] ?>">X Sterge produs</a>
                                 <p>Disponibilitate: <a class="stock">in stock</a></p>
                                 <a>Pret : <?php echo $row['pret']; ?> </a>
                                 <form method="POST">
-                                <button name = "adauga-cos" type="submit" formaction="<?php echo URL; ?>produse/addToCartMenPage/<?php echo $row['id_produs'] ?>/<?php echo $this->category ?>">Adauga in cos</button>
+                                    <button class="adauga-in-cos" name="adauga-in-cos" type="submit" formaction="<?php echo URL; ?>wishlist/addToCart/<?php echo $row['id_produs'] ?>/<?php echo $row['marime'] ?>">Adauga in cos</button>
                                 </form>
                             </div>
                         </td>
