@@ -31,7 +31,7 @@ class Cart extends Controller
         if ($count > 0) {
             $this->view->render('cartFull');
         } else {
-            $this->view->render('wishlistEmpty');
+            $this->view->render('cartEmpty');
         }
     }
 }

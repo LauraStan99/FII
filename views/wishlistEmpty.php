@@ -26,7 +26,7 @@
     <p>Zi frumoasa !</p>
 
     <button id="inapoi-la-cump" type="button" onclick="window.location.href='<?php echo URL; ?>home'">
-      &lt Inapoi la cumparaturi
+      ◄ Inapoi la cumparaturi
     </button>
   </main>
 

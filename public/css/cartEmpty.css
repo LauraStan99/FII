@@ -7,32 +7,18 @@ body {
   margin: 0;
 }
 main {
+  width: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 100%;
 }
-
-main .favorite {
-  flex-direction: row;
-  align-self: center;
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
-
-main .favorite a {
-  font: bold;
-  font-size: 35px;
+main h1 {
   text-align: center;
-}
-main .favorite #inima-favorite {
-  height: 25px;
-  margin-right: 5px;
+  font-size: 2rem;
 }
 main p {
-  font: normal;
-  font-size: 16px;
-  align-self: center;
+  font-size: 1rem;
+  text-align: center;
 }
 
 main #inapoi-la-cump {
@@ -48,7 +34,6 @@ main #inapoi-la-cump {
   margin-bottom: 5vh;
   align-self: center;
 }
-
 
 @media screen and (max-width: 800px) {
   main {
