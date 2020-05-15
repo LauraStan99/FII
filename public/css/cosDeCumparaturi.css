@@ -66,18 +66,21 @@ main {
 }
 
 .tabel .articol {
-  width: 30%;
+  width: 27%;
 }
 .tabel .denumire {
-  width: 25%;
+  width: 23%;
 }
 .tabel .marime {
-  width: 15%;
+  width: 10%;
 }
 .tabel .cantitate {
   width: 15%;
 }
 .tabel .pret {
+  width: 10%;
+}
+.tabel .subtotal {
   width: 10%;
 }
 .tabel .sterge-produs {
@@ -128,15 +131,14 @@ main {
 .tabel #produs {
   width: 60%;
 }
-.tabel input {
+.tabel td .cantitate p {
   width: 40%;
 }
-.tabel .cantitate {
-  text-align: left;
+.tabel td .cantitate {
+  display: flex;
+  flex-direction: column;
 }
-.tabel .cantitate .butoane-rezerva {
-  display: none;
-}
+
 .tabel .butonPlus,
 .butonMinus {
   width: 20%;

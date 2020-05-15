@@ -104,14 +104,29 @@ header .logo-favorite,
 }
 
 header .header-right {
-  width: 50%;
+  width: 30%;
   margin-top: 5px;
 }
 header .header-left {
-  width: 50%;
+  width: 70%;
   margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+}
+header .header-left .link-nume,
+.oferta-transport {
+  width: 50%;
+  display:flex;
+  flex-direction: row;
 }
 
+.header-left .oferta-transport img{
+  height: 50px;
+ margin-left: 4vw;
+}
+.header-left .oferta-transport a{
+  margin-top: 2vh;
+}
 .navbar {
   background-color: black;
   display: flex;
@@ -194,6 +209,9 @@ input[type='submit'] {
 
 @media screen and (max-width: 700px) {
   header .logo-nume {
+    display: none;
+  }
+  .header-left .oferta-transport{
     display: none;
   }
   .navbar {

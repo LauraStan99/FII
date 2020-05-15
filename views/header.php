@@ -8,7 +8,7 @@
     <meta http-equiv="cache-control" content="no-cache,no-store,must-revalidate">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="0">
-    <link href="<?php echo URL; ?>public/css/headerNew.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/header.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -28,16 +28,15 @@
                     <script type="text/javascript" src="<?php echo URL; ?>public/js/modal-fav.js"></script>
 
                     <?php if (Session::get('loggedIn') == true) { ?>
-                        <?php if(Session::get('wishlist') == true){ ?>
-                        <a class="link-favorite" href="<?php echo URL; ?>wishlist" title="Lista de dorinte">
-                            <img class="logo-favorite" src="<?php echo URL; ?>public/poze/logo-favorite-tw.png" alt="Favorite" />
-                        </a>
-                        <?php } 
-                        else { ?>
+                        <?php if (Session::get('wishlist') == true) { ?>
+                            <a class="link-favorite" href="<?php echo URL; ?>wishlist" title="Lista de dorinte">
+                                <img class="logo-favorite" src="<?php echo URL; ?>public/poze/logo-favorite-tw.png" alt="Favorite" />
+                            </a>
+                        <?php } else { ?>
                             <a class="link-favorite" href="<?php echo URL; ?>wishlist/empty" title="Lista de dorinte">
-                            <img class="logo-favorite" src="<?php echo URL; ?>public/poze/logo-favorite-tw.png" alt="Favorite" />
-                        </a>
-                        <?php } ?>    
+                                <img class="logo-favorite" src="<?php echo URL; ?>public/poze/logo-favorite-tw.png" alt="Favorite" />
+                            </a>
+                        <?php } ?>
                     <?php } ?>
 
 
@@ -55,7 +54,7 @@
                     <script type="text/javascript" src="<?php echo URL; ?>public/js/modal.js"></script>
 
                     <?php if (Session::get('loggedIn') == true) { ?>
-                        
+
                         <!--    
                         <img class="trigger-cartEmpty" src="<?php /*echo URL;*/ ?>public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
                             <div class="modal-cartEmpty">
@@ -69,7 +68,7 @@
                         <a class="link cos" href="<?php echo URL; ?>cart" title="Cos cumparaturi">
                             <img class="logo-cos" src="<?php echo URL; ?>public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
                         </a>
-                        <?php }?>
+                    <?php } ?>
 
                 </div>
 
@@ -86,10 +85,17 @@
                 </div>
             </div>
 
+
+
+
             <div class="header-left">
                 <div class="link-nume">
                     <a href="<?php echo URL; ?>home" title="logo"><img class="logo" src="<?php echo URL; ?>public/poze/logoHeader.png" alt="logo" /></a>
                     <a href="<?php echo URL; ?>home" title="logo-nume"><img class="logo-nume" src="<?php echo URL; ?>public/poze/tw-numeLogo.png" alt="logo-nume" /></a>
+                </div>
+                <div class="oferta-transport">
+                    <img src="<?php echo URL; ?>public/poze/ofertaTransport.png">
+                    <a> Transport gratuit de la 350 de lei </a>
                 </div>
             </div>
 

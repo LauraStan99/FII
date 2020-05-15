@@ -5,7 +5,7 @@
   <title>Cos | Impressed</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="<?php echo URL; ?>public/css/cartnou.css" rel="stylesheet">
+  <link href="<?php echo URL; ?>public/css/cosDeCumparaturi.css" rel="stylesheet">
 </head>
 
 <body>
@@ -33,7 +33,8 @@
             <th class="marime">Marime</th>
             <th class="cantitate">Cantitate</th>
             <th class="pret">Pret</th>
-            <th class="sterge-produs"></th>
+            <th class="subtotal">Subtotal</th>
+            <th class="sterge-produs">Sterge</th>
           </tr>
           <br>
           <?php
@@ -51,13 +52,13 @@
               <td class="cantitate">
                 <form method="POST">
                   <button formaction="<?php echo URL; ?>cart?id=<?php echo $row['id_produs'] ?>&marime=<?php echo $row['marime'] ?>" name="buttonMinus" class="butonMinus">-</button>
-                  <input type="text" value=<?php echo $row['cantitate']; ?> name="quantity">
+                  <p><?php echo $row['cantitate']; ?> </p>
                   <button formaction="<?php echo URL; ?>cart?id=<?php echo $row['id_produs'] ?>&marime=<?php echo $row['marime'] ?>" name="buttonPlus" class="butonPlus">+</button>
                 </form>
               </td>
 
+              <td><?php echo $row['pret']; ?> lei</td>
               <td><?php echo $row['pretTotal']; ?> lei</td>
-
               <td>
                 <form method="POST">
                   <button formaction="<?php echo URL; ?>cart?id=<?php echo $row['id_produs'] ?>&marime=<?php echo $row['marime'] ?>" type="submit" name="x-sterge" class="x-sterge">X</button>
