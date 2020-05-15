@@ -19,7 +19,7 @@
       <hr />
     </div>
     <br />
-    <form method="post">
+    <form method="POST">
       <div class="linie">
         <label for="numeCard">Nume card <a class="neccessary">*</a> </label>
         <div class="input">
@@ -59,8 +59,10 @@
         <span class="error" > <?php if (isset($this->cvvCardErr)) echo $this->cvvCardErr; ?></span>
         </div>
       </div>
-      <input id="plaseaza-comanda" type="submit" value="Submit">
-      
+
+      <button type="submit" name="submit" value="submit" id="plaseaza-comanda">
+                    Plaseaza Comanda
+                </button>
       </input>
     </form>
   </main>

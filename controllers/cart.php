@@ -60,7 +60,8 @@ class Cart extends Controller
 
         $cart = new Cart_model();
         $cart->addToCommand();
-        header('location: ' . URL . 'checkout');
+        $id_comanda = $cart->selectIdComanda();
+        header('location: ' . URL . 'checkout?id_comanda='.$id_comanda);
     }
     
 }

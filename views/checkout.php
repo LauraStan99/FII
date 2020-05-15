@@ -115,10 +115,10 @@
             </div>
 
             <div class="butoane">
-                <button type="button" name="renunta" class="buton-renunta" onclick="window.location.href='<?php echo URL; ?>home'">
+                <button type="button" name="renunta" class="buton-renunta" onclick="window.location.href='<?php echo URL; ?>checkout/deleteCommand/<?php if(isset($_GET['id_comanda'])) echo $_GET['id_comanda'];?>'">
                     Renunta
                 </button>
-                <button type="submit" name="submit" value="Submit" class="buton-continua">
+                <button type="submit" name="submit" value="submit" class="buton-continua">
                     Plaseaza Comanda
                 </button>
 
