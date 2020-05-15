@@ -207,12 +207,12 @@ class Validate
     return $data;
   }
 
-  function validateNumeCard(&$numeCard, &$numeCardErr)
+  function validateNameCard(&$numeCard, &$numeCardErr)
   {
-    if (empty($_POST["numeCard"])) {
+    if (empty($_POST["nume-card"])) {
       $numeCardErr = 'Numele este obligatoriu';
     } else {
-      $numeCard = $this->test_input($_POST["numeCard"]);
+      $numeCard = $_POST["nume-card"];
 
       if (!preg_match("/^[a-zA-Z ]*$/", $numeCard)) {
         $numeCardErr = "Obligatoriu doar litere si spatii";

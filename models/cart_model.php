@@ -47,4 +47,15 @@ class Cart_model extends Model
             $this->db->insert('produse_comanda', $insert_data);
         }
     }
+
+    public function selectIdComanda(){
+        if (!isset($_SESSION))
+        {
+            session_start();
+        }
+        $id = Session::get('id_utilizator');
+        $result = $this->db->selectOrderBy1('produse_comanda', 'id_utilizator', $id, 'id_comanda', 'desc');
+        $row = $result -> fetch();
+        return $row['id_comanda'];
+    }
 }

@@ -64,6 +64,14 @@ class Database extends PDO
         else return false;
     }
 
+    public function update2($table_name, $col1, $data1, $col2, $data2, $col3, $data3)
+    {
+        $string = "UPDATE ".$table_name." SET ".$col1." ='".$data1."' WHERE ".$col2 ."='".$data2."' AND ".$col3."='".$data3."'";
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return true;
+        else return false;
+    }
+
     public function select1($table_name, $col, $data){
         $string="SELECT * FROM ".$table_name." WHERE ".$col."='".$data."'";  
         $stmt = $this->con->prepare($string);
@@ -132,5 +140,18 @@ class Database extends PDO
         else return false;
     }
 
+    public function selectOrderBy1($table_name,$col1,$data1,$order,$filter) {
+      
+        $string="SELECT * FROM ".$table_name." WHERE ".$col1."='".$data1."' order by ".$order." ".$filter;  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
 
+    public function selectDate(){
+        $string="SELECT sysdate()";  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
 }
