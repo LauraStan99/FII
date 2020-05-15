@@ -19,6 +19,9 @@
       <h1>( Cosul dvs. de cumparaturi )</h1>
       <hr>
     </div>
+    <button class="continua-cumparaturi">
+      ◄ Continua cumparaturi
+    </button>
     <div class="body">
       <div class="tabel">
 
@@ -47,9 +50,9 @@
 
               <td class="cantitate">
                 <form method="POST">
-                  <button formaction="<?php echo URL; ?>cart?id=<?php echo $row['id_produs'] ?>&marime=<?php echo $row['marime'] ?>" name ="buttonMinus" class="butonMinus">-</button>
+                  <button formaction="<?php echo URL; ?>cart?id=<?php echo $row['id_produs'] ?>&marime=<?php echo $row['marime'] ?>" name="buttonMinus" class="butonMinus">-</button>
                   <input type="text" value=<?php echo $row['cantitate']; ?> name="quantity">
-                  <button formaction="<?php echo URL; ?>cart?id=<?php echo $row['id_produs'] ?>&marime=<?php echo $row['marime'] ?>" name = "buttonPlus" class="butonPlus">+</button>
+                  <button formaction="<?php echo URL; ?>cart?id=<?php echo $row['id_produs'] ?>&marime=<?php echo $row['marime'] ?>" name="buttonPlus" class="butonPlus">+</button>
                 </form>
               </td>
 
@@ -58,7 +61,7 @@
               <td>
                 <form method="POST">
                   <button formaction="<?php echo URL; ?>cart?id=<?php echo $row['id_produs'] ?>&marime=<?php echo $row['marime'] ?>" type="submit" name="x-sterge" class="x-sterge">X</button>
-                <form>
+                  <form>
               </td>
 
             </tr>
@@ -68,19 +71,24 @@
         </table>
 
       </div>
+
       <div class="totalFinal">
         <p>Subtotal: <?php echo $this->totalPrice; ?> lei </p>
-        <p>Cost transport: <?php echo $this->livrare; ?>  lei </p>
+        <p>Cost transport: <?php echo $this->livrare; ?> lei </p>
 
-        <p> Totalul comenzii: <?php echo $this->totalPrice+$this->livrare; ?> lei </p>
-          <form>
-        <button id="finalizare-comanda" type="submit" formaction='<?php echo URL; ?>cart/addCommand'>
-          Catre finalizare ►
-        </button>
+        <p> Totalul comenzii: <?php echo $this->totalPrice + $this->livrare; ?> lei </p>
+        <form>
+          <button id="finalizare-comanda" type="submit" formaction='<?php echo URL; ?>cart/addCommand'>
+            Catre finalizare ►
+          </button>
         </form>
         <br />
       </div>
+
+
+
     </div>
+
 
   </main>
 

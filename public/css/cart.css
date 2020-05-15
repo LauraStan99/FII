@@ -20,6 +20,19 @@ main {
   margin-top: 5vh;
   margin-bottom: 5vh;
 }
+.continua-cumparaturi {
+  width: 17%;
+  font-size: 1rem;
+  background-color: black;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  outline: 0;
+  height: 5vh;
+  margin-bottom: 1vh;
+  margin-left: 1vw;
+}
 .body {
   width: 100%;
   display: flex;
@@ -70,9 +83,10 @@ main {
 .tabel .sterge-produs {
   width: 5%;
 }
+
 .totalFinal {
   width: 20%;
-  height: 200px;
+  height: 50vh;
   border: 2px solid #000000;
   margin-top: 20px;
   margin-left: 3vw;
@@ -95,6 +109,19 @@ main {
   align-self: center;
   margin-left: 1vw;
 }
+.cart-dreapta .continua-cumparaturi {
+  background-color: black;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  outline: 0;
+  width: 80%;
+  height: 5vh;
+  margin-left: 4vw;
+  margin-top: 3vh;
+  font-size: 0.9rem;
+}
 .tabel td {
   text-align: center;
 }
@@ -116,7 +143,26 @@ main {
   text-align: center;
   font-size: 0.7rem;
 }
-
+@media screen and (max-width: 1800px) {
+  .totalFinal {
+    height: 20vh;
+  }
+  .totalFinal #finalizare-comanda {
+    height: 4vh;
+  }
+  .continua-cumparaturi {
+    width: 25vw;
+    height: 5vh;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .totalFinal {
+    height: 30vh;
+  }
+  .totalFinal #finalizare-comanda {
+    height: 5vh;
+  }
+}
 @media screen and (max-width: 800px) {
   main {
     display: flex;
@@ -130,22 +176,29 @@ main {
     width: 100%;
     margin-left: 0px;
   }
+  .continua-cumparaturi {
+    width: 40%;
+    height: 5vh;
+  }
   .body {
     display: flex;
     flex-direction: column;
   }
   .totalFinal {
-    width: 93%;
-    margin-bottom: 10px;
-    height: 100px;
-    height:200px
+    height: 40vh;
+    width: 40%;
+    margin-bottom: 5vh;
+    margin-left: 1vw;
   }
-  .totalFinal p{
+  .totalFinal #finalizare-comanda {
+    height: 4vh;
+  }
+  .totalFinal p {
     font-size: 0.8rem;
   }
-  .totalFinal #finalizare-comanda{
-    width: 95%;
-    margin-left: 2vw;
+  .totalFinal #finalizare-comanda {
+    width: 80%;
+    margin-left: 1vw;
   }
 
   .tabel th,
@@ -168,6 +221,10 @@ main {
     display: none;
     width: 80%;
   }
+  .continua-cumparaturi {
+    width: 40%;
+    height: 5vh;
+  }
   .body {
     display: flex;
     flex-direction: column;
@@ -177,9 +234,17 @@ main {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .tabel th,
   td {
     font-size: 12px;
+  }
+  .continua-cumparaturi {
+    width: 80%;
+    align-self: center;
+  }
+  .totalFinal {
+    width: 97%;
+    height: 27vh;
   }
 }
