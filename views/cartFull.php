@@ -19,7 +19,7 @@
       <h1>( Cosul dvs. de cumparaturi )</h1>
       <hr>
     </div>
-    <button class="continua-cumparaturi">
+    <button class="continua-cumparaturi" onclick="window.location.href='<?php echo URL; ?>home'">
       ◄ Continua cumparaturi
     </button>
     <div class="body">

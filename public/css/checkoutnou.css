@@ -9,8 +9,22 @@ body {
 
 main {
   width: 100%;
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 0px;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.main-dreapta {
+  width: 30%;
+}
+.main-stanga {
+  display: block;
+  width: 70%;
 }
 
 main h1 {
@@ -18,13 +32,13 @@ main h1 {
   margin-left: 30px;
 }
 
-main .metoda-livrare p {
+.main .main-stanga .metoda-livrare p {
   font-size: 25px;
   margin-left: 30px;
   margin-bottom: 20px;
 }
 
-main #register1,
+.main .main-stanga #register1,
 #register2,
 #adresa,
 #tara,
@@ -33,34 +47,33 @@ main #register1,
   height: 30px;
   margin-left: 30px;
 }
-
-main .linie .input {
+.main .main-stanga .linie .input {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-main .linie input[type='text'] {
+.main .main-stanga .linie input[type='text'] {
   margin-left: 30px;
-  width: 50%;
+  width: 60%;
   height: 40px;
   margin-top: 5px;
   margin-bottom: 20px;
 }
-main form .metoda-plata {
+.main .main-stanga .metoda-plata {
   font-size: 25px;
   margin-left: 30px;
   margin-bottom: 20px;
 }
-main .butoane {
+.main .main-stanga .butoane {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-main .butoane .buton-continua {
-  background-color: rgb(143, 255, 152);
+.main .main-stanga .butoane .buton-continua {
+  background-color: black;
   width: 25%;
-  color: black;
+  color: white;
   padding: 14px 10px;
   text-decoration: none;
   outline: none;
@@ -70,7 +83,7 @@ main .butoane .buton-continua {
   font-size: 15px;
   margin-bottom: 20px;
 }
-main .butoane .buton-renunta {
+.main .main-stanga .butoane .buton-renunta {
   background-color: rgb(250, 128, 128);
   width: 25%;
   color: black;
@@ -84,19 +97,35 @@ main .butoane .buton-renunta {
   margin-bottom: 20px;
 }
 
-main form .buton-inregistrare:hover {
+.main .main-stanga .buton-inregistrare:hover {
   background-color: green;
 }
 
-main form .neccessary{
-  color:red;
+.main .main-stanga .neccessary {
+  color: red;
 }
 
-main .error{
-  color:red; 
-  margin-left:20px;
+.main .main-stanga .error {
+  color: red;
+  margin-left: 20px;
+}
+.main ,.main-dreapta .articol{
+  width: 20%;
+}
+.main ,.main-dreapta .detalii{
+  width: 80%;
+  font-size: 0.7rem;
 }
 
+.main-dreapta #produs{
+  width: 100%;
+
+}
+.main-dreapta .detalii-produs,
+.main-dreapta .total-comanda{
+  display: flex;
+  flex-direction: column;
+}
 @media screen and (max-width: 700px) {
   main {
     flex-direction: column;
@@ -104,11 +133,11 @@ main .error{
     margin-left: 2px;
   }
 
-  main .linie input[type='text'] {
+  .main .main-stanga .linie input[type='text'] {
     width: 90%;
     margin-left: 5px;
   }
-  main #register1,
+  .main .main-stanga #register1,
   #register2,
   #adresa,
   #tara,
@@ -117,18 +146,18 @@ main .error{
     height: 30px;
     margin-left: 5px;
   }
-  main .metoda-plata {
+  .main .main-stanga .metoda-plata {
     margin-left: 5px;
   }
-  main .butoane {
+  .main .main-stanga .butoane {
     display: flex;
     flex-direction: column;
   }
-  main .butoane .buton-renunta {
+  .main .main-stanga .butoane .buton-renunta {
     width: 90%;
     margin-left: 5px;
   }
-  main .butoane .buton-continua {
+  .main .main-stanga .butoane .buton-continua {
     width: 90%;
     margin-left: 5px;
   }
