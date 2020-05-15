@@ -70,13 +70,14 @@
       </div>
       <div class="totalFinal">
         <p>Subtotal: <?php echo $this->totalPrice; ?> lei </p>
-        <p>Cost transport: 20 lei </p>
+        <p>Cost transport: <?php echo $this->livrare; ?>  lei </p>
 
-        <p> Totalul comenzii: <?php echo $this->totalPrice+20; ?> lei </p>
-
-        <button id="finalizare-comanda" type="button" onclick="window.location.href='<?php echo URL; ?>checkout'">
+        <p> Totalul comenzii: <?php echo $this->totalPrice+$this->livrare; ?> lei </p>
+          <form>
+        <button id="finalizare-comanda" type="submit" formaction='<?php echo URL; ?>cart/addCommand'>
           Catre finalizare ►
         </button>
+        </form>
         <br />
       </div>
     </div>

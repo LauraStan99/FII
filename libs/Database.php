@@ -124,4 +124,13 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
+
+    public function selectOrderBy($table_name, $order, $filter){
+        $string="SELECT * FROM ".$table_name." order by ".$order." ".$filter;  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
+
 }

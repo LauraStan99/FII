@@ -22,9 +22,10 @@
 
             <div class="metoda-livrare">
                 <p>
-                    Medota de livrare: Curier<input type="checkbox" id="curier" />
-                    Posta<input type="checkbox" id="posta" />
+                    Medota de livrare: Curier<input type="radio" id="curier" name = "livrare" value = "curier" />
+                    Posta<input type="radio" id="posta" name = "livrare" value = "posta"/>
                     <a class = "neccessary">*</a>
+                    <span class = "error"><?php if(isset($this->livrareErr)) echo $this->livrareErr;?></span>
                 </p>
             </div>
             <div class="linie">
@@ -34,7 +35,7 @@
                     <a class = "neccessary">*</a>
                 </label>
                 <div class="input">
-                    <input type="text" id="checkout-nume" name="nume" placeholder="Popescu " value="<?php if (isset($this->nume)) echo $this->nume; ?>" />
+                    <input type="text" id="checkout-nume" name="nume" placeholder="Popescu " value="<?php if (isset($this->nume)) echo $this->nume; else echo Session::get('nume'); ?>" />
                     <span class="error"> <?php if (isset($this->numeErr)) echo $this->numeErr; ?></span>
                 </div>
             </div>
@@ -45,7 +46,7 @@
                     <a class = "neccessary">*</a>
                 </label>
                 <div class="input">
-                    <input type="text" id="checkout-prenume" name="prenume" placeholder="Daniel" value="<?php if (isset($this->prenume)) echo $this->prenume; ?>" />
+                    <input type="text" id="checkout-prenume" name="prenume" placeholder="Daniel" value="<?php if (isset($this->prenume)) echo $this->prenume; else echo Session::get('prenume'); ?>" />
                     <span class="error"> <?php if (isset($this->prenumeErr)) echo $this->prenumeErr; ?></span>
 
 
@@ -58,7 +59,7 @@
                     <a class = "neccessary">*</a>
                 </label>
                 <div class="input">
-                    <input type="text" id="checkout-email" name="email" placeholder="popescu@gmail.com" value="<?php if (isset($this->email)) echo $this->email; ?>" />
+                    <input type="text" id="checkout-email" name="email" placeholder="popescu@gmail.com" value="<?php if (isset($this->email)) echo $this->email; else echo Session::get('email'); ?>" />
                     <span class="error"> <?php if (isset($this->emailErr))
                                                                 echo $this->emailErr;
                                                             ?></span>
@@ -72,7 +73,7 @@
                     <a class = "neccessary">*</a>
                 </label>
                 <div class="input">
-                    <input type="text" id="checkout-email" name="adresa" placeholder="Str. Primaverii nr.8" value="<?php if (isset($this->adresa)) echo $this->adresa; ?>" />
+                    <input type="text" id="checkout-email" name="adresa" placeholder="Str. Primaverii nr.8" value="<?php if (isset($this->adresa)) echo $this->adresa; else echo Session::get('adresa'); ?>" />
                     <span class="error"> <?php if (isset($this->adresaErr))
                                                                 echo $this->adresaErr;
                                                             ?></span>
@@ -106,9 +107,10 @@
             </div>
             <div class="metoda-plata">
                 <p>
-                    Medota de plata: Ramburs<input type="checkbox" id="ramburs" />
-                    Online cu card bancar<input type="checkbox" id="card" />
+                    Medota de plata: Ramburs<input type="radio" id="ramburs" name = "plata" value = "cash" />
+                    Online cu card bancar<input type="radio" id="card" name = "plata" value = "card"/>
                     <a class = "neccessary">*</a>
+                    <span class = "error"><?php if(isset($this->paymentErr)) echo $this->paymentErr;?></span>
                 </p>
             </div>
 
@@ -117,12 +119,12 @@
                     Renunta
                 </button>
                 <button type="submit" name="submit" value="Submit" class="buton-continua">
-                    Continua
+                    Plaseaza Comanda
                 </button>
 
             </div>
 
-        </form>
+        </form>     
     </main>
 
     <?php

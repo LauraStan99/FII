@@ -112,6 +112,24 @@ class Validate
     }
   }
 
+  function validatePayment(&$plata, &$plataErr){
+    if(empty($_POST["plata"])){
+      $plataErr= "Plata este obligatorie";
+    }
+    else{
+      $plata =$this->test_input($_POST["plata"]);
+    }
+  }
+
+  function validateDelivery(&$livrare, &$livrareErr){
+    if(empty($_POST["livrare"])){
+      $livrareErr= "Metoda de livrare este obligatorie";
+    }
+    else{
+      $livrare =$this->test_input($_POST["livrare"]);
+    }
+  }
+
   function validateMessage(&$mesaj, &$mesajErr)
   {
     if (empty($_POST["mesaj"])) {

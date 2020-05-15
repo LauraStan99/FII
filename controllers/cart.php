@@ -44,11 +44,23 @@ class Cart extends Controller
         if ($count > 0) {
             $totalPrice = $cart->selectCartTotalPrice();
             $this->view->totalPrice = $totalPrice;
+            if($this->view->totalPrice >= 350){
+                $this->view->livrare = 0;
+            }
+            else{
+                $this->view->livrare = 20;
+            }
             $this->view->render('cartFull');
         } else {
             $this->view->render('cartEmpty');
         }
     }
 
+    public function addCommand(){
+
+        $cart = new Cart_model();
+        $cart->addToCommand();
+        header('location: ' . URL . 'checkout');
+    }
     
 }
