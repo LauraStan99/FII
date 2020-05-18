@@ -47,12 +47,11 @@ main .detalii .pret .valoare {
 main .detalii .pret .stock {
   width: 20%;
 }
-main .detalii .pret .stock #inStock {
-  position: relative;
-  display: inline-block;
-  width: 100px;
-  height: 30px;
-  margin-top: 15px;
+main .detalii .pret #in-stock {
+  color:green;
+}
+main .detalii .pret #out-of-stock {
+  color:red;
 }
 main .detalii .butoane-marime {
   flex-direction: column;

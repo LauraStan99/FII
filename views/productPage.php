@@ -5,7 +5,7 @@
     <title>Detalii produs | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="<?php echo URL; ?>/public/css/productPage.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>/public/css/productPageNew.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -29,10 +29,10 @@
                 <div class="pret">
                     <div class="valoare">
                         <p>Pret : <?php echo  $row['pret']; ?> lei</p>
+                        <a id="in-stock">IN STOCK</a>
+                        <!-- <a id="out-of-stock">OUT OF STOCK</a> -->
                     </div>
-                    <div class="stock">
-                        <img id="inStock" src="<?php echo URL; ?>public/poze/inStock.png">
-                    </div>
+                    
                 </div>
                 <div>
                     <hr>

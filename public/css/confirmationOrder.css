@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0px;
+}
+main h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 6vh;
+}
+main .mesaj {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+main .mesaj img {
+  margin-left: 15vw;
+  width: 13vw;
+  height: 30vh;
+}
+main .mesaj p {
+  margin-right: 15vw;
+  margin-top: 12vh;
+}
+@media screen and (max-width: 700px) {
+  main .mesaj img {
+    margin-left: 5vw;
+    width: 20vw;
+    height: 30vh;
+  }
+  main .mesaj p {
+    margin-right: 5vw;
+    margin-top: 12vh;
+  }
+}
+@media screen and (max-width: 550px) {
+  main .mesaj {
+    display: flex;
+    flex-direction: column;
+  }
+  main .mesaj img {
+    width: 30%;
+    align-self: center;
+  }
+  main .mesaj p {
+    text-align: center;
+    margin-top: 3vh;
+  }
+}

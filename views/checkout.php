@@ -5,7 +5,7 @@
     <title>Checkout | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="<?php echo URL; ?>public/css/checkoutnou.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/checkout.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -156,7 +156,7 @@
                                 </div>
                             </td>
                         </tr>
-                       
+
                     </table>
                     <hr>
                 </div>
