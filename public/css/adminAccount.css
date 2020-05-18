@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+main {
+  display: flex;
+  flex-direction: column;
+}
+main h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+main p {
+  margin-left: 5vw;
+  font-size: 1.2rem;
+}
+.administrare {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+.administrare-utilizatori h2,
+.administrare-produse h3 {
+  font-size: 1rem;
+  text-align: center;
+}
+.administrare-utilizatori,
+.administrare-produse {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 0.8rem;
+}
+.administrare-utilizatori a,
+.administrare-produse a {
+  background-color: rgb(100, 98, 98);
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 4px 0;
+  border: none;
+}
+.administrare .line {
+  border-left: 6px solid black;
+  height: 300px;
+}
+.administrare .modal {
+  display: none;  
+  position: fixed;  
+  z-index: 1;  
+  padding-top: 100px;  
+  left: 0;
+  top: 0;
+  width: 100%;  
+  height: 100%; 
+  overflow: auto;  
+  background-color: rgb(0, 0, 0);  
+  background-color: rgba(0, 0, 0, 0.4);  
+}
+
+/* Modal Content */
+.administrare .modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.administrare .modal-content .sectiune{
+    display: flex;
+    flex-direction: column;
+}
+.administrare .modal-content .input-id{
+    display: flex;
+    flex-direction: row;
+}
+.input-id input[type="text"]{
+    height: 5vh;
+    width: 20%;
+}
+.input-id button{
+    background-color: black;
+    color: white;
+}
+
+/* The Close Button */
+.administrare .close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.administrare .close:hover,
+.administrare .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  main .administrare {
+    display: flex;
+    flex-direction: column;
+  }
+  main .administrare .line {
+    display: none;
+  }
+}
