@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+main h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+main .linie{
+    margin-bottom: 2vh;
+    margin-left: 2vw;
+}
+main .linie input[type="text"]{
+    width: 50%;
+    height: 5vh;
+}
+main .buton{
+    background-color: black;
+    width: 49%;
+    height: 7vh;
+    color: white;
+    padding: 14px 10px;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 2vw;
+    font-size: 1rem;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+    text-align: center;
+}
+@media screen and (max-width: 700px) {
+    main .linie{
+        margin-bottom: 2vh;
+        margin-left: 3vw;
+    }
+    main .linie input[type="text"]{
+        width: 90%;
+        height: 5vh;
+    } 
+    main .buton{ 
+        margin-left: 3vw;
+        width: 87%;}
+}
