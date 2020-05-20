@@ -33,7 +33,17 @@
                 'marime'=>$size, 'pret'=>$row['pret']
                 
             );
-            return $this->db->insert('cos', $insert_data);
+            $result1 = $this->db->select2('marimi', 'id_produs', $id_product, 'marime', $size);
+            $row1 = $result1->fetch();
+            if($row1['cantitate'] == 0)
+            {
+                return false;
+            }
+            else{
+                
+                return $this->db->insert('cos', $insert_data);
+            }
+            
         }
 
         public function selectProductDetails($id_product){

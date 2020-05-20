@@ -86,7 +86,10 @@ class Produse extends Controller
                     }
                     else
                     {
-                        $buton->addToCart($id_product, $_GET['size']);
+                        if($buton->addToCart($id_product, $_GET['size']) == false){
+                            $this->view->message = 'Produsul cu marimea selectata nu este in stoc';
+                        }
+                        
                     }
                 }
                 else

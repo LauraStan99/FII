@@ -18,11 +18,7 @@ class Cart extends Controller
         if (isset($_POST['x-sterge'])) {
             if (isset($_GET['id']) && isset($_GET['marime'])) {
                 $buton->deleteFromCart($_GET['id'], $_GET['marime']);
-                if ($count == 1) {
-                    header('location: ' . URL . 'home');
-                } else {
                     header('location: ' . URL . 'cart');
-                }
             }
         }
         if (isset($_POST['buttonPlus'])) {

@@ -58,6 +58,11 @@
                     <button type="submit" name="adauga-cos" id="adauga-cos">Adauga in cos</button>
                     <button type="submit" name="adauga-favorite" id="adauga-favorite">Adauga la favorite </button>
                 </form>
+                <?php
+                if(isset($this->message)){
+                    echo $this->message;
+                }
+                ?>
             </div>
             <div class="descriere-produs">
                 <div>
