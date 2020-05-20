@@ -23,6 +23,7 @@ main p {
   flex-direction: row;
   margin-left: 20vw;
   margin-right: 20vw;
+  align-content: center;
 }
 .administrare-utilizatori h2,
 .administrare-produse h3 {
@@ -57,17 +58,17 @@ main p {
   height: 300px;
 }
 .administrare .modal {
-  display: none;  
-  position: fixed;  
-  z-index: 1;  
-  padding-top: 100px;  
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
   left: 0;
   top: 0;
-  width: 100%;  
-  height: 100%; 
-  overflow: auto;  
-  background-color: rgb(0, 0, 0);  
-  background-color: rgba(0, 0, 0, 0.4);  
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Modal Content */
@@ -76,23 +77,24 @@ main p {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
 }
-.administrare .modal-content .sectiune{
-    display: flex;
-    flex-direction: column;
+.administrare .modal-content .sectiune {
+  display: flex;
+  flex-direction: column;
 }
-.administrare .modal-content .input-id{
-    display: flex;
-    flex-direction: row;
+.administrare .modal-content .input-id {
+  display: flex;
+  flex-direction: row;
 }
-.input-id input[type="text"]{
-    height: 5vh;
-    width: 20%;
+.input-id input[type='text'] {
+  height: 5vh;
+  width: 20%;
+  align-self: center;
 }
-.input-id button{
-    background-color: black;
-    color: white;
+.input-id button {
+  background-color: black;
+  color: white;
 }
 
 /* The Close Button */
@@ -117,5 +119,13 @@ main p {
   }
   main .administrare .line {
     display: none;
+  }
+  .input-id input[type='text'] {
+    height: 5vh;
+    width: 70%;
+    align-self: center;
+  }
+  .administrare .modal-content {
+    width: 70%;
   }
 }
