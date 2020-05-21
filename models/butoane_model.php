@@ -1,5 +1,5 @@
 <?php
-
+    use PHPMailer\PHPMailer\PHPMailer;
     class Butoane_model extends Model{
         
         public function __construct()
@@ -138,6 +138,85 @@
             return $row['cantitate'];
         }
         
-
+        public function sendEmailConfirmation($orderId){
+            $result = $this->db->select1('comanda', 'id_comanda', $orderId);
+            $result1 = $this->db->selectJoin('produse_comanda', 'produse','id_produs','id_produs','id_comanda', $orderId);
+            $row = $result -> fetch();
+            $mail = new PHPMailer();
+    
+            $mail->isSMTP();
+            $mail->Host = "smtp.gmail.com";
+            $mail->SMTPAuth = true;
+            $mail->Username = "impressed.shop2020";
+            $mail->Password = "impressed2020$";
+            $mail->Port = 587;
+            $mail->SMTPSecure="tls";
+    
+            $mail->isHTML(true);
+            $mail->setFrom("impressed.shop2020@gmail.com");
+            $mail->addAddress($row['email']);
+            $mail->Subject = "Comanda Impressed";
+            $mail->Body = "
+            <html>
+            <body>
+            <p>Datele comenzii:</p>
+            <table>
+            <tr>
+            <th>Nume</th>
+            <th>Prenume</th>
+            <th>Email</th>
+            <th>Adresa</th>
+            <th>Oras</th>
+            <th>Tara</th>
+            <th>Metoda Plata</th>
+            <th>Metoda Livrare</th>
+            <th>Data Plasare</th>
+            </tr>
+            <tr>
+            <td>".$row['nume']."</td>
+            <td>".$row['prenume']."</td>
+            <td>".$row['email']."</td>
+            <td>".$row['adresa']."</td>
+            <td>".$row['oras']."</td>
+            <td>".$row['tara']."</td>
+            <td>".$row['metoda_plata']."</td>
+            <td>".$row['metoda_livrare']."</td>
+            <td>".$row['data_plasare']."</td>
+            </tr>
+            </table>
+            <br>
+            <p>Detaliile comenzii:</p>
+            <table>
+            <tr>
+            <th>Nume</th>
+            <th>Material</th>
+            <th>Culoare</th>
+            <th>Marime</th>
+            <th>Cantitate</th>
+            <th>Pret</th>
+            <th>Pret Total</th>
+            </tr>";
+    
+            while($row1 = $result1->fetch())
+            {
+                $mail->Body.="
+                <tr>
+                <td>".$row1['nume']."</td>
+                <td>".$row1['material']."</td>
+                <td>".$row1['culoare']."</td>
+                <td>".$row1['marime']."</td>
+                <td>".$row1['cantitate']."</td>
+                <td>".$row1['pret']."</td>
+                <td>".$row1['pret']*$row1['cantitate']."</td>
+                </tr>
+                "; 
+            }
+            $mail->Body.="</body>
+            </html>
+            ";
+            $mail->send();
+            $mail->clearAddresses();
+            $mail->smtpClose();
+        }
     }
 ?>
