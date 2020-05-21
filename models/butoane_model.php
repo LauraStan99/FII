@@ -1,16 +1,14 @@
 <?php
     use PHPMailer\PHPMailer\PHPMailer;
+
     class Butoane_model extends Model{
         
-        public function __construct()
-        {
+        public function __construct(){
             parent::__construct();
         }
 
-
         public function addToWishlist($id_product,$size){
-            if (!isset($_SESSION))
-            {
+            if (!isset($_SESSION)){
                 session_start();
             }
             $id = Session::get('id_utilizator');
@@ -21,8 +19,7 @@
         }
 
         public function addToCart($id_product,$size){
-            if (!isset($_SESSION))
-            {
+            if (!isset($_SESSION)){
                 session_start();
             }
             $result = $this->selectProductDetails($id_product);
@@ -51,8 +48,7 @@
         }
 
         public function deleteFromCart($id_product,$size){
-            if (!isset($_SESSION))
-            {
+            if (!isset($_SESSION)){
                 session_start();
             }
             $id = Session::get('id_utilizator');
@@ -60,8 +56,7 @@
         }
 
         public function deleteFromWishlist($id_product,$size){
-            if (!isset($_SESSION))
-            {
+            if (!isset($_SESSION)){
                 session_start();
             }
             $id = Session::get('id_utilizator');
@@ -69,8 +64,7 @@
         }
 
         public function countProductsCart(){
-            if (!isset($_SESSION))
-            {
+            if (!isset($_SESSION)){
                 session_start();
             }
             $id = Session::get('id_utilizator');
@@ -80,8 +74,7 @@
         }
 
         public function countWishlistProducts(){
-            if (!isset($_SESSION))
-            {
+            if (!isset($_SESSION)){
                 session_start();
             }
             $id = Session::get('id_utilizator');
@@ -91,8 +84,7 @@
         }
 
         public function selectProductCount($id_product, $size){
-            if (!isset($_SESSION))
-            {
+            if (!isset($_SESSION)){
                 session_start();
             }
             $id = Session::get('id_utilizator');
@@ -102,8 +94,7 @@
         }
 
         public function addQuantity($id_product, $size){
-            if (!isset($_SESSION))
-            {
+            if (!isset($_SESSION)){
                 session_start();
             }
             $id = Session::get('id_utilizator');
@@ -115,8 +106,7 @@
         }
 
         public function subtractQuantity($id_product, $size){
-            if (!isset($_SESSION))
-            {
+            if (!isset($_SESSION)){
                 session_start();
             }
             $id = Session::get('id_utilizator');
@@ -128,8 +118,7 @@
         }
 
         public function getQuantity($id_product, $size){
-            if (!isset($_SESSION))
-            {
+            if (!isset($_SESSION)){
                 session_start();
             }
             $id = Session::get('id_utilizator');
@@ -196,7 +185,7 @@
             <th>Pret</th>
             <th>Pret Total</th>
             </tr>";
-    
+            $suma = 0;
             while($row1 = $result1->fetch())
             {
                 $mail->Body.="
@@ -209,9 +198,28 @@
                 <td>".$row1['pret']."</td>
                 <td>".$row1['pret']*$row1['cantitate']."</td>
                 </tr>
-                "; 
+                ";
+                $suma = $row1['pret']*$row1['cantitate'] + $suma;
             }
-            $mail->Body.="</body>
+            $mail->Body.="
+            <br>
+            <p> Pret total produse: ".$suma."<p>";
+            if($suma >= 350){
+                $mail->Body.="
+                <p> Livrare : 0 lei</p>
+                <p> Pret total comanda: ".$suma."<p>
+                ";
+            }
+            else{ 
+                $suma = $suma + 20;
+                $mail->Body.="
+                <p> Livrare : 20 lei</p>
+               
+                <p> Pret total comanda: ".$suma."<p>
+                ";
+            }
+            $mail->Body.="
+            </body>
             </html>
             ";
             $mail->send();

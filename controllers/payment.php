@@ -32,6 +32,7 @@ class Payment extends Controller
                     if($change == true)
                     {
                         $button->sendEmailConfirmation($_GET['id_comanda']);
+                        $payment->deleteCart();
                         header('location: ' . URL . 'order');
                     }
                 }

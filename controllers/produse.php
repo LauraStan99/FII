@@ -89,7 +89,6 @@ class Produse extends Controller
                         if($buton->addToCart($id_product, $_GET['size']) == false){
                             $this->view->message = 'Produsul cu marimea selectata nu este in stoc';
                         }
-                        
                     }
                 }
                 else
@@ -101,7 +100,19 @@ class Produse extends Controller
                     }
                     else
                     {
-                        $buton->addToCart($id_product, 'XS');
+                        if($buton->addToCart($id_product, 'XS') == false){
+                            if($buton->addToCart($id_product, 'S') == false){
+                                if($buton->addToCart($id_product, 'M') == false){
+                                    if($buton->addToCart($id_product, 'L') == false){
+                                        if($buton->addToCart($id_product, 'XL') == false){
+                                            if($buton->addToCart($id_product, 'XXL')==false){
+                                                $this->view->message = 'Produsul cu nu este in stoc';
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
