@@ -24,7 +24,7 @@
 
     <div class="footer-centru">
         <div class="locatie">
-            <a title="Locatie"><img src="<?php echo URL; ?>public/poze/locatieTw.png" alt="locatie" /></a>
+            <a href="https://www.google.com/maps/place/Strada+General+Henri+Mathias+Berthelot+16-18,+Ia%C8%99i/@47.173599,27.5722604,17z/data=!3m1!4b1!4m5!3m4!1s0x40cafb618082222f:0x5f3819119b5a1fb5!8m2!3d47.1736138!4d27.5744451" title="Locatie"><img src="<?php echo URL; ?>public/poze/locatieTw.png" alt="locatie" /></a>
             <p>Strada General Henri Mathias Berthelot Nr. 16</p>
         </div>
 

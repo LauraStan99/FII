@@ -7,29 +7,33 @@ class Wishlist extends Controller
         parent::__construct();
     }
 
-    function empty()
+    /*function empty()
     {
         $this->view->render('wishlistEmpty');
-    }
+    }*/
 
+    /**
+     * calculez nr de produse din wishlist
+     * daca exista produse, le afisez, respectiv randez pagina de wishlist
+     * altfel, randez pagina predefinita ca wishlist-ul este gol
+     */
     function index(){
         $wishlist = new Wishlist_model();
-        $buton = new Butoane_model();
-        $count = $buton->countProductsWishlist();
-        $this->view->result = $wishlist->selectWishlistProducts();
-        if($count>0){
+        $button = new Butoane_model();
+        $countWishlistProducts = $button->countWishlistProducts();
+        if($countWishlistProducts > 0)
+        {
+            $this->view->result = $wishlist->selectWishlistProducts();
             $this->view->render('wishlist');
         }
-        else{
-            $this->view->render('wishlistEmpty');
-        }
-        
+        else $this->view->render('wishlistEmpty');
     }
+    
 
     public function addToCart($id_product, $size){
 
         $button = new Butoane_model();
-        $count = $button->selectProductCart($id_product, $size);
+        $count = $button->selectProductCount($id_product, $size);
         if($count != 0)
         {
             $button->addQuantity($id_product, $size);     

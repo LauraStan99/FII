@@ -7,10 +7,10 @@ class Err extends Controller
     {
         parent::__construct();
     }
+
     function index()
-    { 
+    {
         $this->view->message = 'Pagina de eroare';
         $this->view->render('error');
-       
     }
 }

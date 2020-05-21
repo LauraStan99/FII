@@ -79,7 +79,7 @@ class Produse extends Controller
             }
             if (isset($_POST['adauga-cos'])) {
                 if (isset($_GET['size'])) {
-                    $count = $buton->selectProductCart($id_product, $_GET['size']);
+                    $count = $buton->selectProductCount($id_product, $_GET['size']);
                     if($count != 0)
                     {
                         $buton->addQuantity($id_product, $_GET['size']);     
@@ -94,7 +94,7 @@ class Produse extends Controller
                 }
                 else
                 {
-                    $count = $buton->selectProductCart($id_product, 'XS');
+                    $count = $buton->selectProductCount($id_product, 'XS');
                     if($count != 0)
                     {
                         $buton->addQuantity($id_product, 'XS');     
@@ -123,7 +123,7 @@ class Produse extends Controller
     public function addToCartWomenPage($id_product, $category){
 
         $button = new Butoane_model();
-        $count = $button->selectProductCart($id_product, 'XS');
+        $count = $button->selectProductCount($id_product, 'XS');
         if($count != 0)
         {
             $button->addQuantity($id_product, 'XS');     
@@ -138,7 +138,7 @@ class Produse extends Controller
     public function addToCartMenPage($id_product, $category){
 
         $button = new Butoane_model();
-        $count = $button->selectProductCart($id_product, 'XS');
+        $count = $button->selectProductCount($id_product, 'XS');
         if($count != 0)
         {
             $button->addQuantity($id_product, 'XS');     
@@ -153,7 +153,7 @@ class Produse extends Controller
     public function addToCartChildrenPage($id_product, $category){
 
         $button = new Butoane_model();
-        $count = $button->selectProductCart($id_product, 'XS');
+        $count = $button->selectProductCount($id_product, 'XS');
         if($count != 0)
         {
             $button->addQuantity($id_product, 'XS');     

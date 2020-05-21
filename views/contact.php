@@ -50,8 +50,8 @@
           <a class="neccessary">*</a>
         </label>
         <div class="input">
-          <input type="text" id="contact-nume" name="nume" placeholder="Popescu" value="<?php if (isset($this->nume)) echo $this->nume; ?>" />
-          <span class="error"> <?php if (isset($this->numeErr)) echo $this->numeErr; ?></span>
+          <input type="text" id="contact-nume" name="nume" placeholder="Popescu" value="<?php if (isset($this->lastName)) echo $this->lastName; else echo SESSIOn::get('nume'); ?>" />
+          <span class="error"> <?php if (isset($this->lastNameErr)) echo $this->lastNameErr; ?></span>
         </div>
       </div>
 
@@ -61,8 +61,8 @@
           <a class="neccessary">*</a>
         </label>
         <div class="input">
-          <input type="text" id="contact-prenume" name="prenume" placeholder=" Daniel" value="<?php if (isset($this->prenume)) echo $this->prenume; ?>" />
-          <span class="error" > <?php if (isset($this->prenumeErr)) echo $this->prenumeErr; ?></span>
+          <input type="text" id="contact-prenume" name="prenume" placeholder=" Daniel" value="<?php if (isset($this->firstName)) echo $this->firstName; else echo SESSIOn::get('prenume'); ?>" />
+          <span class="error" > <?php if (isset($this->firstNameErr)) echo $this->firstNameErr; ?></span>
         </div>
       </div>
 
@@ -73,7 +73,7 @@
           <a class="neccessary">*</a>
         </label>
         <div class="input">
-          <input type="text" id="contact-email" name="email" placeholder="popescu@gmai.com" value="<?php if (isset($this->email)) echo $this->email; ?>" />
+          <input type="text" id="contact-email" name="email" placeholder="popescu@gmai.com" value="<?php if (isset($this->email)) echo $this->email; else echo SESSIOn::get('email'); ?>" />
           <span class="error" > <?php if (isset($this->emailErr)) echo $this->emailErr; ?></span>
         </div>
       </div>
@@ -85,8 +85,8 @@
           <a class="neccessary">*</a>
         </label>
         <div class="input">
-          <input type="text" id="contact-telefon" name="telefon" placeholder="0755-666-777" value="<?php if (isset($this->telefon)) echo $this->telefon; ?>" />
-          <span class="error"  > <?php if (isset($this->telefonErr)) echo $this->telefonErr; ?></span>
+          <input type="text" id="contact-telefon" name="telefon" placeholder="0755-666-777" value="<?php if (isset($this->phone)) echo $this->phone; else echo SESSIOn::get('telefon'); ?>" />
+          <span class="error"  > <?php if (isset($this->phoneErr)) echo $this->phoneErr; ?></span>
         </div>
       </div>
 
@@ -110,14 +110,17 @@
           <a class="neccessary">*</a>
         </label>
         <div class="input">
-          <input type="mesaj" id="contact-mesaj" name="mesaj" value="<?php if (isset($this->mesaj)) echo $this->mesaj; ?>" />
-          <span class="error"  > <?php if (isset($this->mesajErr)) echo $this->mesajErr; ?></span>
+          <input type="mesaj" id="contact-mesaj" name="mesaj" value="<?php if (isset($this->message)) echo $this->message; ?>" />
+          <span class="error"  > <?php if (isset($this->messageErr)) echo $this->messageErr; ?></span>
         </div>
       </div>
 
-      <button class="buton-formular" type="submit" onclick="window.location.href=''">
+      <button class="buton-formular" type="submit" name="submit">
         Trimiteti
       </button>
+      <?php
+      if(isset($this->successMessage)) echo $this->successMessage;
+      ?>
     </form>
   </main>
 

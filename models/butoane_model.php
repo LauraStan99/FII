@@ -79,7 +79,7 @@
             return $row['count(*)'];
         }
 
-        public function countProductsWishlist(){
+        public function countWishlistProducts(){
             if (!isset($_SESSION))
             {
                 session_start();
@@ -90,7 +90,7 @@
             return $row['count(*)'];
         }
 
-        public function selectProductCart($id_product, $size){
+        public function selectProductCount($id_product, $size){
             if (!isset($_SESSION))
             {
                 session_start();
