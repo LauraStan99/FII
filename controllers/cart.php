@@ -23,7 +23,9 @@ class Cart extends Controller
         }
         if (isset($_POST['buttonPlus'])) {
             if (isset($_GET['id']) && isset($_GET['marime'])) {
-               $buton->addQuantity($_GET['id'], $_GET['marime']);
+               if($buton->addQuantity($_GET['id'], $_GET['marime']) == false){
+                   $this->view->message = "Numarul de produse pe care il doriti nu este suficient";
+               }
                header('location: ' . URL . 'cart');
             }
         }

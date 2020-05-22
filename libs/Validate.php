@@ -3,44 +3,48 @@
 class Validate
 {
 
-  public function __construct()
-  {
+  public function __construct(){
   }
 
-
-  function validateLastName(&$nume, &$numeErr)
-  {
-    if (empty($_POST["nume"])) {
-      $numeErr = 'Numele este obligatoriu';
+  /**
+   * validare nume de familie in formular
+   * numele trebuie sa contina doar litere sau si spatii
+   */
+  function validateLastName(&$lastName, &$lastNameErr){
+    if (empty($_POST["nume"])){
+      $lastNameErr = 'Numele este obligatoriu';
     } else {
-      $nume = $this->test_input($_POST["nume"]);
-
-      if (!preg_match("/^[a-zA-Z ]*$/", $nume)) {
-        $numeErr = 'Obligatoriu doar litere si spatii';
+      $lastName = $this->test_input($_POST["nume"]);
+      if (!preg_match("/^[a-zA-Z ]*$/", $lastName)) {
+        $lastNameErr = 'Obligatoriu doar litere sau si spatii';
       }
     }
   }
 
-  function validateFirstName(&$prenume, &$prenumeErr)
-  {
-    if (empty($_POST["prenume"])) {
-      $prenumeErr = "Prenumele este obligatoriu";
-    } else {
-
-      $prenume = $this->test_input($_POST["prenume"]);
-
-      if (!preg_match("/^[a-zA-Z ]*$/", $prenume)) {
-        $prenumeErr = "Obligatoriu doar litere si spatii";
+  /**
+   * validare prenume in formular
+   * prenumele trebuie sa contina doar litere sau si spatii
+   * 
+   */
+  function validateFirstName(&$firstName, &$firstNameErr){
+    if (empty($_POST["prenume"])){
+      $firstNameErr = "Prenumele este obligatoriu";
+    } else{
+      $firstName = $this->test_input($_POST["prenume"]);
+      if (!preg_match("/^[a-zA-Z ]*$/", $firstName)) {
+        $firstNameErr = "Obligatoriu doar litere sau si spatii";
       }
     }
   }
 
-  function validateEmail(&$email, &$emailErr)
-  {
+  /**
+   * validare email in formular
+   * email-ul trebuie sa aiba formatul standard al unui email example@site.com
+   */
+  function validateEmail(&$email, &$emailErr){
     if (empty($_POST["email"])) {
       $emailErr = "Email-ul este obligatoriu";
     } else {
-
       $email = $this->test_input($_POST["email"]);
       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $emailErr = "Format gresit";
@@ -48,37 +52,51 @@ class Validate
     }
   }
 
-  function validateAddress(&$adresa, &$adresaErr)
+
+  /**
+   * validare adresa in formular
+   * adresa trebuie sa fie mentionata
+   * nu are nicio constrangere privind caracterele din aceasta
+   */
+  function validateAddress(&$adress, &$adressErr)
   {
     if (empty($_POST["adresa"])) {
-      $adresaErr = "Adresa este obligatorie";
+      $adressErr = "Adresa este obligatorie";
     } else {
-      $adresa = $this->test_input($_POST["adresa"]);
+      $adress = $this->test_input($_POST["adresa"]);
     }
   }
-  function validateCity(&$oras, &$orasErr)
+
+  /**
+   * validare oras formular
+   * numele orasului trebuie sa contina doar litere sau si spatii
+   */
+  function validateCity(&$city, &$cityErr)
   {
     if (empty($_POST["oras"])) {
-      $orasErr = "Orasul este obligatoriu";
+      $cityErr = "Orasul este obligatoriu";
     } else {
-
-      $oras = $this->test_input($_POST["oras"]);
-
-      if (!preg_match("/^[a-zA-Z ]*$/", $oras)) {
-        $orasErr = "Obligatoriu doar litere si spatii";
+      $city = $this->test_input($_POST["oras"]);
+      if (!preg_match("/^[a-zA-Z ]*$/", $city)) {
+        $cityErr = "Obligatoriu doar litere sau si spatii";
       }
     }
   }
-  function validateCountry(&$tara, &$taraErr)
+
+  /**
+   * validare tara
+   * numele tarii trebuie sa contina doar litere sau si spatii
+   */
+  function validateCountry(&$country, &$countryErr)
   {
     if (empty($_POST["tara"])) {
-      $taraErr = "Tara este obligatorie";
+      $countryErr = "Tara este obligatorie";
     } else {
 
-      $tara = $this->test_input($_POST["tara"]);
+      $country = $this->test_input($_POST["tara"]);
 
-      if (!preg_match("/^[a-zA-Z ]*$/", $tara)) {
-        $taraErr = "Obligatoriu doar litere si spatii";
+      if (!preg_match("/^[a-zA-Z ]*$/", $country)) {
+        $countryErr = "Obligatoriu doar litere sau si spatii";
       }
     }
   }
@@ -255,7 +273,7 @@ class Validate
 
       $anCard = str_replace(' ', '', $_POST["an-card"]);
       if (preg_match("/^[0-9]*$/", $anCard)) {
-        if (checkdate('01', '1', $anCard) != 1 || strlen($anCard) != 4) {
+        if (checkdate('01', '1', $anCard) != 1 || strlen($anCard) != 4 || $anCard < 2020) {
           $anCardErr = "Anul este invalid";
         }
       } else {

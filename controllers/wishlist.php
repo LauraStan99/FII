@@ -33,15 +33,7 @@ class Wishlist extends Controller
     public function addToCart($id_product, $size){
 
         $button = new Butoane_model();
-        $count = $button->selectProductCount($id_product, $size);
-        if($count != 0)
-        {
-            $button->addQuantity($id_product, $size);     
-        }
-        else
-        {
-            $button->addToCart($id_product, $size);
-        }
+        $button->addToCart($id_product, $size);
         header('location: ' . URL . 'wishlist');
     }
 

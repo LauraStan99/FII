@@ -136,7 +136,14 @@
             $row = $result->fetch();
             $newQuantity = $row['cantitate']+1;
             $newPrice = $newQuantity*$row['pret'];
-            return $this->db->update3('cos', 'cantitate', $newQuantity, 'pretTotal', $newPrice,'id_utilizator', $id, 'id_produs', $id_product, 'marime', $size);
+
+            $result1 = $this->db->select2('marimi', 'id_produs', $id_product, 'marime', $size);
+            $row1 = $result1->fetch();
+            if($row1['cantitate'] - 1 != 0)
+            {
+                return $this->db->update3('cos', 'cantitate', $newQuantity, 'pretTotal', $newPrice,'id_utilizator', $id, 'id_produs', $id_product, 'marime', $size);
+            }
+            else return false;
         }
 
         public function subtractQuantity($id_product, $size){
