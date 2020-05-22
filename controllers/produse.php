@@ -8,61 +8,61 @@ class Produse extends Controller
         parent::__construct();
     }
 
-    public function femei($category)
-    {
-
+    public function femei($category){
         $product = new produse_model();
-
         $this->view->result = $product->selectWomanCategory($category);
         $this->view->category = $category;
         $this->view->render('womenProducts');
     }
-    public function femeiOrder($category, $order, $filter)
-    {
+
+    public function femeiOrder($category, $order, $filter){
         $product = new produse_model();
         $this->view->result = $product->selectOrder('femei', $category, $order, $filter);
         $this->view->category = $category;
         $this->view->render('womenProducts');
     }
 
-    public function barbati($category)
-    {
+    public function barbati($category){
         $product = new produse_model();
-
         $this->view->result = $product->selectManCategory($category);
         $this->view->category = $category;
         $this->view->render('menProducts');
     }
-    public function barbatiOrder($category, $order, $filter)
-    {
+
+    public function barbatiOrder($category, $order, $filter){
         $product = new produse_model();
         $this->view->result = $product->selectOrder('barbati', $category, $order, $filter);
         $this->view->category = $category;
         $this->view->render('menProducts');
     }
 
-    public function copii($category)
-    {
+    public function copii($category){
         $product = new produse_model();
-
         $this->view->result = $product->selectChildrenCategory($category);
         $this->view->category = $category;
         $this->view->render('childrenProducts');
     }
-    public function copiiOrder($category, $order, $filter)
-    {
+
+    public function copiiOrder($category, $order, $filter){
         $product = new produse_model();
         $this->view->result = $product->selectOrder('copii', $category, $order, $filter);
         $this->view->category = $category;
         $this->view->render('childrenProducts');
     }
 
-    public function produs($id_product)
-    {
+    public function produs($id_product){
         $product = new produse_model();
         $buton = new butoane_model();
+        
         $this->view->result = $product->selectProduct($id_product);
-
+        $this->view->stocXS =  $product->selectCountProduct($id_product, 'XS');
+        $this->view->stocS =  $product->selectCountProduct($id_product, 'S');
+        $this->view->stocM =  $product->selectCountProduct($id_product, 'M');
+        $this->view->stocL =  $product->selectCountProduct($id_product, 'L');
+        $this->view->stocXL =  $product->selectCountProduct($id_product, 'XL');
+        $this->view->stocXXL =  $product->selectCountProduct($id_product, 'XXL');
+        $this->view->stocTotal = $this->view->stocXS + $this->view->stocS + $this->view->stocM + $this->view->stocL + $this->view->stocXL + $this->view->stocXXL;
+        
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if (isset($_POST['S'])) {
                 header('location: ../produs/' . $id_product . '?size=S');
@@ -79,35 +79,19 @@ class Produse extends Controller
             }
             if (isset($_POST['adauga-cos'])) {
                 if (isset($_GET['size'])) {
-                    $count = $buton->selectProductCount($id_product, $_GET['size']);
-                    if($count != 0)
-                    {
-                        $buton->addQuantity($id_product, $_GET['size']);     
-                    }
-                    else
-                    {
-                        if($buton->addToCart($id_product, $_GET['size']) == false){
-                            $this->view->message = 'Produsul cu marimea selectata nu este in stoc';
+                    if($buton->addToCart($id_product, $_GET['size']) == false){
+                            $this->view->message = 'Produsul cu marimea selectata nu este in stoc.';
                         }
                     }
-                }
                 else
                 {
-                    $count = $buton->selectProductCount($id_product, 'XS');
-                    if($count != 0)
-                    {
-                        $buton->addQuantity($id_product, 'XS');     
-                    }
-                    else
-                    {
-                        if($buton->addToCart($id_product, 'XS') == false){
-                            if($buton->addToCart($id_product, 'S') == false){
-                                if($buton->addToCart($id_product, 'M') == false){
-                                    if($buton->addToCart($id_product, 'L') == false){
-                                        if($buton->addToCart($id_product, 'XL') == false){
-                                            if($buton->addToCart($id_product, 'XXL')==false){
-                                                $this->view->message = 'Produsul cu nu este in stoc';
-                                            }
+                    if($buton->addToCart($id_product, 'XS') == false){
+                        if($buton->addToCart($id_product, 'S') == false){
+                            if($buton->addToCart($id_product, 'M') == false){
+                                if($buton->addToCart($id_product, 'L') == false){
+                                    if($buton->addToCart($id_product, 'XL') == false){
+                                        if($buton->addToCart($id_product, 'XXL')==false){
+                                                $this->view->message = 'Produsul nu este in stoc.';
                                         }
                                     }
                                 }
@@ -116,14 +100,28 @@ class Produse extends Controller
                     }
                 }
             }
+
             if (isset($_POST['adauga-favorite'])) {
 
                 if (isset($_GET['size'])) {
-                    $buton->addToWishlist($id_product, $_GET['size']);
+                    if($buton->addToWishlist($id_product, $_GET['size'])==false)
+                    $this->view->message = 'Produsul cu marimea selectata este deja in wishlist.';
                 }
                 else
                 {
-                    $buton->addToWishlist($id_product, 'XS');
+                    if($buton->addToWishlistSize($id_product, 'XS') == false){
+                        if($buton->addToWishlistSize($id_product, 'S') == false){
+                            if($buton->addToWishlistSize($id_product, 'M') == false){
+                                if($buton->addToWishlistSize($id_product, 'L') == false){
+                                    if($buton->addToWishlistSize($id_product, 'XL') == false){
+                                        if($buton->addToWishlistSize($id_product, 'XXL')==false){
+                                            $this->view->message = 'Produsul nu este in stoc.';
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -133,45 +131,57 @@ class Produse extends Controller
 
     public function addToCartWomenPage($id_product, $category){
 
-        $button = new Butoane_model();
-        $count = $button->selectProductCount($id_product, 'XS');
-        if($count != 0)
-        {
-            $button->addQuantity($id_product, 'XS');     
-        }
-        else
-        {
-            $button->addToCart($id_product, 'XS');
+        $buton = new Butoane_model();
+        if($buton->addToCart($id_product, 'XS') == false){
+            if($buton->addToCart($id_product, 'S') == false){
+                if($buton->addToCart($id_product, 'M') == false){
+                    if($buton->addToCart($id_product, 'L') == false){
+                        if($buton->addToCart($id_product, 'XL') == false){
+                            if($buton->addToCart($id_product, 'XXL')==false){
+                                    $this->view->message = 'Produsul nu este in stoc.';
+                            }
+                        }
+                    }
+                }
+            }
         }
         header('location: ' . URL . 'produse/femei/'.$category);
     }
 
     public function addToCartMenPage($id_product, $category){
 
-        $button = new Butoane_model();
-        $count = $button->selectProductCount($id_product, 'XS');
-        if($count != 0)
-        {
-            $button->addQuantity($id_product, 'XS');     
-        }
-        else
-        {
-            $button->addToCart($id_product, 'XS');
+        $buton = new Butoane_model();
+        if($buton->addToCart($id_product, 'XS') == false){
+            if($buton->addToCart($id_product, 'S') == false){
+                if($buton->addToCart($id_product, 'M') == false){
+                    if($buton->addToCart($id_product, 'L') == false){
+                        if($buton->addToCart($id_product, 'XL') == false){
+                            if($buton->addToCart($id_product, 'XXL')==false){
+                                    $this->view->message = 'Produsul nu este in stoc.';
+                            }
+                        }
+                    }
+                }
+            }
         }
         header('location: ' . URL . 'produse/barbati/'.$category);
     }
 
     public function addToCartChildrenPage($id_product, $category){
 
-        $button = new Butoane_model();
-        $count = $button->selectProductCount($id_product, 'XS');
-        if($count != 0)
-        {
-            $button->addQuantity($id_product, 'XS');     
-        }
-        else
-        {
-            $button->addToCart($id_product, 'XS');
+        $buton = new Butoane_model();
+        if($buton->addToCart($id_product, 'XS') == false){
+            if($buton->addToCart($id_product, 'S') == false){
+                if($buton->addToCart($id_product, 'M') == false){
+                    if($buton->addToCart($id_product, 'L') == false){
+                        if($buton->addToCart($id_product, 'XL') == false){
+                            if($buton->addToCart($id_product, 'XXL')==false){
+                                    $this->view->message = 'Produsul nu este in stoc.';
+                            }
+                        }
+                    }
+                }
+            }
         }
         header('location: ' . URL . 'produse/copii/'.$category);
     }

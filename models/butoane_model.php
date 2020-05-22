@@ -7,6 +7,34 @@
             parent::__construct();
         }
 
+        /**
+         * creez un array cu datele despre produsul cu id-ul si marimea date ca parametru
+         * in functie de marimea data ca parametru, caut cate produse cu acea marimea exista
+         * daca cantiatea este 0, returnez false
+         * altfel, caut sa vad daca produsul nu este deja in wishlist pt utilizatorul logat,
+         * daca nu exista, il adaug, altfel returnez false
+         */
+        public function addToWishlistSize($id_product,$size){
+            if (!isset($_SESSION)){
+                session_start();
+            }
+            $id = Session::get('id_utilizator');
+            $insert_data = array(
+                'id_utilizator' => $id,'id_produs' => $id_product , 'marime'=>$size
+            );
+            $result = $this->db->select2('marimi', 'id_produs', $id_product, 'marime', $size);
+            $row = $result->fetch();
+            if($row['cantitate'] == 0){
+                return false;
+            }
+            else {
+                $result1 = $this->db->selectCount3('wishlist', 'id_utilizator', $id, 'id_produs', $id_product, 'marime', $size);
+                $row1 = $result1->fetch();
+                if($row1['count(*)']) return false;
+                else return $this->db->insert('wishlist', $insert_data);
+            }
+        }
+
         public function addToWishlist($id_product,$size){
             if (!isset($_SESSION)){
                 session_start();
@@ -15,7 +43,10 @@
             $insert_data = array(
                 'id_utilizator' => $id,'id_produs' => $id_product , 'marime'=>$size
             );
-            return $this->db->insert('wishlist', $insert_data);
+            $result = $this->db->selectCount3('wishlist', 'id_utilizator', $id, 'id_produs', $id_product, 'marime', $size);
+            $row = $result->fetch();
+            if($row['count(*)']) return false;
+            else return $this->db->insert('wishlist', $insert_data);
         }
 
         public function addToCart($id_product,$size){
@@ -37,8 +68,11 @@
                 return false;
             }
             else{
-                
-                return $this->db->insert('cos', $insert_data);
+                $quantityInCart = $this->selectProductCount($id_product, $size);
+                if($quantityInCart != 0){
+                    return $this->addQuantity($id_product,$size);
+                }
+                else return $this->db->insert('cos', $insert_data);
             }
             
         }
@@ -68,7 +102,7 @@
                 session_start();
             }
             $id = Session::get('id_utilizator');
-            $result = $this->db->select_count('cos', 'id_utilizator', $id);
+            $result = $this->db->selectCount('cos', 'id_utilizator', $id);
             $row = $result->fetch();
             return $row['count(*)'];
         }
@@ -78,7 +112,7 @@
                 session_start();
             }
             $id = Session::get('id_utilizator');
-            $result = $this->db->select_count('wishlist', 'id_utilizator', $id);
+            $result = $this->db->selectCount('wishlist', 'id_utilizator', $id);
             $row = $result->fetch();
             return $row['count(*)'];
         }
