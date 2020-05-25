@@ -17,6 +17,6 @@ class Admin_model extends Model
 
     }
     public function deleteUser($id_user){
-        return $this->db->delete1('utilizatori','id_utilizator',$id_user);
+        return $this->db->delete1('utilizatori','id_utilizator', $id_user);
     }
 }

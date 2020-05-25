@@ -43,7 +43,7 @@
                     </td>
                     <td>
                         <form>
-                            <button id="stergere-user" formaction="<?php echo URL; ?>admin/stergeUtilizator/<?php echo $row['id_utilizator'] ?>" type="submit">Sterge</button>
+                            <button id="stergere-user"  formaction="<?php echo URL;?>admin/stergeUtilizator/<?php echo $row['id_utilizator']?>" type="submit">Sterge</button>
                         </form>
                     </td>
                 </tr>
