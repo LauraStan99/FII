@@ -21,7 +21,7 @@ class Admin extends Controller
     public function stergeProdus($id_produs)
     {
         $product = new admin_model();
-        $this->view->result = $product->deleteProduct($id_produs);
+        $product->deleteProduct($id_produs);
         header('location: ' . URL . 'admin/listareProduse');
     }
     public function listareUtilizatori()
@@ -33,7 +33,7 @@ class Admin extends Controller
     public function stergeUtilizator($id_utilizator)
     {
         $product = new admin_model();
-        $this->view->result = $product->deleteUser($id_utilizator);
+        $product->deleteUser($id_utilizator);
         header('location: ' . URL . 'admin/listareUtilizatori');
     }
 
