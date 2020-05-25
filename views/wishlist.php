@@ -57,7 +57,6 @@
                                 <form method="POST">
                                     <button class="adauga-in-cos" name="adauga-in-cos" type="submit" formaction="<?php echo URL; ?>wishlist/addToCart/<?php echo $row['id_produs'] ?>/<?php echo $row['marime'] ?>">Adauga in cos</button>
                                 </form>
-                            
                         </td>
                     </tr>
 

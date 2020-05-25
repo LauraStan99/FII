@@ -11,6 +11,7 @@ class Checkout extends Controller
     {
         $valid = new Validate();
         $checkout = new Checkout_model();
+        $button = new Butoane_model();
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $valid->validateLastName($this->view->nume, $this->view->numeErr);
             $valid->validateFirstName($this->view->prenume, $this->view->prenumeErr);
@@ -32,7 +33,8 @@ class Checkout extends Controller
                 else{
                     $checkout->addNewCommand($_GET['id_comanda'], $this->view->nume, $this->view->prenume, $this->view->email, $this->view->adresa, $this->view->tara, $this->view->oras, $this->view->payment, $this->view->livrare);
                     $checkout->deleteCart();
-                    header('location: ' . URL . 'home');
+                    $button->sendEmailConfirmation($_GET['id_comanda']);
+                    header('location: ' . URL . 'order');
                 }
             }
         }

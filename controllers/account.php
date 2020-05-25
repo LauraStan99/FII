@@ -8,24 +8,27 @@ class Account extends Controller
         parent::__construct();
     }
 
+    /**
+     * daca butonul "Schimba" este apasat,
+     * validez campul/campurile pe care utilizatorul vrea sa le schimbe
+     * daca datele noi introduse sunt corecte, sunt actualizate in baza de date
+     */
     public function index()
     {
-        $valid = new Validate();
+        $validate = new Validate();
         $user = new User();
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST["submit"])){
 
-            $valid->changeLastName($this->view->nume, $this->view->numeErr);
-            $valid->changeFirstName($this->view->prenume, $this->view->prenumeErr);
-            $valid->changeEmail($this->view->email, $this->view->emailErr);
-            $valid->changeAddress($this->view->adresa, $this->view->adresaErr);
-            $valid->changePhone($this->view->telefon, $this->view->telefonErr);
-            $valid->changePassword($this->view->parola, $this->view->parolaErr);
-        }
-        if (isset($_POST["submit"])) {                 
+            $validate->changeLastName($this->view->nume, $this->view->numeErr);
+            $validate->changeFirstName($this->view->prenume, $this->view->prenumeErr);
+            $validate->changeEmail($this->view->email, $this->view->emailErr);
+            $validate->changeAddress($this->view->adresa, $this->view->adresaErr);
+            $validate->changePhone($this->view->telefon, $this->view->telefonErr);
+            $validate->changePassword($this->view->parola, $this->view->parolaErr);              
 
-            if(isset($this->view->nume)) $user->updateName($this->view->nume);
-            if(isset($this->view->prenume)) $user->updatePrenume($this->view->prenume);
+            if(isset($this->view->nume)) $user->updateLastName($this->view->nume);
+            if(isset($this->view->prenume)) $user->updateFirstName($this->view->prenume);
             if(isset($this->view->email)) $user->updateEmail($this->view->email);
             if(isset($this->view->adresa)) $user->updateAddress($this->view->adresa);
             if(isset($this->view->telefon)) $user->updatePhone($this->view->telefon);
@@ -39,6 +42,7 @@ class Account extends Controller
 
         $this->view->render('account');
     }
+
     public function logout()
     {
         Session::destroy();

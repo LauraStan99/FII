@@ -3,14 +3,12 @@
 class Order extends Controller
 {
 
-    public function __construct()
-    {
+    public function __construct(){
         parent::__construct();
     }
 
     public function index()
     {
-
-        $this->view->render('order');
+        $this->view->render('confirmationOrder');
     }
 }

@@ -6,24 +6,24 @@ class User extends Model
     {
         parent::__construct();
     }
+
     public function addUser($data)
     {
         return $this->db->insert('utilizatori', $data);
     }
-    public function updateName($name)
+
+    public function updateLastName($name)
     {
-        if (!isset($_SESSION))
-		{
+        if (!isset($_SESSION)){
 			session_start();
 		}
         $id = Session::get('id_utilizator');
         return $this->db->update('utilizatori', 'nume', $name, 'id_utilizator',$id);
     }
 
-    public function updatePrenume($prenume)
+    public function updateFirstName($prenume)
     {
-        if (!isset($_SESSION))
-		{
+        if (!isset($_SESSION)){
 			session_start();
 		}
         $id = Session::get('id_utilizator');
@@ -32,8 +32,7 @@ class User extends Model
 
     public function updateEmail($email)
     {
-        if (!isset($_SESSION))
-		{
+        if (!isset($_SESSION)){
 			session_start();
 		}
         $id = Session::get('id_utilizator');
@@ -41,8 +40,7 @@ class User extends Model
     }
 
     public function updatePhone($phone){
-        if (!isset($_SESSION))
-		{
+        if (!isset($_SESSION)){
 			session_start();
 		}
         $id = Session::get('id_utilizator');
@@ -50,8 +48,7 @@ class User extends Model
     }
 
     public function updateAddress($address){
-        if (!isset($_SESSION))
-		{
+        if (!isset($_SESSION)){
 			session_start();
 		}
         $id = Session::get('id_utilizator');
@@ -59,8 +56,7 @@ class User extends Model
     }
 
     public function updatePassword($password){
-        if (!isset($_SESSION))
-		{
+        if (!isset($_SESSION)){
 			session_start();
 		}
         $id = Session::get('id_utilizator');

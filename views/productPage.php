@@ -29,10 +29,14 @@
                 <div class="pret">
                     <div class="valoare">
                         <p>Pret : <?php echo  $row['pret']; ?> lei</p>
-                        <a id="in-stock">IN STOCK</a>
-                        <!-- <a id="out-of-stock">OUT OF STOCK</a> -->
+                        <p>Stoc: <?php if (isset($_GET['size']) && $_GET['size'] == 'XS') echo $this->stocXS;
+                                       else if (isset($_GET['size']) && $_GET['size'] == 'S') echo $this->stocS;
+                                       else if (isset($_GET['size']) && $_GET['size'] == 'M') echo $this->stocM;
+                                       else if (isset($_GET['size']) && $_GET['size'] == 'L') echo $this->stocL;
+                                       else if (isset($_GET['size']) && $_GET['size'] == 'XL') echo $this->stocXL;
+                                       else if (isset($_GET['size']) && $_GET['size'] == 'XXL') echo $this->stocXXL;
+                                       else echo $this->stocTotal; ?></p>
                     </div>
-                    
                 </div>
                 <div>
                     <hr>
@@ -58,6 +62,11 @@
                     <button type="submit" name="adauga-cos" id="adauga-cos">Adauga in cos</button>
                     <button type="submit" name="adauga-favorite" id="adauga-favorite">Adauga la favorite </button>
                 </form>
+                <?php
+                if(isset($this->message)){
+                    echo $this->message;
+                }
+                ?>
             </div>
             <div class="descriere-produs">
                 <div>

@@ -30,8 +30,10 @@ class Produse_model extends Model
         return $this->db->select1('produse', 'id_produs',$id_product);
     }
 
-    public function selectAllProducts(){
-        return $this->db->selectOrderBy('produse','id_produs','asc');
+    public function selectCountProduct($id_product,$size){
+        $result = $this->db->select2('marimi', 'id_produs', $id_product, 'marime', $size);
+        $row = $result->fetch();
+        return $row['cantitate'];
     }
 
 }

@@ -39,7 +39,12 @@ class Checkout_model extends Model
             'adresa' => $adresa, 'oras' => $oras, 'tara' => $tara, 'metoda_plata' => $plata, 'metoda_livrare' => $livrare,
             'status_comanda' => $status_comanda, 'data_plasare' => $data_plasare, 'id_comanda' => $id_comanda
         );
-        return $this->db->insert('comanda', $insert_data);
+        $this->db->insert('comanda', $insert_data);
+
+        $result1 = $this->db->select1('produse_comanda', 'id_comanda', $id_comanda);
+        while($row1 = $result1->fetch()){
+            $this->db->updateSetNew('marimi', 'cantitate', $row1['cantitate'], 'id_produs', $row1['id_produs'], 'marime', $row1['marime']);
+        }
     }
 
     public function deleteCart(){
