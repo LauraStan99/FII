@@ -5,7 +5,7 @@
     <title>Produse | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="<?php echo URL; ?>public/css/seeProducts.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/seeProductsNew.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -54,7 +54,10 @@
                         <?php echo $row['pret']  ?> $
                     </td>
                     <td>
-                        <button id="stergere-produs">Sterge</button>
+                        <form method="POST">
+                            <button id="stergere-produs" formaction="<?php echo URL; ?>admin/stergeProdus/<?php echo $row['id_produs'] ?>" type="submit">Sterge</button>
+                        </form>
+
                     </td>
                 </tr>
             <?php } ?>

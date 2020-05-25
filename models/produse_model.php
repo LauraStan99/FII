@@ -2,7 +2,6 @@
 class Produse_model extends Model
 {
 
-
     public function __construct()
     {
         parent::__construct();
@@ -35,5 +34,7 @@ class Produse_model extends Model
         $row = $result->fetch();
         return $row['cantitate'];
     }
+
+    
 
 }

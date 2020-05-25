@@ -5,7 +5,7 @@
     <title>Users | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../public/css/seeUsers.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/seeUsers.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -25,23 +25,31 @@
                 <th class="sterge"></th>
             </tr>
             <br>
+            <?php
+            while ($row = $this->result->fetch()) {
+            ?>
                 <tr>
                     <td>
-                        <img id="produs" src="../public/poze/user.png">
+                        <img id="produs" src="<?php echo URL; ?>public/poze/user.png">
                     </td>
                     <td>
-                        Nume si prenume
+                        <?php echo $row['nume'] . " " . $row['prenume'] ?>
                     </td>
                     <td>
-                        email@gmail.com
+                        <?php echo $row['email'] ?>
                     </td>
                     <td>
-                        0766666666
+                        <?php echo $row['telefon'] ?>
                     </td>
                     <td>
-                        <button id="stergere-user">Sterge</button>
+                        <form>
+                            <button id="stergere-user" formaction="<?php echo URL; ?>admin/stergeUtilizator/<?php echo $row['id_utilizator'] ?>" type="submit">Sterge</button>
+                        </form>
                     </td>
                 </tr>
+            <?php
+            }
+            ?>
         </table>
 
     </main>

@@ -9,7 +9,11 @@
 </head>
 
 <body>
-
+    <header>
+        <?php
+        require 'header.php';
+        ?>
+    </header>
 
 
     <main>
@@ -22,7 +26,7 @@
         <div class="administrare">
             <div class="administrare-utilizatori">
                 <h2>ADMINISTRARE UTILIZATORI</h2>
-                <a>• Vezi utilizatori</a>
+                <a href="<?php echo URL; ?>admin/listareUtilizatori">• Vezi utilizatori</a>
             </div>
             <div class="line"></div>
             <div class="administrare-produse">
@@ -30,7 +34,7 @@
                 <a id="stergeProdus">• Sterge produs</a>
                 <a>• Adauga produs</a>
                 <a>• Modifica produs</a>
-                <a href="<?php echo URL ?>admin/listareProduse">• Vezi produse</a>
+                <a href="<?php echo URL; ?>admin/listareProduse">• Vezi produse</a>
             </div>
             <div id="modalStergereProdus" class="modal">
                 <div class="modal-content">
