@@ -5,11 +5,15 @@
     <title>Produse | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../public/css/seeProducts.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/seeProducts.css" rel="stylesheet" />
 </head>
 
 <body>
-
+    <header>
+        <?php
+        require 'header.php';
+        ?>
+    </header>
     <main>
         <div>
             <h1>Lista produse</h1>
@@ -27,27 +31,33 @@
 
             </tr>
             <br>
-            <tr>
-                <td>
-                    id produs
-                </td>
-                <td>
-                    <img id="produs" src="../public/poze/f-rochie10.png">
-                </td>
 
-                <td>
-                    Denumirea produsului
-                </td>
-                <td>
-                    material
-                </td>
-                <td>
-                    pret$
-                </td>
-                <td>
-                    <button id="stergere-produs">Sterge</button>
-                </td>
-            </tr>
+            <?php
+            while ($row = $this->result->fetch()) {
+            ?>
+
+                <tr>
+                    <td>
+                        <?php echo $row['id_produs']  ?>
+                    </td>
+                    <td>
+                        <img id="produs" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
+                    </td>
+
+                    <td>
+                        <?php echo $row['nume']  ?>
+                    </td>
+                    <td>
+                        <?php echo $row['material']  ?>
+                    </td>
+                    <td>
+                        <?php echo $row['pret']  ?> $
+                    </td>
+                    <td>
+                        <button id="stergere-produs">Sterge</button>
+                    </td>
+                </tr>
+            <?php } ?>
 
         </table>
 
@@ -56,6 +66,6 @@
     <?php
     require 'footer.php';
     ?>
-
+</body>
 
 </html>

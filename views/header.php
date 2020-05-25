@@ -76,12 +76,15 @@
                     <a class="link cont" href="<?php echo URL; ?>login" title="Cont">
                         <img class="logo-cont" src="<?php echo URL; ?>public/poze/cont-tw.png" alt="Cont" />
                     </a>
-                    <?php if (Session::get('loggedIn') == true) : ?>
+                    <?php if (Session::get('loggedIn') == true && Session::get('tip_utilizator') == 'user') { ?>
                         <a class="link cont" href="<?php echo URL; ?>account" title="Cont">
                             <img class="logo-cont" src="<?php echo URL; ?>public/poze/cont-tw.png" alt="Cont" />
                         </a>
-                    <?php endif; ?>
-
+                    <?php } else if (Session::get('loggedIn') == true && Session::get('tip_utilizator') == 'admin') {  ?>
+                        <a class="link cont" href="<?php echo URL; ?>admin" title="Cont">
+                            <img class="logo-cont" src="<?php echo URL; ?>public/poze/cont-tw.png" alt="Cont" />
+                        </a>
+                    <?php } ?>
                 </div>
             </div>
 

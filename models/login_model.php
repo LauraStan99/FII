@@ -27,6 +27,7 @@ class Login_Model extends Model
                 Session::set('email', $inreg['email']);
                 Session::set('telefon', $inreg['telefon']);
                 Session::set('parola', $inreg['parola']);
+                Session::set('tip_utilizator',$inreg['tip_utilizator']);
                 Session::set('loggedIn', true);
 
                 $query1 = 'SELECT * FROM wishlist WHERE id_utilizator=' . $inreg['id_utilizator'];

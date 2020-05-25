@@ -5,12 +5,12 @@
     <title>Account | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../public/css/adminAccountNew.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/adminAccount.css" rel="stylesheet" />
 </head>
 
 <body>
 
-    
+
 
     <main>
         <div>
@@ -30,7 +30,7 @@
                 <a id="stergeProdus">• Sterge produs</a>
                 <a>• Adauga produs</a>
                 <a>• Modifica produs</a>
-                <a>• Vezi produse</a>
+                <a href="<?php echo URL ?>admin/listareProduse">• Vezi produse</a>
             </div>
             <div id="modalStergereProdus" class="modal">
                 <div class="modal-content">
@@ -45,7 +45,7 @@
                     </form>
                 </div>
             </div>
-            <script type="text/javascript" src="../public/js/modal-stergereProdus.js"></script>
+            <script type="text/javascript" src="<?php echo URL; ?>public/js/modal-stergereProdus.js"></script>
         </div>
     </main>
 

@@ -30,4 +30,8 @@ class Produse_model extends Model
         return $this->db->select1('produse', 'id_produs',$id_product);
     }
 
+    public function selectAllProducts(){
+        return $this->db->selectOrderBy('produse','id_produs','asc');
+    }
+
 }
