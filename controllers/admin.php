@@ -26,14 +26,14 @@ class Admin extends Controller
     }
     public function listareUtilizatori()
     {
-        $product = new admin_model();
-        $this->view->result = $product->selectAllUsers();
+        $user = new admin_model();
+        $this->view->result = $user->selectAllUsers();
         $this->view->render('seeUsers');
     }
     public function stergeUtilizator($id_utilizator)
     {
-        $product = new admin_model();
-        $this->view->result = $product->deleteUser($id_utilizator);
+        $user = new admin_model();
+        $this->view->result = $user->deleteUser($id_utilizator);
         header('location: ' . URL . 'admin/listareUtilizatori');
     }
 
