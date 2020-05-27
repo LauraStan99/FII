@@ -36,7 +36,7 @@
                 <h3>ADMINISTRARE PRODUSE</h3>
                 <a href="<?php echo URL; ?>admin/stergereProdusDupaId">• Sterge produs</a>
                 <a href="<?php echo URL; ?>admin/adaugaProdus">• Adauga produs</a>
-                <a>• Modifica produs</a>
+                <a href="<?php echo URL; ?>admin/modificaProdus">• Modifica produs</a>
                 <a href="<?php echo URL; ?>admin/listareProduse">• Vezi produse</a>
             </div>
         </div>

@@ -20,11 +20,11 @@ main {
 }
 
 .main-dreapta {
-  width: 30%;
+  width: 40%;
 }
 .main-stanga {
   display: block;
-  width: 70%;
+  width: 60%;
 }
 
 main h1 {
@@ -109,7 +109,9 @@ main h1 {
   color: red;
   margin-left: 20px;
 }
-
+.main .main-dreapta{
+  margin-top: 0vh;
+}
 
 .main .main-dreapta .articol{
   width: 20%;
@@ -128,6 +130,9 @@ main h1 {
   display: flex;
   flex-direction: column;
 }
+.main .main-dreapta .tabel #mesaj-comanda{
+  font-size: 1.2rem;
+}
 @media screen and (max-width: 700px) {
   .main {
     flex-direction: column;
@@ -136,7 +141,7 @@ main h1 {
   }
 
   .main .main-stanga .linie input[type='text'] {
-    width: 90%;
+    width: 98%;
     margin-left: 5px;
   }
   .main .main-stanga #register1,
@@ -156,11 +161,15 @@ main h1 {
     flex-direction: column;
   }
   .main .main-stanga .butoane .buton-renunta {
-    width: 90%;
+    width: 98%;
     margin-left: 5px;
   }
   .main .main-stanga .butoane .buton-continua {
-    width: 90%;
+    width: 98%;
     margin-left: 5px;
+  }
+  .main .main-dreapta,
+  .main .main-stanga{
+    width: 100%;
   }
 }

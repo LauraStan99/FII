@@ -5,7 +5,7 @@
     <title>Checkout | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="<?php echo URL; ?>public/css/checkout1.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/checkout.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -134,33 +134,34 @@
 
 
                 <div class="tabel">
-                    <?php if(isset($this->nrProd) && $this->nrProd > 5) { ?>
-                    <a> Afisare produse comanda 5/<?php echo $this->nrProd; ?> </a>
+                    <?php if (isset($this->nrProd) && $this->nrProd > 5) { ?>
+                        <a id="mesaj-comanda"> Afisare produse comanda 5/<?php echo $this->nrProd; ?> </a>
                     <?php } ?>
+
                     <table>
-                        <?php
-                        while($row = $this->result->fetch()) {
-                        ?>
+
                         <tr>
                             <th class="articol"></th>
                             <th class="detalii"></th>
                         </tr>
                         <br>
-
-                        <tr>
-                            <td>
-                                <a href="<?php echo URL . 'produse/produs/'.$row['id_produs'] ?>">
-                                <img id="produs" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
-                                </a>
-                            </td>
-                            <td>
-                                <div class="detalii-produs">
-                                    <h2><?php echo $row['nume']; ?></h2>
-                                    <a>Cantitate: <?php echo $row['cantitate']; ?> </a>
-                                    <a>Pret: <?php echo $row['pret']; ?> </a>
-                                </div>
-                            </td>
-                        </tr>
+                        <?php
+                        while ($row = $this->result->fetch()) {
+                        ?>
+                            <tr>
+                                <td>
+                                    <a href="<?php echo URL . 'produse/produs/' . $row['id_produs'] ?>">
+                                        <img id="produs" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
+                                    </a>
+                                </td>
+                                <td>
+                                    <div class="detalii-produs">
+                                        <h2><?php echo $row['nume']; ?></h2>
+                                        <a>Cantitate: <?php echo $row['cantitate']; ?> </a>
+                                        <a>Pret: <?php echo $row['pret']; ?> </a>
+                                    </div>
+                                </td>
+                            </tr>
                         <?php } ?>
                     </table>
                     <hr>
@@ -169,6 +170,7 @@
                     <a>Subtotal: <?php echo $this->subtotal; ?></a>
                     <a>Cost transport: <?php echo $this->livrare; ?></a>
                     <a>Total: <?php echo $this->total; ?></a>
+                    <br />
                 </div>
 
             </div>

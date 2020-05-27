@@ -83,7 +83,6 @@ class Admin extends Controller
             if (isset($_POST['cauta-produs'])) {
                 $this->view->result = $admin->selectProductById($_POST['cauta-produs']);
             }
-            // if ($this->view->result == false) $this->view->message = "Produsul cu ID-ul introdus :" . $_POST["cauta"] . " nu exista !";
         }
 
         $this->view->render('stergereProdus');
@@ -93,5 +92,27 @@ class Admin extends Controller
         $product = new admin_model();
         $product->deleteProduct($id_produs);
         header('location: ' . URL . 'admin/stergereProdus');
+    }
+    public function modificaProdus()
+    {
+        $admin = new admin_model();
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (isset($_POST["cauta"])) {
+                if (isset($_POST['cauta-produs'])) {
+                    $this->view->result = $admin->selectProductById($_POST['cauta-produs']);
+                    $id = $_POST['cauta-produs'];
+                }
+
+
+
+                if (isset($_POST["submit"])) {
+
+                    if (isset($_POST['nume'])) {
+                        $admin->updateProductName($_POST['nume'], $id);
+                    }
+                }
+            }
+        }
+        $this->view->render('modifyProduct');
     }
 }

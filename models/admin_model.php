@@ -33,5 +33,42 @@ class Admin_model extends Model
        if($row['count(*)']==0) return false;
        else return $result;
     }
+    public function updateProductName($name,$id)
+    {
+        return $this->db->update('produse', 'nume', $name, 'id_produs',$id);
+    }
+    public function updateProductPrice($price,$id)
+    {
+        return $this->db->update('produse', 'pret', $price, 'id_produs',$id);
+    }
+    public function updateProductMaterial($material,$id)
+    {
+        return $this->db->update('produse', 'material', $material, 'id_produs',$id);
+    }
+    public function updateProductImage($image,$id)
+    {
+        return $this->db->update('produse', 'imagine', $image, 'id_produs',$id);
+    }
+    public function updateProductDescription($description,$id)
+    {
+        return $this->db->update('produse', 'descriere', $description, 'id_produs',$id);
+    }
+    public function updateProductGender($gender,$id)
+    {
+        return $this->db->update('produse', 'gen', $gender, 'id_produs',$id);
+    }
+    public function updateProductTipe($tipe,$id)
+    {
+        return $this->db->update('produse', 'tip', $tipe, 'id_produs',$id);
+    }
+    public function updateProductCategory($category,$id)
+    {
+        return $this->db->update('produse', 'categorie', $category, 'id_produs',$id);
+    }
+    public function updateProductColor($color,$id)
+    {
+        return $this->db->update('produse', 'culoare', $color, 'id_produs',$id);
+    }
+
     
 }
