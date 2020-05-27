@@ -83,9 +83,15 @@ class Admin extends Controller
             if (isset($_POST['cauta-produs'])) {
                 $this->view->result = $admin->selectProductById($_POST['cauta-produs']);
             }
-            if ($this->view->result == false) $this->view->message = "Produsul cu ID-ul introdus :" . $_POST["cauta"] . " nu exista !";
+            // if ($this->view->result == false) $this->view->message = "Produsul cu ID-ul introdus :" . $_POST["cauta"] . " nu exista !";
         }
 
         $this->view->render('stergereProdus');
+    }
+    public function stergeProdusIntrodus($id_produs)
+    {
+        $product = new admin_model();
+        $product->deleteProduct($id_produs);
+        header('location: ' . URL . 'admin/stergereProdus');
     }
 }

@@ -70,7 +70,7 @@
             </td>
             <td>
               <form method="POST">
-                <button id="stergere-produs" formaction="<?php echo URL; ?>admin/stergeProdus/<?php echo $row['id_produs'] ?>" type="submit">Sterge</button>
+                <button id="stergere-produs" formaction="<?php echo URL; ?>admin/stergeProdusIntrodus/<?php echo $row['id_produs'] ?>" type="submit">Sterge</button>
               </form>
 
             </td>
