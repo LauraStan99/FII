@@ -100,16 +100,14 @@ class Admin extends Controller
             if (isset($_POST["cauta"])) {
                 if (isset($_POST['cauta-produs'])) {
                     $this->view->result = $admin->selectProductById($_POST['cauta-produs']);
-                    $id = $_POST['cauta-produs'];
+                    $this->view->id_produs = $_POST['cauta-produs'];
                 }
+            }
 
+            if (isset($_POST["submit"])) {
 
-
-                if (isset($_POST["submit"])) {
-
-                    if (isset($_POST['nume'])) {
-                        $admin->updateProductName($_POST['nume'], $id);
-                    }
+                if (isset($_POST['nume']) && isset($_POST['cauta-produs'])) {
+                    $admin->updateProductName($_POST['nume'], $_POST['cauta-produs']);
                 }
             }
         }
