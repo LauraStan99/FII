@@ -117,6 +117,14 @@ class Database extends PDO
         else return false;
     }
 
+    public function select6($table_name,$col1,$data1,$col2,$data2,$col3,$data3, $col4, $data4, $col5, $data5, $col6, $data6) {
+      
+        $string="SELECT * FROM ".$table_name." WHERE ".$col1."='".$data1."' and ".$col2."='".$data2."' and ".$col3."='".$data3."' and ".$col4."='".$data4."' and".$col5."='".$data5."' and ".$col5."='".$data5."' and".$col6."='".$data6."'";  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
     public function selectOrderBy2($table_name,$col1,$data1,$col2,$data2,$order,$filter) {
       
         $string="SELECT * FROM ".$table_name." WHERE ".$col1."='".$data1."' and ".$col2."='".$data2."' order by ".$order." ".$filter;  
