@@ -90,10 +90,6 @@
                 <?php } ?>
 
                 <button id="buton" type="submit" name="submit">Modifica</button>
-
-
-
-
             </form>
         <?php } ?>
     </main>
