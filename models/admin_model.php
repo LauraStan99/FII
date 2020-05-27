@@ -27,10 +27,8 @@ class Admin_model extends Model
         return $this->db->insert('produse', $data);
     }
     public function selectProductById($id)
-    {  $result= $this->db->select1('produse','id_produs',$id);
-       $row=$result->fetch();
-       if($row['id_produs']==null) return false;
-       else return $result;
+    {
+        return $this->db->select1('produse','id_produs',$id);
     }
     
 }
