@@ -33,10 +33,12 @@ class Admin_model extends Model
        if($row['count(*)']==0) return false;
        else return $result;
     }
+    
     public function updateProductName($name,$id)
     {
         return $this->db->update('produse', 'nume', $name, 'id_produs',$id);
     }
+
     public function updateProductPrice($price,$id)
     {
         return $this->db->update('produse', 'pret', $price, 'id_produs',$id);
