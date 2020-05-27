@@ -34,7 +34,10 @@ class Produse_model extends Model
         $row = $result->fetch();
         return $row['cantitate'];
     }
-
+ public function selectByFilter($category,$pret,$material,$marime,$tip,$gen)
+ {
+     return $this->db->selectJoin6('produse','marimi','id_produs','id_produs','categorie',$category,'pret',$pret,'material',$material,'marime',$marime,'tip',$tip,'gen',$gen);
+ }
     
 
 }

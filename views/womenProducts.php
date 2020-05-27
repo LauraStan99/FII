@@ -17,28 +17,28 @@
     <main>
 
 
-        <div class="filter">
+        <form method="POST" class="filter">
             <div class="prices">
                 <h1>PRET</h1>
                 <div class="check-price">
-                    <label><input type="checkbox" />Pana la 50 Lei</label>
-                    <label><input type="checkbox" />50 - 100 Lei</label>
-                    <label><input type="checkbox" />100 - 150 Lei</label>
-                    <label><input type="checkbox" />150 - 200 Lei</label>
-                    <label><input type="checkbox" />200 - 250 Lei</label>
-                    <label><input type="checkbox" />Peste 250 Lei</label>
+                    <label><input type="radio" name="pret" value="" />Pana la 50 Lei</label>
+                    <label><input type="radio" name="pret" value="100"/>50 - 100 Lei</label>
+                    <label><input type="radio" name="pret" />100 - 150 Lei</label>
+                    <label><input type="radio" name="pret" />150 - 200 Lei</label>
+                    <label><input type="radio" name="pret" />200 - 250 Lei</label>
+                    <label><input type="radio" name="pret" />Peste 250 Lei</label>
                 </div>
             </div>
             <hr>
             <div class="size">
                 <h1>MARIME</h1>
                 <div class="check-size">
-                    <label><input type="checkbox" />XS/34</label>
-                    <label><input type="checkbox" />S/36</label>
-                    <label><input type="checkbox" />M/38</label>
-                    <label><input type="checkbox" />L/40</label>
-                    <label><input type="checkbox" />XL/42</label>
-                    <label><input type="checkbox" />XXL/44</label>
+                    <label><input type="radio" name="marime" />XS/34</label>
+                    <label><input type="radio" name="marime" />S/36</label>
+                    <label><input type="radio" name="marime" />M/38</label>
+                    <label><input type="radio" name="marime" />L/40</label>
+                    <label><input type="radio" name="marime" />XL/42</label>
+                    <label><input type="radio" name="marime" />XXL/44</label>
                 </div>
             </div>
             <hr>
@@ -63,19 +63,19 @@
             <div class="fabrics">
                 <h1>MATERIAL</h1>
                 <div class="check-fabrics">
-                    <label><input type="checkbox" /> bumbac</label>
-                    <label><input type="checkbox" /> matase</label>
-                    <label><input type="checkbox" /> vascoza</label>
-                    <label><input type="checkbox" /> catifea</label>
-                    <label><input type="checkbox" /> satin</label>
-                    <label><input type="checkbox" /> stofa</label>
-                    <label><input type="checkbox" /> denim</label>
-                    <label><input type="checkbox" /> sifon</label>
-                    <label><input type="checkbox" /> poliester</label>
-                    <label><input type="checkbox" /> tul</label>
-                    <label><input type="checkbox" /> poliamida</label>
-                    <label><input type="checkbox" /> piele</label>
-                    <label><input type="checkbox" /> in</label>
+                    <label><input type="radio" name="material" /> bumbac</label>
+                    <label><input type="radio" name="material" /> matase</label>
+                    <label><input type="radio" name="material" /> vascoza</label>
+                    <label><input type="radio" name="material" /> catifea</label>
+                    <label><input type="radio" name="material" /> satin</label>
+                    <label><input type="radio" name="material" /> stofa</label>
+                    <label><input type="radio" name="material" /> denim</label>
+                    <label><input type="radio" name="material" /> sifon</label>
+                    <label><input type="radio" name="material" /> poliester</label>
+                    <label><input type="radio" name="material" /> tul</label>
+                    <label><input type="radio" name="material" /> poliamida</label>
+                    <label><input type="radio" name="material" /> piele</label>
+                    <label><input type="radio" name="material" /> in</label>
                 </div>
 
             </div>
@@ -83,20 +83,20 @@
             <div class="occasions">
                 <h1>OCAZIE</h1>
                 <div class="check-occasions">
-                    <label><input type="checkbox" /> casual</label>
-                    <label><input type="checkbox" /> sport</label>
-                    <label><input type="checkbox" /> business</label>
-                    <label><input type="checkbox" /> festival</label>
-                    <label><input type="checkbox" /> cocktail</label>
-                    <label><input type="checkbox" /> bal</label>
+                    <label><input type="radio" name="tip" value="casual"/> casual</label>
+                    <label><input type="radio" name="tip" value="sport"/> sport</label>
+                    <label><input type="radio" name="tip" value="business" /> business</label>
+                    <label><input type="radio" name="tip" value="festival"/> festival</label>
+                    <label><input type="radio" name="tip" value="cocktail"/> cocktail</label>
+                    <label><input type="radio" name="tip" value="bal"/> bal</label>
                 </div>
 
             </div>
             </br>
 
-            <button type="submit" class="aplica">Aplica</button>
-        </div>
+            <button type="submit" class="aplica" name="aplica-filtre">Aplica</button>
 
+        </form>
         <div class="page">
 
             <div class="order">
@@ -140,7 +140,7 @@
                             <h1><?php echo  $row['nume']; ?></h1>
                             <p class="price"><?php echo  $row['pret']; ?> lei</p>
                             <form method="POST">
-                            <button name = "adauga-cos" type="submit" formaction="<?php echo URL; ?>produse/addToCartWomenPage/<?php echo $row['id_produs'] ?>/<?php echo $this->category ?>">Adauga in cos</button>
+                                <button name="adauga-cos" type="submit" formaction="<?php echo URL; ?>produse/addToCartWomenPage/<?php echo $row['id_produs'] ?>/<?php echo $this->category ?>">Adauga in cos</button>
                             </form>
                         </div>
                     </div>
