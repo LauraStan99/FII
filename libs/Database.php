@@ -119,7 +119,7 @@ class Database extends PDO
 
     public function selectJoin6($table_name1,$table_name2,$col1,$col2,$col3,$data3, $col4, $data4, $col5, $data5, $col6, $data6, $col7, $data7, $col8, $data8) {
       
-        $string="SELECT * FROM " . $table_name1 . " JOIN ".$table_name2." ON ".$table_name1.".".$col1."=".$table_name2.".".$col2." WHERE ".$col3."='".$data3."' and ".$col4."='".$data4."' and ".$col5."='".$data5."' and ".$col6."='".$data6."' and".$col7."='".$data7."' and ".$col8."='".$data8."'";  
+        $string="SELECT * FROM " . $table_name1 . " JOIN ".$table_name2." ON ".$table_name1.".".$col1."=".$table_name2.".".$col2." WHERE ".$col3."='".$data3."' and ".$col4."='".$data4."' and ".$col5."='".$data5."' and ".$col6."='".$data6."' and".$col7."='".$data7."' and ".$col8."between".$data8."'";  
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;

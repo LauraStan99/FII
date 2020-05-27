@@ -15,7 +15,7 @@ class Produse extends Controller
         if (isset($_POST['aplica-filtre'])) {
             if (!empty($_POST['pret'])) {
                 $pret = $_POST['pret'];
-            } else $pret = false;
+            } else $pret ="0 AND 1500";
             if (!empty($_POST['marime'])) {
                 $marime = $_POST['marime'];
             } else $marime = false;
@@ -25,7 +25,7 @@ class Produse extends Controller
             if (!empty($_POST['tip'])) {
                 $tip = $_POST['tip'];
             } else $tip = false;
-            $this->view->result = $product->selectByFilter($category, $pret, $material, $marime, $tip, 'femei');
+            $this->view->result = $product->selectByFilter($category, $material, $marime, $tip, "femei" );
         } else {
             $this->view->result = $product->selectWomanCategory($category);
         }
