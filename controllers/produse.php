@@ -11,22 +11,22 @@ class Produse extends Controller
     public function femei($category)
     {
         $this->view->category = $category;
+        
         $product = new produse_model();
         if (isset($_POST['aplica-filtre'])) {
-            if (!empty($_POST['pret'])) {
-                $pret = $_POST['pret'];
-            } else $pret ="0 AND 1500";
             if (!empty($_POST['marime'])) {
-                $marime = $_POST['marime'];
-            } else $marime = false;
+                $marime = "'".$_POST['marime']."'";
+            } else $marime = 'false';
             if (!empty($_POST['material'])) {
-                $material = $_POST['material'];
-            } else $material = false;
+                $material = "'".$_POST['material']."'";
+            } else $material = 'false';
             if (!empty($_POST['tip'])) {
-                $tip = $_POST['tip'];
-            } else $tip = false;
-            $this->view->result = $product->selectByFilter($category, $material, $marime, $tip, "femei" );
-        } else {
+                $tip ="'".$_POST['tip']."'";
+            } else $tip = 'false';
+    
+            $this->view->result = $product->selectByFilter("'".$category."'", $material, $marime, $tip, "'femei'");
+        } 
+        else {
             $this->view->result = $product->selectWomanCategory($category);
         }
         $this->view->render('womenProducts');

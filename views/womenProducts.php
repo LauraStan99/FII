@@ -33,12 +33,12 @@
             <div class="size">
                 <h1>MARIME</h1>
                 <div class="check-size">
-                    <label><input type="radio" name="marime" />XS/34</label>
-                    <label><input type="radio" name="marime" />S/36</label>
-                    <label><input type="radio" name="marime" />M/38</label>
-                    <label><input type="radio" name="marime" />L/40</label>
-                    <label><input type="radio" name="marime" />XL/42</label>
-                    <label><input type="radio" name="marime" />XXL/44</label>
+                    <label><input type="radio" name="marime" value = "XS"/>XS/34</label>
+                    <label><input type="radio" name="marime" value = "S"/>S/36</label>
+                    <label><input type="radio" name="marime" value = "M"/>M/38</label>
+                    <label><input type="radio" name="marime" value = "L"/>L/40</label>
+                    <label><input type="radio" name="marime" value = "XL"/>XL/42</label>
+                    <label><input type="radio" name="marime" value = "XXL"/>XXL/44</label>
                 </div>
             </div>
             <hr>
@@ -63,8 +63,8 @@
             <div class="fabrics">
                 <h1>MATERIAL</h1>
                 <div class="check-fabrics">
-                    <label><input type="radio" name="material" /> bumbac</label>
-                    <label><input type="radio" name="material" /> matase</label>
+                    <label><input type="radio" name="material" value = "bumbac"/> bumbac</label>
+                    <label><input type="radio" name="material"  /> matase</label>
                     <label><input type="radio" name="material" /> vascoza</label>
                     <label><input type="radio" name="material" /> catifea</label>
                     <label><input type="radio" name="material" /> satin</label>
