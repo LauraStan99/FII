@@ -109,16 +109,18 @@ main h1 {
   color: red;
   margin-left: 20px;
 }
-.main ,.main-dreapta .articol{
+
+
+.main .main-dreapta .articol{
   width: 20%;
 }
-.main ,.main-dreapta .detalii{
+.main .main-dreapta .detalii{
   width: 80%;
   font-size: 0.7rem;
 }
 
 .main-dreapta #produs{
-  width: 100%;
+  width: 70%;
 
 }
 .main-dreapta .detalii-produs,
@@ -127,7 +129,7 @@ main h1 {
   flex-direction: column;
 }
 @media screen and (max-width: 700px) {
-  main {
+  .main {
     flex-direction: column;
     width: 100%;
     margin-left: 2px;

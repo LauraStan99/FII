@@ -38,6 +38,19 @@ class Checkout extends Controller
                 }
             }
         }
+        $this->view->result = $checkout->selectCartProducts($_GET['id_comanda']);
+        $this->view->subtotal = $checkout->selectSubtotal($_GET['id_comanda']);
+        if($this->view->subtotal > 350) 
+        {
+            $this->view->total = $this->view->subtotal;
+            $this->view->livrare = 0;
+        }
+        else
+        {
+            $this->view->total = $this->view->subtotal + 20;
+            $this->view->livrare = 20;
+        }
+        $this->view->nrProd = $checkout->selectNrProd($_GET['id_comanda']);
         $this->view->render('checkout');
     }
 

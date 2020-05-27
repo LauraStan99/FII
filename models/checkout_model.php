@@ -15,6 +15,25 @@ class Checkout_model extends Model
         return $this->db->delete2('produse_comanda', 'id_utilizator', $id, 'id_comanda', $id_command);
     }
 
+    public function selectCartProducts($orderId){
+        return $this->db->selectJoinLimit('produse_comanda', 'produse', 'id_produs', 'id_produs', 'id_comanda', $orderId);
+    }
+
+    public function selectSubtotal($orderId){
+        $result = $this->db->select1('produse_comanda', 'id_comanda', $orderId);
+        $subtotal = 0;
+        while($row = $result->fetch()){
+            $subtotal = $subtotal + $row['pret']*$row['cantitate'];
+        }
+        return $subtotal;
+    }
+
+    public function selectNrProd($orderId){
+        $result = $this->db->selectCount('produse_comanda', 'id_comanda', $orderId);
+        $row = $result -> fetch();
+        return $row['count(*)'];
+    }
+
     public function addNewCommand($id_comanda, $nume, $prenume, $email, $adresa, $oras, $tara, $plata, $livrare){
         if (!isset($_SESSION))
         {

@@ -86,6 +86,13 @@ class Database extends PDO
         else return false;
     }
 
+    public function selectJoinLimit($table_name1, $table_name2, $col1, $col2, $col3, $data){
+        $string = "SELECT * FROM " . $table_name1 . " JOIN ".$table_name2." ON ".$table_name1.".".$col1."=".$table_name2.".".$col2." WHERE ".$table_name1.".".$col3."='".$data."' LIMIT 5";
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
     public function select2($table_name,$col1,$data1,$col2,$data2) {
       
         $string="SELECT * FROM ".$table_name." WHERE ".$col1."='".$data1."' and ".$col2."='".$data2."'";  
