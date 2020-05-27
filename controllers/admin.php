@@ -106,34 +106,32 @@ class Admin extends Controller
 
             if (isset($_POST["submit"])) {
 
-                if (isset($_POST['nume'])) {
-                    if (isset($_POST['cauta-produs'])) {
-                        $admin->updateProductName($_POST['nume'], $_POST['cauta-produs']);
-                    }
+                if (!empty($_POST['pret-prod']) && isset($_POST['cauta-produs'])) {
+                    $admin->updateProductPrice($_POST['pret-prod'], $_POST['cauta-produs']);
                 }
-                if (isset($_POST['pret']) && isset($_POST['cauta-produs'])) {
-                    $admin->updateProductPrice($_POST['pret'], $_POST['cauta-produs']);
+                if (!empty($_POST['nume-prod']) && isset($_POST['cauta-produs'])) {
+                    $admin->updateProductName($_POST['nume-prod'], $_POST['cauta-produs']);
                 }
-                if (isset($_POST['material']) && isset($_POST['cauta-produs'])) {
-                    $admin->updateProductMaterial($_POST['material'], $_POST['cauta-produs']);
+                if (!empty($_POST['material-prod']) && isset($_POST['cauta-produs'])) {
+                    $admin->updateProductMaterial($_POST['material-prod'], $_POST['cauta-produs']);
                 }
-                if (isset($_POST['imagine']) && isset($_POST['cauta-produs'])) {
-                    $admin->updateProductImage(substr_replace($_POST['imagine'], "", -4), $_POST['cauta-produs']);
+                if (!empty($_POST['imagine-prod']) && isset($_POST['cauta-produs'])) {
+                    $admin->updateProductImage(substr_replace($_POST['imagine-prod'], "", -4), $_POST['cauta-produs']);
                 }
-                if (isset($_POST['descriere']) && isset($_POST['cauta-produs'])) {
-                    $admin->updateProductDescription($_POST['descriere'], $_POST['cauta-produs']);
+                if (!empty($_POST['descriere-prod']) && isset($_POST['cauta-produs'])) {
+                    $admin->updateProductDescription($_POST['descriere-prod'], $_POST['cauta-produs']);
                 }
-                if (isset($_POST['gen']) && isset($_POST['cauta-produs'])) {
-                    $admin->updateProductGender($_POST['gen'], $_POST['cauta-produs']);
+                if (!empty($_POST['gen-prod']) && isset($_POST['cauta-produs'])) {
+                    $admin->updateProductGender($_POST['gen-prod'], $_POST['cauta-produs']);
                 }
-                if (isset($_POST['tip']) && isset($_POST['cauta-produs'])) {
-                    $admin->updateProductTipe($_POST['tip'], $_POST['cauta-produs']);
+                if (!empty($_POST['tip-prod']) && isset($_POST['cauta-produs'])) {
+                    $admin->updateProductTipe($_POST['tip-prod'], $_POST['cauta-produs']);
                 }
-                if (isset($_POST['categorie']) && isset($_POST['cauta-produs'])) {
-                    $admin->updateProductCategory($_POST['categorie'], $_POST['cauta-produs']);
+                if (!empty($_POST['categorie-prod']) && isset($_POST['cauta-produs'])) {
+                    $admin->updateProductCategory($_POST['categorie-prod'], $_POST['cauta-produs']);
                 }
-                if (isset($_POST['culoare']) && isset($_POST['cauta-produs'])) {
-                    $admin->updateProductColor($_POST['culoare'], $_POST['cauta-produs']);
+                if (!empty($_POST['culoare-prod']) && isset($_POST['cauta-produs'])) {
+                    $admin->updateProductColor($_POST['culoare-prod'], $_POST['cauta-produs']);
                 }
             }
         }

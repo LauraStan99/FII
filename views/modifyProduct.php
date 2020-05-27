@@ -34,52 +34,52 @@
                         <div class="linie">
                             <label for="form-nume"><a> Nume produs: <?php echo $row['nume'] ?> </a></label>
                             <div class="input">
-                                <input type="text" id="nume-produs" name="nume" />
+                                <input type="text" id="nume-produs" name="nume-prod" />
                             </div>
                         </div>
                         <div class="linie">
                             <label for="form-descriere"><a> Descriere produs: <?php echo $row['descriere'] ?></a></label>
                             <div class="input">
-                                <input type="text" id="descriere" name="descriere" />
+                                <input type="text" id="descriere" name="descriere-prod" />
                             </div>
                         </div>
                         <div class="linie">
                             <label for="form-pret"><a> Pret produs: <?php echo $row['pret'] ?></a></label>
                             <div class="input">
-                                <input type="text" id="pret" name="pret" />
+                                <input type="text" id="pret" name="pret-prod" />
 
                             </div>
                         </div>
                         <div class="linie">
                             <label for="form-material"><a> Material produs: <?php echo $row['material'] ?></a></label>
                             <div class="input">
-                                <input type="text" id="material" name="material" />
+                                <input type="text" id="material" name="material-prod" />
                             </div>
                         </div>
                         <div class="linie">
                             <label for="form-culoare"><a> Culoare produs: <?php echo $row['culoare'] ?></a></label>
                             <div class="input">
-                                <input type="text" id="culoare" name="culoare" />
+                                <input type="text" id="culoare" name="culoare-prod" />
 
                             </div>
                         </div>
                         <div class="linie">
                             <label for="form-gen"><a> Gen produs: <?php echo $row['gen'] ?></a></label>
                             <div class="input">
-                                <input type="text" id="gen" name="gen" />
+                                <input type="text" id="gen" name="gen-prod" />
                             </div>
                         </div>
                         <div class="linie">
                             <label for="form-categorie"><a> Categorie produs: <?php echo $row['categorie'] ?></a></label>
                             <div class="input">
-                                <input type="text" id="categorie" name="categorie" />
+                                <input type="text" id="categorie" name="categorie-prod" />
 
                             </div>
                         </div>
                         <div class="linie">
                             <label for="form-tip"><a> Tip produs: <?php echo $row['tip'] ?></a></label>
                             <div class="input">
-                                <input type="text" id="tip" name="tip" />
+                                <input type="text" id="tip" name="tip-prod" />
                             </div>
                         </div>
 
