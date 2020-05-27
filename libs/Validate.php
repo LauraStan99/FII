@@ -3,15 +3,17 @@
 class Validate
 {
 
-  public function __construct(){
+  public function __construct()
+  {
   }
 
   /**
    * validare nume de familie in formular
    * numele trebuie sa contina doar litere sau si spatii
    */
-  function validateLastName(&$lastName, &$lastNameErr){
-    if (empty($_POST["nume"])){
+  function validateLastName(&$lastName, &$lastNameErr)
+  {
+    if (empty($_POST["nume"])) {
       $lastNameErr = 'Numele este obligatoriu';
     } else {
       $lastName = $this->test_input($_POST["nume"]);
@@ -26,10 +28,11 @@ class Validate
    * prenumele trebuie sa contina doar litere sau si spatii
    * 
    */
-  function validateFirstName(&$firstName, &$firstNameErr){
-    if (empty($_POST["prenume"])){
+  function validateFirstName(&$firstName, &$firstNameErr)
+  {
+    if (empty($_POST["prenume"])) {
       $firstNameErr = "Prenumele este obligatoriu";
-    } else{
+    } else {
       $firstName = $this->test_input($_POST["prenume"]);
       if (!preg_match("/^[a-zA-Z ]*$/", $firstName)) {
         $firstNameErr = "Obligatoriu doar litere sau si spatii";
@@ -41,7 +44,8 @@ class Validate
    * validare email in formular
    * email-ul trebuie sa aiba formatul standard al unui email example@site.com
    */
-  function validateEmail(&$email, &$emailErr){
+  function validateEmail(&$email, &$emailErr)
+  {
     if (empty($_POST["email"])) {
       $emailErr = "Email-ul este obligatoriu";
     } else {
@@ -130,21 +134,21 @@ class Validate
     }
   }
 
-  function validatePayment(&$plata, &$plataErr){
-    if(empty($_POST["plata"])){
-      $plataErr= "Plata este obligatorie";
-    }
-    else{
-      $plata =$this->test_input($_POST["plata"]);
+  function validatePayment(&$plata, &$plataErr)
+  {
+    if (empty($_POST["plata"])) {
+      $plataErr = "Plata este obligatorie";
+    } else {
+      $plata = $this->test_input($_POST["plata"]);
     }
   }
 
-  function validateDelivery(&$livrare, &$livrareErr){
-    if(empty($_POST["livrare"])){
-      $livrareErr= "Metoda de livrare este obligatorie";
-    }
-    else{
-      $livrare =$this->test_input($_POST["livrare"]);
+  function validateDelivery(&$livrare, &$livrareErr)
+  {
+    if (empty($_POST["livrare"])) {
+      $livrareErr = "Metoda de livrare este obligatorie";
+    } else {
+      $livrare = $this->test_input($_POST["livrare"]);
     }
   }
 
@@ -164,7 +168,7 @@ class Validate
 
       if (!preg_match("/^[a-zA-Z ]*$/", $nume)) {
         $numeErr = 'Obligatoriu doar litere si spatii';
-      } 
+      }
     }
   }
 
@@ -291,6 +295,26 @@ class Validate
       if (!preg_match("/^[0-9]*$/", $cvvCard) || strlen($cvvCard) != 3) {
         $cvvCardErr = "Codul cvv este invalid";
       }
+    }
+  }
+
+  function validatePrice(&$price, &$priceErr)
+  {
+    if (empty($_POST["pret"])) {
+      $priceErr = "Pretul produsului este obligatoriu.";
+    } else {
+      $price = str_replace(' ', '', $_POST["pret"]);
+      if (!preg_match("/^[0-9 ]*$/", $price)) {
+        $priceErr = "Pretul trebuie sa contina doar cifre.";
+      }
+    }
+  }
+  function validateEmptyInput($nameInput, &$inputErr, &$inputValue)
+  {
+    if (empty($nameInput)) {
+      $inputErr = "Acest camp este obligatoriu.";
+    } else {
+      $inputValue = $nameInput;
     }
   }
 }

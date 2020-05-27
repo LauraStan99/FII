@@ -1,15 +1,19 @@
 * {
   box-sizing: border-box;
 }
-
 body {
   font-family: Arial;
   margin: 0;
+
 }
-main {
+main{
+  display: block;
+}
+form{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+
 }
 main h1 {
   font-size: 2rem;
@@ -24,7 +28,7 @@ main .linie input[type="text"]{
     width: 50%;
     height: 5vh;
 }
-main .buton{
+main #buton{
     background-color: black;
     width: 49%;
     height: 7vh;

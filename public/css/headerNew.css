@@ -139,12 +139,17 @@ header .header-left .link-nume,
   margin-top: 10px;
   padding: 5px 15px;
 }
-
-input[type='submit'] {
+.navbar .search-bar{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1vh;
+}
+.navbar #ok {
   margin-left: 0px;
   background: rgba(184, 182, 184, 0.952);
   border: 0;
   color: black;
+
 }
 
 .femei,

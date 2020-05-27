@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+main h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+main .input-cauta {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5vh;
+  align-content: center;
+}
+
+main .input-cauta input[type='text'] {
+  width: 50%;
+  height: 5vh;
+  align-self: center;
+  margin-left: 2vw;
+}
+
+main .input-cauta .buton-cauta {
+  width: 5%;
+  font-size: 1rem;
+}
+table {
+  width: 90%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  align-self: center;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+table .idProdus{
+    width: 4vw;
+}
+table .culoare,
+table .gen,
+table .pret,
+table .sterge{
+    width: 10%;
+}
+table .material{
+    width: 15%;
+}
+table .imagine{
+    width: 30%;
+}
+table .denumire{
+    width: 20%;
+}
+table #produs{
+    width: 50%;
+}
+table td{
+    text-align: center;
+    align-self: center;
+}
+
+@media screen and (max-width:700px){
+    
+}
+

@@ -9,7 +9,11 @@
 </head>
 
 <body>
-
+<header>
+<?php
+require 'header.php';
+?>
+</header>
     <main>
         <div>
             <h1>Lista utilizatori</h1>

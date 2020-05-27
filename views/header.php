@@ -8,7 +8,7 @@
     <meta http-equiv="cache-control" content="no-cache,no-store,must-revalidate">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="0">
-    <link href="<?php echo URL; ?>public/css/header.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/headerNew.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -147,9 +147,9 @@
             </div>
         </div>
         <script src="<?php echo URL; ?>public/js/navbar.js"> </script>
-        <form>
-            <input type="search" name="q" placeholder="Cauta..." />
-            <input type="submit" value="OK" />
+        <form class="search-bar">
+            <input type="search" name="search" placeholder="Cauta..." />
+            <input type="submit" value="OK" id="ok"/>
         </form>
     </div>
 </body>

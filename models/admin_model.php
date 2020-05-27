@@ -6,17 +6,31 @@ class Admin_model extends Model
         parent::__construct();
     }
 
-    public function selectAllProducts(){
-        return $this->db->selectOrderBy('produse','id_produs','asc');
-    } 
-    public function deleteProduct($id_product){
-        return $this->db->delete1('produse','id_produs',$id_product);
+    public function selectAllProducts()
+    {
+        return $this->db->selectOrderBy('produse', 'id_produs', 'asc');
     }
-    public function selectAllUsers(){
-        return $this->db->selectOrderBy('utilizatori','id_utilizator','asc');
-
+    public function deleteProduct($id_product)
+    {
+        return $this->db->delete1('produse', 'id_produs', $id_product);
     }
-    public function deleteUser($id_user){
-        return $this->db->delete1('utilizatori','id_utilizator', $id_user);
+    public function selectAllUsers()
+    {
+        return $this->db->selectOrderBy('utilizatori', 'id_utilizator', 'asc');
     }
+    public function deleteUser($id_user)
+    {
+        return $this->db->delete1('utilizatori', 'id_utilizator', $id_user);
+    }
+    public function insertNewProduct($data)
+    {
+        return $this->db->insert('produse', $data);
+    }
+    public function selectProductById($id)
+    {  $result= $this->db->select1('produse','id_produs',$id);
+       $row=$result->fetch();
+       if($row['id_produs']==null) return false;
+       else return $result;
+    }
+    
 }
