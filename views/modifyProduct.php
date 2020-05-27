@@ -84,7 +84,7 @@
                         </div>
 
                         <div class="upload">
-                            Fotografie actuala: <?php echo $row['imagine'] ?>.png
+                            Fotografie actuala: <?php echo $row['imagine'] ?>
                             <p> Incarca o fotografie:</p>
                             <input type="file" name="imagine" id="fileToUpload">
                         </div>
