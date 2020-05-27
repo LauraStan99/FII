@@ -27,8 +27,11 @@ class Admin_model extends Model
         return $this->db->insert('produse', $data);
     }
     public function selectProductById($id)
-    {
-        return $this->db->select1('produse','id_produs',$id);
+    {  $result= $this->db->select1('produse','id_produs',$id);
+       $count = $this->db->selectCount('produse','id_produs',$id);
+       $row=$count->fetch();
+       if($row['count(*)']==0) return false;
+       else return $result;
     }
     
 }
