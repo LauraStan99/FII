@@ -39,6 +39,7 @@ main .logout {
   margin-left: 20vw;
   margin-right: 20vw;
   align-content: center;
+  align-self : center;
 }
 .administrare-utilizatori h2,
 .administrare-produse h3 {
@@ -73,6 +74,7 @@ main .logout {
 .administrare .line {
   border-left: 6px solid black;
   height: 300px;
+  align-self: center;
 }
 
 

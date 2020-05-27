@@ -28,8 +28,9 @@ class Admin_model extends Model
     }
     public function selectProductById($id)
     {  $result= $this->db->select1('produse','id_produs',$id);
-       $row=$result->fetch();
-       if($row['id_produs']==null) return false;
+       $count = $this->db->selectCount('produse','id_produs',$id);
+       $row=$count->fetch();
+       if($row['count(*)']==0) return false;
        else return $result;
     }
     
