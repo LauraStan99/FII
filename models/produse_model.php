@@ -34,16 +34,26 @@ class Produse_model extends Model
         $row = $result->fetch();
         return $row['cantitate'];
     }
- public function selectByFilter($category,$material,$marime,$tip,$gen,$culoare,$pret)
- {
-     return $this->db->selectJoin7('produse','marimi','id_produs','categorie',$category,'material',$material,'marime',$marime,'tip',$tip,'gen',$gen,'culoare',$culoare,'pret',$pret);
- }
+    public function selectByFilter($category,$material,$marime,$tip,$gen,$culoare,$pret)
+    {
+        return $this->db->selectJoin7('produse','marimi','id_produs','categorie',$category,'material',$material,'marime',$marime,'tip',$tip,'gen',$gen,'culoare',$culoare,'pret',$pret);
+    }
     public function selectByFilterWithoutSize($category,$material,$tip,$gen,$culoare,$pret){
         return $this->db->select6('produse','categorie',$category,'material',$material,'tip',$tip,'gen',$gen,'culoare',$culoare,'pret',$pret);
     }
     public function deteleProduct($id_product)
     {
       return $this->db->delete1('produse','id_produs',$id_product);
+    }
+    public function nrAccesariCurente($id_product)
+    {
+        $result =$this->db->select1('produse','id_produs',$id_product);
+        $row = $result->fetch();
+        return $row['nr_accesari'];
+    }
+    public function cresteNrAccesari($nr_accesari,$id_product)
+    {
+        return $this->db->update('produse','nr_accesari',$nr_accesari,'id_produs',$id_product);
     }
 
 }

@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+main .main-stanga,
+main .main-dreapta {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.main-stanga {
+  width: 40%;
+}
+.main-dreapta {
+  width: 55%;
+}
+
+main .main-stanga h1 {
+  font-size: 35px;
+  align-self: center;
+  margin-bottom: 20px;
+  align-self: center;
+}
+main .main-stanga form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 90px;
+}
+
+main .main-stanga form .linie #email,
+#parola {
+  height: 20px;
+}
+
+main .main-stanga form .linie .input #logare-parola,
+#logare-email {
+  width: 80%;
+  height: 40px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+main .main-stanga .buton-stanga {
+  background-color: black;
+  width: 80%;
+  height: 6vh;
+  color: white;
+  padding: 14px 10px;
+  text-decoration: none;
+  margin-top: 30px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+main .main-dreapta h2 {
+  font-size: 35px;
+  align-self: center;
+}
+
+main .main-dreapta h3 {
+  font: bold;
+  align-self: center;
+}
+
+main .main-dreapta .buton-dreapta {
+  background-color: black;
+  width: 50%;
+  height: 6vh;
+  color: white;
+  padding: 14px 10px;
+  text-decoration: none;
+  margin-top: 30px;
+  margin-left: 0px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  align-self: center;
+  font-size: 1rem;
+}
+main .main-stanga .buton-stanga:hover,
+main .main-dreapta .buton-dreapta:hover {
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+main .main-dreapta .beneficii p {
+  font-size: 15px;
+  text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+  .main-dreapta,
+  .main-stanga {
+    flex-direction: column;
+    width: 100%;
+  }
+  .main-dreapta .beneficii {
+    margin-left: 0px;
+  }
+  .main-stanga input[type='text'] {
+    width: 90%;
+  }
+  main .main-stanga h1 {
+    font-size: 35px;
+    align-self: center;
+  }
+  main .main-stanga #email,
+  #parola {
+    margin-left: 60px;
+  }
+  main .main-stanga .buton-stanga {
+    width: 70%;
+  }
+  main .main-dreapta .buton-dreapta {
+    width: 70%;
+  }
+  main .main-dreapta h2 {
+    text-align: center;
+  }
+}

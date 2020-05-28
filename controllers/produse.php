@@ -219,6 +219,9 @@ class Produse extends Controller
             }
         }
 
+        $nr_accesari = $product->nrAccesariCurente($id_product) + 1;
+        $product->cresteNrAccesari($nr_accesari, $id_product);
+
         $this->view->render('productPage');
     }
 
@@ -293,4 +296,5 @@ class Produse extends Controller
         $product->deteleProduct($id_product);
         header('location:' . URL . 'produse/' . $gender . "/" . $category);
     }
+ 
 }

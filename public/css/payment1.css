@@ -32,13 +32,18 @@
     margin-left: 4vw;
     margin-top: 4vh;
     margin-bottom: 3vh;
+    font-size: 1rem;
     height: 6vh;
     color:white;
     background-color: black;
 }
+main .plaseaza-comanda:hover{
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
 main .linie .error{
     color: red;
-    font-size: 0.7rem;
+    font-size: 1rem;
 }
 @media screen and (max-width:600px){
     main .linie input{

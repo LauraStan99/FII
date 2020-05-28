@@ -54,30 +54,44 @@ input[type='mesaj'] {
   margin-top: 5px;
   margin-bottom: 20px;
 }
+main .linie .input input[type='mesaj'] {
+  margin-left: 30px;
+  width: 50%;
+  height: 100px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
 
 main form .buton-formular {
-  background-color: rgb(143, 255, 152);
+  background-color: black;
   width: 50%;
-  color: black;
+  color: white;
   padding: 14px 10px;
   text-decoration: none;
   outline: none;
   border: none;
   cursor: pointer;
   margin-left: 30px;
-  font-size: 15px;
+  font-size: 1rem;
   margin-bottom: 20px;
 }
 
 main form .buton-formular:hover {
-  background-color: green;
+  opacity: 0.9;
+  font-size: 1.1rem;
 }
 main .error{
   color:red;
-  margin-left: 20px;
+  margin-left: 2vw;
+  margin-top:1vh ;
 }
 main .neccessary{
   color:red;
+}
+main .succes{
+  font-size: 1rem;
+  margin-left: 2vw;
+  margin-top:1vh 
 }
 @media screen and (max-width: 700px) {
   main #contact-nume[type='text'],

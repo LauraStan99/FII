@@ -5,7 +5,7 @@
   <title>Cont | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="<?php echo URL; ?>public/css/account.css" rel="stylesheet" />
+  <link href="<?php echo URL; ?>public/css/account1.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -156,7 +156,7 @@
     </form>
 
     <button class="buton-inapoi-cump" type="button" onclick="window.location.href='<?php echo URL; ?>home'">
-      &lt Inapoi la cumparaturi
+    ◄ Inapoi la cumparaturi
     </button>
     </br>
   </main>

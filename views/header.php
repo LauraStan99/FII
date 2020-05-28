@@ -8,7 +8,7 @@
     <meta http-equiv="cache-control" content="no-cache,no-store,must-revalidate">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="0">
-    <link href="<?php echo URL; ?>public/css/headerNew.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/header.css" rel="stylesheet" />
 </head>
 
 <body>

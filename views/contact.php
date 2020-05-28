@@ -5,7 +5,7 @@
   <title>Contact | Impressed</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="<?php echo URL; ?>public/css/contact.css" rel="stylesheet" />
+  <link href="<?php echo URL; ?>public/css/contact1.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -118,9 +118,7 @@
       <button class="buton-formular" type="submit" name="submit">
         Trimiteti
       </button>
-      <?php
-      if(isset($this->successMessage)) echo $this->successMessage;
-      ?>
+     <a class="succes">ddddddddddddddddddddddddddddd <?php if(isset($this->successMessage)) echo $this->successMessage; ?> </a>
     </form>
   </main>
 
