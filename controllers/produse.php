@@ -287,4 +287,10 @@ class Produse extends Controller
         $produs = new Produse_model();
         $this->view->result = $produs->$this->view->render('womenProducts');
     }
+    public function deleteProductAsAdmin($id_product, $gender, $category)
+    {
+        $product = new Produse_model();
+        $product->deteleProduct($id_product);
+        header('location:' . URL . 'produse/' . $gender . "/" . $category);
+    }
 }

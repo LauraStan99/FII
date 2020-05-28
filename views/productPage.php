@@ -30,12 +30,12 @@
                     <div class="valoare">
                         <p>Pret : <?php echo  $row['pret']; ?> lei</p>
                         <p>Stoc: <?php if (isset($_GET['size']) && $_GET['size'] == 'XS') echo $this->stocXS;
-                                       else if (isset($_GET['size']) && $_GET['size'] == 'S') echo $this->stocS;
-                                       else if (isset($_GET['size']) && $_GET['size'] == 'M') echo $this->stocM;
-                                       else if (isset($_GET['size']) && $_GET['size'] == 'L') echo $this->stocL;
-                                       else if (isset($_GET['size']) && $_GET['size'] == 'XL') echo $this->stocXL;
-                                       else if (isset($_GET['size']) && $_GET['size'] == 'XXL') echo $this->stocXXL;
-                                       else echo $this->stocTotal; ?></p>
+                                    else if (isset($_GET['size']) && $_GET['size'] == 'S') echo $this->stocS;
+                                    else if (isset($_GET['size']) && $_GET['size'] == 'M') echo $this->stocM;
+                                    else if (isset($_GET['size']) && $_GET['size'] == 'L') echo $this->stocL;
+                                    else if (isset($_GET['size']) && $_GET['size'] == 'XL') echo $this->stocXL;
+                                    else if (isset($_GET['size']) && $_GET['size'] == 'XXL') echo $this->stocXXL;
+                                    else echo $this->stocTotal; ?></p>
                     </div>
                 </div>
                 <div>
@@ -61,9 +61,13 @@
                 <form method="POST">
                     <button type="submit" name="adauga-cos" id="adauga-cos">Adauga in cos</button>
                     <button type="submit" name="adauga-favorite" id="adauga-favorite">Adauga la favorite </button>
+
+                    <?php if (Session::get('tip_utilizator') == "admin") {  ?>
+                        <button type="submit" name="sterge-produs" id="sterge-produs" formaction="<?php echo URL; ?>produse/deleteProductAsAdmin/<?php echo $row['id_produs']; ?>/<?php echo $row['gen'] ;?>/<?php echo $row['categorie'] ;?>">Sterge produs</button>
+                    <?php } ?>
                 </form>
                 <?php
-                if(isset($this->message)){
+                if (isset($this->message)) {
                     echo $this->message;
                 }
                 ?>

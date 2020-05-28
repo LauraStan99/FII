@@ -41,5 +41,9 @@ class Produse_model extends Model
     public function selectByFilterWithoutSize($category,$material,$tip,$gen,$culoare,$pret){
         return $this->db->select6('produse','categorie',$category,'material',$material,'tip',$tip,'gen',$gen,'culoare',$culoare,'pret',$pret);
     }
+    public function deteleProduct($id_product)
+    {
+      return $this->db->delete1('produse','id_produs',$id_product);
+    }
 
 }

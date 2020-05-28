@@ -93,9 +93,32 @@ main .detalii #adauga-favorite {
   height: 50px;
   margin-top: 30px;
 }
+main .detalii #sterge-produs{
+ color: rgb(168, 24, 24);
+ background-color: white;
+ text-align: center;
+ font-size: 20px;
+ cursor: pointer;
+ border: none;
+ outline: 0;
+ width: 50%;
+ height: 50px;
+ margin-top: 30px;
+ border:1px solid rgb(168, 24, 24);
+}
+main .detalii #sterge-produs:hover{
+  background-color:rgb(168, 24, 24);
+  opacity: 0.9;
+  color: black;
+  font-size: 1.2rem;
+}
+
 main .detalii #adauga-cos:hover,
-main .detalii #adauga-favorite:hover,
-main .detalii .butoane-marime #buton:hover {
+main .detalii #adauga-favorite:hover {
+  opacity: 0.7;
+  font-size: 1.2rem;
+}
+main .detalii .butoane-marime #buton:hover{
   opacity: 0.7;
 }
 main .descriere-produs hr.limita-descriere {
