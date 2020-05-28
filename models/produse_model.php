@@ -34,10 +34,12 @@ class Produse_model extends Model
         $row = $result->fetch();
         return $row['cantitate'];
     }
- public function selectByFilter($category,$material,$marime,$tip,$gen)
+ public function selectByFilter($category,$material,$marime,$tip,$gen,$culoare,$pret)
  {
-     return $this->db->selectJoinPisici('produse','marimi','id_produs','categorie',$category,'material',$material,'marime',$marime,'tip',$tip,'gen',$gen);
+     return $this->db->selectJoin7('produse','marimi','id_produs','categorie',$category,'material',$material,'marime',$marime,'tip',$tip,'gen',$gen,'culoare',$culoare,'pret',$pret);
  }
-    
+    public function selectByFilterWithoutSize($category,$material,$tip,$gen,$culoare,$pret){
+        return $this->db->select6('produse','categorie',$category,'material',$material,'tip',$tip,'gen',$gen,'culoare',$culoare,'pret',$pret);
+    }
 
 }

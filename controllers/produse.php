@@ -11,22 +11,35 @@ class Produse extends Controller
     public function femei($category)
     {
         $this->view->category = $category;
-        
         $product = new produse_model();
         if (isset($_POST['aplica-filtre'])) {
             if (!empty($_POST['marime'])) {
-                $marime = "'".$_POST['marime']."'";
+                $marime = "'" . $_POST['marime'] . "'";
             } else $marime = 'false';
             if (!empty($_POST['material'])) {
-                $material = "'".$_POST['material']."'";
+                $material = "'" . $_POST['material'] . "'";
             } else $material = 'false';
             if (!empty($_POST['tip'])) {
-                $tip ="'".$_POST['tip']."'";
+                $tip = "'" . $_POST['tip'] . "'";
             } else $tip = 'false';
-    
-            $this->view->result = $product->selectByFilter("'".$category."'", $material, $marime, $tip, "'femei'");
-        } 
-        else {
+            if (!empty($_POST['pret'])) {
+                $prices = explode(",", $_POST['pret']);
+                $pret1 = $prices[0];
+                $pret2 = $prices[1];
+            } else {
+                $pret1 = 0;
+                $pret2 = 1500;
+            }
+            if (!empty($_POST['culoare'])) {
+                $culoare = "'" . $_POST['culoare'] . "'";
+            } else $culoare = 'false';
+
+            if ($marime == 'false') {
+                $this->view->result = $product->selectByFilterWithoutSize("'" . $category . "'", $material, $tip, "'femei'", $culoare, $pret1 . " and " . $pret2);
+            } else {
+                $this->view->result = $product->selectByFilter("'" . $category . "'", $material, $marime, $tip, "'femei'", $culoare, $pret1 . " and " . $pret2);
+            }
+        } else {
             $this->view->result = $product->selectWomanCategory($category);
         }
         $this->view->render('womenProducts');
@@ -42,9 +55,39 @@ class Produse extends Controller
 
     public function barbati($category)
     {
-        $product = new produse_model();
-        $this->view->result = $product->selectManCategory($category);
         $this->view->category = $category;
+        $product = new produse_model();
+        $this->view->category = $category;
+        if (isset($_POST['aplica-filtre'])) {
+            if (!empty($_POST['marime'])) {
+                $marime = "'" . $_POST['marime'] . "'";
+            } else $marime = 'false';
+            if (!empty($_POST['material'])) {
+                $material = "'" . $_POST['material'] . "'";
+            } else $material = 'false';
+            if (!empty($_POST['tip'])) {
+                $tip = "'" . $_POST['tip'] . "'";
+            } else $tip = 'false';
+            if (!empty($_POST['pret'])) {
+                $prices = explode(",", $_POST['pret']);
+                $pret1 = $prices[0];
+                $pret2 = $prices[1];
+            } else {
+                $pret1 = 0;
+                $pret2 = 1500;
+            }
+            if (!empty($_POST['culoare'])) {
+                $culoare = "'" . $_POST['culoare'] . "'";
+            } else $culoare = 'false';
+
+            if ($marime == 'false') {
+                $this->view->result = $product->selectByFilterWithoutSize("'" . $category . "'", $material, $tip, "'barbati'", $culoare, $pret1 . " and " . $pret2);
+            } else {
+                $this->view->result = $product->selectByFilter("'" . $category . "'", $material, $marime, $tip, "'barbati'", $culoare, $pret1 . " and " . $pret2);
+            }
+        } else {
+            $this->view->result = $product->selectManCategory($category);
+        }
         $this->view->render('menProducts');
     }
 
@@ -58,9 +101,40 @@ class Produse extends Controller
 
     public function copii($category)
     {
-        $product = new produse_model();
-        $this->view->result = $product->selectChildrenCategory($category);
         $this->view->category = $category;
+        $product = new produse_model();
+        $this->view->category = $category;
+        if (isset($_POST['aplica-filtre'])) {
+            if (!empty($_POST['marime'])) {
+                $marime = "'" . $_POST['marime'] . "'";
+            } else $marime = 'false';
+            if (!empty($_POST['material'])) {
+                $material = "'" . $_POST['material'] . "'";
+            } else $material = 'false';
+            if (!empty($_POST['tip'])) {
+                $tip = "'" . $_POST['tip'] . "'";
+            } else $tip = 'false';
+            if (!empty($_POST['pret'])) {
+                $prices = explode(",", $_POST['pret']);
+                $pret1 = $prices[0];
+                $pret2 = $prices[1];
+            } else {
+                $pret1 = 0;
+                $pret2 = 1500;
+            }
+            if (!empty($_POST['culoare'])) {
+                $culoare = "'" . $_POST['culoare'] . "'";
+            } else $culoare = 'false';
+
+            if ($marime == 'false') {
+                $this->view->result = $product->selectByFilterWithoutSize("'" . $category . "'", $material, $tip, "'copii'", $culoare, $pret1 . " and " . $pret2);
+            } else {
+                $this->view->result = $product->selectByFilter("'" . $category . "'", $material, $marime, $tip, "'copii'", $culoare, $pret1 . " and " . $pret2);
+            }
+        } else {
+            $this->view->result = $product->selectChildrenCategory($category);
+        }
+
         $this->view->render('childrenProducts');
     }
 

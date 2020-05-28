@@ -116,18 +116,18 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
-
-    public function selectJoin6($table_name1,$table_name2,$col1,$col2,$col3,$data3, $col4, $data4, $col5, $data5, $col6, $data6, $col7, $data7) {
-      
-        $string="SELECT * FROM " . $table_name1 . " JOIN ".$table_name2." ON ".$table_name1.".".$col1."=".$table_name2.".".$col2." WHERE ".$col3."='".$data3."' and ".$col4."='".$data4."' and ".$col5."='".$data5."' and ".$col6."='".$data6."' and ".$col7."='".$data7."'";  
+    public function select6($table_name,$col1,$data1,$col2,$data2,$col3,$data3,$col4,$data4,$col5,$data5,$col6,$data6)
+    {
+        $string="SELECT * FROM  ".$table_name." WHERE ".$col1." = ".$data1." and ".$col2." = ".$data2." and ".$col3." = ".$data3." and ".$col4." = ".$data4." and ".$col5." = ".$data5." and ".$col6." between ".$data6;
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;
+   
     }
 
-    public function selectJoinPisici($table_name1, $table_name2, $col, $col1, $data1, $col2, $data2, $col3, $data3, $col4, $data4, $col5, $data5) {
+    public function selectJoin7($table_name1, $table_name2, $col, $col1, $data1, $col2, $data2, $col3, $data3, $col4, $data4, $col5, $data5,$col6,$data6,$col7,$data7) {
       
-        $string="SELECT * FROM " . $table_name1 . " JOIN ". $table_name2 . " ON " .$table_name1.".".$col. " = " .$table_name2.".".$col." where ". $col1. " = ". $data1. " and ".$col2. " = ". $data2. " and ".$col3. " = ". $data3. " and ".$col4. " = ". $data4. " and ".$col5. " = ". $data5;  
+        $string="SELECT * FROM " . $table_name1 . " JOIN ". $table_name2 . " ON " .$table_name1.".".$col. " = " .$table_name2.".".$col." where ". $col1. " = ". $data1. " and ".$col2. " = ". $data2. " and ".$col3. " = ". $data3. " and ".$col4. " = ". $data4. " and ".$col5. " = ". $data5." and ".$col6. " = ". $data6." and ".$col7." between ".$data7; 
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;
