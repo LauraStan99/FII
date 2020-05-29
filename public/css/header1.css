@@ -144,6 +144,7 @@ header .header-left .link-nume,
   flex-direction: row;
   margin-bottom: 1vh;
 }
+
 .navbar #ok {
   margin-left: 0px;
   background: rgba(184, 182, 184, 0.952);

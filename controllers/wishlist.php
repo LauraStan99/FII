@@ -7,10 +7,10 @@ class Wishlist extends Controller
         parent::__construct();
     }
 
-    /*function empty()
+    function empty()
     {
         $this->view->render('wishlistEmpty');
-    }*/
+    }
 
     /**
      * calculez nr de produse din wishlist
