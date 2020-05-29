@@ -153,7 +153,7 @@ class Produse extends Controller
         else {
             $this->view->result = $product->selectChildrenCategory($category, $this->view->count);
         }
-        if(isset($_POST['populare']))
+        if(isset($_POST['popularitate']))
             {
                    $this->view->result =  $product->selectOrder('copii', $category, 'nr_accesari', 'desc', $this->view->result, $this->view->count);
             }

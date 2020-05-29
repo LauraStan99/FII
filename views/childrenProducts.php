@@ -118,7 +118,7 @@
                     <button class="sortare-buton" onclick="Order()">Ordoneaza dupa ▼</button>
                     <div class="sortare-continut" id="ordonare">
                         <form method = "POST">
-                        <button name = "populare">Cele mai populare</button>
+                        <button name = "popularitate">Cele mai populare</button>
                         <button name = "alfabetic">Ordonare alfabetica</button>
                         <button name = "crescator">Pret crescator</button>
                         <button name = "descrescator">Pret descrescator</button>
