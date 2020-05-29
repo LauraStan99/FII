@@ -77,6 +77,7 @@ class Produse_model extends Model
     }
 
     public function selectByFilterWithoutSize($category,$material,$tip,$gen,$culoare,$pret, &$count){
+       
         $result = $this->db->select6('produse','categorie',$category,'material',$material,'tip',$tip,'gen',$gen,'culoare',$culoare,'pret',$pret);
         $count = 0;
         while($result->fetch()){

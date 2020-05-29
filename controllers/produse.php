@@ -61,7 +61,7 @@ class Produse extends Controller
                 $this->view->result = $product->selectByFilter("'" . $category . "'", $_GET['material'], $_GET['marime'], $_GET['tip'], "'femei'", $_GET['culoare'], $_GET['pret1'] . " and " . $_GET['pret2'], $this->view->count);
             }
         } else {
-            $this->view->result = $product->selectChildrenCategory($category, $this->view->count);
+            $this->view->result = $product->selectWomanCategory($category, $this->view->count);
         }
         if (isset($_POST['popularitate'])) {
             $this->view->result =  $product->selectOrder('femei', $category, 'nr_accesari', 'desc', $this->view->result, $this->view->count);
@@ -93,7 +93,7 @@ class Produse extends Controller
                 $this->view->result = $product->selectByFilter("'" . $category . "'", $_GET['material'], $_GET['marime'], $_GET['tip'], "'barbati'", $_GET['culoare'], $_GET['pret1'] . " and " . $_GET['pret2'], $this->view->count);
             }
         } else {
-            $this->view->result = $product->selectChildrenCategory($category, $this->view->count);
+            $this->view->result = $product->selectManCategory($category, $this->view->count);
         }
         if (isset($_POST['popularitate'])) {
             $this->view->result =  $product->selectOrder('barbati', $category, 'nr_accesari', 'desc', $this->view->result, $this->view->count);

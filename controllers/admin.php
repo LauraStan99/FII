@@ -137,4 +137,8 @@ class Admin extends Controller
         }
         $this->view->render('modifyProduct');
     }
+   
+
+
+
 }

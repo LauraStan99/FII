@@ -5,7 +5,7 @@
     <title>Account | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="<?php echo URL; ?>public/css/adminAccount.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/admin.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -30,6 +30,12 @@
             <div class="administrare-utilizatori">
                 <h2>ADMINISTRARE UTILIZATORI</h2>
                 <a href="<?php echo URL; ?>admin/listareUtilizatori">• Vezi utilizatori</a>
+                <h2>STATISTICI</h2>
+                <a>• Vezi statistica comenzi</a>
+                <a>• Vezi statistica comenzi</a>
+                <a>• Vezi statistica comenzi</a>
+                <a>• Vezi statistica comenzi</a>
+                <a>• Vezi statistica comenzi</a>
             </div>
             <div class="line"></div>
             <div class="administrare-produse">
