@@ -129,7 +129,10 @@
             </div>
             <div class="products">
                 <?php
-
+                if($this->count == 0){
+                    echo "Nu sunt produse";
+                }
+                else{
                 while ($row = $this->result->fetch()) {
                 ?>
 
@@ -147,7 +150,7 @@
                     </div>
 
                 <?php
-                }
+                }}
                 ?>
 
             </div>

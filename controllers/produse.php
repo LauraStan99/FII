@@ -35,12 +35,12 @@ class Produse extends Controller
             } else $culoare = 'false';
 
             if ($marime == 'false') {
-                $this->view->result = $product->selectByFilterWithoutSize("'" . $category . "'", $material, $tip, "'femei'", $culoare, $pret1 . " and " . $pret2);
+                $this->view->result = $product->selectByFilterWithoutSize("'" . $category . "'", $material, $tip, "'femei'", $culoare, $pret1 . " and " . $pret2, $this->view->count);
             } else {
-                $this->view->result = $product->selectByFilter("'" . $category . "'", $material, $marime, $tip, "'femei'", $culoare, $pret1 . " and " . $pret2);
+                $this->view->result = $product->selectByFilter("'" . $category . "'", $material, $marime, $tip, "'femei'", $culoare, $pret1 . " and " . $pret2, $this->view->count);
             }
         } else {
-            $this->view->result = $product->selectWomanCategory($category);
+            $this->view->result = $product->selectWomanCategory($category, $this->view->count);
         }
         $this->view->render('womenProducts');
     }
@@ -48,7 +48,7 @@ class Produse extends Controller
     public function femeiOrder($category, $order, $filter)
     {
         $product = new produse_model();
-        $this->view->result = $product->selectOrder('femei', $category, $order, $filter);
+        $this->view->result = $product->selectOrder('femei', $category, $order, $filter, $this->view->count);
         $this->view->category = $category;
         $this->view->render('womenProducts');
     }
@@ -81,12 +81,12 @@ class Produse extends Controller
             } else $culoare = 'false';
 
             if ($marime == 'false') {
-                $this->view->result = $product->selectByFilterWithoutSize("'" . $category . "'", $material, $tip, "'barbati'", $culoare, $pret1 . " and " . $pret2);
+                $this->view->result = $product->selectByFilterWithoutSize("'" . $category . "'", $material, $tip, "'barbati'", $culoare, $pret1 . " and " . $pret2, $this->view->count);
             } else {
-                $this->view->result = $product->selectByFilter("'" . $category . "'", $material, $marime, $tip, "'barbati'", $culoare, $pret1 . " and " . $pret2);
+                $this->view->result = $product->selectByFilter("'" . $category . "'", $material, $marime, $tip, "'barbati'", $culoare, $pret1 . " and " . $pret2, $this->view->count);
             }
         } else {
-            $this->view->result = $product->selectManCategory($category);
+            $this->view->result = $product->selectManCategory($category, $this->view->count);
         }
         $this->view->render('menProducts');
     }
@@ -94,7 +94,7 @@ class Produse extends Controller
     public function barbatiOrder($category, $order, $filter)
     {
         $product = new produse_model();
-        $this->view->result = $product->selectOrder('barbati', $category, $order, $filter);
+        $this->view->result = $product->selectOrder('barbati', $category, $order, $filter, $this->view->count);
         $this->view->category = $category;
         $this->view->render('menProducts');
     }
@@ -127,12 +127,12 @@ class Produse extends Controller
             } else $culoare = 'false';
 
             if ($marime == 'false') {
-                $this->view->result = $product->selectByFilterWithoutSize("'" . $category . "'", $material, $tip, "'copii'", $culoare, $pret1 . " and " . $pret2);
+                $this->view->result = $product->selectByFilterWithoutSize("'" . $category . "'", $material, $tip, "'copii'", $culoare, $pret1 . " and " . $pret2, $this->view->count);
             } else {
-                $this->view->result = $product->selectByFilter("'" . $category . "'", $material, $marime, $tip, "'copii'", $culoare, $pret1 . " and " . $pret2);
+                $this->view->result = $product->selectByFilter("'" . $category . "'", $material, $marime, $tip, "'copii'", $culoare, $pret1 . " and " . $pret2, $this->view->count);
             }
         } else {
-            $this->view->result = $product->selectChildrenCategory($category);
+            $this->view->result = $product->selectChildrenCategory($category, $this->view->count);
         }
 
         $this->view->render('childrenProducts');
@@ -141,7 +141,7 @@ class Produse extends Controller
     public function copiiOrder($category, $order, $filter)
     {
         $product = new produse_model();
-        $this->view->result = $product->selectOrder('copii', $category, $order, $filter);
+        $this->view->result = $product->selectOrder('copii', $category, $order, $filter, $this->view->count);
         $this->view->category = $category;
         $this->view->render('childrenProducts');
     }
