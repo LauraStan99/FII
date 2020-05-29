@@ -3,6 +3,8 @@
 class Produse extends Controller
 {
 
+    public $filter_array = array(); 
+
     public function __construct()
     {
         parent::__construct();
@@ -107,6 +109,7 @@ class Produse extends Controller
         if (isset($_POST['aplica-filtre'])) {
             if (!empty($_POST['marime'])) {
                 $marime = "'" . $_POST['marime'] . "'";
+                
             } else $marime = 'false';
             if (!empty($_POST['material'])) {
                 $material = "'" . $_POST['material'] . "'";
