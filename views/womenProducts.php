@@ -117,40 +117,41 @@
                 <div class="sortare">
                     <button class="sortare-buton" onclick="Order()">Ordoneaza dupa ▼</button>
                     <div class="sortare-continut" id="ordonare">
-                        <a href="<?php echo URL . 'produse/femeiOrder/' . $this->category . '/nr_accesari/desc' ?>">Cele mai populare</a>
-                        <a href="<?php echo URL . 'produse/femeiOrder/' . $this->category . '/nume/asc' ?>">Ordonare alfabetica</a>
-                        <a href="<?php echo URL . 'produse/femeiOrder/' . $this->category . '/pret/asc' ?>">Pret crescator</a>
-                        <a href="<?php echo URL . 'produse/femeiOrder/' . $this->category . '/pret/desc' ?>">Pret descrescator</a>
+                        <form method="POST" class="form-ordonare">
+                            <button name="popularitate">Cele mai populare</button>
+                            <button name="alfabetic">Ordonare alfabetica</button>
+                            <button name="crescator">Pret crescator</button>
+                            <button name="descrescator">Pret descrescator</button>
+                        </form>
                     </div>
-
                 </div>
                 <script src="<?php echo URL; ?>public/js/order.js"> </script>
 
             </div>
             <div class="products">
                 <?php
-                if($this->count == 0){
+                if ($this->count == 0) {
                     echo "Nu sunt produse";
-                }
-                else{
-                while ($row = $this->result->fetch()) {
+                } else {
+                    while ($row = $this->result->fetch()) {
                 ?>
 
-                    <div class="column">
-                        <div class="card">
-                            <a href="<?php echo URL . 'produse/produs/' . $row['id_produs'] ?>">
-                                <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
-                            </a>
-                            <h1><?php echo  $row['nume']; ?></h1>
-                            <p class="price"><?php echo  $row['pret']; ?> lei</p>
-                            <form method="POST">
-                                <button name="adauga-cos" type="submit" formaction="<?php echo URL; ?>produse/addToCartWomenPage/<?php echo $row['id_produs'] ?>/<?php echo $this->category ?>">Adauga in cos</button>
-                            </form>
+                        <div class="column">
+                            <div class="card">
+                                <a href="<?php echo URL . 'produse/produs/' . $row['id_produs'] ?>">
+                                    <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
+                                </a>
+                                <h1><?php echo  $row['nume']; ?></h1>
+                                <p class="price"><?php echo  $row['pret']; ?> lei</p>
+                                <form method="POST">
+                                    <button name="adauga-cos" type="submit" formaction="<?php echo URL; ?>produse/addToCartWomenPage/<?php echo $row['id_produs'] ?>/<?php echo $this->category ?>">Adauga in cos</button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
 
                 <?php
-                }}
+                    }
+                }
                 ?>
 
             </div>

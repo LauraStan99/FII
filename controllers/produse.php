@@ -8,7 +8,8 @@ class Produse extends Controller
         parent::__construct();
     }
 
-    public function filtreaza($gen, $categorie){
+    public function filtreaza($gen, $categorie)
+    {
         if (!empty($_POST['marime'])) {
             $marime = "'" . $_POST['marime'] . "'";
         } else {
@@ -41,52 +42,40 @@ class Produse extends Controller
             $pret1 = 1;
             $pret2 = 1500;
         }
-        header('location: ' . URL . 'produse/'.$gen. '/' . $categorie . '?marime=' . $marime . '&culoare=' . $culoare . '&material=' . $material . '&tip=' . $tip . '&pret1=' . $pret1 . '&pret2=' . $pret2);
-       
+
+
+        header('location: ' . URL . 'produse/' . $gen . '/' . $categorie . '?marime=' . $marime . '&culoare=' . $culoare . '&material=' . $material . '&tip=' . $tip . '&pret1=' . $pret1 . '&pret2=' . $pret2);
     }
 
     public function femei($category)
     {
         $this->view->category = $category;
         $product = new produse_model();
-        if (isset($_POST['aplica-filtre'])) {
-            if (!empty($_POST['marime'])) {
-                $marime = "'" . $_POST['marime'] . "'";
-            } else $marime = 'false';
-            if (!empty($_POST['material'])) {
-                $material = "'" . $_POST['material'] . "'";
-            } else $material = 'false';
-            if (!empty($_POST['tip'])) {
-                $tip = "'" . $_POST['tip'] . "'";
-            } else $tip = 'false';
-            if (!empty($_POST['pret'])) {
-                $prices = explode(",", $_POST['pret']);
-                $pret1 = $prices[0];
-                $pret2 = $prices[1];
-            } else {
-                $pret1 = 0;
-                $pret2 = 1500;
-            }
-            if (!empty($_POST['culoare'])) {
-                $culoare = "'" . $_POST['culoare'] . "'";
-            } else $culoare = 'false';
+        $this->view->category = $category;
+        if (isset($_GET['pret1']) && isset($_GET['pret2']) && isset($_GET['marime']) && isset($_GET['culoare']) && isset($_GET['material']) && isset($_GET['tip'])) {
 
-            if ($marime == 'false') {
-                $this->view->result = $product->selectByFilterWithoutSize("'" . $category . "'", $material, $tip, "'femei'", $culoare, $pret1 . " and " . $pret2, $this->view->count);
+            if ($_GET['marime'] == 'false') {
+
+                $this->view->result = $product->selectByFilterWithoutSize("'" . $category . "'", $_GET['material'], $_GET['tip'], "'femei'", $_GET['culoare'], $_GET['pret1'] . " and " . $_GET['pret2'], $this->view->count);
             } else {
-                $this->view->result = $product->selectByFilter("'" . $category . "'", $material, $marime, $tip, "'femei'", $culoare, $pret1 . " and " . $pret2, $this->view->count);
+                $this->view->result = $product->selectByFilter("'" . $category . "'", $_GET['material'], $_GET['marime'], $_GET['tip'], "'femei'", $_GET['culoare'], $_GET['pret1'] . " and " . $_GET['pret2'], $this->view->count);
             }
         } else {
-            $this->view->result = $product->selectWomanCategory($category, $this->view->count);
+            $this->view->result = $product->selectChildrenCategory($category, $this->view->count);
         }
-        $this->view->render('womenProducts');
-    }
-
-    public function femeiOrder($category, $order, $filter)
-    {
-        $product = new produse_model();
-        $this->view->result = $product->selectOrder('femei', $category, $order, $filter, $this->view->count);
-        $this->view->category = $category;
+        if (isset($_POST['popularitate'])) {
+            $this->view->result =  $product->selectOrder('femei', $category, 'nr_accesari', 'desc', $this->view->result, $this->view->count);
+        }
+        if (isset($_POST['alfabetic'])) {
+            $this->view->result =  $product->selectOrder('femei', $category, 'nume', 'asc', $this->view->result, $this->view->count);
+        }
+        if (isset($_POST['crescator'])) {
+            $this->view->result =  $product->selectOrder('femei', $category, 'pret', 'asc', $this->view->result, $this->view->count);
+        }
+        if (isset($_POST['descrescator'])) {
+            $this->view->result =  $product->selectOrder('femei', $category, 'pret', 'desc', $this->view->result, $this->view->count);
+        }
+        $product->deleteFromProduse_filter_order();
         $this->view->render('womenProducts');
     }
 
@@ -95,44 +84,30 @@ class Produse extends Controller
         $this->view->category = $category;
         $product = new produse_model();
         $this->view->category = $category;
-        if (isset($_POST['aplica-filtre'])) {
-            if (!empty($_POST['marime'])) {
-                $marime = "'" . $_POST['marime'] . "'";
-            } else $marime = 'false';
-            if (!empty($_POST['material'])) {
-                $material = "'" . $_POST['material'] . "'";
-            } else $material = 'false';
-            if (!empty($_POST['tip'])) {
-                $tip = "'" . $_POST['tip'] . "'";
-            } else $tip = 'false';
-            if (!empty($_POST['pret'])) {
-                $prices = explode(",", $_POST['pret']);
-                $pret1 = $prices[0];
-                $pret2 = $prices[1];
-            } else {
-                $pret1 = 0;
-                $pret2 = 1500;
-            }
-            if (!empty($_POST['culoare'])) {
-                $culoare = "'" . $_POST['culoare'] . "'";
-            } else $culoare = 'false';
+        if (isset($_GET['pret1']) && isset($_GET['pret2']) && isset($_GET['marime']) && isset($_GET['culoare']) && isset($_GET['material']) && isset($_GET['tip'])) {
 
-            if ($marime == 'false') {
-                $this->view->result = $product->selectByFilterWithoutSize("'" . $category . "'", $material, $tip, "'barbati'", $culoare, $pret1 . " and " . $pret2, $this->view->count);
+            if ($_GET['marime'] == 'false') {
+
+                $this->view->result = $product->selectByFilterWithoutSize("'" . $category . "'", $_GET['material'], $_GET['tip'], "'barbati'", $_GET['culoare'], $_GET['pret1'] . " and " . $_GET['pret2'], $this->view->count);
             } else {
-                $this->view->result = $product->selectByFilter("'" . $category . "'", $material, $marime, $tip, "'barbati'", $culoare, $pret1 . " and " . $pret2, $this->view->count);
+                $this->view->result = $product->selectByFilter("'" . $category . "'", $_GET['material'], $_GET['marime'], $_GET['tip'], "'barbati'", $_GET['culoare'], $_GET['pret1'] . " and " . $_GET['pret2'], $this->view->count);
             }
         } else {
-            $this->view->result = $product->selectManCategory($category, $this->view->count);
+            $this->view->result = $product->selectChildrenCategory($category, $this->view->count);
         }
-        $this->view->render('menProducts');
-    }
-
-    public function barbatiOrder($category, $order, $filter)
-    {
-        $product = new produse_model();
-        $this->view->result = $product->selectOrder('barbati', $category, $order, $filter, $this->view->count);
-        $this->view->category = $category;
+        if (isset($_POST['popularitate'])) {
+            $this->view->result =  $product->selectOrder('barbati', $category, 'nr_accesari', 'desc', $this->view->result, $this->view->count);
+        }
+        if (isset($_POST['alfabetic'])) {
+            $this->view->result =  $product->selectOrder('barbati', $category, 'nume', 'asc', $this->view->result, $this->view->count);
+        }
+        if (isset($_POST['crescator'])) {
+            $this->view->result =  $product->selectOrder('barbati', $category, 'pret', 'asc', $this->view->result, $this->view->count);
+        }
+        if (isset($_POST['descrescator'])) {
+            $this->view->result =  $product->selectOrder('barbati', $category, 'pret', 'desc', $this->view->result, $this->view->count);
+        }
+        $product->deleteFromProduse_filter_order();
         $this->view->render('menProducts');
     }
 
@@ -142,33 +117,28 @@ class Produse extends Controller
         $product = new produse_model();
         $this->view->category = $category;
         if (isset($_GET['pret1']) && isset($_GET['pret2']) && isset($_GET['marime']) && isset($_GET['culoare']) && isset($_GET['material']) && isset($_GET['tip'])) {
-            
+
             if ($_GET['marime'] == 'false') {
-                
+
                 $this->view->result = $product->selectByFilterWithoutSize("'" . $category . "'", $_GET['material'], $_GET['tip'], "'copii'", $_GET['culoare'], $_GET['pret1'] . " and " . $_GET['pret2'], $this->view->count);
             } else {
                 $this->view->result = $product->selectByFilter("'" . $category . "'", $_GET['material'], $_GET['marime'], $_GET['tip'], "'copii'", $_GET['culoare'], $_GET['pret1'] . " and " . $_GET['pret2'], $this->view->count);
             }
-        } 
-        else {
+        } else {
             $this->view->result = $product->selectChildrenCategory($category, $this->view->count);
         }
-        if(isset($_POST['populare']))
-            {
-                   $this->view->result =  $product->selectOrder('copii', $category, 'nr_accesari', 'desc', $this->view->result, $this->view->count);
-            }
-            if(isset($_POST['alfabetic']))
-            {
-                   $this->view->result =  $product->selectOrder('copii', $category, 'nume', 'asc', $this->view->result, $this->view->count);
-            }
-            if(isset($_POST['crescator']))
-            {
-                   $this->view->result =  $product->selectOrder('copii', $category, 'pret', 'asc', $this->view->result, $this->view->count);
-            }
-            if(isset($_POST['descrescator']))
-            {
-                   $this->view->result =  $product->selectOrder('copii', $category, 'pret', 'desc', $this->view->result, $this->view->count);
-            }
+        if (isset($_POST['popularitate'])) {
+            $this->view->result =  $product->selectOrder('copii', $category, 'nr_accesari', 'desc', $this->view->result, $this->view->count);
+        }
+        if (isset($_POST['alfabetic'])) {
+            $this->view->result =  $product->selectOrder('copii', $category, 'nume', 'asc', $this->view->result, $this->view->count);
+        }
+        if (isset($_POST['crescator'])) {
+            $this->view->result =  $product->selectOrder('copii', $category, 'pret', 'asc', $this->view->result, $this->view->count);
+        }
+        if (isset($_POST['descrescator'])) {
+            $this->view->result =  $product->selectOrder('copii', $category, 'pret', 'desc', $this->view->result, $this->view->count);
+        }
         $product->deleteFromProduse_filter_order();
         $this->view->render('childrenProducts');
     }
@@ -312,11 +282,6 @@ class Produse extends Controller
         header('location: ' . URL . 'produse/copii/' . $category);
     }
 
-    public function filterProducts()
-    {
-        $produs = new Produse_model();
-        $this->view->result = $produs->$this->view->render('womenProducts');
-    }
     public function deleteProductAsAdmin($id_product, $gender, $category)
     {
         $product = new Produse_model();

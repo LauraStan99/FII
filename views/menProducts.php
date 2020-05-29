@@ -17,7 +17,7 @@
     <main>
 
 
-    <form method="POST" class="filter">
+        <form method="POST" class="filter">
             <div class="prices">
                 <h1>PRET</h1>
                 <div class="check-price">
@@ -117,10 +117,12 @@
                 <div class="sortare">
                     <button class="sortare-buton" onclick="Order()">Ordoneaza dupa ▼</button>
                     <div class="sortare-continut" id="ordonare">
-                        <a href="<?php echo URL . 'produse/barbatiOrder/' . $this->category . '/nr_accesari/desc' ?>">Cele mai populare</a>
-                        <a href="<?php echo URL . 'produse/barbatiOrder/' . $this->category . '/nume/asc' ?>">Ordonare alfabetica</a>
-                        <a href="<?php echo URL . 'produse/barbatiOrder/' . $this->category . '/pret/asc' ?>">Pret crescator</a>
-                        <a href="<?php echo URL . 'produse/barbatiOrder/' . $this->category . '/pret/desc' ?>">Pret descrescator</a>
+                        <form method="POST" class="form-ordonare">
+                            <button name="popularitate">Cele mai populare</button>
+                            <button name="alfabetic">Ordonare alfabetica</button>
+                            <button name="crescator">Pret crescator</button>
+                            <button name="descrescator">Pret descrescator</button>
+                        </form>
                     </div>
 
                 </div>
@@ -136,13 +138,13 @@
                     <div class="column">
                         <div class="card">
                             <a href="<?php echo URL . 'produse/produs/' . $row['id_produs'] ?>">
-                                <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png" >
+                                <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
                             </a>
                             <h1><?php echo  $row['nume']; ?></h1>
                             <p class="price"><?php echo  $row['pret']; ?> lei</p>
                             <form method="POST">
-                            <button name = "adauga-cos" type="submit" formaction="<?php echo URL; ?>produse/addToCartMenPage/<?php echo $row['id_produs'] ?>/<?php echo $this->category ?>">Adauga in cos</button>
-                            </form>                        
+                                <button name="adauga-cos" type="submit" formaction="<?php echo URL; ?>produse/addToCartMenPage/<?php echo $row['id_produs'] ?>/<?php echo $this->category ?>">Adauga in cos</button>
+                            </form>
                         </div>
                     </div>
 
