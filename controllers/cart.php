@@ -15,12 +15,14 @@ class Cart extends Controller
         $buton = new Butoane_model();
         $count = $buton->countProductsCart();
         $this->view->result = $cart->selectCartProducts();
+        
         if (isset($_POST['x-sterge'])) {
             if (isset($_GET['id']) && isset($_GET['marime'])) {
                 $buton->deleteFromCart($_GET['id'], $_GET['marime']);
                     header('location: ' . URL . 'cart');
             }
         }
+
         if (isset($_POST['buttonPlus'])) {
             if (isset($_GET['id']) && isset($_GET['marime'])) {
                if($buton->addQuantity($_GET['id'], $_GET['marime']) == false){
