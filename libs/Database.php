@@ -23,6 +23,13 @@ class Database extends PDO
         else return false;
     }
 
+    public function deleteAll($table_name){
+        $string = "DELETE FROM " . $table_name;
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return true;
+        else return false;
+    }
+
     public function delete1($table_name, $col, $data)
     {
 

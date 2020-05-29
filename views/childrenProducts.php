@@ -117,19 +117,22 @@
                 <div class="sortare">
                     <button class="sortare-buton" onclick="Order()">Ordoneaza dupa ▼</button>
                     <div class="sortare-continut" id="ordonare">
-                        <a href="<?php echo URL . 'produse/copiiOrder/' . $this->category . '/nr_accesari/desc' ?>">Cele mai populare</a>
-                        <a href="<?php echo URL . 'produse/copiiOrder/' . $this->category . '/nume/asc' ?>">Ordonare alfabetica</a>
-                        <a href="<?php echo URL . 'produse/copiiOrder/' . $this->category . '/pret/asc' ?>">Pret crescator</a>
-                        <a href="<?php echo URL . 'produse/copiiOrder/' . $this->category . '/pret/desc' ?>">Pret descrescator</a>
+                        <a href="<?php echo URL . 'produse/copiiOrder/' . $this->category . '/nr_accesari/desc/'?>">Cele mai populare</a>
+                        <a href="<?php echo URL . 'produse/copiiOrder/' . $this->category . '/nume/asc/' ?>">Ordonare alfabetica</a>
+                        <a href="<?php echo URL . 'produse/copiiOrder/' . $this->category . '/pret/asc/' ?>">Pret crescator</a>
+                        <a href="<?php echo URL . 'produse/copiiOrder/' . $this->category . '/pret/desc/' ?>">Pret descrescator</a>
                     </div>
-
                 </div>
                 <script src="<?php echo URL; ?>public/js/order.js"> </script>
 
             </div>
             <div class="products">
                 <?php
-
+                if($this->count == 0)
+                {
+                    echo "Nu exista produse.";
+                }
+                else{
                 while ($row = $this->result->fetch()) {
                 ?>
 
@@ -147,6 +150,7 @@
                     </div>
 
                 <?php
+                }
                 }
                 ?>
 

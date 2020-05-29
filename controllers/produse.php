@@ -141,8 +141,40 @@ class Produse extends Controller
     public function copiiOrder($category, $order, $filter)
     {
         $product = new produse_model();
-        $this->view->result = $product->selectOrder('copii', $category, $order, $filter, $this->view->count);
+
+        if (isset($_POST['aplica-filtre'])) {
+            if (!empty($_POST['marime'])) {
+                $marime = "'" . $_POST['marime'] . "'";
+            } else $marime = 'false';
+            if (!empty($_POST['material'])) {
+                $material = "'" . $_POST['material'] . "'";
+            } else $material = 'false';
+            if (!empty($_POST['tip'])) {
+                $tip = "'" . $_POST['tip'] . "'";
+            } else $tip = 'false';
+            if (!empty($_POST['pret'])) {
+                $prices = explode(",", $_POST['pret']);
+                $pret1 = $prices[0];
+                $pret2 = $prices[1];
+            } else {
+                $pret1 = 0;
+                $pret2 = 1500;
+            }
+            if (!empty($_POST['culoare'])) {
+                $culoare = "'" . $_POST['culoare'] . "'";
+            } else $culoare = 'false';
+
+            if ($marime == 'false') {
+                $resultPage = $product->selectByFilterWithoutSize("'" . $category . "'", $material, $tip, "'copii'", $culoare, $pret1 . " and " . $pret2, $this->view->count);
+            } else {
+                $resultPage = $product->selectByFilter("'" . $category . "'", $material, $marime, $tip, "'copii'", $culoare, $pret1 . " and " . $pret2, $this->view->count);
+            }
+        } else {
+            $resultPage = $product->selectChildrenCategory($category, $this->view->count);
+        }
+        $this->view->result = $product->selectOrder('copii', $category, $order, $filter, $resultPage, $this->view->count);
         $this->view->category = $category;
+        $product->deleteFromProduse_filter_order();
         $this->view->render('childrenProducts');
     }
 

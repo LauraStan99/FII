@@ -37,13 +37,23 @@ class Produse_model extends Model
         return $this->db->select2('produse','gen','copii','categorie',$category);
     }
 
-    public function selectOrder($gender,$category,$order,$filter, &$count) {
-        $result = $this->db->selectOrderBy2('produse','gen',$gender,'categorie',$category,$order,$filter);
+    public function selectOrder($gender,$category,$order,$filter, $resultPage, &$count) {
+
+
+        while($row = $resultPage -> fetch()){
+            $insert_data = array(
+                'id_produs' => $row['id_produs'], 'nume' => $row['nume'], 'pret' => $row['pret'], 'material' => $row['material'], 'imagine'=>$row['imagine'], 'descriere' => $row['descriere'],
+                'gen' => $row['gen'], 'tip' => $row['tip'], 'categorie' => $row['categorie'], 'culoare' => $row['culoare'], 'nr_accesari' => $row['nr_accesari']
+            );
+            $this->db->insert('produse_filter_order', $insert_data);
+        }
+
+        $result = $this->db->selectOrderBy2('produse_filter_order','gen',$gender,'categorie',$category,$order,$filter);
         $count = 0;
         while($result->fetch()){
             $count = $count + 1;
         }
-        return $this->db->selectOrderBy2('produse','gen',$gender,'categorie',$category,$order,$filter);
+        return $this->db->selectOrderBy2('produse_filter_order','gen',$gender,'categorie',$category,$order,$filter);
     }
 
     public function selectProduct($id_product){
@@ -78,6 +88,10 @@ class Produse_model extends Model
     public function deteleProduct($id_product)
     {
       return $this->db->delete1('produse','id_produs',$id_product);
+    }
+
+    public function deleteFromProduse_filter_order(){
+        return $this->db->deleteAll('produse_filter_order');
     }
 
     public function nrAccesariCurente($id_product)
