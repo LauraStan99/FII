@@ -117,7 +117,7 @@
                 <div class="sortare">
                     <button class="sortare-buton" onclick="Order()">Ordoneaza dupa ▼</button>
                     <div class="sortare-continut" id="ordonare">
-                        <a href="">Cele mai populare</a>
+                        <a href="<?php echo URL . 'produse/copiiOrder/' . $this->category . '/nr_accesari/desc' ?>">Cele mai populare</a>
                         <a href="<?php echo URL . 'produse/copiiOrder/' . $this->category . '/nume/asc' ?>">Ordonare alfabetica</a>
                         <a href="<?php echo URL . 'produse/copiiOrder/' . $this->category . '/pret/asc' ?>">Pret crescator</a>
                         <a href="<?php echo URL . 'produse/copiiOrder/' . $this->category . '/pret/desc' ?>">Pret descrescator</a>
