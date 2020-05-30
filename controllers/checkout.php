@@ -27,11 +27,11 @@ class Checkout extends Controller
             {
                 if($this->view->payment == 'card')
                 {
-                    $checkout->addNewCommand($_GET['id_comanda'], $this->view->nume, $this->view->prenume, $this->view->email, $this->view->adresa, $this->view->tara, $this->view->oras, $this->view->payment, $this->view->livrare);
+                    $checkout->addNewCommand($_GET['id_comanda'], $this->view->nume, $this->view->prenume, $this->view->email, $this->view->adresa, $this->view->oras, $this->view->tara, $this->view->payment, $this->view->livrare);
                     header('location: ' . URL . 'payment?id_comanda=' . $_GET['id_comanda']);
                 }
                 else{
-                    $checkout->addNewCommand($_GET['id_comanda'], $this->view->nume, $this->view->prenume, $this->view->email, $this->view->adresa, $this->view->tara, $this->view->oras, $this->view->payment, $this->view->livrare);
+                    $checkout->addNewCommand($_GET['id_comanda'], $this->view->nume, $this->view->prenume, $this->view->email, $this->view->adresa, $this->view->oras,$this->view->tara, $this->view->payment, $this->view->livrare);
                     $checkout->deleteCart();
                     $button->sendEmailConfirmation($_GET['id_comanda']);
                     header('location: ' . URL . 'order');

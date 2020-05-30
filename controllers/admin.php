@@ -143,6 +143,7 @@ class Admin extends Controller
        $this->view->result=$admin->selectStatisticaComenzi();
        $this->view->render('statisticaComenzi');    
    } 
+
    public function statisticaProduseFemei()
    {
        $admin=new admin_model();
@@ -156,5 +157,10 @@ class Admin extends Controller
        $this->view->render('statisticaCeleMaiPopulareProduse');    
    }
 
+   public function statisticaPlataComenzi(){
 
+        $admin = new admin_model();
+        $this->view->result=$admin->selectStatisticaPlataComenzi();
+       $this->view->render('statisticaPlataComenzi'); 
+   }
 }

@@ -84,5 +84,8 @@ class Admin_model extends Model
         return $this->db->selectOrderBy1Limit('produse','nr_accesari','desc',10);
     }
 
+    public function selectStatisticaPlataComenzi(){
+        return $this->db->selectGroupBy('comanda','metoda_plata');
+    }
     
 }

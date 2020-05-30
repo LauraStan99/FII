@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
  <html>
 
  <head>
@@ -12,15 +12,15 @@
 
            function drawChart() {
                 var data = google.visualization.arrayToDataTable([
-                     ['Data plasare', 'Numar comenzi/zi'],
+                     ['Modalitate plata', 'Nr. comenzi/ modalitate plata'],
                      <?php
                          while ($row = $this->result->fetch()) {
-                              echo "['" . $row["data_plasare"] . "', " . $row["number"] . "],";
+                              echo "['" . $row["metoda_plata"] . "', " . $row["number"] . "],";
                          }
                          ?>
                 ]);
                 var options = {
-                     is3D:true
+                    pieHole: 0.5
                 };
                 var chart = new google.visualization.PieChart(document.getElementById('piechart'));
                 chart.draw(data, options);
