@@ -5,7 +5,7 @@
        $country = array ('Romania'=>'Romania','Italia'=>'Italy','Germania'=>'Germany','Spania'=>'Spain','Rusia'=>'Russia', 'Anglia' => 'United Kingdom',
        'Portugalia' => 'Portugal', 'Grecia' => 'Greece', 'Austria' => 'Austria', 'Franta' => 'France', 'Norvegia' => 'Norway', 'Moldova' => 'Moldova');   
     ?>
-    <link href="<?php echo URL; ?>public/css/statisticaComenzi.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/statisticaComenzi1.css" rel="stylesheet" />
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {

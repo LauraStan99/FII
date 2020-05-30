@@ -2,7 +2,7 @@
  <html>
 
  <head>
-      <link href="<?php echo URL; ?>public/css/statisticaComenzi.css" rel="stylesheet" />
+      <link href="<?php echo URL; ?>public/css/statisticaComenzi1.css" rel="stylesheet" />
       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
       <script type="text/javascript">
            google.charts.load('current', {
@@ -41,15 +41,11 @@
                 <hr>
            </div>
            <div id="piechart"></div>
-
-           <form method="post" action="<?php echo URL ?>admin/createCsv">
-                <div class="form-group">
-                     <div>
-                          <input type="submit" name="Export" value="export to excel" />
-                     </div>
-                </div>
-           </form>
-
+           <div class="butoane">
+                <form method="post" action="<?php echo URL ?>admin/createCsv">
+                     <button type="submit" name="Export" class="exportAsCsv">EXPORT CSV</button>
+                </form>
+           </div>
       </main>
       <footer>
            <?php
