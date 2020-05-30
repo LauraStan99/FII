@@ -22,12 +22,10 @@ main #piechart {
   position: static;
 }
 
-main #regions-div{
-  width: 10%;
-  height: 500px;
-  float: left;
-  position: static;
-  align-content:center;
+main #regions_div{
+ 
+  margin-bottom: 5vh;
+  margin-top: 5vh;
 }
 @media screen and (max-width: 700px) {
   main #piechart {
