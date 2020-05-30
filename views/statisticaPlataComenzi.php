@@ -38,7 +38,7 @@
       <br /><br />
       <main>
            <div>
-                <h1>Statistica comenzilor efectuate in luna mai</h1>
+                <h1>Statistica platilor efectuate in luna mai</h1>
                 <hr>
            </div>
            <div id="piechart"></div>
