@@ -80,5 +80,8 @@ class Admin_model extends Model
         return $this->db->selectJoinGroupByWhere('produse_comanda','produse','categorie','id_produs','gen','femei');
     }
 
+    public function selectStatisticaPlataComenzi(){
+        return $this->db->selectGroupBy('comanda','metoda_plata');
+    }
     
 }
