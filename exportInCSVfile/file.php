@@ -1,8 +1,8 @@
  <div>
-     <form class="form-horizontal" action="functions.php" method="post" name="upload_excel" enctype="multipart/form-data">
+     <form action="functions.php" method="post">
          <div class="form-group">
-             <div class="col-md-4 col-md-offset-4">
-                 <input type="submit" name="Export" class="btn btn-success" value="export to excel" />
+             <div >
+                 <input type="submit" name="Export"  value="export to excel" />
              </div>
          </div>
      </form>

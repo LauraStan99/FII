@@ -13,5 +13,6 @@
         while ($row = $result->fetch()) {
             fputcsv($output, $row);
         }
+        
         fclose($output);
     }
