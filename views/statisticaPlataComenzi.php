@@ -48,11 +48,7 @@
            <div id="piechart"></div>
 
            <form method="post" action="<?php echo URL ?>admin/createCsvStatisticaPlataComenzi">
-                <div class="form-group">
-                     <div>
-                          <input type="submit" name="Export" value="export to excel" />
-                     </div>
-                </div>
+           <button type="submit" name="Export" class="exportAsCsv">EXPORT CSV</button>
            </form>
       </main>
       <footer>

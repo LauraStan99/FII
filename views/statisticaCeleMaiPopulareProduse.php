@@ -24,18 +24,18 @@
             var options = {
                 pieSliceText: 'label',
                 slices: {
-        
+
                     2: {
                         offset: 0.2
                     },
                     5: {
                         offset: 0.2
                     },
-                   
+
                     6: {
                         offset: 0.4
                     },
-                    
+
                 },
             };
 
@@ -56,14 +56,14 @@
             <h1>Statistica celor mai vandute produse</h1>
             <hr>
         </div>
-        <div id="piechart" ></div>
+        <div id="piechart"></div>
+
         <form method="post" action="<?php echo URL ?>admin/createCsvStatisticaCeleMaiPopulareProduse">
-                <div class="form-group">
-                     <div>
-                          <input type="submit" name="Export" value="export to excel" />
-                     </div>
-                </div>
-           </form>
+            <button type="submit" name="Export" class="exportAsCsv">EXPORT CSV</button>
+        </form>
+
+        
+
         <br />
 
     </main>
