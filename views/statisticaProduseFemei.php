@@ -12,10 +12,10 @@
 
         function drawStacked() {
             var data = google.visualization.arrayToDataTable([
-                ['Categorie produs', 'Numar produse vandute'],
+                ['Categorie produs', 'Numar produse vandute', {role:'style'}],
                 <?php
                          while ($row = $this->result->fetch()) {
-                              echo "['" . $row["categorie"] . "', " . $row["number"] . "],";
+                              echo "['" . $row["categorie"] . "', " . $row["number"] . ", 'color:pink' ],";
                          }
                          ?>
             ]);
@@ -26,12 +26,15 @@
                 },
                 isStacked: true,
                 hAxis: {
-                    title: 'Numar produse ',
+                    format:'0',
+                    title: 'Numar produse vandute',
                     minValue: 0,
                 },
                 vAxis: {
                     title: 'Categorie'
-                }
+                },
+                legend:'none'
+                
             };
             var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
             chart.draw(data, options);
