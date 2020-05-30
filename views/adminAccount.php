@@ -33,8 +33,8 @@
                 <h2>STATISTICI</h2>
                 <a href="<?php echo URL; ?>admin/statisticaComenzi">• Vezi statistica comenzi</a>
                 <a href="<?php echo URL; ?>admin/statisticaProduseFemei">• Vezi statistica produse femei</a>
-                <a href="<?php echo URL; ?>admin/statisticaPlataComenzi">• Vezi statistica plata comenzi</a>
                 <a>• Vezi statistica comenzi</a>
+                <a href="<?php echo URL; ?>admin/statisticaPlataComenzi">• Vezi statistica plata comenzi</a>
                 <a>• Vezi statistica comenzi</a>
             </div>
             <div class="line"></div>
