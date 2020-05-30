@@ -51,6 +51,13 @@
       <hr>
       </div>
     <div id="regions_div"></div>
+    <form method="post" action="<?php echo URL ?>admin/createCsvStatisticaComenziEuropa">
+                <div class="form-group">
+                     <div>
+                          <input type="submit" name="Export" value="export to excel" />
+                     </div>
+                </div>
+           </form>
     </main>
     <?php
     require 'footer.php'; 

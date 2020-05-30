@@ -148,9 +148,9 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
-    public function selectOrderBy1Limit($table_name,$col1,$filter,$limit) {
+    public function selectOrderBy1Limit($table_name,$col1, $col2, $col3,$filter,$limit) {
       
-        $string="SELECT * FROM ".$table_name. " order by ".$col1." ".$filter." limit ".$limit;  
+        $string="SELECT ".$col1.",".$col2." FROM ".$table_name. " order by ".$col3." ".$filter." limit ".$limit;  
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;
