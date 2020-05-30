@@ -87,5 +87,9 @@ class Admin_model extends Model
     public function selectStatisticaPlataComenzi(){
         return $this->db->selectGroupBy('comanda','metoda_plata');
     }
+
+    public function selectStatisticaComenziEuropa(){
+        return $this->db->selectGroupBy('comanda','tara');
+    }
     
 }

@@ -163,4 +163,10 @@ class Admin extends Controller
         $this->view->result=$admin->selectStatisticaPlataComenzi();
        $this->view->render('statisticaPlataComenzi'); 
    }
+
+   public function statisticaComenziEuropa(){
+    $admin = new admin_model();
+    $this->view->result = $admin->selectStatisticaComenziEuropa();
+    $this->view->render('statisticaComenziEuropa'); 
+   }
 }

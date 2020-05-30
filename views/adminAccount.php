@@ -35,7 +35,7 @@
                 <a href="<?php echo URL; ?>admin/statisticaProduseFemei">• Vezi statistica produse femei</a>
                 <a href="<?php echo URL; ?>admin/statisticaCeleMaiPopulareProduse">• Vezi statistica produselor populare</a>
                 <a href="<?php echo URL; ?>admin/statisticaPlataComenzi">• Vezi statistica plata comenzi</a>
-                <a>• Vezi statistica comenzi</a>
+                <a href="<?php echo URL; ?>admin/statisticaComenziEuropa">• Vezi statistica comenzi Europa</a>
             </div>
             <div class="line"></div>
             <div class="administrare-produse">

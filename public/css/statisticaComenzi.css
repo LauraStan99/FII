@@ -21,6 +21,14 @@ main #piechart {
   float: left;
   position: static;
 }
+
+main #regions-div{
+  width: 10%;
+  height: 500px;
+  float: left;
+  position: static;
+  align-content:center;
+}
 @media screen and (max-width: 700px) {
   main #piechart {
     width: 100%;

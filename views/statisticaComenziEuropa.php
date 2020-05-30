@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <?php
+       $country = array ('Romania'=>'Romania','Italia'=>'Italy','Germania'=>'Germany','Spania'=>'Spain','Rusia'=>'Russia', 'Anglia' => 'United Kingdom',
+       'Portugalia' => 'Portugal', 'Grecia' => 'Greece', 'Austria' => 'Austria', 'Franta' => 'France', 'Norvegia' => 'Norway', 'Moldova' => 'Moldova');   
+    ?>
+    <link href="<?php echo URL; ?>public/css/statisticaComenzi.css" rel="stylesheet" />
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {
@@ -12,16 +17,19 @@
       function drawRegionsMap() {
         var data = google.visualization.arrayToDataTable([
           ['Tara', 'Numar comenzi livrate'],
-          ['Russia',7],
+          <?php
         
+            while ($row = $this->result->fetch()) {
 
-          
+                echo "['" . $country[$row["tara"]] . "', " . $row["number"] . "],";
+            }
+            ?>
            
         ]);
 
         var options = {
           region: '150', 
-          colorAxis: {colors: ['yellow', 'orange', 'red']},
+          colorAxis: {colors: ['pink', 'violet', 'purple']},
           backgroundColor: '#81d4fa',
           datalessRegionColor: 'white',
           defaultColor: '#f5f5f5',
@@ -34,6 +42,18 @@
     </script>
   </head>
   <body>
-    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+      <?php
+      require 'header.php';
+      ?>
+      <main>
+      <div>
+       <h1>Statistica comenzilor livrate in tarile din Europa </h1> 
+      <hr>
+      </div>
+    <div id="regions_div"></div>
+    </main>
+    <?php
+    require 'footer.php'; 
+    ?>
   </body>
 </html>
