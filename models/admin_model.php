@@ -91,5 +91,18 @@ class Admin_model extends Model
     public function selectStatisticaComenziEuropa(){
         return $this->db->selectGroupBy('comanda','tara');
     }
+    public function createCsv()
+    {
+        header('Content-Type: text/csv; charset=utf-8');
+        header('Content-Disposition: attachment; filename=data.csv');
+        $output = fopen("php://output", "w");
+        fputcsv($output, array('DATA PLASARE', 'NUMAR PRODUSE'));
+        $result=$this->selectStatisticaComenzi();
+        while ($row =$result->fetch(PDO::FETCH_ASSOC)) {
+            fputcsv($output, $row);
+        }
+
+        fclose($output);
+    }
     
 }

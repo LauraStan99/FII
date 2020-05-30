@@ -137,36 +137,43 @@ class Admin extends Controller
         }
         $this->view->render('modifyProduct');
     }
-   public function statisticaComenzi()
-   {
-       $admin=new admin_model();
-       $this->view->result=$admin->selectStatisticaComenzi();
-       $this->view->render('statisticaComenzi');    
-   } 
+    public function statisticaComenzi()
+    {
+        $admin = new admin_model();
+        $this->view->result = $admin->selectStatisticaComenzi();
+        $this->view->render('statisticaComenzi');
+    }
 
-   public function statisticaProduseFemei()
-   {
-       $admin=new admin_model();
-       $this->view->result=$admin->selectStatisticaProduseFemei();
-       $this->view->render('statisticaProduseFemei');    
-   }
-   public function statisticaCeleMaiPopulareProduse()
-   {
-       $admin=new admin_model();
-       $this->view->result=$admin->selectStatisticaProdusePopulare();
-       $this->view->render('statisticaCeleMaiPopulareProduse');    
-   }
+    public function statisticaProduseFemei()
+    {
+        $admin = new admin_model();
+        $this->view->result = $admin->selectStatisticaProduseFemei();
+        $this->view->render('statisticaProduseFemei');
+    }
+    public function statisticaCeleMaiPopulareProduse()
+    {
+        $admin = new admin_model();
+        $this->view->result = $admin->selectStatisticaProdusePopulare();
+        $this->view->render('statisticaCeleMaiPopulareProduse');
+    }
 
-   public function statisticaPlataComenzi(){
+    public function statisticaPlataComenzi()
+    {
 
         $admin = new admin_model();
-        $this->view->result=$admin->selectStatisticaPlataComenzi();
-       $this->view->render('statisticaPlataComenzi'); 
-   }
+        $this->view->result = $admin->selectStatisticaPlataComenzi();
+        $this->view->render('statisticaPlataComenzi');
+    }
 
-   public function statisticaComenziEuropa(){
-    $admin = new admin_model();
-    $this->view->result = $admin->selectStatisticaComenziEuropa();
-    $this->view->render('statisticaComenziEuropa'); 
-   }
+    public function statisticaComenziEuropa()
+    {
+        $admin = new admin_model();
+        $this->view->result = $admin->selectStatisticaComenziEuropa();
+        $this->view->render('statisticaComenziEuropa');
+    }
+    public function createCsv()
+    {
+        $admin = new admin_model();
+        $admin->createCsv();
+    }
 }

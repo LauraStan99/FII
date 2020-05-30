@@ -20,12 +20,11 @@
                          ?>
                 ]);
                 var options = {
-                     is3D:true
+                     is3D: true
                 };
                 var chart = new google.visualization.PieChart(document.getElementById('piechart'));
                 chart.draw(data, options);
            }
-
       </script>
  </head>
 
@@ -42,6 +41,14 @@
                 <hr>
            </div>
            <div id="piechart"></div>
+
+           <form method="post" action="<?php echo URL ?>admin/createCsv">
+                <div class="form-group">
+                     <div>
+                          <input type="submit" name="Export" value="export to excel" />
+                     </div>
+                </div>
+           </form>
 
       </main>
       <footer>
