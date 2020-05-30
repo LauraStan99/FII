@@ -56,6 +56,13 @@
             <hr>
         </div>
         <div id="chart_div"></div>
+        <form method="post" action="<?php echo URL ?>admin/createCsvStatisticaProduseFemei">
+                <div class="form-group">
+                     <div>
+                          <input type="submit" name="Export" value="export to excel" />
+                     </div>
+                </div>
+           </form>
         <br/>
 
     </main>

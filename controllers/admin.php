@@ -171,9 +171,30 @@ class Admin extends Controller
         $this->view->result = $admin->selectStatisticaComenziEuropa();
         $this->view->render('statisticaComenziEuropa');
     }
-    public function createCsv()
+    public function createCsvStatisticaComenzi()
     {
         $admin = new admin_model();
-        $admin->createCsv();
+        $admin->createCsvStatisticaComenzi();
+    }
+
+    public function createCsvStatisticaComenziEuropa()
+    {
+        $admin = new admin_model();
+        $admin->createCsvStatisticaComenziEuropa();
+    }
+
+    public function createCsvStatisticaPlataComenzi(){
+        $admin = new admin_model();
+        $admin->createCsvStatisticaPlataComenzi();
+    }
+
+    public function createCsvStatisticaProduseFemei(){
+        $admin = new admin_model();
+        $admin->createCsvStatisticaProduseFemei();
+    }
+
+    public function createCsvStatisticaCeleMaiPopulareProduse(){
+        $admin = new admin_model();
+        $admin->createCsvStatisticaCeleMaiPopulareProduse();
     }
 }

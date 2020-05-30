@@ -81,7 +81,7 @@ class Admin_model extends Model
     }
     public function selectStatisticaProdusePopulare()
     {
-        return $this->db->selectOrderBy1Limit('produse','nr_accesari','desc',10);
+        return $this->db->selectOrderBy1Limit('produse','nume','nr_accesari','nr_accesari','desc',10);
     }
 
     public function selectStatisticaPlataComenzi(){
@@ -91,7 +91,8 @@ class Admin_model extends Model
     public function selectStatisticaComenziEuropa(){
         return $this->db->selectGroupBy('comanda','tara');
     }
-    public function createCsv()
+
+    public function createCsvStatisticaComenzi()
     {
         header('Content-Type: text/csv; charset=utf-8');
         header('Content-Disposition: attachment; filename=data.csv');
@@ -101,8 +102,54 @@ class Admin_model extends Model
         while ($row =$result->fetch(PDO::FETCH_ASSOC)) {
             fputcsv($output, $row);
         }
+        fclose($output);
+    }
 
+    public function createCsvStatisticaComenziEuropa(){
+        header('Content-Type: text/csv; charset=utf-8');
+        header('Content-Disposition: attachment; filename=data.csv');
+        $output = fopen("php://output", "w");
+        fputcsv($output, array('TARA', 'NUMAR COMENZI LIVRATE'));
+        $result=$this->selectStatisticaComenziEuropa();
+        while ($row =$result->fetch(PDO::FETCH_ASSOC)) {
+            fputcsv($output, $row);
+        }
+        fclose($output);
+    }
+
+    public function createCsvStatisticaPlataComenzi(){
+        header('Content-Type: text/csv; charset=utf-8');
+        header('Content-Disposition: attachment; filename=data.csv');
+        $output = fopen("php://output", "w");
+        fputcsv($output, array('MODALITATE PLATA', 'NUMAR COMENZI'));
+        $result=$this->selectStatisticaPlataComenzi();
+        while ($row =$result->fetch(PDO::FETCH_ASSOC)) {
+            fputcsv($output, $row);
+        }
+        fclose($output);
+    }
+
+    public function createCsvStatisticaProduseFemei(){
+        header('Content-Type: text/csv; charset=utf-8');
+        header('Content-Disposition: attachment; filename=data.csv');
+        $output = fopen("php://output", "w");
+        fputcsv($output, array('CATEGORIE PRODUSE FEMEI', 'NUMAR ARTICOLE CUMPARATE'));
+        $result=$this->selectStatisticaProduseFemei();
+        while ($row =$result->fetch(PDO::FETCH_ASSOC)) {
+            fputcsv($output, $row);
+        }
         fclose($output);
     }
     
+    public function createCsvStatisticaCeleMaiPopulareProduse(){
+        header('Content-Type: text/csv; charset=utf-8');
+        header('Content-Disposition: attachment; filename=data.csv');
+        $output = fopen("php://output", "w");
+        fputcsv($output, array('DENUMIRE PRODUS', 'POPULARITATE'));
+        $result=$this->selectStatisticaProdusePopulare();
+        while ($row =$result->fetch(PDO::FETCH_ASSOC)) {
+            fputcsv($output, $row);
+        }
+        fclose($output);
+    }
 }
