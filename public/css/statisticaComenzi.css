@@ -22,7 +22,7 @@ main #piechart {
   position: static;
 }
 
-main #regions-div{
+main #regions_div{
   width: 10%;
   height: 500px;
   float: left;

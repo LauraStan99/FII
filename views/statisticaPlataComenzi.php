@@ -20,7 +20,11 @@
                          ?>
                 ]);
                 var options = {
-                    pieHole: 0.5
+                    pieHole: 0.5,
+                    slices: {
+                    0: { color: 'pink' },
+                    1: { color: 'violet' }
+                    }
                 };
                 var chart = new google.visualization.PieChart(document.getElementById('piechart'));
                 chart.draw(data, options);
