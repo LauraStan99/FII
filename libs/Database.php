@@ -155,6 +155,22 @@ class Database extends PDO
         else return false;
     }
 
+    public function selectGroupBy($table_name,$col)
+    {
+        $string="SELECT ".$col.",count(*) as number FROM ".$table_name." GROUP BY ".$col;  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+    public function selectJoinGroupByWhere($table_name1,$table_name2,$col,$col1,$col2,$data2)
+    {
+      //  $string="SELECT ".$col.",count(*) as number FROM ". $table_name1 . " JOIN ". $table_name2 . " ON " .$table_name1.".".$col1. " = " .$table_name2.".".$col1." WHERE ". $col2."='".$data2."' GROUP BY". $col;
+      $string="SELECT categorie,count(*) as number FROM produse_comanda join produse on produse_comanda.id_produs=produse.id_produs WHERE gen='femei' GROUP BY categorie"; 
+      $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+
+    }
     public function selectByArray($table_name, $col, $data){
         $string = "SELECT * FROM " . $table_name . " WHERE ".$col." IN";
         $string .= "(" . implode(",", array_values($data)) . ")";

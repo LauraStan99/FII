@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0px;
+}
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main h1 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+main #piechart {
+  width: 100%;
+  height: 500px;
+  float: left;
+  position: static;
+}
+@media screen and (max-width: 700px) {
+  main #piechart {
+    width: 100%;
+    height: 400px;
+    margin-left: 0vw;
+    float: left;
+    position: static;
+  }
+}
+@media screen and (max-width: 500px) {
+  main #piechart {
+    width: 100%;
+    height: 150px;
+    margin-left: 0vw;
+    float: left;
+  }
+}

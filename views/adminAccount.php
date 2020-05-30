@@ -31,9 +31,9 @@
                 <h2>ADMINISTRARE UTILIZATORI</h2>
                 <a href="<?php echo URL; ?>admin/listareUtilizatori">• Vezi utilizatori</a>
                 <h2>STATISTICI</h2>
-                <a>• Vezi statistica comenzi</a>
-                <a>• Vezi statistica comenzi</a>
-                <a>• Vezi statistica comenzi</a>
+                <a href="<?php echo URL; ?>admin/statisticaComenzi">• Vezi statistica comenzi</a>
+                <a href="<?php echo URL; ?>admin/statisticaProduseFemei">• Vezi statistica produse femei</a>
+                <a>• Vezi statistica </a>
                 <a>• Vezi statistica comenzi</a>
                 <a>• Vezi statistica comenzi</a>
             </div>

@@ -71,6 +71,14 @@ class Admin_model extends Model
     {
         return $this->db->update('produse', 'culoare', $color, 'id_produs',$id);
     }
+    public function selectStatisticaComenzi()
+    {
+        return $this->db->selectGroupBy('comanda','data_plasare');
+    } 
+    public function selectStatisticaProduseFemei()
+    {
+        return $this->db->selectJoinGroupByWhere('produse_comanda','produse','categorie','id_produs','gen','femei');
+    }
 
     
 }
