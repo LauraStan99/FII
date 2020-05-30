@@ -79,6 +79,10 @@ class Admin_model extends Model
     {
         return $this->db->selectJoinGroupByWhere('produse_comanda','produse','categorie','id_produs','gen','femei');
     }
+    public function selectStatisticaProdusePopulare()
+    {
+        return $this->db->selectOrderBy1Limit('produse','nr_accesari','desc',10);
+    }
 
     
 }

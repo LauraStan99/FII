@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link href="<?php echo URL; ?>public/css/statisticaProduseFemei.css" rel="stylesheet" />
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
         google.charts.load('current', {
@@ -48,7 +49,7 @@
     <br /><br />
     <main>
         <div>
-            <h1>Statistica comenzilor efectuate in luna mai</h1>
+            <h1>Statistica produselor (femei) vandute din fiecare categorie</h1>
             <hr>
         </div>
         <div id="chart_div"></div>

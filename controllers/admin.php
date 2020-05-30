@@ -149,7 +149,12 @@ class Admin extends Controller
        $this->view->result=$admin->selectStatisticaProduseFemei();
        $this->view->render('statisticaProduseFemei');    
    }
-
+   public function statisticaCeleMaiPopulareProduse()
+   {
+       $admin=new admin_model();
+       $this->view->result=$admin->selectStatisticaProdusePopulare();
+       $this->view->render('statisticaCeleMaiPopulareProduse');    
+   }
 
 
 }
