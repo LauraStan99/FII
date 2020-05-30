@@ -42,7 +42,7 @@
            </div>
            <div id="piechart"></div>
            <div class="butoane">
-                <form method="post" action="<?php echo URL ?>admin/createCsv">
+                <form method="post" action="<?php echo URL ?>admin/createCsvStatisticaComenzi">
                      <button type="submit" name="Export" class="exportAsCsv">EXPORT CSV</button>
                 </form>
            </div>
