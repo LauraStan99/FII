@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <!-- <link href="<?php echo URL; ?>public/css/statisticaProduseFemei1.css" rel="stylesheet" /> -->
+   <link href="<?php echo URL; ?>public/css/StatisticaComenzi.css" rel="stylesheet" /> 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
@@ -49,15 +49,16 @@
             chart.draw(data, options);
 
             var btnSave = document.getElementById('save-pdf');
-            google.visualization.events.addListener(chart, 'ready', function() {
-                btnSave.disabled = false;
-            });
-            btnSave.addEventListener('click', function() {
-                var doc = new jsPDF('l', 'mm', [297, 350]);
-                doc.addImage(chart.getImageURI(), 'JPEG', 0, 0);
-                doc.save('chart.pdf');
-               
-            }, false);
+                google.visualization.events.addListener(chart, 'ready', function() {
+                     btnSave.disabled = false;
+                });
+                btnSave.addEventListener('click', function() {
+                     var doc = new jsPDF('l', 'mm', [297, 350]);
+                     doc.addImage(chart.getImageURI(), 0, 40);
+
+                     doc.text("Statistica comenzilor efectuate pentru categoriile de femei", 40, 30);
+                     doc.save('chart.pdf');
+                }, false);
         }
     </script>
 
@@ -76,8 +77,8 @@
             <hr>
         </div>
         <div id="chart_div"></div>
-        <form method="post" action="<?php echo URL ?>admin/createCsvStatisticaProduseFemei">
-            <button type="submit" name="Export" class="exportAsCsv">EXPORT CSV</button>
+        <form method="post" class="csv">
+            <button type="submit" name="Export" id="exportAsCsv" formaction="<?php echo URL ?>admin/createCsvStatisticaProduseFemei">EXPORT CSV</button>
         </form>
         <button id="save-pdf">SAVE AS PDF</button>
         <br />

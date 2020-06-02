@@ -8,7 +8,7 @@
     'Portugalia' => 'Portugal', 'Grecia' => 'Greece', 'Austria' => 'Austria', 'Franta' => 'France', 'Norvegia' => 'Norway', 'Moldova' => 'Moldova'
   );
   ?>
-  <link href="<?php echo URL; ?>public/css/statisticaComenzi1.css" rel="stylesheet" />
+  <link href="<?php echo URL; ?>public/css/statisticaComenzi.css" rel="stylesheet" />
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
   <script src="https://www.gstatic.com/charts/loader.js"></script>
@@ -56,7 +56,7 @@
         var doc = new jsPDF('l', 'mm', [297, 350]);
         doc.addImage(chart.getImageURI(), 0, 40);
        
-        doc.text("Statistica comenzilor pe Europa", 40, 30);
+        doc.text("Statistica comenzilor livrate in tarile din Europa ", 40, 30);
         doc.save('chart.pdf');
       }, false);
 
@@ -76,9 +76,8 @@
 
 
     <div id="regions_div"></div>
-    <form method="post" action="<?php echo URL ?>admin/createCsvStatisticaComenziEuropa">
-      <button type="submit" name="Export" class="exportAsCsv">EXPORT CSV</button>
-
+    <form method="post" class="csv">
+      <button type="submit" name="Export" id="exportAsCsv" formaction="<?php echo URL ?>admin/createCsvStatisticaComenziEuropa">EXPORT CSV</button>
     </form>
     <button id="save-pdf">SAVE AS PDF</button>
 

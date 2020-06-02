@@ -2,8 +2,13 @@
 <html>
 
 <head>
-    <link href="<?php echo URL; ?>public/css/statisticaComenzi1.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/statisticaComenzi.css" rel="stylesheet" />
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+
+
     <script type="text/javascript">
         google.charts.load("current", {
             packages: ["corechart"]
@@ -41,6 +46,18 @@
 
             var chart = new google.visualization.PieChart(document.getElementById('piechart'));
             chart.draw(data, options);
+
+            var btnSave = document.getElementById('save-pdf');
+            google.visualization.events.addListener(chart, 'ready', function() {
+                btnSave.disabled = false;
+            });
+            btnSave.addEventListener('click', function() {
+                var doc = new jsPDF('l', 'mm', [297, 350]);
+                doc.addImage(chart.getImageURI(), 0, 40);
+
+                doc.text("Statistica celor mai populare produse din aplicatie", 40, 30);
+                doc.save('chart.pdf');
+            }, false);
         }
     </script>
 
@@ -58,11 +75,13 @@
         </div>
         <div id="piechart"></div>
 
-        <form method="post" action="<?php echo URL ?>admin/createCsvStatisticaCeleMaiPopulareProduse">
-            <button type="submit" name="Export" class="exportAsCsv">EXPORT CSV</button>
+        <form method="post" class="csv">
+            <button type="submit" name="Export" id="exportAsCsv" formaction="<?php echo URL ?>admin/createCsvStatisticaCeleMaiPopulareProduse">EXPORT CSV</button>
         </form>
+        <button id="save-pdf">SAVE AS PDF</button>
 
-        
+
+
 
         <br />
 
