@@ -17,7 +17,7 @@
             <div class="header-right">
                 <div class="favorite">
 
-                    <img class="trigger-fav" src="<?php echo URL; ?>public/poze/logo-favorite-tw.png" alt="Favorite" />
+                    <img class="trigger-fav" src="<?php echo URL; ?>public/poze/wishlist.png" alt="Favorite" />
                     <div class="modal-fav">
                         <div class="modal-content-fav">
                             <span class="close-button-fav">&times;</span>
@@ -30,11 +30,11 @@
                     <?php if (Session::get('loggedIn') == true) { ?>
                         <?php if (Session::get('wishlist') == true) { ?>
                             <a class="link-favorite" href="<?php echo URL; ?>wishlist" title="Lista de dorinte">
-                                <img class="logo-favorite" src="<?php echo URL; ?>public/poze/logo-favorite-tw.png" alt="Favorite" />
+                                <img class="logo-favorite" src="<?php echo URL; ?>public/poze/wishlist.png" alt="Favorite" />
                             </a>
                         <?php } else { ?>
                             <a class="link-favorite" href="<?php echo URL; ?>wishlist/empty" title="Lista de dorinte">
-                                <img class="logo-favorite" src="<?php echo URL; ?>public/poze/logo-favorite-tw.png" alt="Favorite" />
+                                <img class="logo-favorite" src="<?php echo URL; ?>public/poze/wishlist.png" alt="Favorite" />
                             </a>
                         <?php } ?>
                     <?php } ?>
@@ -44,7 +44,7 @@
 
                 <div class="cos">
 
-                    <img class="trigger" src="<?php echo URL; ?>public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
+                    <img class="trigger" src="<?php echo URL; ?>public/poze/shopping-bag.png" alt="Cos cumparaturi" />
                     <div class="modal">
                         <div class="modal-content">
                             <span class="close-button">&times;</span>
@@ -66,7 +66,7 @@
                             <script type="text/javascript" src="<?php /*echo URL;*/ ?>public/js/modal-cartEmpty.js"></script>
                         -->
                         <a class="link cos" href="<?php echo URL; ?>cart" title="Cos cumparaturi">
-                            <img class="logo-cos" src="<?php echo URL; ?>public/poze/shopping-cart-tw.png" alt="Cos cumparaturi" />
+                            <img class="logo-cos" src="<?php echo URL; ?>public/poze/shopping-bag.png" alt="Cos cumparaturi" />
                         </a>
                     <?php } ?>
 

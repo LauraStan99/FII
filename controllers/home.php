@@ -11,16 +11,8 @@ class Home extends Controller
     {
         $home = new Home_model();
         $this->view->result=$home->getPopularProducts();
+        $home->createXML();
         $this->view->render('home');
-    }
-
-    function generateXml()
-    {
-        if (isset($_POST['xml'])) {
-            $home = new Home_model();
-            $home->createXML();
-            $this->view->render('home');
-        }
     }
 
     function fluxRSS()
