@@ -9,7 +9,7 @@ class Register extends Controller
 
   public function index()
   {
-    $user = new User();
+    $user = new User_model();
     $valid = new Validate();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
