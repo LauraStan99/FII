@@ -8,7 +8,7 @@ define('DB_USER', 'dba');
 define('DB_PASS', 'sql');
 
 //path
-define('URL', 'http://localhost:82/FII/');
+define('URL', 'http://localhost/FII/');
 
 //contants
 define('HASH_PASSWORD_KEY', 'catsFLYhigh2000miles');

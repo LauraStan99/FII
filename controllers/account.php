@@ -16,7 +16,7 @@ class Account extends Controller
     public function index()
     {
         $validate = new Validate();
-        $user = new User();
+        $user = new User_model();
 
         if (isset($_POST["submit"])){
 

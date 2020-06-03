@@ -9,9 +9,9 @@ class Home extends Controller
 
     function index()
     {
-        $home = new Home_model();
-        $this->view->result=$home->getPopularProducts();
-        $home->createXML();
+        $button = new Butoane_model();
+        $this->view->result=$button->getPopularProducts();
+        $button->createXML();
         $this->view->render('home');
     }
 

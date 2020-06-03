@@ -13,7 +13,7 @@ class Wishlist_model extends Model
             session_start();
         }
         $id = Session::get('id_utilizator');
-        return $result = $this->db->selectJoin('wishlist', 'produse', 'id_produs', 'id_produs', 'id_utilizator', $id);
+        return $this->db->selectJoin('wishlist', 'produse', 'id_produs', 'id_produs', 'id_utilizator', $id);
     }
 }
 ?>

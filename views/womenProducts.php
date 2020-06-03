@@ -95,7 +95,7 @@
             </div>
             </br>
 
-            <button type="submit" class="aplica" name="aplica-filtre">Aplica</button>
+            <button type="submit" class="aplica" name="aplica-filtre" formaction="<?php echo URL; ?>produse/filtreaza/femei/<?php echo $this->category; ?>">Aplica</button>
 
         </form>
         <div class="page">
