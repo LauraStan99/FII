@@ -1,11 +1,8 @@
-<Files .htaccess>
-order allow,deny
-deny from all
-</Files>
-
-Options All -Indexes
+php_flag display_errors on
+php_value error_reporting 9999
 
 RewriteEngine On
+RewriteBase /FII/
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
