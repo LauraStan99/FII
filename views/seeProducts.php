@@ -5,7 +5,7 @@
     <title>Produse | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="<?php echo URL; ?>public/css/seeProductsNew.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/seeProducts.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -63,12 +63,12 @@
             <?php } ?>
 
         </table>
-        <ul> 
+        <ul class="paginare"> 
         <?php 
                       
         for ($i=1; $i<=$this->total_pages; $i++) { ?>
 
-        <li class='active'><a href='<?php echo URL;?>admin/listareProduse?page=<?php echo $i; ?>'><?php echo $i; ?></a></li>
+         <a class="pagina" href='<?php echo URL;?>admin/listareProduse?page=<?php echo $i; ?>'><?php echo $i; ?> </a> 
           
         <?php }
         ?>

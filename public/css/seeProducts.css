@@ -61,6 +61,27 @@ table #stergere-produs {
   height: 4vh;
   font-size: 0.7rem;
 }
+.paginare
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.paginare .pagina{
+  text-align: center;
+  font-family: arial;
+  padding: 6px;
+  background-color: #d8d3d3;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  color: black;
+  margin-left: 1vw;
+  font-size: 0.8rem;
+}
+
+
 @media screen and (max-width: 700px) {
   main {
     flex-direction: column;
@@ -80,5 +101,12 @@ table #stergere-produs {
   table #stergere-produs {
     width: 90%;
     font-size: 0.5rem;
+  }
+  .paginare{
+   justify-content: left;
+  }
+  .pagina{
+    padding: 4px;
+    margin-bottom: 1vh;
   }
 }
