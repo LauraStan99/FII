@@ -185,6 +185,13 @@ class Database extends PDO
         else return false;
     }
 
+    public function selectSearch6($table_name, $data, $col1, $col2, $col3, $col4, $col5, $col6){
+        $string="SELECT * FROM  ".$table_name." WHERE ".$col1." LIKE '%".$data."%' or ".$col2." = '".$data."' or ".$col3." LIKE '%".$data."%' or ".$col4." = '".$data."' or ".$col5." = '".$data."' or ".$col6." = '".$data."'";
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
     public function selectGroupBy($table_name,$col)
     {
         $string="SELECT ".$col.",count(*) as number FROM ".$table_name." GROUP BY ".$col;  

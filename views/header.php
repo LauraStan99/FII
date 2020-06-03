@@ -147,9 +147,9 @@
             </div>
         </div>
         <script src="<?php echo URL; ?>public/js/navbar.js"> </script>
-        <form class="search-bar">
-            <input type="text" name="search" placeholder="Cauta..">
-            <input type="submit" value="OK" id="ok" />
+        <form method = "POST" class="search-bar">
+            <input type="text" name="input" placeholder="Cauta..">
+            <button type="submit" id="ok" name = "cauta" formaction="<?php echo URL; ?>cauta">OK</button>
         </form>
         
     </div>
