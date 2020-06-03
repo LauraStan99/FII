@@ -51,7 +51,7 @@
                         <?php echo $row['material']  ?>
                     </td>
                     <td>
-                        <?php echo $row['pret']  ?> $
+                        <?php echo $row['pret']  ?> lei
                     </td>
                     <td>
                         <form method="POST">

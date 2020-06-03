@@ -1,4 +1,3 @@
-#
 
 php_flag display_errors on
 php_value error_reporting 9999
@@ -9,6 +8,5 @@ RewriteBase /FII/
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l
-RewriteCond %{REQUEST_URI} !fastcgi
 
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
