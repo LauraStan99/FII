@@ -6,10 +6,17 @@ class Admin_model extends Model
         parent::__construct();
     }
 
-    public function selectAllProducts()
+    public function selectAllProducts($start_from, $limit)
     {
-        return $this->db->selectOrderBy('produse', 'id_produs', 'asc');
+        return $this->db->selectLimit('produse', $start_from, $limit);
     }
+
+    public function selectCountProducts(){
+        $result = $this->db->selectCountSimple('produse');
+        $row = $result->fetch();
+        return $row['count(*)'];
+    }
+
     public function deleteProduct($id_product)
     {
         return $this->db->delete1('produse', 'id_produs', $id_product);

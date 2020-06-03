@@ -63,12 +63,22 @@
             <?php } ?>
 
         </table>
+        <ul> 
+        <?php 
+                      
+        for ($i=1; $i<=$this->total_pages; $i++) { ?>
 
+        <li class='active'><a href='<?php echo URL;?>admin/listareProduse?page=<?php echo $i; ?>'><?php echo $i; ?></a></li>
+          
+        <?php }
+        ?>
+        </ul> 
     </main>
 
     <?php
     require 'footer.php';
     ?>
+    
 </body>
 
 </html>

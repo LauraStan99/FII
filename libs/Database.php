@@ -163,9 +163,23 @@ class Database extends PDO
         else return false;
     }
 
+    public function selectLimit($table_name, $start, $limit){
+        $string="SELECT * FROM ".$table_name. " LIMIT ".$start.",".$limit;  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
 
     public function selectCount($table_name, $col, $data){
         $string="SELECT count(*) FROM ".$table_name." WHERE ".$col."='".$data."'";  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
+    public function selectCountSimple($table_name){
+        $string="SELECT count(*) FROM ".$table_name;  
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;

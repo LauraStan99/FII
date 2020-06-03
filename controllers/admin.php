@@ -12,24 +12,51 @@ class Admin extends Controller
         $this->view->render('adminAccount');
     }
 
+    /*$limit = 50;     
+    if (isset($_GET["page"])) {  
+      $pn  = $_GET["page"];  
+    }  
+    else {  
+      $pn=1;  
+    };   
+  
+    $start_from = ($pn-1) * $limit;   
+  
+    $sql = "SELECT * FROM produse LIMIT $start_from, $limit";   
+    $rs_result = $con->query($sql); */
+
     public function listareProduse()
     {
+        $limit = 10;     
+        if (isset($_GET["page"])) {  
+        $this->view->page= $_GET["page"];  
+        }  
+        else {  
+        $this->view->page=1;  
+        };
+  
+        $start_from = ($this->view->page-1) * $limit;
         $product = new admin_model();
-        $this->view->result = $product->selectAllProducts();
+        $this->view->result = $product->selectAllProducts($start_from, $limit);
+        $this->view->total_records = $product->selectCountProducts();
+        $this->view->total_pages = ceil($this->view->total_records / 10);
         $this->view->render('seeProducts');
     }
+
     public function stergeProdus($id_produs)
     {
         $product = new admin_model();
         $product->deleteProduct($id_produs);
         header('location: ' . URL . 'admin/listareProduse');
     }
+
     public function listareUtilizatori()
     {
         $user = new admin_model();
         $this->view->result = $user->selectAllUsers();
         $this->view->render('seeUsers');
     }
+
     public function stergeUtilizator($id_utilizator)
     {
         $product = new admin_model();
