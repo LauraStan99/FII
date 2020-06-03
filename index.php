@@ -11,3 +11,7 @@ require_once "PHPMailer/Exception.php";
 require_once "PHPMailer/SMTP.php";
 $bootstrap = new Bootstrap();
 $bootstrap->init();
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
