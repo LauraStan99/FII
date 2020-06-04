@@ -39,7 +39,7 @@ class Produse_model extends Model
 
     public function selectOrder($gender,$category,$order,$filter, $resultPage, &$count) {
 
-
+        $this->deleteFromProduse_filter_order();
         while($row = $resultPage -> fetch()){
             $insert_data = array(
                 'id_produs' => $row['id_produs'], 'nume' => $row['nume'], 'pret' => $row['pret'], 'material' => $row['material'], 'imagine'=>$row['imagine'], 'descriere' => $row['descriere'],
