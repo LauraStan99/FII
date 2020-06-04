@@ -250,4 +250,11 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
+
+    public function selectAll($table_name){
+        $string="SELECT * FROM ".$table_name;  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
 }

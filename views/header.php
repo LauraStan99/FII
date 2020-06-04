@@ -147,9 +147,10 @@
             </div>
         </div>
         <script src="<?php echo URL; ?>public/js/navbar.js"> </script>
-        <form method = "POST" class="search-bar">
-            <input type="text" name="input" placeholder="Cauta.." required>
-            <button type="submit" id="ok" name = "cauta" formaction="<?php echo URL; ?>cauta">OK</button>
+
+        <form method = "POST" class="search-bar" action = "<?php echo URL; ?>cauta">
+            <input type="text" name="input" placeholder="Cauta.." value="<?php if (isset($this->word)) echo $this->word; ?>" required>
+            <button id="ok" name = "cauta">OK</button>
         </form>
         
     </div>
