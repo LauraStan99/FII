@@ -62,4 +62,13 @@ class User_model extends Model
         $id = Session::get('id_utilizator');
         return $this->db->update('utilizatori', 'parola', HASH::create('sha256',$password, HASH_PASSWORD_KEY), 'id_utilizator', $id);
     }
+
+    public function selectComenziUtilizator()
+    {
+        if (!isset($_SESSION)){
+			session_start();
+		}
+        $id = Session::get('id_utilizator');
+        return $this->db->select1('comanda','id_utilizator',$id);
+    }
 }
