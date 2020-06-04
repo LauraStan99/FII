@@ -46,7 +46,7 @@
                             <h1><?php echo  $row['nume']; ?></h1>
                             <p class="price"><?php echo  $row['pret']; ?> lei</p>
                             <form method="POST">
-                                <button name="adauga-cos">Adauga in cos</button>
+                                    <button name="adauga-cos" type="submit" formaction="<?php echo URL; ?>cauta?id=<?php echo $row['id_produs']; ?>">Adauga in cos</button>
                             </form>
                         </div>
                     </div>

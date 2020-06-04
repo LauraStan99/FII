@@ -7,6 +7,12 @@ class Cauta_model extends Model{
         parent::__construct();
     }
 
+
+    public function selectSearch(){
+
+        return $this->db->selectAll('produse_filter_order');
+    }
+
     public function searchByWord($word){
         $this->deleteFromProduse_filter_order();
         $result =  $this->db->selectSearch6('produse',$word, 'nume', 'material', 'descriere', 'tip', 'culoare', 'categorie');

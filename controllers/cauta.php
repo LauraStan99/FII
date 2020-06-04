@@ -2,7 +2,6 @@
 
 class Cauta extends Controller
 {
-
     function __construct(){
         parent::__construct();
     }
@@ -10,14 +9,38 @@ class Cauta extends Controller
     function index(){
         
         $cauta = new Cauta_model();
-        if(!empty($_POST['input'])){
 
-            $countSearch = $cauta->countSearch($_POST['input']);
+        if(isset($_POST['input'])){
+            $this->view->word = $_POST['input'];
+
+            $countSearch = $cauta->countSearch($this->view->word);
             if($countSearch == 0){
-                $this->view->message='Ne pare rău, niciun produs nu a fost găsit de căutarea dvs. : '.$_POST['input'];
+                $this->view->message='Ne pare rău, niciun produs nu a fost găsit de căutarea dvs. : '.$this->view->word;
             }
-            $this->view->result = $cauta->searchByWord($_POST['input']);
+            $this->view->result = $cauta->searchByWord($this->view->word);
         }
+        else{
+            $this->view->result=$cauta->selectSearch();
+        }
+
+        if(isset($_POST['adauga-cos'])){
+            $buton = new Butoane_model();
+            if ($buton->addToCart($_GET['id'], 'XS') == false) {
+                if ($buton->addToCart($_GET['id'], 'S') == false) {
+                    if ($buton->addToCart($_GET['id'], 'M') == false) {
+                        if ($buton->addToCart($_GET['id'], 'L') == false) {
+                            if ($buton->addToCart($_GET['id'], 'XL') == false) {
+                                if ($buton->addToCart($_GET['id'], 'XXL') == false) {
+                                    $this->view->message = 'Produsul nu este in stoc.';
+                                }
+                            }
+                        }
+                    }
+                }
+            } 
+        }
+
+       
         $this->view->render('cauta');
     }
 
