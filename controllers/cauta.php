@@ -10,9 +10,15 @@ class Cauta extends Controller
     function index(){
         
         $cauta = new Cauta_model();
-        if(isset($_POST['input'])){
+        if(!empty($_POST['input'])){
+
+            $countSearch = $cauta->countSearch($_POST['input']);
+            if($countSearch == 0){
+                $this->view->message('Ne pare rău, niciun produs nu a fost găsit de căutarea dvs. :'.$_POST['input']);
+            }
             $this->view->result = $cauta->searchByWord($_POST['input']);
         }
+        
         $this->view->render('cauta');
     }
 }
