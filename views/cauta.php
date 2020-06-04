@@ -5,7 +5,7 @@
     <title>Produse | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="<?php echo URL; ?>public/css/seeProducts.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/cauta.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -16,59 +16,52 @@
     </header>
     <main>
         <div>
-            <h1>Lista produse</h1>
+            <h1>Rezultatele cautarii dvs.</h1>
             <hr>
         </div>
 
-        <table>
-            <tr>
-                <th class="idProdus"></th>
-                <th class="imagine"></th>
-                <th class="denumire"></th>
-                <th class="material"></th>
-                <th class="pret"></th>
-                <th class="sterge"></th>
+        <div class="sortare">
+            <button class="sortare-buton" onclick="Order()">Ordoneaza dupa ▼</button>
+            <div class="sortare-continut" id="ordonare">
+                <form method="POST" class="form-ordonare">
+                    <button name="popularitate" formaction="<?php echo URL;?>cauta/sortare" >Cele mai populare</button>
+                    <button name="alfabetic">Ordonare alfabetica</button>
+                    <button name="crescator">Pret crescator</button>
+                    <button name="descrescator">Pret descrescator</button>
+                </form>
+            </div>
 
-            </tr>
-            <br>
+        </div>
+        <script src="<?php echo URL; ?>public/js/order.js"> </script>
 
+        <div class="produse">
             <?php
-            while ($row = $this->result->fetch()) {
+            if (!isset($this->message)) {
+                while ($row = $this->result->fetch()) {
             ?>
-
-                <tr>
-                    <td>
-                        <?php echo $row['id_produs']  ?>
-                    </td>
-                    <td>
+                    <div class="produs">
                         <img id="produs" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
-                    </td>
 
-                    <td>
-                        <?php echo $row['nume']  ?>
-                    </td>
-                    <td>
-                        <?php echo $row['material']  ?>
-                    </td>
-                    <td>
-                        <?php echo $row['pret']  ?> lei
-                    </td>
-                    <td>
-                        <form method="POST">
-                            <button id="stergere-produs" formaction="<?php echo URL; ?>admin/stergeProdus/<?php echo $row['id_produs'] ?>" type="submit">Sterge</button>
+                        <a id="nume"><?php echo $row['nume']  ?></a>
+
+                        <a id="pret"> <?php echo $row['pret']  ?> lei</a>
+
+                        <form class="adauga-produs" method="POST">
+                            <button class="adauga">Adauga in cos</button>
                         </form>
 
-                    </td>
-                </tr>
+                    </div>
+                <?php }
+            } else { ?>
+                <p class="mesaj"><?php echo $this->message; ?></p>
             <?php } ?>
-
-        </table>
+        </div>
     </main>
 
     <?php
     require 'footer.php';
     ?>
-    
+
 </body>
 
 </html>

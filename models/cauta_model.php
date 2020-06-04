@@ -20,6 +20,22 @@ class Cauta_model extends Model{
 
         return $i;
     }
-}
+    public function sortare($result,$filter,$order)
+    {
+        while($row = $result -> fetch()){
+            $insert_data = array(
+                'id_produs' => $row['id_produs'], 'nume' => $row['nume'], 'pret' => $row['pret'], 'material' => $row['material'], 'imagine'=>$row['imagine'], 'descriere' => $row['descriere'],
+                'gen' => $row['gen'], 'tip' => $row['tip'], 'categorie' => $row['categorie'], 'culoare' => $row['culoare'], 'nr_accesari' => $row['nr_accesari']
+            );
+            $this->db->insert('produse_filter_order', $insert_data);
+        }
 
-?>
+        $result = $this->db->selectOrderBy('produse_filter_order',$filter,$order);
+        return $result;
+        
+    }
+    public function deleteFromProduse_filter_order()
+    {
+        return $this->db->deleteAll('produse_filter_order');
+    }
+}

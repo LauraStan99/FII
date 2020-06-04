@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+main h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 4vh;
+}
+
+.sortare-buton {
+  background-color: black;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  min-width: 175px;
+  margin-left: 4vw;
+}
+
+.sortare-buton:hover,
+.sortare-buton:focus {
+  opacity: 0.7;
+}
+.sortare {
+  position: relative;
+  display: inline-block;
+}
+
+.sortare-continut {
+  display: none;
+  position: absolute;
+  background-color: #dad3d3;
+  min-width: 175px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-left: 4vw;
+ 
+}
+.form-ordonare {
+  display: flex;
+  flex-direction: column;
+}
+
+.sortare-continut button {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 16px;
+}
+
+.sortare .sortare-continut button:hover {
+  background-color: rgb(167, 164, 164);
+  font-size: 0.8rem;
+}
+
+main .produse {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 5vh;
+  margin-top:5vh;
+}
+main .produs {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  font-size: 0.9rem;
+  color: black;
+  width: 21%;
+  margin-right: 2vw;
+  margin-bottom: 2vh;
+  justify-content: center;
+}
+main .produs #produs {
+  width: 70%;
+  height: 70%;
+  align-self: center;
+}
+main .produs #nume {
+  text-align: center;
+  font-size: 0.9rem;
+  font: bold;
+}
+main .produs #pret {
+  text-align: center;
+  font-size: 0.8rem;
+}
+main .produse .produs .adauga-produs {
+  justify-content: center;
+}
+.adauga-produs .adauga {
+  border: none;
+  outline: 0;
+  padding: 10px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 80%;
+  height: 6vh;
+  font-size: 0.9rem;
+  margin-left: 2vw;
+}
+.produse .mesaj {
+  text-align: center;
+  font-size: 1.2rem;
+  font: bold;
+}
+@media screen and (max-width: 850px) {
+  main .produse .produs #produs {
+    width: 70%;
+    height: 50%;
+  }
+  main .produse .produs {
+    font-size: 0.7rem;
+  }
+  main .produse .produs .adauga {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  main .produse {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  main .produse .produs {
+    width: 80%;
+    align-self: center;
+  }
+  main .produse .produs #produs {
+    width: 60%;
+  }
+}

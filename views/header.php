@@ -148,7 +148,7 @@
         </div>
         <script src="<?php echo URL; ?>public/js/navbar.js"> </script>
         <form method = "POST" class="search-bar">
-            <input type="text" name="input" placeholder="Cauta..">
+            <input type="text" name="input" placeholder="Cauta.." required>
             <button type="submit" id="ok" name = "cauta" formaction="<?php echo URL; ?>cauta">OK</button>
         </form>
         
