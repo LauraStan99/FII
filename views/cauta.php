@@ -24,10 +24,10 @@
             <button class="sortare-buton" onclick="Order()">Ordoneaza dupa ▼</button>
             <div class="sortare-continut" id="ordonare">
                 <form method="POST" class="form-ordonare">
-                    <button name="popularitate" formaction="<?php echo URL;?>cauta/ordonare/nr_accesari/desc" >Cele mai populare</button>
-                    <button name="alfabetic" formaction="<?php echo URL;?>cauta/ordonare/nume/asc" >Ordonare alfabetica</button>
-                    <button name="crescator" formaction="<?php echo URL;?>cauta/ordonare/pret/asc">Pret crescator</button>
-                    <button name="descrescator" formaction="<?php echo URL;?>cauta/ordonare/pret/desc">Pret descrescator</button>
+                    <button name="popularitate" formaction="<?php echo URL; ?>cauta/ordonare/nr_accesari/desc">Cele mai populare</button>
+                    <button name="alfabetic" formaction="<?php echo URL; ?>cauta/ordonare/nume/asc">Ordonare alfabetica</button>
+                    <button name="crescator" formaction="<?php echo URL; ?>cauta/ordonare/pret/asc">Pret crescator</button>
+                    <button name="descrescator" formaction="<?php echo URL; ?>cauta/ordonare/pret/desc">Pret descrescator</button>
                 </form>
             </div>
 
@@ -36,26 +36,24 @@
 
         <div class="produse">
             <?php
-                while ($row = $this->result->fetch()) {
+            while ($row = $this->result->fetch()) {
             ?>
-                    <div class="produs">
-
-                        <a id="produs" href="<?php echo URL . 'produse/produs/' . $row['id_produs'] ?>">
-                                <img src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
+                 <div class="column">
+                        <div class="card">
+                            <a href="<?php echo URL . 'produse/produs/' . $row['id_produs'] ?>">
+                                <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
                             </a>
-                        <a id="nume"><?php echo $row['nume']  ?></a>
-
-                        <a id="pret"> <?php echo $row['pret']  ?> lei</a>
-
-                        <form class="adauga-produs" method="POST">
-                            <button class="adauga">Adauga in cos</button>
-                        </form>
-
+                            <h1><?php echo  $row['nume']; ?></h1>
+                            <p class="price"><?php echo  $row['pret']; ?> lei</p>
+                            <form method="POST">
+                                <button name="adauga-cos">Adauga in cos</button>
+                            </form>
+                        </div>
                     </div>
-                <?php }
+            <?php }
             ?>
-                <p class="mesaj"><?php if(isset($this->message)) echo $this->message; ?></p>
-            
+            <p class="mesaj"><?php if (isset($this->message)) echo $this->message; ?></p>
+
         </div>
     </main>
 

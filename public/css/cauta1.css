@@ -74,35 +74,30 @@ main .produse {
   margin-bottom: 5vh;
   margin-top:5vh;
 }
-main .produs {
-  display: flex;
-  flex-direction: column;
+.card {
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  text-align: center;
+  font-family: arial;
+  padding: 10px;
   background-color: #f1f1f1;
-  font-size: 0.9rem;
-  color: black;
-  width: 21%;
-  margin-right: 2vw;
-  margin-bottom: 2vh;
-  justify-content: center;
+  margin-bottom: 10px;
 }
-main .produs #produs {
+
+.price {
+  color: black;
+  font-size: 22px;
+}
+h1 {
+  font-size: 15px;
+}
+
+.column .card #imagine {
   width: 70%;
   height: 70%;
-  align-self: center;
 }
-main .produs #nume {
-  text-align: center;
-  font-size: 0.9rem;
-  font: bold;
-}
-main .produs #pret {
-  text-align: center;
-  font-size: 0.8rem;
-}
-main .produse .produs .adauga-produs {
-  justify-content: center;
-}
-.adauga-produs .adauga {
+
+.card button {
   border: none;
   outline: 0;
   padding: 10px;
@@ -113,7 +108,18 @@ main .produse .produs .adauga-produs {
   width: 80%;
   height: 6vh;
   font-size: 0.9rem;
-  margin-left: 2vw;
+}
+
+.card button:hover {
+  opacity: 0.7;
+  font-size:1rem ;
+}
+
+.column {
+  float: left;
+  width: 21%;
+  padding: 0 10px;
+  margin-top: 40px;
 }
 .produse .mesaj {
   text-align: center;
@@ -121,29 +127,26 @@ main .produse .produs .adauga-produs {
   font: bold;
 }
 @media screen and (max-width: 850px) {
-  main .produse .produs #produs {
-    width: 70%;
-    height: 50%;
-  }
-  main .produse .produs {
-    font-size: 0.7rem;
-  }
-  main .produse .produs .adauga {
-    width: 100%;
-  }
+
+.card h1 , .price{
+  font-size: 0.8rem;
 }
-@media screen and (max-width: 600px) {
-  main .produse {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  main .produse .produs {
-    width: 80%;
-    align-self: center;
-  }
-  main .produse .produs #produs {
-    width: 60%;
-  }
+.card button {
+  width: 95%;
+  height: 7vh;
+  font-size: 0.8rem;
+} 
+ .column{
+  width: 25%;
+ }
+}
+@media screen and (max-width: 500px) {
+  .card button {
+    width: 70%;
+    height: 6vh;
+    font-size: 0.8rem;
+  } 
+   .column{
+    width: 90%;
+   }
 }
