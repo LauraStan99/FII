@@ -53,6 +53,7 @@ input[type='mesaj'] {
   height: 50px;
   margin-top: 5px;
   margin-bottom: 20px;
+  border-radius: 5px;
 }
 main .linie .input input[type='mesaj'] {
   margin-left: 30px;
@@ -60,6 +61,7 @@ main .linie .input input[type='mesaj'] {
   height: 100px;
   margin-top: 5px;
   margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 main form .buton-formular {
