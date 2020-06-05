@@ -41,6 +41,7 @@ main select {
   height: 50px;
   margin-top: 5px;
   margin-bottom: 10px;
+  border-radius: 5px;
 }
 main .linie {
   display: flex;
@@ -48,18 +49,12 @@ main .linie {
 }
 main .linie input[type='text'],
 input[type='mesaj'] {
-  margin-left: 30px;
+  padding: 8px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid rgb(170, 167, 167);
   width: 50%;
-  height: 50px;
-  margin-top: 5px;
-  margin-bottom: 20px;
-}
-main .linie .input input[type='mesaj'] {
-  margin-left: 30px;
-  width: 50%;
-  height: 100px;
-  margin-top: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 3vh;
 }
 
 main form .buton-formular {
@@ -80,18 +75,18 @@ main form .buton-formular:hover {
   opacity: 0.9;
   font-size: 1.1rem;
 }
-main .error{
-  color:red;
+main .error {
+  color: red;
   margin-left: 2vw;
-  margin-top:1vh ;
+  margin-top: 1vh;
 }
-main .neccessary{
-  color:red;
+main .neccessary {
+  color: red;
 }
-main .succes{
+main .succes {
   font-size: 1rem;
   margin-left: 2vw;
-  margin-top:1vh 
+  margin-top: 1vh;
 }
 @media screen and (max-width: 700px) {
   main #contact-nume[type='text'],

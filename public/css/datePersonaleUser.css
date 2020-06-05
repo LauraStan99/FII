@@ -64,10 +64,13 @@ main #register1,
 main input[type='text'],
 input[type='password'] {
   width: 40%;
-  height: 30px;
   margin-top: 5px;
-  display: block;
   margin-left: 30px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid rgb(170, 167, 167);
+  padding: 10px;
+  margin-bottom: 3vh;
 }
 main form .button {
   display: flex;
@@ -112,45 +115,45 @@ main .buton-inapoi-cump:hover {
   font: bold;
 }
 @media screen and (max-width: 800px) {
-    main {
-      width: 100%;
-      flex-direction: column;
-      flex-wrap: wrap;
-      align-self: center;
-      justify-content: center;
-    }
-    main #id-nume,
-    #id-prenume,
-    #id-email,
-    #id-telefon,
-    #id-adresa,
-    #id-parola {
-      margin-left: 0px;
-    }
-  
-    main .tip-date #register1,
-    #register2,
-    #adresa,
-    #telefon,
-    #email,
-    #parola {
-      margin-left: 20px;
-    }
-    main .buton-schimba {
-      margin-left: 20px;
-      width: 90%;
-      text-align: center;
-    }
-    main .buton-inapoi-cump {
-      margin-left: 20px;
-      width: 90%;
-    }
-    main .logout{
-      width:40%;
-    }
-    main .date input[type='text'],
-    input[type='password'] {
-      margin-left: 20px;
-      width: 90%;
-    }
+  main {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-content: center;
   }
+  main #id-nume,
+  #id-prenume,
+  #id-email,
+  #id-telefon,
+  #id-adresa,
+  #id-parola {
+    margin-left: 0px;
+  }
+
+  main .tip-date #register1,
+  #register2,
+  #adresa,
+  #telefon,
+  #email,
+  #parola {
+    margin-left: 20px;
+  }
+  main .buton-schimba {
+    margin-left: 20px;
+    width: 90%;
+    text-align: center;
+  }
+  main .buton-inapoi-cump {
+    margin-left: 20px;
+    width: 90%;
+  }
+  main .logout {
+    width: 40%;
+  }
+  main .date input[type='text'],
+  input[type='password'] {
+    margin-left: 20px;
+    width: 90%;
+  }
+}
