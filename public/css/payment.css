@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+main h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+main .linie .input {
+    display: flex;
+    flex-direction: row;
+}
+main .linie input[type="text"]{
+  width: 50%;
+  margin-left: 4vw;
+  height: 5vh;
+  margin-bottom: 3vh;
+  display: block;
+  border: none;
+  border-bottom: 1px solid rgb(170, 167, 167);
+  padding: 10px;
+}
+main .linie label {
+  margin-left: 4vw;
+  font-size: 1rem;
+}
+main .plaseaza-comanda {
+  width: 50%;
+  margin-left: 4vw;
+  margin-top: 4vh;
+  margin-bottom: 3vh;
+  font-size: 1rem;
+  height: 6vh;
+  color: white;
+  background-color: black;
+}
+main .plaseaza-comanda:hover {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+main .linie .error {
+  color: red;
+  font-size: 1rem;
+}
+@media screen and (max-width: 600px) {
+  main .linie input {
+    width: 90%;
+    margin-left: 4vw;
+    height: 5vh;
+    margin-bottom: 3vh;
+  }
+  main .linie .error {
+    color: red;
+    font-size: 0.7rem;
+    margin-left: 4vw;
+  }
+  main .plaseaza-comanda {
+    width: 90%;
+  }
+}
