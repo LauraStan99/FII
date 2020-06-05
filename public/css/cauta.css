@@ -88,8 +88,8 @@ main .produse {
   color: black;
   font-size: 22px;
 }
-h1 {
-  font-size: 15px;
+.card h1 {
+  font-size: 0.8rem;
 }
 
 .column .card #imagine {

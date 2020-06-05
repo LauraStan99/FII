@@ -35,6 +35,19 @@ table td {
   height: 5vh;
   text-align: center;
 }
+table .th-idComanda{
+  display: flex;
+  flex-direction: column;
+}
+table td .detalii-comanda{
+  background-color: black;
+  color: white;
+  padding: 5px;
+  font-size: 0.5rem;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 1vh;
+}
 @media screen and (max-width: 800px) {
   main {
     width: 100%;

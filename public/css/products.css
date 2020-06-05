@@ -51,7 +51,6 @@ main {
 .fabrics h1,
 .size h1,
 .occasions h1 {
-  align-self: left;
   text-align: left;
   font-size: 15px;
   margin-left: 5px;
@@ -68,39 +67,6 @@ main {
   flex-direction: column;
   font-family: Noto Sans KR;
 }
-.colors .check-colors #rosu {
-  color: red;
-}
-.colors .check-colors #galben {
-  color: yellow;
-}
-.colors .check-colors #albastru {
-  color: blue;
-}
-.colors .check-colors #negru,
-.colors .check-colors #alb {
-  color: black;
-}
-.colors .check-colors #verde {
-  color: green;
-}
-.colors .check-colors #maro {
-  color: brown;
-}
-.colors .check-colors #bej {
-  color: rgb(233, 168, 108);
-}
-.colors .check-colors #portocaliu {
-  color: orange;
-}
-.colors .check-colors #roz {
-  color: rgb(240, 0, 40);
-}
-.colors .check-colors #mov {
-  color: purple;
-}
-
-
 .page {
   width: 90%;
   display: flex;

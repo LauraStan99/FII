@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+main {
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+main h1 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+main .continut {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+main .continut p {
+  font-size: 1rem;
+  font: bold;
+}
+table {
+  width: 90%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  word-spacing: normal;
+}
+table tr:nth-child(even) {
+  background-color: #c2c2c2;
+}
+
+.continut table .imagine {
+  width: 15%;
+}
+table .denumire {
+  width: 20%;
+}
+table .material,
+table .culoare {
+  width: 15%;
+}
+table .marime,
+table .pret {
+  width: 17.5%;
+}
+table td {
+  height: 5vh;
+  text-align: center;
+}
+table td #produs {
+  width: 50%;
+}
+@media screen and (max-width: 800px) {
+  main {
+    width: 100%;
+  }
+  main table {
+    width: 100%;
+  }
+  table th,
+  td {
+    font-size: 0.7rem;
+  }
+  table td #produs {
+    width: 40%;
+  }
+}

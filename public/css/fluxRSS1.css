@@ -15,7 +15,7 @@ main {
 main h1 {
   font-size: 1.5rem;
   text-align: center;
-  margin-top:5vh;
+  margin-top: 5vh;
 }
 main .produse {
   width: 100%;
@@ -28,7 +28,7 @@ main .produse {
 
 .produs {
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
-  max-width: 500px;
+  max-width: 600px;
   text-align: center;
   font-family: arial;
   padding: 10px;
@@ -37,7 +37,7 @@ main .produse {
   margin-right: 3vw;
   display: flex;
   flex-direction: column;
-
+  width: 45%;
 }
 .produs .titlu {
   text-align: center;
@@ -52,7 +52,7 @@ main .produse {
   cursor: pointer;
   border: none;
   outline: 0;
-  width: 30%;
+  width: 60%;
   height: 25px;
   align-self: center;
   text-decoration: none;
@@ -60,4 +60,19 @@ main .produse {
 .produs .descriere {
   font-size: 1rem;
   text-align: center;
+}
+@media screen and (max-width: 600px) {
+  main{
+    display: flex;
+    flex-direction: column;
+  }
+  main .produse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  main .produse .produs {
+   width: 100%;
+   margin-right: 0vw;
+  }
 }

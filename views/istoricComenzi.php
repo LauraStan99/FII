@@ -5,7 +5,7 @@
     <title>Produse | Impressed</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="<?php echo URL; ?>public/css/istoricComenzi.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/istoricComenzi1.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -22,7 +22,7 @@
 
         <table>
             <tr>
-                <th>ID comanda</th>
+                <th class="th-idComanda">ID comanda</th>
                 <th>Utilizator</th>
                 <th>Adresa de livrare</th>
                 <th>Status comanda</th>
@@ -32,7 +32,11 @@
             </tr>
             <?php while ($row = $this->result->fetch()) { ?>
                 <tr>
-                    <td><?php echo $row['id_comanda']; ?></td>
+                    <td><?php echo $row['id_comanda']; ?>
+                        <form method="POST">
+                            <button class="detalii-comanda" formaction="<?php echo URL; ?>account/detaliiComanda/<?php echo $row['id_comanda']; ?>">Detalii</button>
+                        </form>
+                    </td>
                     <td><?php echo $row['nume']; ?> <?php echo $row['prenume']; ?></td>
                     <td><?php echo $row['adresa']; ?></td>
                     <td>Finalizat</td>

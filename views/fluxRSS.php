@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <link href="<?php echo URL; ?>public/css/fluxRSS.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/fluxRSS1.css" rel="stylesheet" />
     <title>Produse populare Impressed</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
