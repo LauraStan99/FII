@@ -1,5 +1,6 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
+
 class Contact extends Controller{
     public function __construct(){
         parent::__construct();
@@ -13,6 +14,7 @@ class Contact extends Controller{
      * daca nu exista erori, odata la apasarea butonului
      * va fi trimis un email cu datele din formular catre magazin
      */
+    
     public function index(){
         $validate = new Validate();
 

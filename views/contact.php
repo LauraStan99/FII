@@ -118,7 +118,7 @@
       <button class="buton-formular" type="submit" name="submit">
         Trimiteti
       </button>
-     <a class="succes">ddddddddddddddddddddddddddddd <?php if(isset($this->successMessage)) echo $this->successMessage; ?> </a>
+     <a class="succes"> <?php if(isset($this->successMessage)) echo $this->successMessage; ?> </a>
     </form>
   </main>
 

@@ -35,7 +35,7 @@
 
         <div class="mail">
             <a href="mailto:Impressed2020@company.com?Subject=Impressed" title="Mail"><img src="<?php echo URL; ?>public/poze/mailTw.png" alt="mail" /></a>
-            <p>Impressed@company.com</p>
+            <p>impressed.shop2020@gmail.com</p>
         </div>
     </div>
 
