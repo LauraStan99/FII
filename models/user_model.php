@@ -75,4 +75,13 @@ class User_model extends Model
     public function selectDetaliiComanda($orderId){
         return $this->db->selectJoin('produse_comanda', 'produse', 'id_produs', 'id_produs', 'id_comanda', $orderId);
     }
+
+    public function selectTotalPrice($orderId){
+        $result = $this->selectDetaliiComanda($orderId);
+        $totalPrice = 0;
+        while($row = $result->fetch()){
+            $totalPrice = $totalPrice + $row['cantitate']*$row['pret'];
+        }
+        return $totalPrice;
+    }
 }
