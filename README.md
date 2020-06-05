@@ -1,15 +1,16 @@
 # FII - TW 2020
+
 # Impressed Shop
-__DEMO__: 
-__GHID__: 
-__DOCUMENTATIE__:
 
-![Screenshot of the platform](realhome_cover.png)
+**DEMO**:
+**GHID**:
+**DOCUMENTATIE**:
 
+![Screenshot of the platform](realhome_cover.jpg)
 
 #### Developeri:
+
 - Botez Georgiana
 - Stan Laura-Ioana
 
 #### Descriere:
-
