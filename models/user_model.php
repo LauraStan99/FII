@@ -71,4 +71,8 @@ class User_model extends Model
         $id = Session::get('id_utilizator');
         return $this->db->select1('comanda','id_utilizator',$id);
     }
+
+    public function selectDetaliiComanda($orderId){
+        return $this->db->selectJoin('produse_comanda', 'produse', 'id_produs', 'id_produs', 'id_comanda', $orderId);
+    }
 }

@@ -47,11 +47,18 @@ class Account extends Controller
         }
         $this->view->render('datePersonaleAccount');
     }
+
     public function istoricComenzi()
     {
         $user=new User_model();
         $this->view->result=$user->selectComenziUtilizator();
         $this->view->render('istoricComenzi');
+    }
+
+    public function detaliiComanda($order_id){
+        $user=new User_model();
+        $this->view->result = $user->selectDetaliiComanda($order_id);
+        $this->view->render('detaliiComanda');
     }
 
     public function logout()

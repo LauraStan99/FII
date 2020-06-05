@@ -6,7 +6,7 @@
 **GHID**:
 **DOCUMENTATIE**:
 
-![Screenshot of the platform](realhome_cover.jpg)
+![Screenshot of the platform](impressed_cover.jpg)
 
 #### Developeri:
 
