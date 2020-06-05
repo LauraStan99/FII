@@ -57,6 +57,7 @@ class Account extends Controller
 
     public function detaliiComanda($order_id){
         $user=new User_model();
+        $this->view->title = $order_id;
         $this->view->result = $user->selectDetaliiComanda($order_id);
         $this->view->render('detaliiComanda');
     }

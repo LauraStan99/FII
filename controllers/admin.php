@@ -12,19 +12,6 @@ class Admin extends Controller
         $this->view->render('adminAccount');
     }
 
-    /*$limit = 50;     
-    if (isset($_GET["page"])) {  
-      $pn  = $_GET["page"];  
-    }  
-    else {  
-      $pn=1;  
-    };   
-  
-    $start_from = ($pn-1) * $limit;   
-  
-    $sql = "SELECT * FROM produse LIMIT $start_from, $limit";   
-    $rs_result = $con->query($sql); */
-
     public function listareProduse()
     {
         $limit = 10;     
