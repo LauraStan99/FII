@@ -18,13 +18,14 @@ th {text-align: left;}
 <body>
 
 <?php
-$q ="'".$_GET['q']."'";
+
+$q = $_GET['q'];
 
 $con = new PDO('mysql:host=localhost:3308;dbname=impressed', 'dba', 'sql');
 
 
 
-$sql="SELECT * FROM produse WHERE tip IN (". $q .")";
+$sql="SELECT * FROM produse WHERE tip IN (".implode(',', $q).")";
 
 
 $result = $con->prepare($sql);
@@ -48,7 +49,6 @@ while($row = $result->fetch()){
   echo "</tr>";
 }
 echo "</table>";
-mysqli_close($con);
 ?>
 </body>
 </html>

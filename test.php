@@ -14,7 +14,9 @@
                     }
                 };
                 
-                xmlhttp.open("GET", "getUsers.php?q=" + str , true);
+                var arr = new array();
+                arr.push(str);
+                xmlhttp.open("GET", "getUsers.php?q=" + arr , true);
                 xmlhttp.send();
             }
         }
