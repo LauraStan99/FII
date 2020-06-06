@@ -42,9 +42,9 @@ class Cauta_model extends Model{
         return $i;
     }
 
-    public function sortare($filter,$order)
+    public function sortare($filter,$order, $start_from, $limit)
     {
-        return $this->db->selectOrderBy('produse_filter_order',$filter,$order);
+        return $this->db->selectOrderByLimit2('produse_filter_order',$filter,$order,  $start_from, $limit);
     }
 
     public function deleteFromProduse_filter_order()

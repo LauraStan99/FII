@@ -243,6 +243,13 @@ class Database extends PDO
         else return false;
     }
 
+    public function selectOrderByLimit2($table_name, $order, $filter, $start_from, $limit){
+        $string="SELECT * FROM ".$table_name." order by ".$order." ".$filter." LIMIT ".$start_from.",".$limit;  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
     public function selectOrderBy1($table_name,$col1,$data1,$order,$filter) {
       
         $string="SELECT * FROM ".$table_name." WHERE ".$col1."='".$data1."' order by ".$order." ".$filter;  
