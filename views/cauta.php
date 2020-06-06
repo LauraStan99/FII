@@ -24,10 +24,10 @@
             <button class="sortare-buton" onclick="Order()">Ordoneaza dupa ▼</button>
             <div class="sortare-continut" id="ordonare">
                 <form method="POST" class="form-ordonare">
-                    <button name="popularitate" formaction="<?php echo URL; ?>cauta/ordonare/nr_accesari/desc">Cele mai populare</button>
-                    <button name="alfabetic" formaction="<?php echo URL; ?>cauta/ordonare/nume/asc">Ordonare alfabetica</button>
-                    <button name="crescator" formaction="<?php echo URL; ?>cauta/ordonare/pret/asc">Pret crescator</button>
-                    <button name="descrescator" formaction="<?php echo URL; ?>cauta/ordonare/pret/desc">Pret descrescator</button>
+                    <button name="popularitate"  >Cele mai populare</button>
+                    <button name="alfabetic"  >Ordonare alfabetica</button>
+                    <button name="crescator"  >Pret crescator</button>
+                    <button name="descrescator"  >Pret descrescator</button>
                 </form>
             </div>
 

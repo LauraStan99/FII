@@ -43,8 +43,21 @@ class Cauta_model extends Model{
     }
 
     public function sortare($filter,$order, $start_from, $limit)
-    {
+    { 
+    
+        $result=$this->db->selectOrderBy('produse_filter_order',$filter,$order);
+        $this->deleteFromProduse_filter_order();
+        while($row=$result->fetch())
+        {
+            $insert_data = array(
+                'id_produs' => $row['id_produs'], 'nume' => $row['nume'], 'pret' => $row['pret'], 'material' => $row['material'], 'imagine'=>$row['imagine'], 'descriere' => $row['descriere'],
+                'gen' => $row['gen'], 'tip' => $row['tip'], 'categorie' => $row['categorie'], 'culoare' => $row['culoare'], 'nr_accesari' => $row['nr_accesari']
+            );
+            $this->db->insert('produse_filter_order', $insert_data);
+        }
         return $this->db->selectOrderByLimit2('produse_filter_order',$filter,$order,  $start_from, $limit);
+    
+
     }
 
     public function deleteFromProduse_filter_order()
