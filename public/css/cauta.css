@@ -126,6 +126,25 @@ main .produse {
   font-size: 1.2rem;
   font: bold;
 }
+.paginare
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.paginare .pagina{
+  text-align: center;
+  font-family: arial;
+  padding: 6px;
+  background-color: #d8d3d3;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  color: black;
+  margin-left: 1vw;
+  font-size: 0.8rem;
+}
 @media screen and (max-width: 850px) {
 
 .card h1 , .price{
@@ -139,6 +158,13 @@ main .produse {
  .column{
   width: 25%;
  }
+ .paginare{
+  justify-content: left;
+ }
+ .pagina{
+   padding: 4px;
+   margin-bottom: 1vh;
+ }
 }
 @media screen and (max-width: 500px) {
   .card button {
@@ -148,5 +174,12 @@ main .produse {
   } 
    .column{
     width: 90%;
+   }
+   .paginare{
+    justify-content: left;
+   }
+   .pagina{
+     padding: 4px;
+     margin-bottom: 1vh;
    }
 }
