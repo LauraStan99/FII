@@ -17,13 +17,19 @@ class Admin_model extends Model
         return $row['count(*)'];
     }
 
+    public function selectCountUsers(){
+        $result = $this->db->selectCountSimple('utilizatori');
+        $row = $result->fetch();
+        return $row['count(*)'];
+    }
+
     public function deleteProduct($id_product)
     {
         return $this->db->delete1('produse', 'id_produs', $id_product);
     }
-    public function selectAllUsers()
+    public function selectAllUsers($start_from, $limit)
     {
-        return $this->db->selectOrderBy('utilizatori', 'id_utilizator', 'asc');
+        return $this->db->selectLimit('utilizatori', $start_from, $limit);
     }
     public function deleteUser($id_user)
     {

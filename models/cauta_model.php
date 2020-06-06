@@ -8,12 +8,18 @@ class Cauta_model extends Model{
     }
 
 
-    public function selectSearch(){
+    public function selectSearch($start_from, $limit){
 
-        return $this->db->selectAll('produse_filter_order');
+        return $this->db->selectLimit('produse_filter_order', $start_from, $limit);
     }
 
-    public function searchByWord($word){
+    public function count(){
+        $result = $this->db->selectCountSimple('produse_filter_order');
+        $row = $result->fetch();
+        return $row['count(*)'];
+    }
+
+    public function searchByWord($word, $start_from, $limit){
         $this->deleteFromProduse_filter_order();
         $result =  $this->db->selectSearch6('produse',$word, 'nume', 'material', 'descriere', 'tip', 'culoare', 'categorie');
         while($row = $result->fetch()){
@@ -23,7 +29,7 @@ class Cauta_model extends Model{
             );
             $this->db->insert('produse_filter_order', $insert_data);
         }
-        return $this->db->selectSearch6('produse',$word, 'nume', 'material', 'descriere', 'tip', 'culoare', 'categorie');
+        return $this->db->selectSearch6Limit('produse',$word, 'nume', 'material', 'descriere', 'tip', 'culoare', 'categorie', $start_from, $limit);
     }
 
     public function countSearch($word){
@@ -35,6 +41,7 @@ class Cauta_model extends Model{
         }
         return $i;
     }
+
     public function sortare($filter,$order)
     {
         return $this->db->selectOrderBy('produse_filter_order',$filter,$order);

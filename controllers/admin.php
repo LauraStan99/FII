@@ -39,8 +39,21 @@ class Admin extends Controller
 
     public function listareUtilizatori()
     {
+        $limit = 10;
+
+        if (isset($_GET["page"])) {  
+        $this->view->page= $_GET["page"];  
+        }  
+        else {  
+        $this->view->page=1;  
+        };
+
+        $start_from = ($this->view->page-1) * $limit;
+
         $user = new admin_model();
-        $this->view->result = $user->selectAllUsers();
+        $this->view->result = $user->selectAllUsers($start_from, $limit);
+        $this->view->total_records = $user->selectCountUsers();
+        $this->view->total_pages = ceil($this->view->total_records / 10);
         $this->view->render('seeUsers');
     }
 

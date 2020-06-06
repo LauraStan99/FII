@@ -55,6 +55,16 @@ require 'header.php';
             }
             ?>
         </table>
+        <ul class="paginare"> 
+        <?php 
+                      
+        for ($i=1; $i<=$this->total_pages; $i++) { ?>
+
+         <a class="pagina" href='<?php echo URL;?>admin/listareUtilizatori?page=<?php echo $i; ?>'><?php echo $i; ?> </a> 
+          
+        <?php }
+        ?>
+        </ul> 
 
     </main>
 
