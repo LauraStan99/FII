@@ -188,7 +188,7 @@ header .header-left .link-nume,
 .femei-continut,
 .barbati-continut,
 .copii-continut,
-.documentatie-continut{
+.doc-continut{
   display: none;
   position: absolute;
   background-color: white;
@@ -200,7 +200,7 @@ header .header-left .link-nume,
 .femei-continut a,
 .barbati-continut a,
 .copii-continut a,
-.documentatie-continut a {
+.doc-continut a {
   float: none;
   color: black;
   padding: 12px 16px;
@@ -212,7 +212,7 @@ header .header-left .link-nume,
 .femei-continut a:hover,
 .barbati-continut a:hover,
 .copii-continut a:hover,
-.documentatie-continut a:hover {
+.doc-continut a:hover {
   background-color: rgba(184, 182, 184, 0.952);
 }
 
