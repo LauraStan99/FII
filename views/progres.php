@@ -54,7 +54,7 @@
 
           </ol>
         </li>
-        <li><a href="dezvoltare">Dezvoltarea aplicatiei</a></li>
+        <li><a href="#dezvoltare">Dezvoltarea aplicatiei</a></li>
       </ol>
     </div>
 
@@ -168,13 +168,44 @@
         <span>3.</span>
         Dezvoltarea aplicatiei
       </h3>
-      <p>Ca sistem de stocare si management online al codului sursa am folosit GitHub. </p>
+      <p>Ca sistem de stocare si management online al codului sursa am folosit GitHub.In imaginea urmatoare se poate vedea fluxul de lucru. </p>
+      <img src="<?php echo URL; ?>public/poze/lucru-in-echipa.png" class="lucruEchipa">
       <p>Toate CSS-urile si HTML-urile au fost validate cu ajutorul urmatoarelor site-uri
         <ol>
           <li>https://validator.w3.org/</li>
           <li>https://jigsaw.w3.org/css-validator/</li>
         </ol>
       </p>
+      <div class="realizari">
+
+        <ol>
+          <p>Stan Laura-Ioana</p>
+          <li>Documentatie</li>
+          <li>Design aplicatie</li>
+          <li>Arhitectura MVC</li>
+          <li>Modulul de administrare</li>
+          <li>Validari de date account</li>
+          <li>Populare baza de date</li>
+          <li>Filtrare/sortare produse</li>
+          <li>Flux de date RSS</li>
+          <li>Export CSV/PDF</li>
+          <li>Statistici</li>
+        </ol>
+
+        <ol>
+          <p>Botez Georgiana</p>
+          <li>Documentatie</li>
+          <li>Design aplicatie</li>
+          <li>Arhitectura MVC</li>
+          <li>Componenta de plasare a unei comenzi</li>
+          <li>Validari date register</li>
+          <li>Populare baza de date</li>
+          <li>Filtrare/sortare produse</li>
+          <li>Trimitere email</li>
+          <li>Export CSV/PDF</li>
+          <li>Statistici</li>
+        </ol>
+      </div>
 
     </section>
     <?php

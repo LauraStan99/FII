@@ -39,7 +39,8 @@ h2 {
 #abstract,
 #inceput,
 #bazaDeDate,
-#back {
+#back,
+#dezvoltare {
   width: 95%;
   margin-left: 2vw;
 }
@@ -83,7 +84,17 @@ h2 {
 #bazaDeDate .diagrama-BDfinala {
   width: 100%;
 }
-
+#dezvoltare .lucruEchipa {
+  width: 100%;
+}
+#dezvoltare .realizari {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#dezvoltare .realizari p {
+  font-weight: bold;
+}
 @media screen and (max-width: 900px) {
   .imagini-prototip a {
     width: 45%;
