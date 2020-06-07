@@ -122,13 +122,17 @@
                                         Statistici : fiecare dintre aceste statistici pot fi exportate in format CSV si PDF.
                                         <ul>
                                             <li> Vezi statistica comenzi : ofera statistica comenzilor efectuate pe zile</li>
-                                          
-                                                <img src="<?php echo URL; ?>public/poze/statisticaComenzi.jpg"/>
-                                           
+
+                                            <img src="<?php echo URL; ?>public/poze/statisticaComenzi.png" />
+
                                             <li>Vezi statistica produse femei : ofera statistica celor mai cumparate din fiecare subcategorie a categoriei femei</li>
+                                            <img src="<?php echo URL; ?>public/poze/statisticaProduseFemei.png" />
                                             <li>Vezi statistica produse populare : ofera statistica celor mai populare 10 produse din aplicatie</li>
+                                            <img src="<?php echo URL; ?>public/poze/statisticaCeleMaiPopulareProduse.png" />
                                             <li>Vezi statistica plata comenzi : ofera statistica platilor efectuate cu cardul sau ramburs</li>
+                                            <img src="<?php echo URL; ?>public/poze/statisticaPlataComenzi.png" />
                                             <li>Vezi statistica comenzi Europa : ofera statistica comenzilor livrate in tarile din Europa</li>
+                                            <img src="<?php echo URL; ?>public/poze/statisticaComenziEuropa.png" />
                                         </ul>
                                     </li>
                                 </ol>
@@ -138,10 +142,29 @@
 
                     </li>
                     <li>
-                        Traffic: traficul din oras
+                        Iconita de FAVORITE
+                        <ol>
+                            <li>
+                                Daca utilizatorul nu este logat i se va deschide un modal cu mesajul : "Trebuie sa fiti logat pentru a vizualiza produsele favorite!".
+                            </li>
+                            <li>
+                                Daca utilizatorul este logat i se afiseaza lista cu produsele favorite. Utilizatorul poate sterge un produs dinlista de favorita sau il
+                                poate adauga in cos .
+                            </li>
+                        </ol>
                     </li>
                     <li>
-                        Transit: retele de transport in comun din oras
+                        Iconita de COS
+                        <ol>
+                            <li>
+                                Daca utilizatorul nu este logat i se va deschide un modal cu mesajul : "Trebuie sa fiti logat pentru a adauga produse in cos!".
+                            </li>
+                            <li>
+                                Daca utilizatorul este logat i se va afisa un tabel cu produsele adaugate in cos. Fiecarui produs i se poate modifica cantitatea si poate fi sters din cos.
+                                Daca utilizatorul este hotarat sa finalizeze comanda acesta poate folosi butonul de "catre finalizare" care il redirectioneaza pe pagina de checkout. De asemenea
+                                pe pagina de cos vor aparea detaliile sumei comenzii si eventual costul transportului.
+                            </li>
+                        </ol>
                     </li>
 
                 </ul>
@@ -157,8 +180,8 @@
             </h3>
             <p>
                 Bara de navigare este prezenta pe orice pagina a site-ului. Utilizatorul poate alege din butoanele : FEMEI, BARBATI, COPII si INFORMATII.
-                Primele 3 vor oferi utilizatorului subcategori de produse aferente butonului ales si il vor redirectiona catre o pagina in care sunt listate
-                produsele din categoria si subcategoria aleasa. Butonul de INFORMATII ofera 3 optiuni : ghidul de utilizare al aplicatiei , progresul in crearea acesteia
+                Primele 3 vor oferi utilizatorului subcategorii de produse aferente butonului ales si il vor redirectiona catre o pagina in care sunt listate
+                produsele din categoria si subcategoria aleasa. Butonul de INFORMATII ofera 3 optiuni : ghidul de utilizare al aplicatiei , progresul de creare a acesteia
                 si documentatia.
 
             </p>
@@ -166,85 +189,158 @@
                 Bara de navigare contine si o sectiune de cautare prin toate produsele aplicatiei, in functie de criteriul introdus de catre utilizator.
             </p>
         </section>
-        <section id="home">
-            <h3>
-                <span>2.2 </span>
-                Pagina Home
-            </h3>
-            <p>
-                In aceasta pagina se afla cate o lista de proprietati recomandate pentru inchiriere si cumparare.
-                De asemenea, este regasit in josul paginii un camp de cautare, in care pot fi cautate cuvinte cheie despre proprietatile din sistem.
-                La finalul paginii se afla sectiunea de link-uri utile.
-            </p>
-            <p>
-            </p>
-        </section>
-        <section id="buy/rent">
+        <section id="pagina-principala">
             <h3>
                 <span>2.3 </span>
-                Paginile Buy si Rent
+                Pagina Principala
             </h3>
             <p>
-                Fiecare dintre aceste pagini faciliteaza cautarile utilizatorului. Acesta poate introduce cuvinte cheie si poate seta valorile
-                pentru mai multe filtre care se refera la atributele locatiei (i.e rata crimei din zona);
+                Pagina principala contine un carusel cu imagini care pot redirectiona utilizatorul catre o subcategorie de produse din aplicatie.
+                Mai mult poate fi vizualizat clasamentul celor mai populare 10 produse care poate fi deschis si ca flux de date RSS.
             </p>
             <p>
-                Proprietatile sunt puse pe ecran intr-o lista care este incarcata progresiv cu ajutorul butonului de "see more".
-                Selectarea unei proprietati redirectioneaza utilizatorul in pagina respectivei proprietati.
-            </p>
-            <p>
-                De asemenea, pe aceste pagini se afla si butonul de "View on map", care deschide o harta pe care sunt puse puncte pentru
-                locatia fiecarei proprietati, care afiseaza tot pe harta informatii despre proprietatea respectiva.
-                Harta are butoane care arata sau ascund diferite straturi de date :
-                <ul>
-                    <li>
-                        Crime: harta crimelor din oras
-                    </li>
-                    <li>
-                        Traffic: traficul din oras
-                    </li>
-                    <li>
-                        Transit: retele de transport in comun din oras
-                    </li>
-                    <li>
-                        Bicycling: pistele de bicicleta din oras
-                    </li>
-                    <li>
-                        Schools: evidentierea scolilor din apropiere
-                    </li>
-                </ul>
             </p>
         </section>
-        <section id="listingProfile">
+        <section id="pagina-subcategorie">
             <h3>
                 <span>2.4 </span>
-                Pagina proprietatii
+                Pagina unei subcategorii
             </h3>
-            <p>Aceasta pagina contine informatii despre proprietatea respectiva.</p>
-            <p>In primul rand, pagina contine o serie de poze ale proprietatii, pretul, descrierea si adresa.</p>
-            <p>De asemenea, fiecare proprietate are o serie de atribute:
-                <ul>
-                    <li>Size: dimensiunea in sqft</li>
-                    <li>Rooms: numarul de camere</li>
-                    <li>Fun & Frolics: nota data de sistem pentru locatiile recreationale din jur</li>
-                    <li>Safety: nota data de sistem pentru siguranta locatiei</li>
-                    <li>Location: nota pentru localizarea proprietatii</li>
-                </ul>
+            <p>
+                Odata aleasa subcateroria din bara de navigare utilizatorul este redirectionat catre o pagina unde sunt listate produsele aferente.
+                In stanga paginii se afla o lista de filtre care odata alese si aplicate, listeaza produsele filtrare dupa preferinte.
+                <ol>
+                    <li>Pret</li>
+                    <ul>
+                        <li>pana la 50 lei</li>
+                        <li>50-100 lei</li>
+                        <li>100-150 lei</li>
+                        <li>150-200 lei</li>
+                        <li>200-250 lei</li>
+                        <li>peste 250 lei</li>
+                    </ul>
+                    <li>Marime</li>
+                    <ul>
+                        <li>XS/34</li>
+                        <li>S/36</li>
+                        <li>M/38</li>
+                        <li>L/40</li>
+                        <li>XL/42</li>
+                        <li>XXL/44</li>
+                    </ul>
+                    <li>Culoare</li>
+                    <ul>
+                        <li>rosu</li>
+                        <li>galben</li>
+                        <li>albastru</li>
+                        <li>negru</li>
+                        <li>verde</li>
+                        <li>maro</li>
+                        <li>portocaliu</li>
+                        <li>roz</li>
+                        <li>violet</li>
+                        <li>alb</li>
+                        <li>bej</li>
+                    </ul>
+                    <li>Material</li>
+                    <ul>
+                        <li>bumbac </li>
+                        <li>matase</li>
+                        <li>vascoza</li>
+                        <li>catifea</li>
+                        <li>satin</li>
+                        <li>stofa</li>
+                        <li>denim</li>
+                        <li>sifon</li>
+                        <li>poliester</li>
+                        <li> tul</li>
+                        <li> poliamida</li>
+                        <li> piele</li>
+                        <li> in</li>
+                        <li> sintetic</li>
+                    </ul>
+                    <li>Ocazie</li>
+                    <ul>
+                        <li>casual</li>
+                        <li>sport</li>
+                        <li>business</li>
+                        <li>festival</li>
+                        <li>cocktail</li>
+                        <li>bal</li>
+                    </ul>
+
+                </ol>
+
+                De asemenea inainte sau dupa filtrare utilizatorul poate ordona produsele in functie de :
+                <ol>
+                    <li>Cele mai popularitate</li>
+                    <li>Ordonare alfabetica</li>
+                    <li>Pret crescator</li>
+                    <li>Pret descrescator</li>
+                </ol>
+                Toate produsele listate au un buton de adaugare in cos, care va adauga produsul cu prima marime disponibila pornind de la cea mai mica.
             </p>
-            <p>In plus, este prezent un buton pentru bookmark, care salveaza in cont proprietatea ca fiind una preferata.</p>
-            <p>In continuare este gasita aceeasi harta ca la punctul precedent, doar ca o singura locatie este marcata.</p>
-            <p>Mai jos sunt doua diagrame, care reprezinta evolutia in timp a pretului de inchiriere si de cumparare.</p>
-            <p>In final, se afla o lista cu alte proprietati similare cu aceasta.</p>
+
         </section>
-        <section id="userProfile">
+        <section id="paginaProdus">
             <h3>
                 <span>2.5 </span>
-                Pagina utilizatorului
+                Pagina unui produs
             </h3>
-            <p>Aceasta pagina contine informatii despre utilizatorul curent.</p>
-            <p>In primul rand, este regasite o sectiune pentru editarea datelor personale: nume si prenume.</p>
-            <p>In continuare, se afla un buton de retrimitere spre pagina principala, precum si unul de log out.</p>
-            <p>In final, se observa sectiunea pentru proprietatile salvate. </p>
+            <p>Pe pagina unui produs vor putea fi gasite informatii precum :
+                <ul>
+                    <li>imaginea produsului</li>
+                    <li>denumire </li>
+                    <li>pret</li>
+                    <li>stoc total sau in functie de marime</li>
+                    <li>culoare</li>
+                    <li>descriere</li>
+                    <li>material</li>
+                </ul>
+            </p>
+            <p>Mai mult pe aceasta pagina utilizatorul poate alege o marime disponibila si poate adauga produsul in cos sau in lista de favorite .
+                De asemenea , daca utilizatorul este administrator,pagina va avea un buton in plus, care va putea sterge produsul din aplicatie.
+            </p>
+        </section>
+        <section id="checkout">
+            <h3>
+                <span>2.6 </span>
+                Pagina de checkout
+            </h3>
+            <p>
+                Pagina de checkout contine un formular de plasare a comenzii, unde trebuie completate datele personale, adresa de livrare, metoda de livrare si plata.
+                De asemenea in partea dreapta a paginii exista un rezumat al comenzii care listeaza maxim 5 produse din comanda.
+            </p>
+            <p>Daca metoda de plata este ramburs, odata plasata comanda el este redirectionat pe pagina de finalizare comanda unde i se afiseaza un mesaj de confirmare
+                si va primi un mail cu datele comenzii.
+            </p>
+            <p>Daca metoda de plata este online cu card bancar, dupa plasarea comenzii utilizatorul este redirectionat catre pagina de payment</p>
+        </section>
+        <section id="payment">
+            <h3>
+                <span>2.7 </span>
+                Pagina de payment
+            </h3>
+            <p>Pagina contine un formular de completare a datelor cardului utilizatorului , pentru a putea avea loc plata comenzii.Odata validate datele
+                comanda este plasata cu succes. Odata plasata comanda el este redirectionat pe pagina de finalizare comanda unde i se afiseaza un mesaj de confirmare
+                si va primi un mail cu datele comenzii.
+            </p>
+        </section>
+        <section id="footer">
+            <h3>
+                <span>2.8 </span>
+                Footer
+            </h3>
+            <p>Footer-ul este sectionat in 3 parti.</p>
+            <p>Partea stanga a footer-ului contine logo-ul si numele site-ului , precum si 3 butoane functionale
+                <ol>
+                  <li>Acasa : de redirectionare catre pagina principala aplicatiei</li>
+                  <li>Livrare si servicii : de redirectionare catre o pagina care ofera detalii cu privire la serviciile oferite de magazinul Impressed precum si conditiile de livrare</li>
+                  <li>Contact : de redirectionare catre o pagina unde se regaseste un formular, care va fi trimis ulterior magazinului</li>
+                </ol>
+            </p>
+            <p>Partea centrala a footer-ului contine informatii precum adresa magazinului , numarul de telefon si adresa de email de contact.</p>
+            <p>Partea dreapta contine logo-urile retelelor de socializare unde poate fi urmarita activitatea magazinului Impressed.</p>
         </section>
 </body>
 
