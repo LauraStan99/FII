@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.imagini-prototip {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.imagini-prototip a {
+  width: 15%;
+  margin-left: 3vw;
+  display: flex;
+  flex-direction: column;
+  border:1px solid black;
+  margin-bottom: 2vh;
+}
+.imagini-prototip a p{
+    text-align: center;
+}
+
+.imagini-prototip .imagine {
+  width: 100%;
+  height: 300px;
+  border:1px solid black;
+}

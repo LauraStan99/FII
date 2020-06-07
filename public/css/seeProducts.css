@@ -7,10 +7,9 @@ body {
 }
 
 main {
-  flex-direction: column;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 main h1 {
   text-align: center;
@@ -61,14 +60,13 @@ table #stergere-produs {
   height: 4vh;
   font-size: 0.7rem;
 }
-.paginare
-{
+.paginare {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
-.paginare .pagina{
+.paginare .pagina {
   text-align: center;
   font-family: arial;
   padding: 6px;
@@ -80,7 +78,6 @@ table #stergere-produs {
   margin-left: 1vw;
   font-size: 0.8rem;
 }
-
 
 @media screen and (max-width: 700px) {
   main {
@@ -102,10 +99,10 @@ table #stergere-produs {
     width: 90%;
     font-size: 0.5rem;
   }
-  .paginare{
-   justify-content: left;
+  .paginare {
+    justify-content: left;
   }
-  .pagina{
+  .pagina {
     padding: 4px;
     margin-bottom: 1vh;
   }

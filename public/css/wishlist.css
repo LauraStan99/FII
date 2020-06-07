@@ -7,10 +7,9 @@ body {
 }
 
 main {
-  flex-direction: column;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 .titlu h1 {
   width: 100%;
@@ -35,8 +34,6 @@ main {
 }
 .tabel {
   width: 95%;
-  border-collapse: collapse;
-  border-spacing: 0;
   border: 1px solid white;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -65,27 +62,27 @@ main {
 .tabel #produs {
   width: 40%;
 }
-.tabel .coloana-detalii{
+.tabel .coloana-detalii {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   text-align: left;
   margin-left: 1vw;
 }
-.tabel .coloana-detalii h2{
+.tabel .coloana-detalii h2 {
   font-size: 1.2rem;
 }
-.tabel .coloana-detalii a{
+.tabel .coloana-detalii a {
   font-size: 1rem;
 }
 
-.tabel .coloana-stergere .sterge-produs{
-color:red;
+.tabel .coloana-stergere .sterge-produs {
+  color: red;
 }
-.tabel .coloana-stergere .stock{
-  color:green;
+.tabel .coloana-stergere .stock {
+  color: green;
 }
-.tabel .coloana-stergere .adauga-in-cos{
+.tabel .coloana-stergere .adauga-in-cos {
   width: 50%;
   font-size: 1rem;
   background-color: black;
@@ -97,65 +94,65 @@ color:red;
   height: 5vh;
   margin-left: 1vw;
 }
-.coloana-stergere a,p{
+.coloana-stergere a,
+p {
   font-size: 1rem;
 }
 
 @media screen and (max-width: 915px) {
-  .tabel .coloana-stergere .adauga-in-cos{
+  .tabel .coloana-stergere .adauga-in-cos {
     height: 7vh;
   }
-  
 }
 @media screen and (max-width: 800px) {
-  .tabel .coloana-stergere .adauga-in-cos{
+  .tabel .coloana-stergere .adauga-in-cos {
     height: 6vh;
     font-size: 0.8rem;
   }
-  .tabel #produs{
+  .tabel #produs {
     width: 60%;
   }
-  .continua-cumparaturi{
+  .continua-cumparaturi {
     font-size: 0.8rem;
   }
   .tabel th {
     font-size: 0.8rem;
   }
-  .tabel .coloana-detalii h2{
+  .tabel .coloana-detalii h2 {
     font-size: 1rem;
   }
-  .tabel .coloana-detalii a{
+  .tabel .coloana-detalii a {
     font-size: 0.8rem;
   }
   .tabel .coloana-stergere .sterge-produs,
   .tabel .coloana-stergere a,
   .tabel .coloana-stergere p,
-  .tabel .coloana-stergere .stock{
+  .tabel .coloana-stergere .stock {
     font-size: 0.8rem;
   }
 }
-@media screen and (max-width: 500px){
-  .continua-cumparaturi{
+@media screen and (max-width: 500px) {
+  .continua-cumparaturi {
     font-size: 0.8rem;
     height: 6vh;
   }
-  .tabel .coloana-detalii h2{
+  .tabel .coloana-detalii h2 {
     font-size: 0.8rem;
   }
-  .tabel .coloana-detalii a{
+  .tabel .coloana-detalii a {
     font-size: 0.7rem;
   }
   .tabel .coloana-stergere .sterge-produs,
   .tabel .coloana-stergere a,
   .tabel .coloana-stergere p,
-  .tabel .coloana-stergere .stock{
+  .tabel .coloana-stergere .stock {
     font-size: 0.7rem;
   }
-  .tabel .coloana-stergere .adauga-in-cos{
+  .tabel .coloana-stergere .adauga-in-cos {
     font-size: 0.7rem;
     width: 80%;
   }
-  .tabel #produs{
+  .tabel #produs {
     width: 80%;
   }
 }
