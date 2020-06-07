@@ -122,7 +122,7 @@
                                         Statistici : fiecare dintre aceste statistici pot fi exportate in format CSV si PDF.
                                         <ul>
                                             <li> Vezi statistica comenzi : ofera statistica comenzilor efectuate pe zile</li>
-                                            <img src="<?php echo URL; ?>public/poze/statisticaComenzi.jpg" >
+                                            <img src="<?php echo URL; ?>public/poze/statisticaComenzi.png" alt="logo" />
                                             <li>Vezi statistica produse femei : ofera statistica celor mai cumparate din fiecare subcategorie a categoriei femei</li>
                                             <li>Vezi statistica produse populare : ofera statistica celor mai populare 10 produse din aplicatie</li>
                                             <li>Vezi statistica plata comenzi : ofera statistica platilor efectuate cu cardul sau ramburs</li>
