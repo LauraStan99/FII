@@ -126,17 +126,15 @@
                                     <li>
                                         Statistici : fiecare dintre aceste statistici pot fi exportate in format CSV si PDF.
                                         <ol>
-                                            <li> Vezi statistica comenzi : ofera statistica comenzilor efectuate pe zile</li>
-
+                                            <li> Vezi statistica comenzi: ofera statistica comenzilor efectuate pe zile</li>
                                             <img src="<?php echo URL; ?>public/poze/statisticaComenzi.png" class="s-comenzi" />
-
-                                            <li>Vezi statistica produse femei : ofera statistica celor mai cumparate din fiecare subcategorie a categoriei femei</li>
+                                            <li>Vezi statistica produse femei: ofera statistica celor mai cumparate din fiecare subcategorie a categoriei femei</li>
                                             <img src="<?php echo URL; ?>public/poze/statisticaProduseFemei.png" class="s-produseF" />
-                                            <li>Vezi statistica produse populare : ofera statistica celor mai populare 10 produse din aplicatie</li>
+                                            <li>Vezi statistica produse populare: ofera statistica celor mai populare 10 produse din aplicatie</li>
                                             <img src="<?php echo URL; ?>public/poze/statisticaCeleMaiPopulareProduse.png" class="s-produseP" />
-                                            <li>Vezi statistica plata comenzi : ofera statistica platilor efectuate cu cardul sau ramburs</li>
+                                            <li>Vezi statistica plata comenzi: ofera statistica platilor efectuate cu cardul sau ramburs</li>
                                             <img src="<?php echo URL; ?>public/poze/statisticaPlataComenzi.png" class="s-plata" />
-                                            <li>Vezi statistica comenzi Europa : ofera statistica comenzilor livrate in tarile din Europa</li>
+                                            <li>Vezi statistica comenzi Europa: ofera statistica comenzilor livrate in tarile din Europa</li>
                                             <img src="<?php echo URL; ?>public/poze/statisticaComenziEuropa.png" class="s-Europa" />
                                         </ol>
                                     </li>
