@@ -41,27 +41,23 @@
     <script type="text/javascript" src="https://app.diagrams.net/js/viewer.min.js"></script>
   
      -->
-     <div class="cuprins">
-           <h2>Cuprins</h2>
+    <div class="cuprins">
+      <h2>Cuprins</h2>
 
-            <ol>
-                <li><a href="#abstract">Descriere</a></li>
-                <li><a href="#flow-aplicatie">Flow-ul aplicatiei</a>
-                    <ol>
-                        <li><a href="#header">Header</a></li>
-                        <li><a href="#navbar">Bara de navigare</a></li>
-                        <li><a href="#pagina-principala">Pagina principala</a></li>
-                        <li><a href="#pagina-subcategorie">Pagina unei subcategorii</a></li>
-                        <li><a href="#paginaProdus">Pagina unui produs</a></li>
-                        <li><a href="#checkout"> Pagina de checkout</a></li>
-                        <li><a href="#payment">Pagina de payment</a></li>
-                        <li><a href="#footer">Footer</a></li>
-                    </ol>
-                </li>
+      <ol>
+        <li><a href="#abstract">Abstract</a></li>
+        <li><a href="#stagii">Stagiile de dezvoltare</a>
+          <ol>
+            <li><a href="#inceput"> Inceputul</a></li>
+            <li><a href="#bazaDeDate">Baze de date</a></li>
+            <li><a href="#back">Backend</a></li>
 
+          </ol>
+        </li>
+        <li><a href="dezvoltare">Dezvoltarea aplicatiei</a></li>
 
-            </ol>
-        </div>
+      </ol>
+    </div>
     <div typeof="sa:Abstract" id="abstract">
       <h2>
         <span>1. </span>
@@ -72,10 +68,10 @@
       </p>
     </div>
 
-    <section>
+    <section id="stagii">
       <h2>
         <span>2. </span>
-        Stagiile de Dezvoltare
+        Stagiile de dezvoltare
       </h2>
       <section id="inceput">
         <h3>
@@ -164,6 +160,13 @@
       </section>
 
 
+    </section>
+    <section id="dezvoltare">
+      <h3>
+        <span>3.</span>
+        Dezvoltarea aplicatiei
+      </h3>
+      <p>Ca sistem de stocare si management online al codului sursa noi am folosit</p>
     </section>
     <?php
     require 'footer.php';
