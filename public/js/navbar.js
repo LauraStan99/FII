@@ -7,6 +7,9 @@ function selectMen() {
 function selectChildren() {
   document.getElementById('DropC').classList.toggle('show');
 }
+function selectDocumentatie() {
+  document.getElementById('DropDoc').classList.toggle('show');
+}
 
 window.onclick = function (e) {
   if (!e.target.matches('.femei-buton')) {
@@ -24,5 +27,10 @@ window.onclick = function (e) {
     if (myDropdown.classList.contains('show')) {
       myDropdown.classList.remove('show');
     }
-  } 
+  } else if (!e.target.matches('.documentatie-buton')) {
+    var myDropdown = document.getElementById('DropDoc');
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
 };

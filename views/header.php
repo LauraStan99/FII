@@ -8,7 +8,7 @@
     <meta http-equiv="cache-control" content="no-cache,no-store,must-revalidate">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="0">
-    <link href="<?php echo URL; ?>public/css/header.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/headerNew.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -146,13 +146,23 @@
                 <a href="<?php echo URL; ?>produse/copii/salopete">Salopete</a>
             </div>
         </div>
+
+        <div class="documentatie">
+            <button class="documentatie-buton" onclick="selectDocumentatie()">INFORMATII</button>
+            <div class="documentatie-continut" id="DropDoc">
+                <a>Ghid</a>
+                <a>Progres</a>
+                <a>Documentatie</a>
+            </div>
+        </div>
+
         <script src="<?php echo URL; ?>public/js/navbar.js"> </script>
 
-        <form method = "POST" class="search-bar" action = "<?php echo URL; ?>cauta">
+        <form method="POST" class="search-bar" action="<?php echo URL; ?>cauta">
             <input type="text" name="input" placeholder="Cauta.." value="<?php if (isset($this->word)) echo $this->word; ?>" required>
-            <button id="ok" name = "cauta">OK</button>
+            <button id="ok" name="cauta">OK</button>
         </form>
-        
+
     </div>
 </body>
 
