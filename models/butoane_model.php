@@ -19,7 +19,7 @@
     
             $title = $xml->createElement('title', 'Impressed');
             $channel->appendChild($title);
-            $link = $xml->createElement('link', 'http://localhost/FII/home');
+            $link = $xml->createElement('link', 'http://localhost/Impressed/home');
             $channel->appendChild($link);
             $description = $xml->createElement('description', 'Magazin online');
             $channel->appendChild($description);
@@ -32,7 +32,7 @@
                 $title = $xml->createElement('title', $row['nume']);
                 $item->appendChild($title);
     
-                $link = $xml->createElement('link', "http://localhost/FII/produse/produs/" . $row['id_produs']);
+                $link = $xml->createElement('link', "http://localhost/Impressed/produse/produs/" . $row['id_produs']);
                 $item->appendChild($link);
     
                 $description = $xml->createElement('description', $row['descriere']);
