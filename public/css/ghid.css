@@ -1,0 +1,42 @@
+body {
+  font-family: Arial;
+  margin-left: 2vw;
+  display: flex;
+  flex-direction: column;
+}
+header{
+    width: 100%;
+}
+header h1{
+    font-size: 2rem;
+    text-align: center;
+}
+header .subtitlu{
+    text-align: center;
+    margin-left: 0vw;
+    font-style: oblique;
+    border-bottom:1px solid black;
+}
+dt{
+    font-size: 1rem;
+    margin-left: 2vw;
+    font-weight: bold;
+}
+h2{
+    font-size: 1.5rem;
+    margin-left: 2vw;
+}
+h3{
+    font-size: 1rem;
+    margin-left: 2vw;
+}
+p,li{
+    margin-left: 3vw;
+}
+.s-comenzi,
+.s-produseF,
+.s-produseP,
+.s-plata,
+.s-Europa {
+    width: 50%;
+}
