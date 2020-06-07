@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="RealHome - progres" />
+    <meta name="keywords" content="HTML,CSS,JS,PHP,project,infoiasi,web" />
+    <meta name="author" content="Apostu Razvan Gabriel, Mocanu Alexandru" />
+
+    <title>RealHome - Progress</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="pinterest" content="nopin" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <meta name="title" content="RealHome - Progress" />
+    <meta
+      name="description"
+      content="Real estate website for buying and renting listings in Manhattan."
+    />
+    <meta property="og:title" content="RealHome - Progress" />
+    <meta property="og:image" content="RealHome.png" />
+    <meta
+      property="og:description"
+      content="Real estate website for buying and renting listings in Manhattan."
+    />
+    <meta name="twitter:title" content="RealHome - Progress" />
+    <meta
+      name="twitter:description"
+      content="Real estate website for buying and renting listings in Manhattan."
+    />
+    <meta name="twitter:image" content="RealHome.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700|Ubuntu:300,400,500,700&amp;subset=latin-ext"
+      rel="stylesheet"
+    />
+  </head>
+  <body prefix="schema: http://schema.org">
+    <article resource="#" typeof="schema:ScholarlyArticle">
+      <header>
+        <h1>RealHome</h1>
+        <p class="subtitle">Progres</p>
+      </header>
+
+      <div role="contentinfo">
+        <dl>
+          <dt>Autori</dt>
+          <dd>
+            Apostu Razvan Gabriel
+          </dd>
+          <dd>
+            Mocanu Alexandru
+          </dd>
+        </dl>
+      </div>
+
+      <div typeof="sa:Abstract" id="abstract" role="doc-abstract">
+        <h2>
+          <span>1. </span>
+          Abstract
+        </h2>
+        <p>
+          Urmeaza sa se prezinte procesul de dezvoltare al aplicatiei RealHome.
+        </p>
+      </div>
+      <section id="app-guide" role="doc-app-guide">
+        <h2>
+          <span>2. </span>
+          Stagiile de Dezvoltare
+        </h2>
+        <section id="inceput">
+          <h2>
+            <span>2.1 </span>
+            Inceputul
+          </h2>
+          <p>
+            Dezvoltarea platformei a inceput cu realizarea unui prototip de
+            interfata. Dupa ce <b>UI</b>-ul si <b>UX</b>-ul au fost definite
+            prin mockup-uri realizate in <b>Sketch</b> (Software pentru design)
+            a urmat construirea schemei tehnice.
+          </p>
+          <p>
+            Bazat pe cerintele proiectului, am ales stack-ul de lucru (HTML,
+            CSS(<b>SASS</b>) si Javascript nativ) si ne-am concentrat asupra
+            realizarii unui MVP, plecand de la cele stabilite anterior.
+            Prototipul a fost concretizat in HTML, CSS si Javascript, folosind
+            date generice pentru a fi afisate informatii
+          </p>
+        </section>
+
+        <section id="interfataGrafica">
+          <h2>
+            <span>2.2 </span>
+            Implementarea Inferfetei Grafice
+          </h2>
+          <p>
+            Acest pas a constat in transcrierea elementelor grafice in cod,
+            respectand sematica HTML5
+          </p>
+          <p>
+            Stilizarea a fost facuta prin intermediul CSS-ului, post-procesat
+            din format SASS. Am ales utilizarea acestui post-procesator de CSS
+            din motive de scalabilitate si consistenta.
+          </p>
+          <p>
+            Dinamica paginii a fost realizata cu ajutorul Javascriptului,
+            folosindu-ne de feature-urile puse la dispozitie de versiuna
+            <b>ES6</b> (fara o post-procesare cu Babel). Organizarea a fost
+            facuta cu ajutorul modulelor si sistemului de import a claselor. Tot
+            aici, am folosit fetch API pentru a pregati terenul requesturilor la
+            API-ul RealHome (urmeaza).
+          </p>
+        </section>
+
+        <section id="bazaDeDate">
+          <h2>
+            <span>2.3 </span>
+            Baza de date si server
+          </h2>
+          <p>
+            La acest stagiu a fost proiectata baza de date si a fost populata cu
+            date generice pentru a testa si a putea lega restul aplicatiei de
+            aceste date.
+          </p>
+          <p>
+            Lipsa unui API public <i>free</i> pentru extragerea LIVE a unor
+            liste de apartamente/case/birouri ne-a indemnat la scierea unui
+            scraper minimalist pentru a prelua cateva date in scopul popularii
+            bazei noastre de date pentru teste.
+          </p>
+          <p>
+            Baza de date este relationala, oferind o implementare MySQL, iar
+            partea de script-uri a fost realizata in PHP 7 (la final,
+            compatibilitatea a ramas si la nivel de PHP 5), cu ajutorul unui
+            server cu configuratie clasica.
+          </p>
+        </section>
+
+        <section id="API">
+          <h2>
+            <span>2.4.</span>
+            API-ul RealHome
+          </h2>
+          <p>
+            La nivel de structura am ales imparirea clara a platforme intre
+            Front si Back. Informatiile sunt deci furnizate de API-ul propriu,
+            si organizate in pagina de sistemul independent "din fata". Astfel,
+            in cazul in care ar fi fost nevoie vreodata de schimbarea sursei de
+            informatii (e.g. schimbam din PHP in NodeJS), efortul sa fi fost
+            minim.
+          </p>
+        </section>
+
+        <section id="login/register">
+          <h2>
+            <span>2.5 </span>
+            Sistemele de inregistrare si logare a utilizatorilor
+          </h2>
+          <aside>
+            <p>
+              Token-ul este memorat sub forma unui JWT semnat. Acesta contine
+              informatii precum Alfanumeric-ID-ul utilizatorului (daca este
+              cunoscut) si valoarea token-ului de autentificare.
+            </p>
+            <p>
+              Memorarea se face prin intermediul unui Cookie, cu o perioada de
+              viata prestabilita. Pentru a securiza procesul, pe langa criptarea
+              clasica, token-ul are o perioada de valabilitate si de refresh. In
+              momentul atingerii momentului de refresh, token-ul se va regenera
+              si se va inlocui in cookie-ul utilizatorul. Astfel, marim
+              securitatea platfromei si oferim si o navigare intuitiva, fara a
+              fi nevoiti sa deconectam utilizatorul (daca acesta intra constant,
+              token-ul se va regenera singur pana la infinit).
+            </p>
+          </aside>
+          <p>
+            Sistemul de utilizator se bazeaza pe interpretarea a 2 entitati:
+          </p>
+          <ol>
+            <li>
+              Utilizatorul Inregistrat <span>- detine cont pe platforma</span>
+            </li>
+            <li>Utilizatorul Anonim <span>- vizitator</span></li>
+          </ol>
+          <p>
+            Sistemul face tracking la utilizatori, indiferent de tipul lor
+            pentru a oferi recomandari bazate pe experienta lor in platforma.
+          </p>
+          <p>
+            Acest tracking se face pe baza unui token unic ce contine date de
+            identificare are utilizatorului curent.
+          </p>
+        </section>
+        <section id="conectareaAPI">
+          <h2>
+            <span>2.6 </span>
+            Conectarea cu API-uri externe
+          </h2>
+          <p>
+            Pentru a putea afisa si calcula informatii interesante din
+            proximitatea locatiei (ex. nivel de securitate bazat pe numar de
+            crime, nivel de "fun" bazat pe numar de cluburi, restaurante etc.)
+            am recurs la folosirea unor API-uri externe publice
+          </p>
+          <p>
+            In aceasta etapa s-a lucrat pe integrarea aplicatiei cu API-uri
+            externe, precum:
+          </p>
+          <ul>
+            <li>Google Maps API</li>
+            <li>Google Places API</li>
+            <li>NYC Open Data</li>
+          </ul>
+        </section>
+        <section id="integrare">
+          <h2>
+            <span>2.7 </span>
+            Integrarea modulelor
+          </h2>
+          <p>
+            Conform celor explicate la punctul <b>2.4.</b> modulele au fost
+            integrate relativ simplu. Totul fiind gandit modular, codul de
+            integrare a fost doar plug-and-play.
+          </p>
+        </section>
+      </section>
+    </article>
+  </body>
+</html>
