@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
         <title>RealHome - Instructiuni</title>
   </head>
-  <body prefix="schema: http://schema.org">
+  <body>
     <header>
         <h1>Impressed</h1>
         <p class="subtitle">Ghid de utilizare</p>
@@ -115,6 +115,7 @@
                         </li>
                     </ul>
                 </p>
+                <img src="public/poze/statisticaComenzi.jpg" />
             </section>
             <section id = "listingProfile">
                 <h3>
