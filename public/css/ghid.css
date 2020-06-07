@@ -1,42 +1,47 @@
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 body {
   font-family: Arial;
   display: flex;
   flex-direction: column;
   margin: 0;
 }
-header h1{
-    font-size: 2rem;
-    text-align: center;
+header h1 {
+  font-size: 2rem;
+  text-align: center;
 }
-header .subtitlu{
-    text-align: center;
-    margin-left: 0vw;
-    font-style: oblique;
-    border-bottom:1px solid black;
+header .subtitlu {
+  text-align: center;
+  margin-left: 0vw;
+  font-style: oblique;
+  border-bottom: 1px solid black;
 }
-dt{
-    font-size: 1rem;
-    margin-left: 2vw;
-    font-weight: bold;
+dt {
+  font-size: 1rem;
+  margin-left: 2vw;
+  font-weight: bold;
 }
-h2{
-    font-size: 1.5rem;
-    margin-left: 2vw;
+.cuprins a {
+  text-decoration: none;
+  color: black;
 }
-h3{
-    font-size: 1rem;
-    margin-left: 2vw;
+h2 {
+  font-size: 1.5rem;
+  margin-left: 2vw;
 }
-p,li{
-    margin-left: 3vw;
+h3 {
+  font-size: 1rem;
+  margin-left: 2vw;
+}
+p,
+li {
+  margin-left: 3vw;
 }
 .s-comenzi,
 .s-produseF,
 .s-produseP,
 .s-plata,
 .s-Europa {
-    width: 50%;
+  width: 50%;
 }

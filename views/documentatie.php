@@ -7,9 +7,9 @@
     <meta name="keywords" content="HTML,CSS,JS,PHP,project,infoiasi,web">
     <meta name="author" content="Botez Georgiana , Stan Laura-Ioana">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="<?php echo URL; ?>public/css/ghid.css" rel="stylesheet" />
+    <link href="<?php echo URL; ?>public/css/documentatie.css" rel="stylesheet" />
 
-    <title>Impressed - Ghid de utilizare</title>
+    <title>Impressed - Documentatie</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
             ?>
 
             <h1>Impressed</h1>
-            <p class="subtitlu">Ghid de utilizare</p>
+            <p class="subtitlu">Documentatie</p>
 
         </header>
 
@@ -36,29 +36,7 @@
             </dl>
         </div>
 
-        <div class="cuprins">
-           <h2>Cuprins</h2>
-
-            <ol>
-                <li><a href="#abstract">Descriere</a></li>
-                <li><a href="#flow-aplicatie">Flow-ul aplicatiei</a>
-                    <ol>
-                        <li><a href="#header">Header</a></li>
-                        <li><a href="#navbar">Bara de navigare</a></li>
-                        <li><a href="#pagina-principala">Pagina principala</a></li>
-                        <li><a href="#pagina-subcategorie">Pagina unei subcategorii</a></li>
-                        <li><a href="#paginaProdus">Pagina unui produs</a></li>
-                        <li><a href="#checkout"> Pagina de checkout</a></li>
-                        <li><a href="#payment">Pagina de payment</a></li>
-                        <li><a href="#footer">Footer</a></li>
-                    </ol>
-                </li>
-
-
-            </ol>
-        </div>
-
-        <section typeof="sa:Abstract" id="abstract" >
+        <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
             <h2>
                 <span>1. </span>
                 Descriere
@@ -76,7 +54,7 @@
             </p>
         </section>
 
-        <section id="flow-aplicatie" >
+        <section id="app-guide" role="doc-app-guide">
             <h2>
                 <span>2. </span>
                 Flow-ul aplicatiei si continutul acesteia
