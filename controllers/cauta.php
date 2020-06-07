@@ -54,26 +54,42 @@ class Cauta extends Controller
             } 
         }
 
-        
-
+        if(isset($_POST['popularitate']))
+        {
+            $this->view->result=$cauta->sortare('nr_accesari','desc',$start_from,$limit);
+        }
+        if(isset($_POST['alfabetic']))
+        {
+            $this->view->result=$cauta->sortare('nume','asc',$start_from,$limit);
+        }
+        if(isset($_POST['crescator']))
+        {
+            $this->view->result=$cauta->sortare('pret','asc',$start_from,$limit);
+        }
+        if(isset($_POST['descrescator']))
+        {
+            $this->view->result=$cauta->sortare('pret','desc',$start_from,$limit);
+        }
        
         $this->view->render('cauta');
     }
 
-    function ordonare($filter, $order){
-        $cauta = new Cauta_model();
-        $limit = 12;     
-        if (isset($_GET["page"])) {  
-        $this->view->page= $_GET["page"];  
-        }  
-        else {  
-        $this->view->page=1;  
-        };
+    // function ordonare($filter, $order){
+    //     $cauta = new Cauta_model();
+    //     $limit = 12;     
+    //     if (isset($_GET["page"])) {  
+    //     $this->view->page= $_GET["page"];  
+    //     }  
+    //     else {  
+    //     $this->view->page=1;  
+    //     };
   
-        $start_from = ($this->view->page-1) * $limit;
-        $this->view->result=$cauta->sortare($filter, $order, $start_from, $limit);
-        $this->view->total_records = $cauta->count();
-        $this->view->total_pages = ceil($this->view->total_records / $limit);
-        $this->view->render('cauta');
-    }
+    //     $start_from = ($this->view->page-1) * $limit;
+    //     $this->view->result=$cauta->sortare($filter, $order, $start_from, $limit);
+    //     $this->view->total_records = $cauta->count();
+    //     $this->view->total_pages = ceil($this->view->total_records / $limit);
+    //     $this->view->render('cauta');
+    // }
+
+    
 }
