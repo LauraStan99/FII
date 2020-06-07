@@ -26,6 +26,10 @@ dd,
 h2 {
   margin-left: 2vw;
 }
+.cuprins a {
+  text-decoration: none;
+  color: black;
+}
 #abstract h2 {
   margin-left: 0vw;
 }
