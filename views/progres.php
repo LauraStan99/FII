@@ -55,9 +55,11 @@
           </ol>
         </li>
         <li><a href="dezvoltare">Dezvoltarea aplicatiei</a></li>
-
       </ol>
     </div>
+
+    <img src="<?php echo URL; ?>impressed_cover.jpg" class="rezumat" />
+
     <div typeof="sa:Abstract" id="abstract">
       <h2>
         <span>1. </span>
@@ -166,7 +168,14 @@
         <span>3.</span>
         Dezvoltarea aplicatiei
       </h3>
-      <p>Ca sistem de stocare si management online al codului sursa noi am folosit</p>
+      <p>Ca sistem de stocare si management online al codului sursa am folosit GitHub. </p>
+      <p>Toate CSS-urile si HTML-urile au fost validate cu ajutorul urmatoarelor site-uri
+        <ol>
+          <li>https://validator.w3.org/</li>
+          <li>https://jigsaw.w3.org/css-validator/</li>
+        </ol>
+      </p>
+
     </section>
     <?php
     require 'footer.php';
