@@ -5,7 +5,7 @@
     <title>Favorite | Impressed</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="<?php echo URL; ?>public/css/wishlistFavorite.css" rel="stylesheet">
+    <link href="<?php echo URL; ?>public/css/wishlist.css" rel="stylesheet">
 </head>
 
 <body>
@@ -50,13 +50,13 @@
                             <a>Marime : <?php echo $row['marime']; ?></a>
 
                         </td>
-                        <td class="coloana-stergere">    
-                                <a class="sterge-produs" href="<?php echo URL; ?>wishlist/deleteFromWishlist/<?php echo $row['id_produs'] ?>/<?php echo $row['marime'] ?>">X Sterge produs</a>
-                                <p>Disponibilitate: <a class="stock">in stock</a></p>
-                                <a>Pret : <?php echo $row['pret']; ?> </a>
-                                <form method="POST">
-                                    <button class="adauga-in-cos" name="adauga-in-cos" type="submit" formaction="<?php echo URL; ?>wishlist/addToCart/<?php echo $row['id_produs'] ?>/<?php echo $row['marime'] ?>">Adauga in cos</button>
-                                </form>
+                        <td class="coloana-stergere">
+                            <a class="sterge-produs" href="<?php echo URL; ?>wishlist/deleteFromWishlist/<?php echo $row['id_produs'] ?>/<?php echo $row['marime'] ?>">X Sterge produs</a>
+                            <p>Disponibilitate: <a class="stock">in stock</a></p>
+                            <a>Pret : <?php echo $row['pret']; ?> </a>
+                            <form method="POST">
+                                <button class="adauga-in-cos" name="adauga-in-cos" type="submit" formaction="<?php echo URL; ?>wishlist/addToCart/<?php echo $row['id_produs'] ?>/<?php echo $row['marime'] ?>">Adauga in cos</button>
+                            </form>
                         </td>
                     </tr>
 

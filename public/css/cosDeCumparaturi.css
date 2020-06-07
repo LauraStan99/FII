@@ -66,10 +66,10 @@ main {
 }
 
 .tabel .articol {
-  width: 27%;
+  width: 20%;
 }
 .tabel .denumire {
-  width: 23%;
+  width: 25%;
 }
 .tabel .marime {
   width: 10%;
@@ -84,7 +84,7 @@ main {
   width: 10%;
 }
 .tabel .sterge-produs {
-  width: 5%;
+  width: 10%;
 }
 
 .totalFinal {
@@ -129,7 +129,7 @@ main {
   text-align: center;
 }
 .tabel #produs {
-  width: 60%;
+  width: 30%;
 }
 .tabel td .cantitate p {
   width: 40%;
