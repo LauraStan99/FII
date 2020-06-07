@@ -11,6 +11,9 @@
 </head>
 
 <body>
+<?php
+        require 'header.php'
+        ?>
     <header>
         <h1>Impressed</h1>
         <p class="subtitle">Ghid de utilizare</p>
@@ -343,5 +346,11 @@
             <p>Partea dreapta contine logo-urile retelelor de socializare unde poate fi urmarita activitatea magazinului Impressed.</p>
         </section>
 </body>
+<footer>
 
+<?php
+require 'footer.php';
+?>
+
+</footer>
 </html>
