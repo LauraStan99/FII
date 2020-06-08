@@ -8,29 +8,34 @@
   <link href="<?php echo URL; ?>public/css/signIn1.css" rel="stylesheet" />
 </head>
 <style>
-  .err { /* stiluri pentru mesajul de eroare */
-  display: inline;
-  color: red;
-  background-color: yellow;
-  font-family: sans-serif;
-}
-  </style>
+  main .err {
+    /* stiluri pentru mesajul de eroare */
+    display: inline;
+    color: red;
+    background-color: yellow;
+    font-family: sans-serif;
+  }
+
+  main .hidden {
+    display: none;
+  }
+</style>
+
 <body>
 
   <?php
   require 'header.php';
   ?>
-
   <script type="text/javascript">
-    var request;
+    var request; // incapsuleaza cererea HTTP catre serverul Web
 
+    // incarca un document XML desemnat de 'url'
     function loadXML(url) {
       // verificam existenta obiectului XMLHttpRequest
       if (window.XMLHttpRequest) {
         // exista suport nativ
         request = new XMLHttpRequest();
-      } else
-      if (window.ActiveXObject) {
+      } else if (window.ActiveXObject) {
         // se poate folosi obiectul ActiveX din vechiul MSIE
         request = new ActiveXObject("Microsoft.XMLHTTP");
       }
@@ -43,7 +48,7 @@
         request.send(null);
       } else {
         // nu exista suport pentru Ajax
-        console.log('No Ajax support :(');
+        console.log("No Ajax support :(");
       }
     }
 
@@ -56,14 +61,17 @@
           // procesam datele receptionate prin DOM
           // (preluam elementul radacina al documentului XML)
           var response = request.responseXML.documentElement;
-          var res = response.getElementsByTagName('result')[0].firstChild.data;
+          var res = response.getElementsByTagName("result")[0].firstChild
+            .data;
           // apelam functia de semnalare a (in)existentei numelui
-          signalEmailExists('', res);
+          signalEmailExists("", res);
         }
         // eventual, se pot trata si alte coduri HTTP (404, 500 etc.)
-        else { // eroare...
-          console.log("A problem occurred (XML data transfer):\n" +
-            response.statusText);
+        else {
+          // eroare...
+          console.log(
+            "A problem occurred (XML data transfer):\n" + response.statusText
+          );
         }
       } // final de if
     }
@@ -71,18 +79,18 @@
     // functia de semnalare a existentei unui nume de persoana
     function signalEmailExists(name, exist) {
       // avem un raspuns?
-      if (exist != '') {
+      if (exist != "") {
         // preluam via metodele DOM elementul cu id='eroareNume'
         // pentru a afisa mesajul de eroare
-        var msg = document.getElementById('errName');
+        var msg = document.getElementById("errName");
         // schimbam stilul de afisare (in caz de eroare vor fi aplicate
         // proprietatile de stil din clasa 'eroare',
         // altfel textul va fi ascuns)
-        msg.className = exist == 1 ? 'err' : 'hidden';
+        msg.className = exist == 1 ? "err" : "hidden";
       } else {
         // nu e niciun raspuns stabilit, vom verifica asincron
         // trimitand o cerere catre server
-        loadXML('controllers/ajax_register.php?email=' + name);
+        loadXML("<?php echo URL ?>controllers/ajax_register.php" + name);
       }
     }
   </script>
@@ -133,7 +141,7 @@
           <span class="error"> <?php if (isset($this->emailErr))
                                   echo $this->emailErr;
                                 ?></span>
-          <span class="hidden" id="errName" style ="display: none;">
+          <span class="hidden" id="errName">
             Name already exists, choose another one...
           </span>
 
@@ -180,7 +188,7 @@
                                 ?></span>
         </div>
       </div>
-      <button type="submit" name="submit" value="Submit" onclick = "handleResponse()" class="buton-inregistrare">
+      <button type="submit" name="submit" value="Submit" onclick="javascript:handleResponse()" class="buton-inregistrare">
         Inregistrare
       </button>
       <span class="text-success" class="neccessary">
