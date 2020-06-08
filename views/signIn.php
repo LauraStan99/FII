@@ -7,83 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="<?php echo URL; ?>public/css/signIn1.css" rel="stylesheet" />
 </head>
-<style>
-  .err { /* stiluri pentru mesajul de eroare */
-  display: inline;
-  color: red;
-  background-color: yellow;
-  font-family: sans-serif;
-}
-  </style>
+
 <body>
 
   <?php
   require 'header.php';
   ?>
-
-  <script type="text/javascript">
-    var request;
-
-    function loadXML(url) {
-      // verificam existenta obiectului XMLHttpRequest
-      if (window.XMLHttpRequest) {
-        // exista suport nativ
-        request = new XMLHttpRequest();
-      } else
-      if (window.ActiveXObject) {
-        // se poate folosi obiectul ActiveX din vechiul MSIE
-        request = new ActiveXObject("Microsoft.XMLHTTP");
+  <script>
+    function showHint(str) {
+      var xhttp;
+      if (str.length == 0) {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
       }
-
-      if (request) {
-        // stabilim functia de tratare a starii incarcarii
-        request.onreadystatechange = handleResponse();
-        // preluam documentul prin metoda GET
-        request.open("GET", url, true);
-        request.send(null);
-      } else {
-        // nu exista suport pentru Ajax
-        console.log('No Ajax support :(');
-      }
-    }
-
-    // functia de tratare a schimbarii de stare a cererii
-    function handleResponse() {
-      // verificam daca incarcarea s-a terminat cu succes
-      if (request.readyState == 4) {
-        // verificam daca am obtinut codul de stare '200 Ok'
-        if (request.status == 200) {
-          // procesam datele receptionate prin DOM
-          // (preluam elementul radacina al documentului XML)
-          var response = request.responseXML.documentElement;
-          var res = response.getElementsByTagName('result')[0].firstChild.data;
-          // apelam functia de semnalare a (in)existentei numelui
-          signalEmailExists('', res);
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("txtHint").innerHTML = this.responseText;
         }
-        // eventual, se pot trata si alte coduri HTTP (404, 500 etc.)
-        else { // eroare...
-          console.log("A problem occurred (XML data transfer):\n" +
-            response.statusText);
-        }
-      } // final de if
-    }
-
-    // functia de semnalare a existentei unui nume de persoana
-    function signalEmailExists(name, exist) {
-      // avem un raspuns?
-      if (exist != '') {
-        // preluam via metodele DOM elementul cu id='eroareNume'
-        // pentru a afisa mesajul de eroare
-        var msg = document.getElementById('errName');
-        // schimbam stilul de afisare (in caz de eroare vor fi aplicate
-        // proprietatile de stil din clasa 'eroare',
-        // altfel textul va fi ascuns)
-        msg.className = exist == 1 ? 'err' : 'hidden';
-      } else {
-        // nu e niciun raspuns stabilit, vom verifica asincron
-        // trimitand o cerere catre server
-        loadXML('controllers/ajax_register.php?email=' + name);
-      }
+      };
+      xhttp.open("GET", "<?php echo URL;?>public/util/ajax_register.php?email=" + str, true);
+      xhttp.send();
     }
   </script>
 
@@ -129,15 +73,13 @@
           <a class="neccessary">*</a>
         </label>
         <div class="input">
-          <input type="text" id="inregistrare-email" name="email" placeholder="popescu@gmail.com" onblur="javascript:signalEmailExists (this.value, '')" value="<?php if (isset($this->email)) echo $this->email; ?>" onkeyup="javascript:handleResponse()"/>
-          <span class="error"> <?php if (isset($this->emailErr))
+          <input type="text" id="inregistrare-email" name="email" placeholder="popescu@gmail.com" onkeyup="javascript:showHint(this.value)" value="<?php if (isset($this->email)) echo $this->email; ?>" onkeyup="javascript:handleResponse()" />
+          <span class="error" id="txtHint"> <?php if (isset($this->emailErr))
                                   echo $this->emailErr;
                                 ?></span>
-          <span class="hidden" id="errName" style ="display: none;">
-            Name already exists, choose another one...
-          </span>
-
+        
         </div>
+
       </div>
 
       <div class="linie">
@@ -180,9 +122,10 @@
                                 ?></span>
         </div>
       </div>
-      <button type="submit" name="submit" value="Submit"  class="buton-inregistrare">
+      <button type="submit" name="submit" value="Submit" class="buton-inregistrare">
         Inregistrare
       </button>
+
       <span class="text-success" class="neccessary">
         <?php
         if (isset($this->success_message))
