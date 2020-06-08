@@ -41,4 +41,4 @@ class Register extends Controller
     $this->view->render('signIn');
   }
 }
-?>
+ 
