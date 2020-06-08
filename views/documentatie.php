@@ -231,9 +231,9 @@
                         Magazinul poate fi contactat de catre orice utilizator folosind numarul de telefon, adresa de email sau completand un formular regasit pe site .
                         Formularul contine datele dupa care utilizatorul poate fi contactat, insotit si de mesajul/problema
                         utilizatorului .</p>
-                    <div class="email1">
-                        <img src="<?php echo URL; ?>public/poze/email1.png" />
-                    </div>
+
+                    <img class="email1" src="<?php echo URL; ?>public/poze/email1.png" />
+
                 </li>
                 <li>Odata finalizata o comanda, un utilizator primeste un email de confirmare a comenzii.
                     <p>Email-ul contine datele comenzii( date personale, date despre produsele achizitionate si costurile produselor si ale livrarii) </p>
