@@ -16,5 +16,5 @@ function checkIfEmailExists ($email_user) {
 }
 ?>
 <response>
-  <result><?php echo checkIfEmailExists ($_GET['email']); ?></result>
+  <result><?php echo checkIfEmailExists ($_REQUEST['email']); ?></result>
 </response>
