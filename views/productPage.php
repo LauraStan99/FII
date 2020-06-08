@@ -17,9 +17,9 @@
         <?php
         while ($row = $this->result->fetch()) {
         ?>
-            <div class="imagine-produs">
+            <a class="imagine-produs" href="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
                 <img id="imagine" src="<?php echo URL; ?>public/poze/<?php echo  $row['imagine']; ?>.png">
-            </div>
+            </a>
             <div class="detalii">
 
                 <h1><?php echo  $row['nume']; ?></h1>
@@ -63,7 +63,7 @@
                     <button type="submit" name="adauga-favorite" id="adauga-favorite">Adauga la favorite </button>
 
                     <?php if (Session::get('tip_utilizator') == "admin") {  ?>
-                        <button type="submit" name="sterge-produs" id="sterge-produs" formaction="<?php echo URL; ?>produse/deleteProductAsAdmin/<?php echo $row['id_produs']; ?>/<?php echo $row['gen'] ;?>/<?php echo $row['categorie'] ;?>">Sterge produs</button>
+                        <button type="submit" name="sterge-produs" id="sterge-produs" formaction="<?php echo URL; ?>produse/deleteProductAsAdmin/<?php echo $row['id_produs']; ?>/<?php echo $row['gen']; ?>/<?php echo $row['categorie']; ?>">Sterge produs</button>
                     <?php } ?>
                 </form>
                 <?php

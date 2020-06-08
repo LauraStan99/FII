@@ -14,6 +14,11 @@
     <description>Jeans p&#xE2;n&#x103; la glezn&#x103;, confec&#x21B;iona&#x21B;i din denim elastic presp&#x103;lat de bumbac, cu cinci buzunare, cu talie foarte &#xEE;nalt&#x103;</description>
   </item>
   <item>
+    <title>Tricou de bumbac</title>
+    <link>http://localhost/Impressed/produse/produs/206</link>
+    <description>Tricou din jerseu moale de bumbac.</description>
+  </item>
+  <item>
     <title>Pantaloni culotte</title>
     <link>http://localhost/Impressed/produse/produs/187</link>
     <description>Pantaloni p&#xE2;n&#x103; la glezn&#x103;, din &#x21B;es&#x103;tur&#x103; vaporoas&#x103; de viscoz&#x103;, cu elastic &#xEE;mbr&#x103;cat, cu vol&#x103;na&#x219; &#x219;i fund&#x103; decorativ&#x103; &#xEE;n talie &#x219;i cu buzunare laterale. Model drept &#x219;i larg pe picioare.</description>
@@ -47,10 +52,5 @@
     <title>Bluza cu imprimeu floral</title>
     <link>http://localhost/Impressed/produse/produs/20</link>
     <description>Bluz&#x103; dreapt&#x103; din &#x21B;es&#x103;tur&#x103;, cu deschiz&#x103;tur&#x103; rotund&#x103; la spate, cu &#x219;nururi &#xEE;n spatele g&#xE2;tului &#x219;i cu imprimeu floral</description>
-  </item>
-  <item>
-    <title>Bluz&#x103; cu m&#xE2;neci bufante</title>
-    <link>http://localhost/Impressed/produse/produs/25</link>
-    <description>Bluz&#x103; cambrat&#x103; cu r&#x103;scroiala g&#xE2;tului &#xEE;n form&#x103; de inim&#x103; &#x219;i cu &#xEE;ncre&#x21B;ituri decorative la bust. M&#xE2;neci scurte, bufante &#x219;i ample, cu elastic &#xEE;ngust &#xEE;mbr&#x103;cat la umeri &#x219;i la baz&#x103;.</description>
   </item>
 </channel>
