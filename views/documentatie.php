@@ -57,7 +57,7 @@
                 </li>
                 <li><a href="#login">Modului de login</a></li>
                 <li><a href="#flux-RSS">Fluxul RSS</a></li>
-                <li><a href="#mail">Libraria PHPMailer</a></li>
+                <li><a href="#email">Libraria PHPMailer</a></li>
                 <li><a href="#statistici">Statisticile generate</a></li>
                 <li><a href="#formateMinimale">Formate minimale de export: CSV si PDF</a></li>
                 
