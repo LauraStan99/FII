@@ -152,7 +152,7 @@ class Admin extends Controller
                     $admin->updateProductGender($_POST['gen-prod'], $_POST['cauta-produs']);
                 }
                 if (!empty($_POST['tip-prod']) && isset($_POST['cauta-produs'])) {
-                    $admin->updateProductTipe($_POST['tip-prod'], $_POST['cauta-produs']);
+                    $admin->updateProductType($_POST['tip-prod'], $_POST['cauta-produs']);
                 }
                 if (!empty($_POST['categorie-prod']) && isset($_POST['cauta-produs'])) {
                     $admin->updateProductCategory($_POST['categorie-prod'], $_POST['cauta-produs']);

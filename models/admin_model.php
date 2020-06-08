@@ -72,7 +72,7 @@ class Admin_model extends Model
     {
         return $this->db->update('produse', 'gen', $gender, 'id_produs',$id);
     }
-    public function updateProductTipe($tipe,$id)
+    public function updateProductType($tipe,$id)
     {
         return $this->db->update('produse', 'tip', $tipe, 'id_produs',$id);
     }

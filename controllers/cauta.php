@@ -73,23 +73,4 @@ class Cauta extends Controller
        
         $this->view->render('cauta');
     }
-
-    // function ordonare($filter, $order){
-    //     $cauta = new Cauta_model();
-    //     $limit = 12;     
-    //     if (isset($_GET["page"])) {  
-    //     $this->view->page= $_GET["page"];  
-    //     }  
-    //     else {  
-    //     $this->view->page=1;  
-    //     };
-  
-    //     $start_from = ($this->view->page-1) * $limit;
-    //     $this->view->result=$cauta->sortare($filter, $order, $start_from, $limit);
-    //     $this->view->total_records = $cauta->count();
-    //     $this->view->total_pages = ceil($this->view->total_records / $limit);
-    //     $this->view->render('cauta');
-    // }
-
-    
 }
