@@ -10,6 +10,7 @@ define('DB_PASS', 'sql');
 //path
 define('URL', 'http://localhost:82/Impressed/');
 
+
 //contants
 define('HASH_PASSWORD_KEY', 'catsFLYhigh2000miles');
 define('LIBS', 'libs/');
