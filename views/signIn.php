@@ -129,7 +129,7 @@
           <a class="neccessary">*</a>
         </label>
         <div class="input">
-          <input type="text" id="inregistrare-email" name="email" placeholder="popescu@gmail.com" onblur="javascript:signalEmailExists (this.value, '')" value="<?php if (isset($this->email)) echo $this->email; ?>" />
+          <input type="text" id="inregistrare-email" name="email" placeholder="popescu@gmail.com" onblur="javascript:signalEmailExists (this.value, '')" value="<?php if (isset($this->email)) echo $this->email; ?>" onkeyup="javascript:handleResponse()"/>
           <span class="error"> <?php if (isset($this->emailErr))
                                   echo $this->emailErr;
                                 ?></span>
@@ -180,7 +180,7 @@
                                 ?></span>
         </div>
       </div>
-      <button type="submit" name="submit" value="Submit" onclick = "handleResponse()" class="buton-inregistrare">
+      <button type="submit" name="submit" value="Submit"  class="buton-inregistrare">
         Inregistrare
       </button>
       <span class="text-success" class="neccessary">
