@@ -21,7 +21,7 @@
 
             <h1>Impressed</h1>
             <p class="subtitlu">Documentatie</p>
-
+            <hr>
         </header>
 
         <div>
@@ -139,7 +139,127 @@
             </div>
 
         </section>
+        <section id="login">
+            <h2>
+                <span>4.</span>Modulul de login
+            </h2>
+            <p>
+                Modulul de login este impartit in 2 cazuri:
+                <ol>
+                    <li>Partea de logare a unui utilizator , avand un cont activ
+                        <p> Email-ul este unic in baza de date, astfel utilizatorul poate sa se logheze cu email-ul introdus la crearea contului , insotit de
+                            parola aleasa de el.
+                        </p>
+                        <p>Parola introdusa in campul aferent nu este vizibila pentru utilizator, aceasta fiind verificata si retinuta in baza de date utilizand
+                            algoritmul de hash (sha256) , reprezentand codificarea parolei pe 256 de caractere.
+                        </p>
+                        <p>Odata ce au fost verificate datele se creeaza o noua sesiune in care sunt retinute anumite date despre utilizator ce ne vor fi utile pentru
+                            managementul aplicatiei pentru clientul respectiv.
+                        </p>
+                        <p>Pentru fiecare utilizator logat sesiunea creata retine urmatoarele date :
+                        </p>
+                        <ul>
+                            <li>id-ul utilizatorului</li>
+                            <li>numele si prenumele</li>
+                            <li>adresa de email</li>
+                            <li>numarul de telefon</li>
+                            <li>tipul utilizatorului</li>
+                            <li>adresa</li>
+                        </ul>
+                        <p>In momentul in care utilizatorul se deconecteaza de pe aplicatie , sesiunea este distrusa odata cu ea si datele retinute despre utilizator.</p>
+                    </li>
+                    <li>Partea de inregistrare a unui utilizator , creand un nou cont
+                        <p>Daca un vizitator doreste sa beneficieze de facilitatile aplicatiei noastre , el va trebui sa isi creeze un cont.</p>
+                        <p>Urmatoarele date sunt necesare pentru realizarea unui cont: nume,prenume,email,telefon,adresa si parola.</p>
+                        <p>Toate aceste date sunt trecute printr-un validator (clasa Validate din libs care contine toate functiile de valiadre ale aplicatiei).</p>
+                        <ul>
+                            <li>toate camputile sunt obligatorii </li>
+                            <li>numele si prenumele trebuie sa contina doar litere si eventual spatii </li>
+                            <li>email-ul trebuie sa respecte formatul unui email si trebuie sa fie unic(ex: example@gmail.com)</li>
+                            <li>numarul de telefon trebuie sa contina exclusiv cifre</li>
+                            <li>parola trebuie sa contina obligatoriu cate una din :literamica, ltra mare, numere si caractere speciale ( ! @ # $ % & * ) </li>
+                        </ul>
+                        <p>Unicitatea adresei de email este verficata facand un request la un fisier care parcurge un XML cu toate adresele user-ilor deja existenti.
+                            Pentru acest lucru a fost nevoie sa se foloseasca tehnologia Ajax.
+                        </p>
+                        <p>Chiar daca utilizatorul introduce o parola coerenta , dupa codificare , aceasta v-a fi criptata sub o noua forma (256 caractere).
+                        </p>
+                    </li>
 
+                </ol>
+            </p>
+        </section>
+        <section id="flux-RSS">
+            <h2>
+                <span>5.</span>Fluxul RSS
+            </h2>
+            <p>
+                La fiecare randare a paginii principala se face o actalizare a fisierului XML ce trebuie sa contina cele mai populare 10 produse din toata aplicatia,
+                aceasta popularitate rezultand din numarul de accesari al fiecarui produs de catre utilizatorii aplicatiei .
+            </p>
+            <p>XML-ul rezultat este parcurs cu "xpath(XPATH)" si astfel oferind utilizatorilor posibilitatea de a vizualiza clasamentul produselor
+                si in alt format (ca flux de date RSS).
+            </p>
+
+        </section>
+        <section id="email">
+            <h2>
+                <span>6.</span>Libraria PHPMailer
+            </h2>
+            <p>In aplicatia noastra exista 2 cazuri in care se trimite email. </p>
+            <ol>
+                <li>Un utilizator doreste sa contacteze magazinul Impressed
+                    <p>
+                        Acesta poate fi contactat printr-un numar de telefon , adresa de email sau prin completarea unui formular de pe site .
+                        Formularul contine datele dupa care utilizatorul poate fi contactat , insotit si de mesajul
+                        utilizatorului .</p>
+                    <div class="email1">
+                        <img src="<?php echo URL; ?>public/poze/email1.png" />
+                    </div>
+                </li>
+                <li>Odata finalizata o comanda un utilizator primeste un email de confirmare a comenzii
+                    <p>Email-ul contine datele comenzii ( date personale si produse achizitionate) </p>
+                    <div class="email2">
+                        <img src="<?php echo URL; ?>public/poze/email2.png" />
+                    </div>
+                </li>
+            </ol>
+            <p>Pentru trimiterea email-ului s-a folosit libraria PHPMailer preluta de pe urmatorul link : <a href="https://github.com/PHPMailer/PHPMailer">https://github.com/PHPMailer/PHPMailer</a></p>
+            <p>
+                S-au folosit clasele: Exception, OAuth, PHPMailer, POP3 si SMTP .Au fost importate in index.php si s-a creat o instanta a clasei PHPMailer.
+                Se foloseste protocolul SMTP cu hostul gmail.com, setez adresa de la care se va trimite email-ul si anume Impressed.shop@gmail.com si adaug adresa careia
+                i se va trimite mailul.Adaug subiectul si body-ul mail-ului si apelez metoda send() pentru a trimite mail-ul.
+            </p>
+        </section>
+        <section id="statistici">
+            <h2>
+                <span>7.</span>Statisticile generate
+            </h2>
+            <p>Pentru realizarea chart-urilor pentru statistici s-a utilizat serviciul Google Charts .</p>
+            <p>Pentru fiecare statistica s-a creat o noua pagina in care am avut un " div " avand ca si id numele chart-ului .Dupa care
+                am adugat o referita carte Api-ul de la Google Charts .Iar in secventa de javascript de trasare a chart-ului , in sectiunea de
+                date necesare am adaugat datele din baza noastra de date, in functie de statistica.
+            </p>
+        </section>
+        <section id="formateMinimale">
+            <h2>
+                <span>8.</span>Formate minimale de export: CSV si PDF
+            </h2>
+            <ol>
+                <li>CSV
+                    <p>Cu ajutorul functiilor din fisierul admin_model , ne setam tipul fisierului pe care dorim sa il cream ("Content-Type: text/csv")
+                        ii setam proprietatea de scriere in fisier ('W') ,deschizand-ul si populandu-l cu date din baza noastra de date, in functie de
+                        tematica statisticii .
+                    </p>
+                </li>
+                <li>PDF
+                    <p>In mometul in care este actionat butonul de exportAsPDF (buton cu id-ul "save-pdf" ) este apelata functia din fisierul de javascript
+                        "statisticaPDF" care in momentul cand s-a apasat butonul se creeaza un obiecte de tipul jsPDF() care retine chart-ul drept o imagine,
+                        pe care ulterior o salveaza in laptopul unde se face exportul ca si chart.pdf.
+                    </p>
+                </li>
+            </ol>
+        </section>
         <footer>
 
             <?php

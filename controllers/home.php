@@ -20,7 +20,6 @@ class Home extends Controller
         define('FEED',URL."public/util/popularitate.xml");
         $xml = simplexml_load_file(FEED);
         $this->view->result = $xml;
-
         $this->view->render('fluxRSS');
     }
 }
