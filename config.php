@@ -8,7 +8,7 @@ define('DB_USER', 'dba');
 define('DB_PASS', 'sql');
 
 //path
-define('URL', 'http://localhost/Impressed/');
+define('URL', 'http://localhost:82/Impressed/');
 
 
 //contants
