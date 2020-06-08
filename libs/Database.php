@@ -15,14 +15,13 @@ class Database extends PDO
 
     public function insert($table_name, $data)
     {
-        $string = "INSERT INTO " . $table_name . " (";
+        $string = "INSERT INTO ".$table_name." (";
         $string .= implode(",", array_keys($data)) . ') VALUES (';
         $string .= "'" . implode("','", array_values($data)) . "')";
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return true;
         else return false;
     }
-
     public function deleteAll($table_name){
         $string = "DELETE FROM " . $table_name;
         $stmt = $this->con->prepare($string);
@@ -87,9 +86,9 @@ class Database extends PDO
     }
 
     public function select1($table_name, $col, $data){
-        $string="SELECT * FROM ".$table_name." WHERE ".$col."='".$data."'";  
+        $string="SELECT * FROM ".$table_name." WHERE ".$col." = ? ";  
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
+        if ($stmt->execute([$data])) return $stmt;
         else return false;
     }
 

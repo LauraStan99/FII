@@ -11,6 +11,8 @@ class Register extends Controller
   {
     $user = new User_model();
     $valid = new Validate();
+    $button = new Butoane_model();
+    $button->createXMLUsers();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $valid->validateLastName($this->view->nume, $this->view->numeErr);
@@ -20,8 +22,6 @@ class Register extends Controller
       $valid->validatePhone($this->view->telefon, $this->view->telefonErr);
       $valid->validatePassword($this->view->parola, $this->view->parolaErr);
     }
-
-
 
     if (isset($_POST["submit"])) {
       $insert_data = array(
@@ -37,6 +37,8 @@ class Register extends Controller
         $this->view->success_message = "Toate campurile campurile trebuie completate conform cerintelor.";
       }
     }
+
     $this->view->render('signIn');
   }
 }
+?>

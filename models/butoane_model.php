@@ -38,9 +38,35 @@
                 $description = $xml->createElement('description', $row['descriere']);
                 $item->appendChild($description);
             }
-            $xml->save("popularitate.xml");
+            $xml->save("public/util/popularitate.xml");
         }
         
+        public function createXMLUsers()
+        {
+            $result = $this->db->selectAll('utilizatori');
+    
+            $xml = new DOMDocument("1.0");
+            $xml->formatOutput = true;
+    
+            $users = $xml->createElement("users");
+            $xml->appendChild($users);
+
+    
+            while ($row = $result->fetch()) {
+    
+                $user = $xml->createElement('user');
+                $users->appendChild($user);
+    
+                $id = $xml->createElement('id', $row['id_utilizator']);
+                $user->appendChild($id);
+    
+                $email = $xml->createElement('email', $row['email']);
+                $user->appendChild($email);
+            }
+            $xml->save("public/util/utilizatori.xml");
+        }
+        
+
         public function getPopularProducts()
         {
          return $this->db->selectOrderByLimit('produse','nr_accesari', 'desc', 10);
