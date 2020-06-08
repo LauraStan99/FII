@@ -213,17 +213,19 @@
                         Acesta poate fi contactat printr-un numar de telefon , adresa de email sau prin completarea unui formular de pe site .
                         Formularul contine datele dupa care utilizatorul poate fi contactat , insotit si de mesajul
                         utilizatorului .</p>
-                    <div class="email1">
-                        <img src="<?php echo URL; ?>public/poze/email1.png" />
-                    </div>
+
+                    <img class="email1" src="<?php echo URL; ?>public/poze/email1.png" />
+
                 </li>
+
                 <li>Odata finalizata o comanda un utilizator primeste un email de confirmare a comenzii
                     <p>Email-ul contine datele comenzii ( date personale si produse achizitionate) </p>
-                    <div class="email2">
-                        <img src="<?php echo URL; ?>public/poze/email2.png" />
-                    </div>
+
+
+                    <img class="email2" src="<?php echo URL; ?>public/poze/email2.png" />
                 </li>
             </ol>
+
             <p>Pentru trimiterea email-ului s-a folosit libraria PHPMailer preluta de pe urmatorul link : <a href="https://github.com/PHPMailer/PHPMailer">https://github.com/PHPMailer/PHPMailer</a></p>
             <p>
                 S-au folosit clasele: Exception, OAuth, PHPMailer, POP3 si SMTP .Au fost importate in index.php si s-a creat o instanta a clasei PHPMailer.

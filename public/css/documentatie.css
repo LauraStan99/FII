@@ -26,6 +26,40 @@ dd ,h2,li{
   text-decoration: none;
   color: black;
 }
-#abstract p {
+#abstract p,
+#server-web p,
+#server-web h3 ,
+#structura-MVC ,
+#login p,
+#flux-RSS p,
+#email p,
+#statistici p
+{
 margin-left: 3vw;
+}
+#abstract .diagrama-aplicatiei{
+    width: 100%;
+}
+
+#structura-MVC .diagrama-MVC ,
+.diagrama-Controller,
+.diagrama-Model{
+    width: 95%; 
+}
+ 
+#email,
+#email ol li  {
+    width: 100%;
+}
+#email ol li .email1{
+    width: 50%;
+}
+#email ol li .email2 {
+    width: 90%;
+}
+
+@media screen and (max-width: 600px) {
+
+#email ol li .email1{
+    width: 80%;
 }
