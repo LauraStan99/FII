@@ -6,7 +6,13 @@ class Checkout extends Controller
     {
         parent::__construct();
     }
-
+/**
+ * utilizatorului ise randeaza pagina de checkout unde ii apare un formular de complatat cu datele de livrare  , afiandui-se si un rezumat 
+ * al propriei comenzi 
+ * Fiecare camp este obligatoriu , in caz de necompletare se trimite catre front mesaj de eroare , 
+ * fiecare valoare preluata din input-uri este validata , iar in caz de bifare a metodei de plata cu cardul ,dupa plasarea comenzii
+ * utilizatorul este redistribuit catre pagina de payment
+ */
     public function index()
     {
         $valid = new Validate();

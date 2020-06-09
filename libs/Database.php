@@ -341,7 +341,6 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
-
     /**
      *selecteaza toate liniile tabelului , ordonate dupa coloana specificata intr-un anumit sens ( asc/desc )
      * unde celecoloana specificata respecta egalitatea cu data oferita printre parametrii functiei
@@ -353,7 +352,6 @@ class Database extends PDO
         if ($stmt->execute([$data1])) return $stmt;
         else return false;
     }
-
     /**
      * selecteaza toate liniile tabelului , ordonate dupa coloana specificata intr-un anumit sens ( asc/desc )
      * unde cele 2 coloanele specificate respecta egalitatile cu datele oferite in parametrii functiei,
@@ -367,7 +365,6 @@ class Database extends PDO
         if ($stmt->execute([$data1, $data2])) return $stmt;
         else return false;
     }
-
     /**
      *  selelecteaza toate liniile permise de limita oferita ca parametru din tabelul specificat , 
      *  ordonate dupa coloana specificata intr-o anumita ordonare ( asc/desc )
@@ -380,7 +377,6 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
-
     /**
      * selelecteaza toate liniile permise de limita oferita ca parametru din tabelul specificat , 
      * ordonate dupa coloana specificata intr-o anumita ordonare ( asc/desc )
@@ -394,7 +390,6 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
-
     /**
      * selecteaza toate liniile tabelului specificat incepand de la pragul de start pana la cel final ,
      * ordonate dupa o anumita coloana ($order),avand o anumita ordonare($filter = asc/desc ) 
@@ -414,12 +409,11 @@ class Database extends PDO
      */
     public function selectSearch6($table_name, $data, $col1, $col2, $col3, $col4, $col5, $col6)
     {
-        $string = "SELECT * FROM  " . $table_name . " WHERE " . $col1 . " LIKE '%" . $data . "%' or " . $col2 . " = '" . $data . "' or " . $col3 . " LIKE '%" . $data . "%' or " . $col4 . " = '" . $data . "' or " . $col5 . " = '" . $data . "' or " . $col6 . " = '" . $data . "'";
+        $string = "SELECT * FROM  " . $table_name . " WHERE " . $col1 . " LIKE '%" . $data . "%' or " . $col2 . " = ? or " . $col3 . " LIKE '%" . $data . "%' or " . $col4 . " = ? or " . $col5 . " = ? or " . $col6 . " = ? ";
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
+        if ($stmt->execute([$data, $data, $data, $data])) return $stmt;
         else return false;
     }
-
     /**
      * selecteaza toate inregistrarile (liniile) din tabela specificata , 
      * unde valorile celor 6 coloane pot indeplini anumite conditii (de a fi egale cu valoarea oferita ca si parametru , 
@@ -428,12 +422,11 @@ class Database extends PDO
      */
     public function selectSearch6Limit($table_name, $data, $col1, $col2, $col3, $col4, $col5, $col6, $start_from, $limit)
     {
-        $string = "SELECT * FROM  " . $table_name . " WHERE " . $col1 . " LIKE '%" . $data . "%' or " . $col2 . " = '" . $data . "' or " . $col3 . " LIKE '%" . $data . "%' or " . $col4 . " = '" . $data . "' or " . $col5 . " = '" . $data . "' or " . $col6 . " = '" . $data . "' LIMIT " . $start_from . "," . $limit;
+        $string = "SELECT * FROM  " . $table_name . " WHERE " . $col1 . " LIKE '%" . $data . "%' or " . $col2 . " = ? or " . $col3 . " LIKE '%" . $data . "%' or " . $col4 . " = ? or " . $col5 . " = ? or " . $col6 . " = ? LIMIT " . $start_from . "," . $limit;
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
+        if ($stmt->execute([$data, $data, $data, $data])) return $stmt;
         else return false;
     }
-
     /**
      *selecteaza o anumita coloana si numarul de aparitii din tabela specificata ca parametru,  grupate dupa coloana
      */
