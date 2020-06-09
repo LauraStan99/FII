@@ -105,6 +105,10 @@ class Validate
     }
   }
 
+  /**
+   * validare numar de telefon
+   * numerele de telefon trebuie sa contina doar cifre
+   */
   function validatePhone(&$telefon, &$telefonErr)
   {
     if (empty($_POST["telefon"])) {
@@ -119,6 +123,10 @@ class Validate
     }
   }
 
+  /**
+   * validare parola
+   * parola trebuie sa contina minim una din: numar, litera si caracter special
+   */
   function validatePassword(&$parola, &$parolaErr)
   {
     if (empty($_POST["parola"])) {
@@ -134,6 +142,10 @@ class Validate
     }
   }
 
+  /**
+   * validate metoda plata
+   * metoda este obligatoriu sa fie aleasa
+   */
   function validatePayment(&$plata, &$plataErr)
   {
     if (empty($_POST["plata"])) {
@@ -143,6 +155,10 @@ class Validate
     }
   }
 
+  /**
+   * validare metoda de livrare
+   * metoda este obligatoriu sa fie aleasa
+   */
   function validateDelivery(&$livrare, &$livrareErr)
   {
     if (empty($_POST["livrare"])) {
@@ -152,6 +168,10 @@ class Validate
     }
   }
 
+  /**
+   * validare mesaj contact
+   * campul de mesaj este obligatoriu sa fie completat
+   */
   function validateMessage(&$mesaj, &$mesajErr)
   {
     if (empty($_POST["mesaj"])) {
@@ -161,6 +181,10 @@ class Validate
     }
   }
 
+  /**
+   * validare nume de familie in formular
+   * numele trebuie sa contina doar litere sau si spatii
+   */
   function changeLastName(&$nume, &$numeErr)
   {
     if (!empty($_POST["nume"])) {
@@ -172,6 +196,10 @@ class Validate
     }
   }
 
+  /**
+   * validare prenume in formular
+   * numele trebuie sa contina doar litere sau si spatii
+   */
   function changeFirstName(&$prenume, &$prenumeErr)
   {
     if (!empty($_POST["prenume"])) {
@@ -183,6 +211,10 @@ class Validate
     }
   }
 
+  /**
+   * validare email in formular
+   * email-ul introdus trebuie sa aiba formatul unui e-mail
+   */
   function changeEmail(&$email, &$emailErr)
   {
     if (!empty($_POST["email"])) {
@@ -193,6 +225,9 @@ class Validate
     }
   }
 
+  /**
+   * validare adresa in formular
+   */
   function changeAddress(&$adresa, &$adresaErr)
   {
     if (!empty($_POST["adresa"])) {
@@ -200,6 +235,10 @@ class Validate
     }
   }
 
+  /**
+   * validare numar de telefon in formular
+   * numarul de telefon trebuie sa contina exclusiv cifre
+   */
   function changePhone(&$telefon, &$telefonErr)
   {
     if (!empty($_POST["telefon"])) {
@@ -211,6 +250,10 @@ class Validate
     }
   }
 
+  /**
+   * validare parola in formular
+   * parola trebuie sa contina minim una din: numar, litera si caracter special
+   */
   function changePassword(&$parola, &$parolaErr)
   {
     if (!empty($_POST["parola"])) {
@@ -220,6 +263,7 @@ class Validate
       }
     }
   }
+
   function test_input($data)
   {
     $data = trim($data);
@@ -228,6 +272,10 @@ class Validate
     return $data;
   }
 
+  /**
+   * validare nume card
+   * numele trebuie sa contina exclusiv litere, eventual spatii
+   */
   function validateNameCard(&$numeCard, &$numeCardErr)
   {
     if (empty($_POST["nume-card"])) {
@@ -240,6 +288,11 @@ class Validate
       }
     }
   }
+
+  /**
+   * validare numar card in formular
+   * numarul cardului trebuie sa contina 16 cifre
+   */
   function validateNumarCard(&$numarCard, &$numarCardErr)
   {
     if (empty($_POST["numar-card"])) {
@@ -252,6 +305,11 @@ class Validate
       }
     }
   }
+
+  /**
+   * validare luna expirare card in formular
+   * luna de expirare trebuie sa fie valida, adica in intervalul 01-12
+   */
   function validateMonthCard(&$lunaCard, &$lunaCardErr)
   {
     if (empty($_POST["luna-card"])) {
@@ -268,6 +326,11 @@ class Validate
       }
     }
   }
+
+  /**
+   * validare an expirare card in formular
+   * anul de expirare a cardulu trebuie sa fie un an valid, format din 4 cifre si mai mare decat 2019
+   */
   function validateYearCard(&$anCard, &$anCardErr)
   {
     if (empty($_POST["an-card"])) {
@@ -276,7 +339,7 @@ class Validate
 
       $anCard = str_replace(' ', '', $_POST["an-card"]);
       if (preg_match("/^[0-9]*$/", $anCard)) {
-        if (checkdate('01', '1', $anCard) != 1 || strlen($anCard) != 4 || $anCard < 2020) {
+        if (checkdate('01', '1', $anCard) != 1 || strlen($anCard) != 4 || $anCard < 2019) {
           $anCardErr = "Anul este invalid";
         }
       } else {
@@ -284,6 +347,11 @@ class Validate
       }
     }
   }
+
+  /**
+   * validare cvv card in formular
+   * cvv-ul sa fie format dintr-un sir de numere din exact 3 cifre
+   */
   function validateCvvCard(&$cvvCard, &$cvvCardErr)
   {
     if (empty($_POST["CVV-card"])) {
@@ -297,6 +365,10 @@ class Validate
     }
   }
 
+  /**
+   * validare pret formular
+   * pretul trebuie sa contina doar cifre
+   */
   function validatePrice(&$price, &$priceErr)
   {
     if (empty($_POST["pret"])) {
@@ -308,6 +380,11 @@ class Validate
       }
     }
   }
+
+  /**
+   * validare generala pentru un input
+   * input-ul nu trebuie sa ramana necompletat
+   */
   function validateEmptyInput($nameInput, &$inputErr, &$inputValue)
   {
     if (empty($nameInput)) {
