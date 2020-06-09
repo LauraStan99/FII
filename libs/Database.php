@@ -144,6 +144,22 @@ class Database extends PDO
         else return false;
     }
 
+    /** SELECT **/
+
+    public function selectAll($table_name){
+        $string="SELECT * FROM ".$table_name;  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
+    public function selectDate(){
+        $string="SELECT sysdate()";  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
     /**
      * selectez toate liniile dintr-o tabela data ca parametru
      * care indeplinesc urmatoarea conditia
@@ -182,8 +198,66 @@ class Database extends PDO
         else return false;
     }
 
+    /**
+     * selectez toate liniile dintr-o tabela data ca parametru
+     * care indeplinesc urmatoarea conditia
+     * cele 6 coloane date ca parametru sa aiba valoarile date ca parametru
+     */
+    public function select6($table_name,$col1,$data1,$col2,$data2,$col3,$data3,$col4,$data4,$col5,$data5,$col6,$data6)
+    {
+        $string="SELECT * FROM  ".$table_name." WHERE ".$col1." = ".$data1." and ".$col2." = ".$data2." and ".$col3." = ".$data3." and ".$col4." = ".$data4." and ".$col5." = ".$data5." and ".$col6." between ".$data6;
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
+    public function selectJoin($table_name1, $table_name2, $col1, $col2, $col3, $data){
+        $string = "SELECT * FROM " . $table_name1 . " JOIN ".$table_name2." ON ".$table_name1.".".$col1."=".$table_name2.".".$col2." WHERE ".$table_name1.".".$col3."='".$data."'";
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
     public function selectJoinLimit($table_name1, $table_name2, $col1, $col2, $col3, $data){
         $string = "SELECT * FROM " . $table_name1 . " JOIN ".$table_name2." ON ".$table_name1.".".$col1."=".$table_name2.".".$col2." WHERE ".$table_name1.".".$col3."='".$data."' LIMIT 5";
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
+
+    public function selectJoin2($table_name1, $table_name2, $col1, $col2, $col3, $data1, $col4, $data2){
+        $string = "SELECT * FROM " . $table_name1 . " JOIN ".$table_name2." ON ".$table_name1.".".$col1."=".$table_name2.".".$col2." WHERE ".$table_name1.".".$col3."='".$data1."' and ".$table_name1.".".$col4."='".$data2."'";
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
+        public function selectJoin7($table_name1, $table_name2, $col, $col1, $data1, $col2, $data2, $col3, $data3, $col4, $data4, $col5, $data5,$col6,$data6,$col7,$data7) {
+      
+        $string="SELECT * FROM " . $table_name1 . " JOIN ". $table_name2 . " ON " .$table_name1.".".$col. " = " .$table_name2.".".$col." where ". $col1. " = ". $data1. " and ".$col2. " = ". $data2. " and ".$col3. " = ". $data3. " and ".$col4. " = ". $data4. " and ".$col5. " = ". $data5." and ".$col6. " = ". $data6." and ".$col7." between ".$data7; 
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
+    public function selectJoinGroupByWhere($table_name1,$table_name2,$col,$col1,$col2,$data2)
+    {
+      $string = "SELECT ".$col.", count(*) as number FROM ". $table_name1." JOIN ".$table_name2." ON ".$table_name1.".".$col1." = ".$table_name2.".".$col1." WHERE ".$col2."='".$data2."' GROUP BY ".$col;
+      $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
+    public function selectCountSimple($table_name){
+        $string="SELECT count(*) FROM ".$table_name;  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
+    public function selectCount($table_name, $col, $data){
+        $string="SELECT count(*) FROM ".$table_name." WHERE ".$col."='".$data."'";  
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;
@@ -197,18 +271,24 @@ class Database extends PDO
         else return false;
     }
 
-    public function select6($table_name,$col1,$data1,$col2,$data2,$col3,$data3,$col4,$data4,$col5,$data5,$col6,$data6)
-    {
-        $string="SELECT * FROM  ".$table_name." WHERE ".$col1." = ".$data1." and ".$col2." = ".$data2." and ".$col3." = ".$data3." and ".$col4." = ".$data4." and ".$col5." = ".$data5." and ".$col6." between ".$data6;
+    public function selectLimit($table_name, $start, $limit){
+        $string="SELECT * FROM ".$table_name. " LIMIT ".$start.",".$limit;  
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;
-   
     }
 
-    public function selectJoin7($table_name1, $table_name2, $col, $col1, $data1, $col2, $data2, $col3, $data3, $col4, $data4, $col5, $data5,$col6,$data6,$col7,$data7) {
+    public function selectOrderBy($table_name, $order, $filter){
+        $string="SELECT * FROM ".$table_name." order by ".$order." ".$filter;  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute()) return $stmt;
+        else return false;
+    }
+
+
+    public function selectOrderBy1($table_name,$col1,$data1,$order,$filter) {
       
-        $string="SELECT * FROM " . $table_name1 . " JOIN ". $table_name2 . " ON " .$table_name1.".".$col. " = " .$table_name2.".".$col." where ". $col1. " = ". $data1. " and ".$col2. " = ". $data2. " and ".$col3. " = ". $data3. " and ".$col4. " = ". $data4. " and ".$col5. " = ". $data5." and ".$col6. " = ". $data6." and ".$col7." between ".$data7; 
+        $string="SELECT * FROM ".$table_name." WHERE ".$col1."='".$data1."' order by ".$order." ".$filter;  
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;
@@ -221,13 +301,7 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
-    public function selectOrderBy1Limit($table_name,$col1, $col2, $col3,$filter,$limit) {
-      
-        $string="SELECT ".$col1.",".$col2." FROM ".$table_name. " order by ".$col3." ".$filter." limit ".$limit;  
-        $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
-        else return false;
-    }
+
     public function selectOrderByLimit($table_name,$col,$filter,$limit) {
       
         $string="SELECT * FROM ".$table_name. " order by ".$col." ".$filter." limit ".$limit;  
@@ -236,27 +310,21 @@ class Database extends PDO
         else return false;
     }
 
-    public function selectLimit($table_name, $start, $limit){
-        $string="SELECT * FROM ".$table_name. " LIMIT ".$start.",".$limit;  
+    public function selectOrderBy1Limit($table_name,$col1, $col2, $col3,$filter,$limit) {
+      
+        $string="SELECT ".$col1.",".$col2." FROM ".$table_name. " order by ".$col3." ".$filter." limit ".$limit;  
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;
     }
 
-
-    public function selectCount($table_name, $col, $data){
-        $string="SELECT count(*) FROM ".$table_name." WHERE ".$col."='".$data."'";  
+    public function selectOrderByLimit2($table_name, $order, $filter, $start_from, $limit){
+        $string="SELECT * FROM ".$table_name." order by ".$order." ".$filter." LIMIT ".$start_from.",".$limit;  
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;
     }
 
-    public function selectCountSimple($table_name){
-        $string="SELECT count(*) FROM ".$table_name;  
-        $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
-        else return false;
-    }
 
     public function selectSearch6($table_name, $data, $col1, $col2, $col3, $col4, $col5, $col6){
         $string="SELECT * FROM  ".$table_name." WHERE ".$col1." LIKE '%".$data."%' or ".$col2." = '".$data."' or ".$col3." LIKE '%".$data."%' or ".$col4." = '".$data."' or ".$col5." = '".$data."' or ".$col6." = '".$data."'";
@@ -279,14 +347,7 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
-    public function selectJoinGroupByWhere($table_name1,$table_name2,$col,$col1,$col2,$data2)
-    {
-      $string = "SELECT ".$col.", count(*) as number FROM ". $table_name1." JOIN ".$table_name2." ON ".$table_name1.".".$col1." = ".$table_name2.".".$col1." WHERE ".$col2."='".$data2."' GROUP BY ".$col;
-      $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
-        else return false;
-
-    }
+    
     public function selectByArray($table_name, $col, $data){
         $string = "SELECT * FROM " . $table_name . " WHERE ".$col." IN";
         $string .= "(" . implode(",", array_values($data)) . ")";
@@ -295,53 +356,4 @@ class Database extends PDO
         else return false;
     }
 
-    public function selectJoin($table_name1, $table_name2, $col1, $col2, $col3, $data){
-        $string = "SELECT * FROM " . $table_name1 . " JOIN ".$table_name2." ON ".$table_name1.".".$col1."=".$table_name2.".".$col2." WHERE ".$table_name1.".".$col3."='".$data."'";
-        $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
-        else return false;
-    }
-
-    public function selectJoin2($table_name1, $table_name2, $col1, $col2, $col3, $data1, $col4, $data2){
-        $string = "SELECT * FROM " . $table_name1 . " JOIN ".$table_name2." ON ".$table_name1.".".$col1."=".$table_name2.".".$col2." WHERE ".$table_name1.".".$col3."='".$data1."' and ".$table_name1.".".$col4."='".$data2."'";
-        $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
-        else return false;
-    }
-
-    public function selectOrderBy($table_name, $order, $filter){
-        $string="SELECT * FROM ".$table_name." order by ".$order." ".$filter;  
-        $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
-        else return false;
-    }
-
-    public function selectOrderByLimit2($table_name, $order, $filter, $start_from, $limit){
-        $string="SELECT * FROM ".$table_name." order by ".$order." ".$filter." LIMIT ".$start_from.",".$limit;  
-        $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
-        else return false;
-    }
-
-    public function selectOrderBy1($table_name,$col1,$data1,$order,$filter) {
-      
-        $string="SELECT * FROM ".$table_name." WHERE ".$col1."='".$data1."' order by ".$order." ".$filter;  
-        $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
-        else return false;
-    }
-
-    public function selectDate(){
-        $string="SELECT sysdate()";  
-        $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
-        else return false;
-    }
-
-    public function selectAll($table_name){
-        $string="SELECT * FROM ".$table_name;  
-        $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
-        else return false;
-    }
 }
