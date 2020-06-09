@@ -7,6 +7,14 @@
             parent::__construct();
         }
 
+        /**
+         * creez un fisier xml cu datele preluate din tabela produse
+         * respectiv preiau cele mai populare 10 produse in functie de nr accesarilor
+         * tagg urile din xml vor fi channel
+         * care va contine un titlu, link si o descriere
+         * iar apoi mai multe item-uri care contin si ele un titlu, link si descriere
+         * xml ul este salvat in public/util
+         */
         public function createXML()
         {
             $result = $this->db->selectOrderByLimit('produse','nr_accesari', 'desc', 10);
@@ -41,6 +49,15 @@
             $xml->save("public/util/popularitate.xml");
         }
         
+
+        /**
+         * creez un fisier xml cu toti utilizatorii aplicatiei
+         * acestia vor fi preluati din baza de date Impressed din tabela utilizatori
+         * tagg-ul principal va fi users
+         * care va contine mai multi user
+         * cu un id si email
+         * xml ul este salvat in public/util
+         */
         public function createXMLUsers()
         {
             $result = $this->db->selectAll('utilizatori');
@@ -100,6 +117,13 @@
             }
         }
 
+        /**
+         * creez un array cu datele despre produsul cu id-ul si marimea date ca parametru
+         * pe care le inserez in tabela wishlist
+         * insa, inainte de acest lucru verific daca acest produs cu aceasta marime nu exista deja in wishlist
+         * daca exista, returnez false
+         * altfel, inserez in tabela wishlist
+         */
         public function addToWishlist($id_product,$size){
             if (!isset($_SESSION)){
                 session_start();
@@ -114,6 +138,14 @@
             else return $this->db->insert('wishlist', $insert_data);
         }
 
+        /**
+         * preiau toate datele din tabela produse pentru produsul cu id-ul dat ca parametru
+         * creez un array cu datele acestui produs
+         * in functie de marimea data ca parametru, caut cate produse cu acea marimea exista
+         * daca cantiatea este 0, returnez false
+         * altfel, caut sa vad daca produsul nu este deja in cos pt utilizatorul logat,
+         * daca nu exista, il adaug, altfel ii cresc cantitatea
+         */
         public function addToCart($id_product,$size){
             if (!isset($_SESSION)){
                 session_start();
@@ -142,10 +174,16 @@
             
         }
 
+        /**
+         * selectez din tabela produse toate datele pentru produsul cu id-ul dat ca parametru
+         */
         public function selectProductDetails($id_product){
             return $this->db->select1('produse', 'id_produs', $id_product);
         }
 
+        /**
+         * sterg produsul din cos cu id-ul si marimea date ca parametru
+         */
         public function deleteFromCart($id_product,$size){
             if (!isset($_SESSION)){
                 session_start();
@@ -154,6 +192,9 @@
             return $this->db->delete3('cos', 'id_utilizator', $id, 'id_produs', $id_product,'marime', $size);
         }
 
+        /**
+         * sterg produsul din wihslist cu id-ul si marimea date ca parametru
+         */
         public function deleteFromWishlist($id_product,$size){
             if (!isset($_SESSION)){
                 session_start();
@@ -162,6 +203,10 @@
             return $this->db->delete3('wishlist', 'id_utilizator', $id, 'id_produs', $id_product,'marime', $size);
         }
 
+        /**
+         * calculez nr ul de produse din cos pentru utilizatorul curent
+         * returnez acest numar
+         */
         public function countProductsCart(){
             if (!isset($_SESSION)){
                 session_start();
@@ -172,6 +217,10 @@
             return $row['count(*)'];
         }
 
+        /**
+         * calculez nr-ul de produse din wishlist pentru utilizatorul curent
+         * returnez acest numar
+         */
         public function countWishlistProducts(){
             if (!isset($_SESSION)){
                 session_start();
@@ -182,6 +231,10 @@
             return $row['count(*)'];
         }
 
+        /**
+         * calculez din cos numarul de produse cu id-ul si marimea date ca parametru
+         * returnez acest numar
+         */
         public function selectProductCount($id_product, $size){
             if (!isset($_SESSION)){
                 session_start();
@@ -192,6 +245,9 @@
             return $row['count(*)'];
         }
 
+        /**
+         * cresc cantitatea pentru un produs din cos
+         */
         public function addQuantity($id_product, $size){
             if (!isset($_SESSION)){
                 session_start();
@@ -211,6 +267,9 @@
             else return false;
         }
 
+        /**
+         * scad cantitatea cu o unitate pentru un produs din cos
+         */
         public function subtractQuantity($id_product, $size){
             if (!isset($_SESSION)){
                 session_start();
@@ -223,6 +282,9 @@
             return $this->db->update3('cos', 'cantitate', $newQuantity, 'pretTotal', $newPrice,'id_utilizator', $id, 'id_produs', $id_product, 'marime', $size);
         }
 
+        /**
+         * returnez cantitatea curenta pentru un produs aflat in cos
+         */
         public function getQuantity($id_product, $size){
             if (!isset($_SESSION)){
                 session_start();
@@ -233,6 +295,20 @@
             return $row['cantitate'];
         }
         
+        /**
+         * trimitere email de confirmare in urma efectuarii unei comenzi
+         * se preiau datele necesare pentru un astfel de email
+         * adica datele de contact si de trimitere a coletului
+         * si datele despre produsele achizitionate de catre utilizator
+         * folosesc smtp gmail utilizand adresa de utilizare impressed.shop2020@gmail.com
+         * setez ca adresa de la care sa fie mail ul sa fie: impressed.shop2020@gmail.com
+         * adaug catre cine se va trimite mail-ul adica e-mail-ul utilizatorului
+         * body ul mail ului va contine doua tabele informative
+         * cu datele utilizatorului
+         * si produsele achizitionate
+         * plus plata ce va trebuie sau a fost deja achitata
+         * alaturi de taxele de transport
+         */
         public function sendEmailConfirmation($orderId){
             $result = $this->db->select1('comanda', 'id_comanda', $orderId);
             $result1 = $this->db->selectJoin('produse_comanda', 'produse','id_produs','id_produs','id_comanda', $orderId);
