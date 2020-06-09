@@ -9,6 +9,16 @@ class Cart extends Controller
         parent::__construct();
     }
 
+    /**
+     * randez pagina cosului de cumparaturi
+     * daca se apasa butonul de stergere, sterg produsul respectiv din cos
+     * daca se apasa pe '+' cantitatea produsului respectiv va creste, respectiv
+     * daca se apasa pe '-' cantitatea produsului va scadea cu o unitate
+     * daca cantitatea produsului e 1 si utilizatorul incearca sa o stearga, produsul va fi sters din cos
+     * in functie de nr-ul de produse din cos ale utilizatorului logat, randez o anumita pagina
+     * daca cosul este gol, se randeaza pagina cartEmpty
+     * altfel, se randeaza pagina cartFull
+     */
     public function index()
     {
         $cart = new Cart_model();
@@ -56,6 +66,12 @@ class Cart extends Controller
         }
     }
 
+    /**
+     * functie care este accesata in momentul in care utilizatorul acceaseaza
+     * butonul plaseaza comanda
+     * in acest moment, toate produsele din cos sunt adaugate in tabela produse_comanda
+     * stabilind astfel si id-ul posibilei comenzi respective
+     */
     public function addCommand(){
 
         $cart = new Cart_model();
@@ -63,5 +79,4 @@ class Cart extends Controller
         $id_comanda = $cart->selectIdComanda();
         header('location: ' . URL . 'checkout?id_comanda='.$id_comanda);
     }
-    
 }

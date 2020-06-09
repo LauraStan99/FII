@@ -15,13 +15,13 @@ class Account extends Controller
     }
 
 
+    /**
+     * daca butonul "Schimba" este apasat,
+     * validez campul/campurile pe care utilizatorul vrea sa le schimbe
+     * daca datele noi introduse sunt corecte, sunt actualizate in baza de date
+     */
     public function datePersonale()
     {
-        /**
-         * daca butonul "Schimba" este apasat,
-         * validez campul/campurile pe care utilizatorul vrea sa le schimbe
-         * daca datele noi introduse sunt corecte, sunt actualizate in baza de date
-         */
         $validate = new Validate();
         $user = new User_model();
 
@@ -48,21 +48,33 @@ class Account extends Controller
         $this->view->render('datePersonaleAccount');
     }
 
+    /**
+     * selectez toate comenzile utilizatorului logat pentru a i le afisa
+     */
     public function istoricComenzi()
     {
-        $user=new User_model();
-        $this->view->result=$user->selectComenziUtilizator();
+        $user = new User_model();
+        $this->view->result = $user->selectComenziUtilizator();
         $this->view->render('istoricComenzi');
     }
 
-    public function detaliiComanda($order_id){
-        $user=new User_model();
+    /**
+     * selectez detaliile despre produsele achizitionate in comanda
+     * cu id-ul dat ca parametru
+     */
+    public function detaliiComanda($order_id)
+    {
+        $user = new User_model();
         $this->view->title = $order_id;
         $this->view->totalPrice = $user->selectTotalPrice($order_id);
         $this->view->result = $user->selectDetaliiComanda($order_id);
         $this->view->render('detaliiComanda');
     }
 
+    /**
+     * distrug sesiunea creata pentru utilizatorul curent
+     * astfel, delogand user-ul
+     */
     public function logout()
     {
         Session::destroy();

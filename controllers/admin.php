@@ -12,17 +12,21 @@ class Admin extends Controller
         $this->view->render('adminAccount');
     }
 
+    /**
+     * listez toate produsele din baza de date a aplicatiei in functie de pagina pe care se afla adminul
+     * daca nu este setata nicio pagina in url, este considerat ca este prima pagina, astfel se ia de pagina din url
+     * selectez produsele in functie de limita nr-ului de produse pe o pagina si pagina pe ca se afla adminul
+     */
     public function listareProduse()
     {
-        $limit = 10;     
-        if (isset($_GET["page"])) {  
-        $this->view->page= $_GET["page"];  
-        }  
-        else {  
-        $this->view->page=1;  
+        $limit = 10;
+        if (isset($_GET["page"])) {
+            $this->view->page = $_GET["page"];
+        } else {
+            $this->view->page = 1;
         };
-  
-        $start_from = ($this->view->page-1) * $limit;
+
+        $start_from = ($this->view->page - 1) * $limit;
         $product = new admin_model();
         $this->view->result = $product->selectAllProducts($start_from, $limit);
         $this->view->total_records = $product->selectCountProducts();
@@ -30,6 +34,9 @@ class Admin extends Controller
         $this->view->render('seeProducts');
     }
 
+    /**
+     * sterg un produs din baza de date Impressed in functie de id-ul dat ca parametru
+     */
     public function stergeProdus($id_produs)
     {
         $product = new admin_model();
@@ -37,18 +44,22 @@ class Admin extends Controller
         header('location: ' . URL . 'admin/listareProduse');
     }
 
+    /**
+     * listez toti utilizatorii din baza de date a aplicatiei in functie de pagina pe care se afla adminul
+     * daca nu este setata nicio pagina in url, este considerat ca este prima pagina, astfel se ia de pagina din url
+     * selectez utilizatorii in functie de limita nr-ului de produse pe o pagina si pagina pe ca se afla adminul
+     */
     public function listareUtilizatori()
     {
         $limit = 10;
 
-        if (isset($_GET["page"])) {  
-        $this->view->page= $_GET["page"];  
-        }  
-        else {  
-        $this->view->page=1;  
+        if (isset($_GET["page"])) {
+            $this->view->page = $_GET["page"];
+        } else {
+            $this->view->page = 1;
         };
 
-        $start_from = ($this->view->page-1) * $limit;
+        $start_from = ($this->view->page - 1) * $limit;
 
         $user = new admin_model();
         $this->view->result = $user->selectAllUsers($start_from, $limit);
@@ -57,6 +68,9 @@ class Admin extends Controller
         $this->view->render('seeUsers');
     }
 
+    /**
+     * sterg un utilizator in functie de id-ul dat ca parametru
+     */
     public function stergeUtilizator($id_utilizator)
     {
         $product = new admin_model();
@@ -64,11 +78,25 @@ class Admin extends Controller
         header('location: ' . URL . 'admin/listareUtilizatori');
     }
 
+    /**
+     * distrug sesiunea asociata utilizatorului curent
+     * redirectionez adminul delogat catre pagina de login
+     */
     public function logout()
     {
         Session::destroy();
         header('location: ' . URL . 'login');
     }
+
+    /**
+     * functie care adauga un produs de imbracaminte in baza de date
+     * daca este apasat butonul de a submit, adica de 'Adauga produs',
+     * validez toate input-urile ce trebuiau completate pentru adaugarea noului produs
+     * nume, descriere, culoare, material, gen, categorie, tip
+     * daca toate campurile au fost completate corect si respecta validarile,
+     * toate datele sunt inserate in baza de date
+     * iar adminul va primi si un mesaj de confirmare
+     */
     public function adaugaProdus()
     {
         $validate = new Validate();
@@ -86,7 +114,6 @@ class Admin extends Controller
             $validate->validateEmptyInput($_POST['tip'], $this->view->tipErr, $this->tip);
         }
 
-
         if (isset($_POST["submit"])) {
             if ($this->view->numeErr == "" && $this->view->descriereErr == "" && $this->view->pretErr == "" && $this->view->materialErr == "" && $this->view->culoareErr == "" && $this->view->genErr == "" && $this->view->categorieErr == "" && $this->view->tipErr == "") {
                 $imagine = substr_replace($_POST["imagine"], "", -4);
@@ -103,6 +130,12 @@ class Admin extends Controller
         }
         $this->view->render('addProduct');
     }
+
+    /**
+     * listez pagina de stergereProdusDupaId
+     * daca butonul cauta a fost apasat, si id-ul unui produs a fost introdus
+     * se afiseaza toate datele despre acel produs
+     */
     public function stergereProdusDupaId()
     {
         $admin = new admin_model();
@@ -114,12 +147,27 @@ class Admin extends Controller
 
         $this->view->render('stergereProdus');
     }
+
+    /**
+     * sterg un produs dupa id
+     */
     public function stergeProdusIntrodus($id_produs)
     {
         $product = new admin_model();
         $product->deleteProduct($id_produs);
         header('location: ' . URL . 'admin/stergereProdus');
     }
+
+    /**
+     * daca butonul de cauta a fost apasat,
+     * se face un select in tabela de produse
+     * si se afiseaza toate datele despre produsul cu id-ul cautat
+     * exista cate un input pentru fiecare detaliu despre un produs
+     * nume, descriere, culoare, material, gen, categorie, tip
+     * adminul poate actuala oricare dintre acestea
+     * noile date din input-urile completate sunt updata-te in baza de date Impressed
+     * este randata pagina de modificare a unui produs
+     */
     public function modificaProdus()
     {
         $admin = new admin_model();
@@ -164,6 +212,11 @@ class Admin extends Controller
         }
         $this->view->render('modifyProduct');
     }
+
+    /**
+     * se randeaza pagina de statisticaComenzi
+     * se afiseaza statistica comenzilor efectuate pe zile incepand cu jumatatea lunii mai
+     */
     public function statisticaComenzi()
     {
         $admin = new admin_model();
@@ -171,12 +224,21 @@ class Admin extends Controller
         $this->view->render('statisticaComenzi');
     }
 
+    /**
+     * se randeaza pagina de statisticaComenzi
+     * se afiseaza statistica celor mai achizitionate subcategorii de produse de femei
+     */
     public function statisticaProduseFemei()
     {
         $admin = new admin_model();
         $this->view->result = $admin->selectStatisticaProduseFemei();
         $this->view->render('statisticaProduseFemei');
     }
+
+    /**
+     * se randeaza pagina de statisticaComenzi
+     * se afiseaza statistica celor mai populare produse din populatie 
+     */
     public function statisticaCeleMaiPopulareProduse()
     {
         $admin = new admin_model();
@@ -184,6 +246,10 @@ class Admin extends Controller
         $this->view->render('statisticaCeleMaiPopulareProduse');
     }
 
+    /**
+     * se randeaza pagina de statisticaComenzi
+     * se afiseaza statistica comenzilor in functie de metoda de plata cash/card
+     */
     public function statisticaPlataComenzi()
     {
 
@@ -192,35 +258,58 @@ class Admin extends Controller
         $this->view->render('statisticaPlataComenzi');
     }
 
+    /**
+     * se randeaza pagina de statisticaComenzi
+     * se afiseaza statistica comenzilor efectuate in Europa
+     */
     public function statisticaComenziEuropa()
     {
         $admin = new admin_model();
         $this->view->result = $admin->selectStatisticaComenziEuropa();
         $this->view->render('statisticaComenziEuropa');
     }
+
+    /**
+     * se creeaza un fisier csv pentru statistica comenzilor ce va putea fi exportat
+     */
     public function createCsvStatisticaComenzi()
     {
         $admin = new admin_model();
         $admin->createCsvStatisticaComenzi();
     }
 
+     /**
+     * se creeaza un fisier csv pentru statistica comenzilor din europa ce va putea fi exportat
+     */
     public function createCsvStatisticaComenziEuropa()
     {
         $admin = new admin_model();
         $admin->createCsvStatisticaComenziEuropa();
     }
 
-    public function createCsvStatisticaPlataComenzi(){
+     /**
+     * se creeaza un fisier csv pentru statistica comenzilor in functie de metoda de plata ce va putea fi exportat
+     */
+    public function createCsvStatisticaPlataComenzi()
+    {
         $admin = new admin_model();
         $admin->createCsvStatisticaPlataComenzi();
     }
 
-    public function createCsvStatisticaProduseFemei(){
+     /**
+     * se creeaza un fisier csv pentru statistica celor mai achizitionate subcategorii de produse de femei ce va putea fi exportat
+     */
+    public function createCsvStatisticaProduseFemei()
+    {
         $admin = new admin_model();
         $admin->createCsvStatisticaProduseFemei();
     }
 
-    public function createCsvStatisticaCeleMaiPopulareProduse(){
+     /**
+     * se creeaza un fisier csv pentru statistica celor mai populare produse din aplicatie ce va putea fi exportat
+     */
+    public function createCsvStatisticaCeleMaiPopulareProduse()
+    {
         $admin = new admin_model();
         $admin->createCsvStatisticaCeleMaiPopulareProduse();
     }

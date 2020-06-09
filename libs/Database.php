@@ -330,9 +330,10 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
-    /*
- *selecteaza toate liniile tabelului , ordonate dupa coloana specificata intr-un anumit sens ( asc/desc )
-*/
+    
+    /**
+     * selecteaza toate liniile tabelului , ordonate dupa coloana specificata intr-un anumit sens ( asc/desc )
+     */
     public function selectOrderBy($table_name, $order, $filter)
     {
         $string = "SELECT * FROM " . $table_name . " order by " . $order . " " . $filter;
@@ -346,10 +347,9 @@ class Database extends PDO
      */
     public function selectOrderBy1($table_name, $col1, $data1, $order, $filter)
     {
-
-        $string = "SELECT * FROM " . $table_name . " WHERE " . $col1 . "='" . $data1 . "' order by " . $order . " " . $filter;
+        $string = "SELECT * FROM " . $table_name . " WHERE " . $col1 . "= ? order by " . $order . " " . $filter;
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
+        if ($stmt->execute([$data1])) return $stmt;
         else return false;
     }
     /**
@@ -360,9 +360,9 @@ class Database extends PDO
     public function selectOrderBy2($table_name, $col1, $data1, $col2, $data2, $order, $filter)
     {
 
-        $string = "SELECT * FROM " . $table_name . " WHERE " . $col1 . "='" . $data1 . "' and " . $col2 . "='" . $data2 . "' order by " . $order . " " . $filter;
+        $string = "SELECT * FROM " . $table_name . " WHERE " . $col1 . "= ? and " . $col2 . "= ? order by " . $order . " " . $filter;
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
+        if ($stmt->execute([$data1, $data2])) return $stmt;
         else return false;
     }
     /**
@@ -437,6 +437,7 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
+
     /**
      *selecteaza toate liniile din tabela data ca si parametru ,
      *unde valoarea coloanei mentionate se incadreaza in valorile array-ului dat ca si parametru
