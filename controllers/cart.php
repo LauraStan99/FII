@@ -9,6 +9,9 @@ class Cart extends Controller
         parent::__construct();
     }
 
+    /**
+     * 
+     */
     public function index()
     {
         $cart = new Cart_model();
