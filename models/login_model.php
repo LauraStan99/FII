@@ -7,6 +7,13 @@ class Login_Model extends Model
         parent::__construct();
     }
 
+    /**
+     * functia run este apelata la pagina de logare unde utilizatorul se conecteaza cu email-ul si parola
+     * dupa realizarea verificarii parolei (codificata)in baza de date , se face un select cu toate datele utilizatorului conectat
+     * si se creeaza o noua sesiune pentru utilizator , in sesiune sunt retinute datele esentiale ale unui utilizator , care ne vor fi 
+     * de folos pe parcursul proiectului 
+     * In cazul in care utilizatorul s-a logat cu succes el este redirectionat catre pagina principala, iar in caz de esec se adauga in URL un mesaj de eroare
+     */
     public function run()
     {
         $parola = Hash::create('sha256', $_POST['parola'], HASH_PASSWORD_KEY);
