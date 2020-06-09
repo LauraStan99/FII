@@ -38,6 +38,11 @@ class Checkout extends Controller
                 }
             }
         }
+        if(isset($_POST['renunta'])){
+            $checkout = new Checkout_model();
+            $checkout->deleteCommand($_GET['id_comanda']);
+            header('location: ' . URL . 'home');
+        }
         $this->view->result = $checkout->selectCartProducts($_GET['id_comanda']);
         $this->view->subtotal = $checkout->selectSubtotal($_GET['id_comanda']);
         if($this->view->subtotal > 350) 
@@ -53,11 +58,4 @@ class Checkout extends Controller
         $this->view->nrProd = $checkout->selectNrProd($_GET['id_comanda']);
         $this->view->render('checkout');
     }
-
-    public function deleteCommand($id_command){
-        $checkout = new Checkout_model();
-        $checkout->deleteCommand($id_command);
-        header('location: ' . URL . 'home');
-    }
-
 }

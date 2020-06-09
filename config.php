@@ -8,7 +8,7 @@ define('DB_USER', 'dba');
 define('DB_PASS', 'sql');
 
 //path
-define('URL', 'https://impressed.herokuapp.com/');
+define('URL', 'http://localhost/Impressed/');
 
 
 //contants

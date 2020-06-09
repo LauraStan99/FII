@@ -60,7 +60,7 @@
                 <li><a href="#email">Libraria PHPMailer</a></li>
                 <li><a href="#statistici">Statisticile generate</a></li>
                 <li><a href="#formateMinimale">Formate minimale de export: CSV si PDF</a></li>
-                
+                <li><a href="#bibliografie">Bibliografie aplicatie</a></li>
             </ol>
         </div>
 
@@ -255,7 +255,7 @@
             </h2>
             <p>Pentru realizarea chart-urilor pentru statistici, s-a utilizat serviciul Google Charts.</p>
             <p>Pentru fiecare statistica, s-a creat o noua pagina in care am avut un "div" avand ca si id, numele chart-ului.
-                Am adugat o referita catre Api-ul de la Google Charts. In secventa de javascript de trasare a chart-ului, 
+                Am adugat o referita catre Api-ul de la Google Charts. In secventa de javascript de trasare a chart-ului,
                 am adaugat datele din baza noastra de date, in functie de statistica.
             </p>
         </section>
@@ -276,6 +276,28 @@
                         pe care ulterior o salveaza in laptopul unde se face exportul ca si chart.pdf.
                     </p>
                 </li>
+            </ol>
+        </section>
+        <section id="bibliografie">
+            <h2>
+                <span>9.</span>Bibliografie aplicatie
+            </h2>
+            <ol>
+                <li><a href="https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_mailto">https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_mailto</a></li>
+                <li><a href="https://www.orsay.com/ro-ro/">https://www.orsay.com/ro-ro/</a></li>
+                <li><a href="https://www.bidorbuy.co.za/item/463675371/_the_speed_wallet_TOM_FRED_London_Freddy_Genuine_British_Leather_Pocket_Wallet.html#bidhistory">https://www.bidorbuy.co.za/item/463675371/_the_speed_wallet_TOM_FRED_London_Freddy_Genuine_British_Leather_Pocket_Wallet.html#bidhistory</a></li>
+                <li><a href="https://www.w3schools.com/">https://www.w3schools.com/</a></li>
+                <li><a href="https://bootsnipp.com/snippets/yP7qe?fbclid=IwAR1fZekdt5yHEF4mUS-CzocAEQECfBFLVsibg5qJRHxHGsPS5EnmsE8JurM">https://bootsnipp.com/snippets/yP7qe?fbclid=IwAR1fZekdt5yHEF4mUS-CzocAEQECfBFLVsibg5qJRHxHGsPS5EnmsE8JurM</a></li>
+                <li><a href="https://azmind.com/demo/bootstrap-footer/template-2/index.html">https://azmind.com/demo/bootstrap-footer/template-2/index.html</a></li>
+                <li><a href="https://codepen.io/scanfcode/pen/MEZPNd">https://codepen.io/scanfcode/pen/MEZPNd</a></li>
+                <li><a href="https://meta.discourse.org/t/easy-responsive-footer/95818">https://meta.discourse.org/t/easy-responsive-footer/95818/</a></li>
+                <li><a href="https://www.mockplus.com/blog/post/bootstrap-4-footer-template">https://www.mockplus.com/blog/post/bootstrap-4-footer-template</a></li>
+                <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_ajax_suggest_php">https://www.w3schools.com/js/tryit.asp?filename=tryjs_ajax_suggest_php</a></li>
+                <li><a href="https://w3c.github.io/scholarly-html/#abstract">https://w3c.github.io/scholarly-html/#abstract</a></li>
+                <li><a href="https://app.diagrams.net/">https://app.diagrams.net/</a></li>
+                <li><a href="https://www.webslesson.info/2016/10/export-mysql-table-data-to-csv-file-in-php.html">https://www.webslesson.info/2016/10/export-mysql-table-data-to-csv-file-in-php.html</a></li>
+                <li><a href="https://developers.google.com/chart/interactive/docs/gallery">https://developers.google.com/chart/interactive/docs/gallery</a></li>
+                <li><a href="https://www.webslesson.info/2016/10/make-simple-pie-chart-by-google-chart-api-with-php-mysql.html">https://www.webslesson.info/2016/10/make-simple-pie-chart-by-google-chart-api-with-php-mysql.html</a></li>
             </ol>
         </section>
         <footer>

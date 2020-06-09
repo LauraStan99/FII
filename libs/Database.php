@@ -4,6 +4,10 @@ class Database extends PDO
 {
     public  $con;
 
+    /**
+     * fac conexiunea cu baza de date
+     * elementele necesare conexiunii sunt definite in config.php
+     */
     public function __construct()
     {
         $this->con = new PDO(DB_TYPE.':host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS);
@@ -13,6 +17,11 @@ class Database extends PDO
         }
     }
 
+    /** INSERT **/
+
+    /**
+     * inserez intr-o tabela data ca parametru un array de elemente de tip cheie-valoare
+     */
     public function insert($table_name, $data)
     {
         $string = "INSERT INTO ".$table_name." (";
@@ -22,6 +31,12 @@ class Database extends PDO
         if ($stmt->execute()) return true;
         else return false;
     }
+
+    /** DELETE **/
+
+    /**
+     * sterg toate campurile din tabela data ca parametru
+     */
     public function deleteAll($table_name){
         $string = "DELETE FROM " . $table_name;
         $stmt = $this->con->prepare($string);
@@ -29,39 +44,85 @@ class Database extends PDO
         else return false;
     }
 
+    /**
+     * sterge toate liniile dintr-o tabela data ca parametru
+     * care indeplinesc o conditie
+     * coloana data ca parametru sa aiba valoarea data ca parametru
+     */
     public function delete1($table_name, $col, $data)
     {
 
-        $string = "DELETE FROM " . $table_name . " WHERE " . $col . "='" . $data . "'";
+        $string = "DELETE FROM " . $table_name . " WHERE " . $col . "= ? ";
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return true;
+        if ($stmt->execute([$data])) return true;
         else return false;
     }
 
+    /**
+     * sterge toate liniile dintr-o tabela data ca parametru
+     * care indeplinesc o conditie
+     * cele 2 coloane date ca parametru sa aiba valoarile date ca parametru
+     */
     public function delete2($table_name, $col1, $data1, $col2, $data2)
     {
-        $string = "DELETE FROM " . $table_name . " WHERE " . $col1 . "='" . $data1 . "' and ". $col2 . "='" . $data2 . "'";
+        $string = "DELETE FROM " . $table_name . " WHERE " . $col1 . "= ? and ". $col2 . "= ?";
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return true;
+        if ($stmt->execute([$data1, $data2])) return true;
         else return false;
     }
 
+    /**
+     * sterge toate liniile dintr-o tabela data ca parametru
+     * care indeplinesc o conditie
+     * cele 3 coloane date ca parametru sa aiba valoarile date ca parametru
+     */
     public function delete3($table_name, $col1, $data1, $col2, $data2, $col3, $data3)
     {
-        $string = "DELETE FROM " . $table_name . " WHERE " . $col1 . "='" . $data1 . "' and ". $col2 . "='" . $data2 . "' and ".$col3 . "='".$data3."'";
+        $string = "DELETE FROM " . $table_name . " WHERE " . $col1 . "= ? and ". $col2 . "= ? and ".$col3 . "= ?";
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return true;
+        if ($stmt->execute([$data1, $data2, $data3])) return true;
         else return false;
     }
 
+    /** UPDATE **/
+
+    /**
+     * updatez o tabela data ca parametru
+     * setand o noua valoare la o anumita coloana
+     * pt toate liniile care indeplinesc o coditie
+     * coloana data ca parametru sa aiba valoarea data ca parametru
+     * 
+     */
     public function update($table_name, $col1, $data1, $col2, $data2)
     {
-        $string = "UPDATE ".$table_name." SET ".$col1." ='".$data1."' WHERE ".$col2 ."='".$data2."'";
+        $string = "UPDATE ".$table_name." SET ".$col1." = ? WHERE ".$col2 ."= ? ";
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return true;
+        if ($stmt->execute([$data1, $data2])) return true;
         else return false;
     }
 
+    /**
+     * updatez o tabela data ca parametru
+     * setand o noua valoare la o anumita coloana
+     * pt toate liniile care indeplinesc o coditie
+     * cele 2 coloane date ca parametru sa aiba valoarile date ca parametru
+     * 
+     */
+    public function update2($table_name, $col1, $data1, $col2, $data2, $col3, $data3)
+    {
+        $string = "UPDATE ".$table_name." SET ".$col1." = ? WHERE ".$col2 ."= ? AND ".$col3."= ?";
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute([$data1, $data2, $data3])) return true;
+        else return false;
+    }
+
+    /**
+     * updatez o tabela data ca parametru
+     * setand o noua valoare la o anumita coloana
+     * pt toate liniile care indeplinesc o coditie
+     * cele 3 coloane date ca parametru sa aiba valoarile date ca parametru
+     * 
+     */
     public function update3($table_name, $col1, $data1, $col2, $data2, $col3, $data3, $col4, $data4, $col5, $data5)
     {
         $string = "UPDATE ".$table_name." SET ".$col1." ='".$data1."' , ".$col2." ='".$data2."' WHERE ".$col3 ."='".$data3."' AND ".$col4."='".$data4."' AND ".$col5."='".$data5."'";
@@ -70,25 +131,54 @@ class Database extends PDO
         else return false;
     }
 
-    public function update2($table_name, $col1, $data1, $col2, $data2, $col3, $data3)
-    {
-        $string = "UPDATE ".$table_name." SET ".$col1." ='".$data1."' WHERE ".$col2 ."='".$data2."' AND ".$col3."='".$data3."'";
-        $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return true;
-        else return false;
-    }
-
+    /**
+     * updatez o tabela data ca parametru
+     * setand o noua valoare la o anumita coloana prin micsorarea valorii din acel camp cu o valoare data ca parametru
+     * pt toate liniile care indeplinesc o coditie
+     * cele 2 coloane date ca parametru sa aiba valoarile date ca parametru
+     */
     public function updateSetNew($table_name, $col1, $data1, $col2, $data2, $col3, $data3){
-        $string = "UPDATE ".$table_name." SET ".$col1." =".$col1."-".$data1." WHERE ".$col2 ."='".$data2."' AND ".$col3."='".$data3."'";
+        $string = "UPDATE ".$table_name." SET ".$col1." =".$col1."-".$data1." WHERE ".$col2 ."= ? AND ".$col3."= ?";
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return true;
+        if ($stmt->execute([$data2, $data3])) return true;
         else return false;
     }
 
+    /**
+     * selectez toate liniile dintr-o tabela data ca parametru
+     * care indeplinesc urmatoarea conditia
+     * coloana data ca parametru sa aiba valoarea data ca parametru
+     */
     public function select1($table_name, $col, $data){
         $string="SELECT * FROM ".$table_name." WHERE ".$col." = ? ";  
         $stmt = $this->con->prepare($string);
         if ($stmt->execute([$data])) return $stmt;
+        else return false;
+    }
+
+    /**
+     * selectez toate liniile dintr-o tabela data ca parametru
+     * care indeplinesc urmatoarea conditia
+     * cele 2 coloane date ca parametru sa aiba valoarile date ca parametru
+     */
+    public function select2($table_name,$col1,$data1,$col2,$data2) {
+      
+        $string="SELECT * FROM ".$table_name." WHERE ".$col1."= ? and ".$col2."= ?";  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute([$data1, $data2])) return $stmt;
+        else return false;
+    }
+
+    /**
+     * selectez toate liniile dintr-o tabela data ca parametru
+     * care indeplinesc urmatoarea conditia
+     * cele 3 coloane date ca parametru sa aiba valoarile date ca parametru
+     */
+    public function select3($table_name,$col1,$data1,$col2,$data2,$col3,$data3) {
+      
+        $string="SELECT * FROM ".$table_name." WHERE ".$col1."= ? and ".$col2."= ? and ".$col3."= ?";  
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute([$data1, $data2, $data3])) return $stmt;
         else return false;
     }
 
@@ -99,25 +189,9 @@ class Database extends PDO
         else return false;
     }
 
-    public function select2($table_name,$col1,$data1,$col2,$data2) {
-      
-        $string="SELECT * FROM ".$table_name." WHERE ".$col1."='".$data1."' and ".$col2."='".$data2."'";  
-        $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
-        else return false;
-    }
-
     public function selectCount3($table_name,$col1,$data1,$col2,$data2,$col3,$data3) {
       
         $string="SELECT count(*) FROM ".$table_name." WHERE ".$col1."='".$data1."' and ".$col2."='".$data2."' and ".$col3."='".$data3."'";  
-        $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
-        else return false;
-    }
-
-    public function select3($table_name,$col1,$data1,$col2,$data2,$col3,$data3) {
-      
-        $string="SELECT * FROM ".$table_name." WHERE ".$col1."='".$data1."' and ".$col2."='".$data2."' and ".$col3."='".$data3."'";  
         $stmt = $this->con->prepare($string);
         if ($stmt->execute()) return $stmt;
         else return false;
