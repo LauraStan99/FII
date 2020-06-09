@@ -6,6 +6,15 @@ class Cauta extends Controller
         parent::__construct();
     }
 
+    /**
+     * functie care imi randeaza o pagina de produse in functie de un cuvant/cuvinte cheie
+     * introduse de catre utilizator in input-ul din search
+     * produsele ce vor fi afisate in urma rezultatului select-ului sunt paginate
+     * pe fiecare pagina vor aparea maxim 12 produse
+     * exista posibilitatea ca utilizatorul sa adauge in cos produsul din lista
+     * cum nu se poate seta o marime, marimea introdusa in cos va fi prima marime disponibila, incepand de la cea mai mica
+     * de asemenea, toate produsele pot fi sortate dupa: popularitate, pret crescator si descrescator si alfabetic
+     */
     function index(){
 
         $cauta = new Cauta_model();
