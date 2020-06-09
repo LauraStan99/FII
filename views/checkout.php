@@ -120,9 +120,11 @@
                 </div>
 
                 <div class="butoane">
-                    <button type="button" name="renunta" class="buton-renunta" onclick="window.location.href='<?php echo URL; ?>home'">
+
+                    <button type="submit" name="renunta" class="buton-renunta">
                         Renunta
                     </button>
+
                     <button type="submit" name="submit" value="Submit" class="buton-continua">
                         Plaseaza Comanda
                     </button>
