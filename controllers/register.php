@@ -6,7 +6,13 @@ class Register extends Controller
   {
     parent::__construct();
   }
-
+/**
+ * randez pagina de signIn unde utilizatorul isi poate crea un cont , 
+ * acesta are de completat un formular unde toate campurile sunt obligatorii , in caz de necompletare se trimit mesaje de eroare,
+ * datele sunt preluate din input-uri si validate cu ajutorul functiilor din clasa Validate , 
+ * in cazul in care anumite campuri au fost completate gresit , se trimit pe front mesaje de eroare generate de functiile de validare
+ * In caz de succes se trimite pe front mesajul de succes
+ */
   public function index()
   {
     $user = new User_model();

@@ -330,7 +330,7 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
-/*
+    /*
  *selecteaza toate liniile tabelului , ordonate dupa coloana specificata intr-un anumit sens ( asc/desc )
 */
     public function selectOrderBy($table_name, $order, $filter)
@@ -340,10 +340,10 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
-/**
- *selecteaza toate liniile tabelului , ordonate dupa coloana specificata intr-un anumit sens ( asc/desc )
- * unde celecoloana specificata respecta egalitatea cu data oferita printre parametrii functiei
- */
+    /**
+     *selecteaza toate liniile tabelului , ordonate dupa coloana specificata intr-un anumit sens ( asc/desc )
+     * unde celecoloana specificata respecta egalitatea cu data oferita printre parametrii functiei
+     */
     public function selectOrderBy1($table_name, $col1, $data1, $order, $filter)
     {
 
@@ -352,11 +352,11 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
-/**
- * selecteaza toate liniile tabelului , ordonate dupa coloana specificata intr-un anumit sens ( asc/desc )
- * unde cele 2 coloanele specificate respecta egalitatile cu datele oferite in parametrii functiei,
- * 
- */
+    /**
+     * selecteaza toate liniile tabelului , ordonate dupa coloana specificata intr-un anumit sens ( asc/desc )
+     * unde cele 2 coloanele specificate respecta egalitatile cu datele oferite in parametrii functiei,
+     * 
+     */
     public function selectOrderBy2($table_name, $col1, $data1, $col2, $data2, $order, $filter)
     {
 
@@ -365,10 +365,10 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
-/**
- *  selelecteaza toate liniile permise de limita oferita ca parametru din tabelul specificat , 
- *  ordonate dupa coloana specificata intr-o anumita ordonare ( asc/desc )
- */
+    /**
+     *  selelecteaza toate liniile permise de limita oferita ca parametru din tabelul specificat , 
+     *  ordonate dupa coloana specificata intr-o anumita ordonare ( asc/desc )
+     */
     public function selectOrderByLimit($table_name, $col, $filter, $limit)
     {
 
@@ -377,11 +377,11 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
-/**
- * selelecteaza toate liniile permise de limita oferita ca parametru din tabelul specificat , 
- * ordonate dupa coloana specificata intr-o anumita ordonare ( asc/desc )
- * fiecare linie avand valorile celor 2 coloane specificate ,
- */
+    /**
+     * selelecteaza toate liniile permise de limita oferita ca parametru din tabelul specificat , 
+     * ordonate dupa coloana specificata intr-o anumita ordonare ( asc/desc )
+     * fiecare linie avand valorile celor 2 coloane specificate ,
+     */
     public function selectOrderBy1Limit($table_name, $col1, $col2, $col3, $filter, $limit)
     {
 
@@ -390,10 +390,10 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
-/**
- * selecteaza toate liniile tabelului specificat incepand de la pragul de start pana la cel final ,
- * ordonate dupa o anumita coloana ($order),avand o anumita ordonare($filter = asc/desc ) 
- */
+    /**
+     * selecteaza toate liniile tabelului specificat incepand de la pragul de start pana la cel final ,
+     * ordonate dupa o anumita coloana ($order),avand o anumita ordonare($filter = asc/desc ) 
+     */
     public function selectOrderByLimit2($table_name, $order, $filter, $start_from, $limit)
     {
         $string = "SELECT * FROM " . $table_name . " order by " . $order . " " . $filter . " LIMIT " . $start_from . "," . $limit;
@@ -402,34 +402,34 @@ class Database extends PDO
         else return false;
     }
 
-/**
- * selecteaza toate inregistrarile (liniile) din tabela specificata , 
- * unde valorile celor 6 coloane pot indeplini anumite conditii (de a fi egale cu valoarea oferita ca si parametru , 
- * data din parametru sa se regaseasca in valoarea coloanei )
- */
+    /**
+     * selecteaza toate inregistrarile (liniile) din tabela specificata , 
+     * unde valorile celor 6 coloane pot indeplini anumite conditii (de a fi egale cu valoarea oferita ca si parametru , 
+     * data din parametru sa se regaseasca in valoarea coloanei )
+     */
     public function selectSearch6($table_name, $data, $col1, $col2, $col3, $col4, $col5, $col6)
     {
-        $string = "SELECT * FROM  " . $table_name . " WHERE " . $col1 . " LIKE '%" . $data . "%' or " . $col2 . " = '" . $data . "' or " . $col3 . " LIKE '%" . $data . "%' or " . $col4 . " = '" . $data . "' or " . $col5 . " = '" . $data . "' or " . $col6 . " = '" . $data . "'";
+        $string = "SELECT * FROM  " . $table_name . " WHERE " . $col1 . " LIKE '%" . $data . "%' or " . $col2 . " = ? or " . $col3 . " LIKE '%" . $data . "%' or " . $col4 . " = ? or " . $col5 . " = ? or " . $col6 . " = ? ";
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
+        if ($stmt->execute([$data, $data, $data, $data])) return $stmt;
         else return false;
     }
-/**
- * selecteaza toate inregistrarile (liniile) din tabela specificata , 
- * unde valorile celor 6 coloane pot indeplini anumite conditii (de a fi egale cu valoarea oferita ca si parametru , 
- * data din parametru sa se regaseasca in valoarea coloanei ),
- * inregistrarile returnate fiind limitate , avand o prag de start si unul de final.
- */
+    /**
+     * selecteaza toate inregistrarile (liniile) din tabela specificata , 
+     * unde valorile celor 6 coloane pot indeplini anumite conditii (de a fi egale cu valoarea oferita ca si parametru , 
+     * data din parametru sa se regaseasca in valoarea coloanei ),
+     * inregistrarile returnate fiind limitate , avand o prag de start si unul de final.
+     */
     public function selectSearch6Limit($table_name, $data, $col1, $col2, $col3, $col4, $col5, $col6, $start_from, $limit)
     {
-        $string = "SELECT * FROM  " . $table_name . " WHERE " . $col1 . " LIKE '%" . $data . "%' or " . $col2 . " = '" . $data . "' or " . $col3 . " LIKE '%" . $data . "%' or " . $col4 . " = '" . $data . "' or " . $col5 . " = '" . $data . "' or " . $col6 . " = '" . $data . "' LIMIT " . $start_from . "," . $limit;
+        $string = "SELECT * FROM  " . $table_name . " WHERE " . $col1 . " LIKE '%" . $data . "%' or " . $col2 . " = ? or " . $col3 . " LIKE '%" . $data . "%' or " . $col4 . " = ? or " . $col5 . " = ? or " . $col6 . " = ? LIMIT " . $start_from . "," . $limit;
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
+        if ($stmt->execute([$data, $data, $data, $data])) return $stmt;
         else return false;
     }
-  /**
-  *selecteaza o anumita coloana si numarul de aparitii din tabela specificata ca parametru,  grupate dupa coloana
-  */
+    /**
+     *selecteaza o anumita coloana si numarul de aparitii din tabela specificata ca parametru,  grupate dupa coloana
+     */
     public function selectGroupBy($table_name, $col)
     {
         $string = "SELECT " . $col . ",count(*) as number FROM " . $table_name . " GROUP BY " . $col;

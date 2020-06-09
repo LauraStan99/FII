@@ -7,6 +7,11 @@ class Produse extends Controller
     {
         parent::__construct();
     }
+/**
+ * functia este destinata filtrului de pe pagina produselor ,
+ * in momentul in care au fost bifate unul sau mai multe filtre de catre utilizator , '
+ * dupa apasarea butonului de aplica , toate datele sunt adaugate in URL
+*/
 
     public function filtreaza($gen, $categorie)
     {
@@ -46,7 +51,11 @@ class Produse extends Controller
 
         header('location: ' . URL . 'produse/' . $gen . '/' . $categorie . '?marime=' . $marime . '&culoare=' . $culoare . '&material=' . $material . '&tip=' . $tip . '&pret1=' . $pret1 . '&pret2=' . $pret2);
     }
-
+/**
+ * se randeaza pagina produselor in care sunt introduse toate produsele preluate din baza de date care corespund subcategoriei alese din categoria femei, 
+ * sau toate produsele preluate din baza de date dupa aplicarea filtrelor introduse de utilizator
+ * In cazul in care utilizatorul doreste sa ordoneze produsele afisate se apeleaza functia de ordonare corespunzatoare optiunii de sortare aleasa
+ */
     public function femei($category)
     {
         $this->view->category = $category;
@@ -76,9 +85,14 @@ class Produse extends Controller
             $this->view->result =  $product->selectOrder('femei', $category, 'pret', 'desc', $this->view->result, $this->view->count);
         }
         $product->deleteFromProduse_filter_order();
+
         $this->view->render('womenProducts');
     }
-
+/**
+ * se randeaza pagina produselor in care sunt introduse toate produsele preluate din baza de date care corespund subcategoriei alese din categoria barbati, 
+ * sau toate produsele preluate din baza de date dupa aplicarea filtrelor introduse de utilizator
+ * In cazul in care utilizatorul doreste sa ordoneze produsele afisate se apeleaza functia de ordonare corespunzatoare optiunii de sortare aleasa
+ */
     public function barbati($category)
     {
         $this->view->category = $category;
@@ -110,7 +124,11 @@ class Produse extends Controller
         $product->deleteFromProduse_filter_order();
         $this->view->render('menProducts');
     }
-
+/**
+ * se randeaza pagina produselor in care sunt introduse toate produsele preluate din baza de date care corespund subcategoriei alese din categoria copii, 
+ * sau toate produsele preluate din baza de date dupa aplicarea filtrelor introduse de utilizator
+ * In cazul in care utilizatorul doreste sa ordoneze produsele afisate se apeleaza functia de ordonare corespunzatoare optiunii de sortare aleasa
+ */
     public function copii($category)
     {
         $this->view->category = $category;
@@ -142,7 +160,17 @@ class Produse extends Controller
         $product->deleteFromProduse_filter_order();
         $this->view->render('childrenProducts');
     }
-
+/**
+ * se randeaza pagina unui produs care va contine toate datele din baza de date cu privire la acel produs
+ * exista butoane pentru fiecare marime , si odata actionate se schimba (pe front) numarul de produse disponibile in stock 
+ * Butonul de adaugarea produsului in cos apeleaza functia addToCart care necesita ca parametri: id-u produsului si marimea(preluata 
+ * de la butoanele de marime)
+ * in cazul in care marimea nu este setata (nu se actioneaza butoanele de marime) se genereaza prima marime disponibila in stock
+ * Daca este selectata o marime a carui stock s-a golit se preda catre front mesajul de eroare "Produsul cu marimea selectata nu este in stoc."
+ * Exista si butonul de wishlist care odata actionat adauga produsul in tabela de favorite cu marimea selectata sau cu una generata automat.
+ * In cazul in care produsul este deja in lista de favorite si se adauga din nou , se genereaza mesajul de eroare care este transmis pe front
+ * 'Produsul cu marimea selectata este deja in wishlist.'
+ */
     public function produs($id_product)
     {
         $product = new produse_model();
@@ -221,7 +249,10 @@ class Produse extends Controller
 
         $this->view->render('productPage');
     }
-
+/**
+ *functie aplicata pe butonul de adugare in cos , pt produsele din categoria femei care sunt randate in urma 
+ *cautarii/selectarii unei subcategorii/filtrari si se adauga ca si marime prima marime disponibila in stock portnins de la XS
+ */
     public function addToCartWomenPage($id_product, $category)
     {
 
@@ -241,7 +272,10 @@ class Produse extends Controller
         }
         header('location: ' . URL . 'produse/femei/' . $category);
     }
-
+/**
+ *functie aplicata pe butonul de adugare in cos , pt produsele din categoria barbati care sunt randate in urma 
+ *cautarii/selectarii unei subcategorii/filtrari si se adauga ca si marime prima marime disponibila in stock portnins de la XS
+ */
     public function addToCartMenPage($id_product, $category)
     {
 
@@ -261,7 +295,10 @@ class Produse extends Controller
         }
         header('location: ' . URL . 'produse/barbati/' . $category);
     }
-
+/**
+ *functie aplicata pe butonul de adugare in cos , pt produsele din categoria copii care sunt randate in urma 
+ *cautarii/selectarii unei subcategorii/filtrari si se adauga ca si marime prima marime disponibila in stock portnins de la XS
+ */
     public function addToCartChildrenPage($id_product, $category)
     {
 
@@ -281,7 +318,9 @@ class Produse extends Controller
         }
         header('location: ' . URL . 'produse/copii/' . $category);
     }
-
+/**
+ * functie destinata paginii de administrare de produse care permite stergerea unui produs in functie de id_ul oferit ca si parametru
+ */
     public function deleteProductAsAdmin($id_product, $gender, $category)
     {
         $product = new Produse_model();
