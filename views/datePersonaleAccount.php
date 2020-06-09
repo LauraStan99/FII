@@ -23,7 +23,7 @@
         <form method="post">
             <div class="tip-date">
                 <label for="inregistrare-nume">
-                    <a id="id-nume"><img id="register1" src="<?php echo URL; ?>public/poze/register-tw.png" alt="register" />Nume : <?php if (isset($this->nume)) {
+                    <a id="id-nume"><img id="register1" src="<?php echo URL; ?>public/poze/register-tw.png" alt="register" />Nume : <?php if (isset($this->nume) && !isset($this->numeErr)) {
                                                                                                                                         echo $this->nume;
                                                                                                                                         SESSION::set('nume', $this->nume);
                                                                                                                                     } else  echo  Session::get('nume'); ?>
@@ -31,7 +31,7 @@
                 </label>
             </div>
             <div class="date">
-                <input type="text" id="inregistrare-nume" name="nume" placeholder="Nume nou ..." value="<?php if (isset($this->nume)) echo $this->nume; ?>" />
+                <input type="text" id="inregistrare-nume" name="nume" placeholder="Nume nou ..." value="<?php if (isset($this->nume) ) echo $this->nume; ?>" />
 
                 <span class="error"> <?php if (isset($this->numeErr)) {
                                             echo $this->numeErr;
@@ -41,7 +41,7 @@
 
             <div class="tip-date">
                 <label for="inregistrare-prenume">
-                    <a id="id-prenume"><img id="register2" src="<?php echo URL; ?>public/poze/register-tw.png" alt="register" />Prenume : <?php if (isset($this->prenume)) {
+                    <a id="id-prenume"><img id="register2" src="<?php echo URL; ?>public/poze/register-tw.png" alt="register" />Prenume : <?php if (isset($this->prenume) && !isset($this->prenumeErr)) {
                                                                                                                                                 echo $this->prenume;
                                                                                                                                                 SESSION::set('prenume', $this->prenume);
                                                                                                                                             } else  echo  Session::get('prenume'); ?></a>
@@ -60,7 +60,7 @@
 
             <div class="tip-date">
                 <label for="inregistrare-email">
-                    <a id="id-email"><img id="email" src="<?php echo URL; ?>public/poze/email-tw.png" alt="email" />Email : <?php if (isset($this->email)) {
+                    <a id="id-email"><img id="email" src="<?php echo URL; ?>public/poze/email-tw.png" alt="email" />Email : <?php if (isset($this->email) && !isset($this->emailErr)) {
                                                                                                                                 echo $this->email;
                                                                                                                                 SESSION::set('email', $this->email);
                                                                                                                             } else  echo  Session::get('email'); ?></a>
@@ -80,7 +80,7 @@
 
             <div class="tip-date">
                 <label for="inregistrare-telefon">
-                    <a id="id-telefon"><img id="telefon" src="<?php echo URL; ?>public/poze/telefon.png" alt="telefon" />Telefon : <?php if (isset($this->telefon)) {
+                    <a id="id-telefon"><img id="telefon" src="<?php echo URL; ?>public/poze/telefon.png" alt="telefon" />Telefon : <?php if (isset($this->telefon) && !isset($this->telefonErr)) {
                                                                                                                                         echo $this->telefon;
                                                                                                                                         SESSION::set('telefon', $this->telefon);
                                                                                                                                     } else  echo  Session::get('telefon'); ?>
@@ -101,7 +101,7 @@
 
             <div class="tip-date">
                 <label for="inregistrare-adresa">
-                    <a id="id-adresa"><img id="adresa" src="<?php echo URL; ?>public/poze/adresaCheckout.png" alt="adresa" />Adresa : <?php if (isset($this->adresa)) {
+                    <a id="id-adresa"><img id="adresa" src="<?php echo URL; ?>public/poze/adresaCheckout.png" alt="adresa" />Adresa : <?php if (isset($this->adresa) && !isset($this->adresaErr)) {
                                                                                                                                             echo $this->adresa;
                                                                                                                                             SESSION::set('adresa', $this->adresa);
                                                                                                                                         } else  echo  Session::get('adresa'); ?></a>
