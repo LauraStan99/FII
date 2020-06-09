@@ -5,7 +5,10 @@ class Wishlist_model extends Model
     {
         parent::__construct();
     }
-
+/**
+ * se porneste sesiunea pentru a putea prelua id-ul utilizatorului conectat la aplicatie,
+ * functia returneaza toate datele despre produsele din tabela de wishlist a  utilizatorului 
+ */
     public function selectWishlistProducts()
     {
         if (!isset($_SESSION))
