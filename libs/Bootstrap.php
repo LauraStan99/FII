@@ -6,10 +6,14 @@ class Bootstrap
     private $controller = null;
 
     private $controllerPath = 'controllers/';
-    private $modelPath = 'models/';
     private $errorFile = 'err.php';
     private $defaultFile = 'home.php';
 
+    /**
+     * preiau url-ul din browser
+     * daca url-ul este gol, import un controller by default, adica redirectionez catre controller-ul home
+     * altfel, preiau controller ul corect si apelez metoda pentru controller
+     */
     public function init()
     {
         $this->getUrl();
@@ -21,6 +25,7 @@ class Bootstrap
         $this->callControllerMethod();
     }
 
+    /** setters **/
     public function setControllerPath($path)
     {
         $this->controllerPath = trim($path, '/') . '/';
@@ -50,6 +55,9 @@ class Bootstrap
         $this->url = explode('/', $this->url);
     }
 
+    /**
+     * import controller-ul home si apelez metoda index() din acesta
+     */
     private function loadDefaultController()
     {
         require $this->controllerPath . $this->defaultFile;
@@ -57,19 +65,30 @@ class Bootstrap
         $this->controller->index();
     }
 
+    /**
+     * preiau numele controller-ului din url
+     * daca exista, il import
+     * si il instantiez
+     */
     private function loadExistingController()
     {
         $file = $this->controllerPath . $this->url[0] . '.php';
         if (file_exists($file)) {
             require $file;
             $this->controller = new $this->url[0];
-            $this->controller->loadModel($this->url[0]);
         } else {
             $this->error();
         }
     }
 
-
+    /**
+     * in functie de numarul de parametrii aflati in url exista mai multe cazuri
+     * aici am considerat doar 5
+     * daca exista un singur parametru, adica numele controller-ului, se va apela functia index din acesta
+     * daca exista 2 parametrii, se va apela functia cu numele celui de-al doilea parametru din url din controller-ul curent
+     * daca exista 3 parametrii, se va apela functia cu 1 parametru din url in controller-ul curent
+     * cazurile 4 si 5 variaza doar prin nr-ul de parametrii al functiilor ce vor fi apelate
+     */
     private function callControllerMethod()
     {
         $length = count($this->url);
@@ -105,6 +124,9 @@ class Bootstrap
         }
     }
 
+    /**
+     * daca numele controller ului din url nu este gasit, se va apela functia index din clasa Err
+     */
     private function error()
     {
         require $this->controllerPath . $this->errorFile;
