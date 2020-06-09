@@ -6,6 +6,9 @@ class Payment_model extends Model
         parent::__construct();
     }
 
+    /**
+     * functia face un update asupra coloanei de status din tabela "comanda" pentru utilizatorul cu id-ul preluat din sesiune
+     */
     public function changeOrderStatus($orderId)
     {
         if (!isset($_SESSION)){
@@ -15,6 +18,9 @@ class Payment_model extends Model
         return $this->db->update2('comanda', 'status_comanda', 'inregistrata', 'id_utilizator', $id, 'id_comanda', $orderId);
     }
 
+    /**
+     * functia sterge intregul cos de cumparaturi a utilizatorului logat , a carui id este preluat din sesiune
+     */
     public function deleteCart(){
         if (!isset($_SESSION))
         {
