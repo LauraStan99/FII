@@ -224,32 +224,38 @@ class Database extends PDO
         else return false;
     }
 
-    
+    /**
+     * selectez toate liniile rezultate din join ul a doua tabele
+     * aceste linii trebuie sa indeplineasca o conditie
+     * si anume o coloana din prima tabela sa aiba valoare data ca cea data ca parametru
+     */
     public function selectJoin($table_name1, $table_name2, $col1, $col2, $col3, $data)
     {
-        $string = "SELECT * FROM " . $table_name1 . " JOIN " . $table_name2 . " ON " . $table_name1 . "." . $col1 . "=" . $table_name2 . "." . $col2 . " WHERE " . $table_name1 . "." . $col3 . "='" . $data . "'";
+        $string = "SELECT * FROM " . $table_name1 . " JOIN " . $table_name2 . " ON " . $table_name1 . "." . $col1 . "=" . $table_name2 . "." . $col2 . " WHERE " . $table_name1 . "." . $col3 . "= ?";
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
+        if ($stmt->execute([$data])) return $stmt;
         else return false;
     }
 
+    /**
+     * selectez toate liniile rezultate din join ul a doua tabele
+     * aceste linii trebuie sa indeplineasca o conditie
+     * si anume o coloana din prima tabela sa aiba valoare data ca cea data ca parametru
+     * nr-ul liniilor selectate este limitat la 5
+     */
     public function selectJoinLimit($table_name1, $table_name2, $col1, $col2, $col3, $data)
     {
-        $string = "SELECT * FROM " . $table_name1 . " JOIN " . $table_name2 . " ON " . $table_name1 . "." . $col1 . "=" . $table_name2 . "." . $col2 . " WHERE " . $table_name1 . "." . $col3 . "='" . $data . "' LIMIT 5";
+        $string = "SELECT * FROM " . $table_name1 . " JOIN " . $table_name2 . " ON " . $table_name1 . "." . $col1 . "=" . $table_name2 . "." . $col2 . " WHERE " . $table_name1 . "." . $col3 . "= ? LIMIT 5";
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
+        if ($stmt->execute([$data])) return $stmt;
         else return false;
     }
 
-
-    public function selectJoin2($table_name1, $table_name2, $col1, $col2, $col3, $data1, $col4, $data2)
-    {
-        $string = "SELECT * FROM " . $table_name1 . " JOIN " . $table_name2 . " ON " . $table_name1 . "." . $col1 . "=" . $table_name2 . "." . $col2 . " WHERE " . $table_name1 . "." . $col3 . "='" . $data1 . "' and " . $table_name1 . "." . $col4 . "='" . $data2 . "'";
-        $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
-        else return false;
-    }
-
+    /**
+     * selectez toate liniile rezultate din join ul a doua tabele
+     * aceste linii trebuie sa indeplineasca anumite conditii
+     * 5 coloane trebuie sa aiba ca valori cele date date ca parametru
+     */
     public function selectJoin7($table_name1, $table_name2, $col, $col1, $data1, $col2, $data2, $col3, $data3, $col4, $data4, $col5, $data5, $col6, $data6, $col7, $data7)
     {
 
@@ -259,14 +265,24 @@ class Database extends PDO
         else return false;
     }
 
+
+    /**
+     * selectez toate liniile rezultate din join ul a doua tabele
+     * aceste linii trebuie sa indeplineasca anumite conditii
+     * o coloana din prima tabela trebuie sa aiba valoarea data ca parametru
+     * si liniile rezultate in urma join ului trebuie sa fie grupate dupa o coloana data ca parametru
+     */
     public function selectJoinGroupByWhere($table_name1, $table_name2, $col, $col1, $col2, $data2)
     {
-        $string = "SELECT " . $col . ", count(*) as number FROM " . $table_name1 . " JOIN " . $table_name2 . " ON " . $table_name1 . "." . $col1 . " = " . $table_name2 . "." . $col1 . " WHERE " . $col2 . "='" . $data2 . "' GROUP BY " . $col;
+        $string = "SELECT " . $col . ", count(*) as number FROM " . $table_name1 . " JOIN " . $table_name2 . " ON " . $table_name1 . "." . $col1 . " = " . $table_name2 . "." . $col1 . " WHERE " . $col2 . "= ? GROUP BY " . $col;
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
+        if ($stmt->execute([$data2])) return $stmt;
         else return false;
     }
 
+    /**
+     * selectez nr-ul de linii dintr-o tabela data ca parametru
+     */
     public function selectCountSimple($table_name)
     {
         $string = "SELECT count(*) FROM " . $table_name;
@@ -275,23 +291,38 @@ class Database extends PDO
         else return false;
     }
 
+    /**
+     * selectez nr-ul de linii dintr-o tabela data ca parametru
+     * care indeplinesc urmatoarea conditie
+     * o coloana trebuie sa aiba valoarea data ca parametru
+     */
     public function selectCount($table_name, $col, $data)
     {
-        $string = "SELECT count(*) FROM " . $table_name . " WHERE " . $col . "='" . $data . "'";
+        $string = "SELECT count(*) FROM " . $table_name . " WHERE " . $col . "= ?";
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
+        if ($stmt->execute([$data])) return $stmt;
         else return false;
     }
 
+    /**
+     * selectez nr-ul de linii dintr-o tabela data ca parametru
+     * linii care indeplinesc urmatoarea conditie
+     * 3 coloana trebuie sa aiba valoarile cele data ca parametru
+     */
     public function selectCount3($table_name, $col1, $data1, $col2, $data2, $col3, $data3)
     {
 
-        $string = "SELECT count(*) FROM " . $table_name . " WHERE " . $col1 . "='" . $data1 . "' and " . $col2 . "='" . $data2 . "' and " . $col3 . "='" . $data3 . "'";
+        $string = "SELECT count(*) FROM " . $table_name . " WHERE " . $col1 . "= ? and " . $col2 . "= ? and " . $col3 . "= ?";
         $stmt = $this->con->prepare($string);
-        if ($stmt->execute()) return $stmt;
+        if ($stmt->execute([$data1, $data2, $data3])) return $stmt;
         else return false;
     }
 
+    /**
+     * selectez toate liniile dintr-o tabela data ca parametru
+     * linii care incep de la index-ul start, dat ca parametru
+     * si se termina la index-ul limit, dat ca parametru
+     */
     public function selectLimit($table_name, $start, $limit)
     {
         $string = "SELECT * FROM " . $table_name . " LIMIT " . $start . "," . $limit;
