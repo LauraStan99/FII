@@ -17,7 +17,8 @@ class Admin_model extends Model
     /**
      * calculez numarul de linii din tabela produse si il returnez
      */
-    public function selectCountProducts(){
+    public function selectCountProducts()
+    {
         $result = $this->db->selectCountSimple('produse');
         $row = $result->fetch();
         return $row['count(*)'];
@@ -26,7 +27,8 @@ class Admin_model extends Model
     /**
      * calculez numarul de linii din tabela utilizatori si il returnez
      */
-    public function selectCountUsers(){
+    public function selectCountUsers()
+    {
         $result = $this->db->selectCountSimple('utilizatori');
         $row = $result->fetch();
         return $row['count(*)'];
@@ -45,7 +47,7 @@ class Admin_model extends Model
      */
     public function selectAllUsers($start_from, $limit)
     {
-        return $this->db->selectLimit('utilizatori', $start_from, $limit);
+        return $this->db->selectLimitWhere('utilizatori', $start_from, $limit, 'tip_utilizator', 'user');
     }
 
     /**
@@ -69,92 +71,93 @@ class Admin_model extends Model
      * in acelasi timp si calculez cate linii sunt returnate pentru select-ul anterior
      */
     public function selectProductById($id)
-    {  $result= $this->db->select1('produse','id_produs',$id);
-       $count = $this->db->selectCount('produse','id_produs',$id);
-       $row=$count->fetch();
-       if($row['count(*)']==0) return false;
-       else return $result;
+    {
+        $result = $this->db->select1('produse', 'id_produs', $id);
+        $count = $this->db->selectCount('produse', 'id_produs', $id);
+        $row = $count->fetch();
+        if ($row['count(*)'] == 0) return false;
+        else return $result;
     }
-    
+
     /**
      * updatez in tabela produse campul nume cu numele dat ca parametru pentru produsul care are id-ul dat ca parametru
      */
-    public function updateProductName($name,$id)
+    public function updateProductName($name, $id)
     {
-        return $this->db->update('produse', 'nume', $name, 'id_produs',$id);
+        return $this->db->update('produse', 'nume', $name, 'id_produs', $id);
     }
 
-     /**
+    /**
      * updatez in tabela produse campul pret cu pretul dat ca parametru pentru produsul care are id-ul dat ca parametru
      */
-    public function updateProductPrice($price,$id)
+    public function updateProductPrice($price, $id)
     {
-        return $this->db->update('produse', 'pret', $price, 'id_produs',$id);
+        return $this->db->update('produse', 'pret', $price, 'id_produs', $id);
     }
 
-     /**
+    /**
      * updatez in tabela produse campul material cu materialul dat ca parametru pentru produsul care are id-ul dat ca parametru
      */
-    public function updateProductMaterial($material,$id)
+    public function updateProductMaterial($material, $id)
     {
-        return $this->db->update('produse', 'material', $material, 'id_produs',$id);
+        return $this->db->update('produse', 'material', $material, 'id_produs', $id);
     }
 
-     /**
+    /**
      * updatez in tabela produse campul imagine cu imaginea data ca parametru pentru produsul care are id-ul dat ca parametru
      */
-    public function updateProductImage($image,$id)
+    public function updateProductImage($image, $id)
     {
-        return $this->db->update('produse', 'imagine', $image, 'id_produs',$id);
+        return $this->db->update('produse', 'imagine', $image, 'id_produs', $id);
     }
 
-     /**
+    /**
      * updatez in tabela produse campul desciere cu descrierea data ca parametru pentru produsul care are id-ul dat ca parametru
      */
-    public function updateProductDescription($description,$id)
+    public function updateProductDescription($description, $id)
     {
-        return $this->db->update('produse', 'descriere', $description, 'id_produs',$id);
+        return $this->db->update('produse', 'descriere', $description, 'id_produs', $id);
     }
 
-     /**
+    /**
      * updatez in tabela produse campul gen cu genul dat ca parametru pentru produsul care are id-ul dat ca parametru
      */
-    public function updateProductGender($gender,$id)
+    public function updateProductGender($gender, $id)
     {
-        return $this->db->update('produse', 'gen', $gender, 'id_produs',$id);
+        return $this->db->update('produse', 'gen', $gender, 'id_produs', $id);
     }
 
-     /**
+    /**
      * updatez in tabela produse campul tip cu tipul dat ca parametru pentru produsul care are id-ul dat ca parametru
      */
-    public function updateProductType($tipe,$id)
+    public function updateProductType($tipe, $id)
     {
-        return $this->db->update('produse', 'tip', $tipe, 'id_produs',$id);
+        return $this->db->update('produse', 'tip', $tipe, 'id_produs', $id);
     }
 
-     /**
+    /**
      * updatez in tabela produse campul categorie cu categoria data ca parametru pentru produsul care are id-ul dat ca parametru
      */
-    public function updateProductCategory($category,$id)
+    public function updateProductCategory($category, $id)
     {
-        return $this->db->update('produse', 'categorie', $category, 'id_produs',$id);
+        return $this->db->update('produse', 'categorie', $category, 'id_produs', $id);
     }
 
-     /**
+    /**
      * updatez in tabela produse campul culoare cu culoarea data ca parametru pentru produsul care are id-ul dat ca parametru
      */
-    public function updateProductColor($color,$id)
+    public function updateProductColor($color, $id)
     {
-        return $this->db->update('produse', 'culoare', $color, 'id_produs',$id);
+        return $this->db->update('produse', 'culoare', $color, 'id_produs', $id);
     }
 
-     /**
+    /**
      * selectez datele pentru statistica comenzilor
      * datele sunt preluate din tabela comanda
      */
     public function selectStatisticaComenzi()
     {
-        return $this->db->selectGroupBy('comanda','data_plasare');
+        return $this->db->selectGroupBy('comanda', 'data_plasare');
     }
 
     /**
@@ -163,7 +166,7 @@ class Admin_model extends Model
      */
     public function selectStatisticaProduseFemei()
     {
-        return $this->db->selectJoinGroupByWhere('produse_comanda','produse','categorie','id_produs','gen','femei');
+        return $this->db->selectJoinGroupByWhere('produse_comanda', 'produse', 'categorie', 'id_produs', 'gen', 'femei');
     }
 
     /**
@@ -173,21 +176,23 @@ class Admin_model extends Model
      */
     public function selectStatisticaProdusePopulare()
     {
-        return $this->db->selectOrderBy1Limit('produse','nume','nr_accesari','nr_accesari','desc',10);
+        return $this->db->selectOrderBy1Limit('produse', 'nume', 'nr_accesari', 'nr_accesari', 'desc', 10);
     }
 
     /**
      * selectez datele pentru statistica comenzilor in functie de metoda de plata cash/card
      */
-    public function selectStatisticaPlataComenzi(){
-        return $this->db->selectGroupBy('comanda','metoda_plata');
+    public function selectStatisticaPlataComenzi()
+    {
+        return $this->db->selectGroupBy('comanda', 'metoda_plata');
     }
 
     /**
      * selectez datele pentru statistica comenzilor in functie de tara de livrare din Europa
      */
-    public function selectStatisticaComenziEuropa(){
-        return $this->db->selectGroupBy('comanda','tara');
+    public function selectStatisticaComenziEuropa()
+    {
+        return $this->db->selectGroupBy('comanda', 'tara');
     }
 
     /**
@@ -203,8 +208,8 @@ class Admin_model extends Model
         header('Content-Disposition: attachment; filename=data.csv');
         $output = fopen("php://output", "w");
         fputcsv($output, array('DATA PLASARE', 'NUMAR PRODUSE'));
-        $result=$this->selectStatisticaComenzi();
-        while ($row =$result->fetch(PDO::FETCH_ASSOC)) {
+        $result = $this->selectStatisticaComenzi();
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             fputcsv($output, $row);
         }
         fclose($output);
@@ -216,13 +221,14 @@ class Admin_model extends Model
      * ii setam proprietatea de scriere in fisier ('W') deschizand-ul si populandu-l cu datele abia preluate
      * 
      */
-    public function createCsvStatisticaComenziEuropa(){
+    public function createCsvStatisticaComenziEuropa()
+    {
         header('Content-Type: text/csv; charset=utf-8');
         header('Content-Disposition: attachment; filename=data.csv');
         $output = fopen("php://output", "w");
         fputcsv($output, array('TARA', 'NUMAR COMENZI LIVRATE'));
-        $result=$this->selectStatisticaComenziEuropa();
-        while ($row =$result->fetch(PDO::FETCH_ASSOC)) {
+        $result = $this->selectStatisticaComenziEuropa();
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             fputcsv($output, $row);
         }
         fclose($output);
@@ -234,13 +240,14 @@ class Admin_model extends Model
      * ii setam proprietatea de scriere in fisier ('W') deschizand-ul si populandu-l cu datele abia preluate
      * 
      */
-    public function createCsvStatisticaPlataComenzi(){
+    public function createCsvStatisticaPlataComenzi()
+    {
         header('Content-Type: text/csv; charset=utf-8');
         header('Content-Disposition: attachment; filename=data.csv');
         $output = fopen("php://output", "w");
         fputcsv($output, array('MODALITATE PLATA', 'NUMAR COMENZI'));
-        $result=$this->selectStatisticaPlataComenzi();
-        while ($row =$result->fetch(PDO::FETCH_ASSOC)) {
+        $result = $this->selectStatisticaPlataComenzi();
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             fputcsv($output, $row);
         }
         fclose($output);
@@ -252,31 +259,33 @@ class Admin_model extends Model
      * ii setam proprietatea de scriere in fisier ('W') deschizand-ul si populandu-l cu datele abia preluate
      * 
      */
-    public function createCsvStatisticaProduseFemei(){
+    public function createCsvStatisticaProduseFemei()
+    {
         header('Content-Type: text/csv; charset=utf-8');
         header('Content-Disposition: attachment; filename=data.csv');
         $output = fopen("php://output", "w");
         fputcsv($output, array('CATEGORIE PRODUSE FEMEI', 'NUMAR ARTICOLE CUMPARATE'));
-        $result=$this->selectStatisticaProduseFemei();
-        while ($row =$result->fetch(PDO::FETCH_ASSOC)) {
+        $result = $this->selectStatisticaProduseFemei();
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             fputcsv($output, $row);
         }
         fclose($output);
     }
-    
+
     /**
      * creez csv ul cu datele preluate din select-ul pentru statistica celor mai populare produse din aplicatie
      * setam tipul fisierului pe care dorim sa il cream ("Content-Type: text/csv")
      * ii setam proprietatea de scriere in fisier ('W') deschizand-ul si populandu-l cu datele abia preluate
      * 
      */
-    public function createCsvStatisticaCeleMaiPopulareProduse(){
+    public function createCsvStatisticaCeleMaiPopulareProduse()
+    {
         header('Content-Type: text/csv; charset=utf-8');
         header('Content-Disposition: attachment; filename=data.csv');
         $output = fopen("php://output", "w");
         fputcsv($output, array('DENUMIRE PRODUS', 'POPULARITATE'));
-        $result=$this->selectStatisticaProdusePopulare();
-        while ($row =$result->fetch(PDO::FETCH_ASSOC)) {
+        $result = $this->selectStatisticaProdusePopulare();
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             fputcsv($output, $row);
         }
         fclose($output);

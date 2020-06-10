@@ -330,6 +330,19 @@ class Database extends PDO
         if ($stmt->execute()) return $stmt;
         else return false;
     }
+
+    /**
+     * selectez toate liniile dintr-o tabela data ca parametru
+     * linii care incep de la index-ul start, dat ca parametru
+     * si se termina la index-ul limit, dat ca parametru
+     */
+    public function selectLimitWhere($table_name, $start, $limit, $col, $data)
+    {
+        $string = "SELECT * FROM " . $table_name . " WHERE ".$col. " = ? LIMIT " . $start . "," . $limit;
+        $stmt = $this->con->prepare($string);
+        if ($stmt->execute([$data])) return $stmt;
+        else return false;
+    }
     
     /**
      * selecteaza toate liniile tabelului , ordonate dupa coloana specificata intr-un anumit sens ( asc/desc )
