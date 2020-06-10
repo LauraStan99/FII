@@ -34,12 +34,12 @@ class Account extends Controller
             $validate->changePhone($this->view->telefon, $this->view->telefonErr);
             $validate->changePassword($this->view->parola, $this->view->parolaErr);
 
-            if (isset($this->view->nume)) $user->updateLastName($this->view->nume);
-            if (isset($this->view->prenume)) $user->updateFirstName($this->view->prenume);
-            if (isset($this->view->email)) $user->updateEmail($this->view->email);
-            if (isset($this->view->adresa)) $user->updateAddress($this->view->adresa);
-            if (isset($this->view->telefon)) $user->updatePhone($this->view->telefon);
-            if (isset($this->view->parola)) $user->updatePassword($this->view->parola);
+            if (isset($this->view->nume) && $this->view->numeErr == "") $user->updateLastName($this->view->nume);
+            if (isset($this->view->prenume) && $this->view->prenumeErr == "") $user->updateFirstName($this->view->prenume);
+            if (isset($this->view->email) && $this->view->emailErr == "") {$user->updateEmail($this->view->email);}
+            if (isset($this->view->adresa) && $this->view->adresaErr == "") $user->updateAddress($this->view->adresa);
+            if (isset($this->view->telefon) && $this->view->telefonErr == "") $user->updatePhone($this->view->telefon);
+            if (isset($this->view->parola) && $this->view->parolaErr == "") $user->updatePassword($this->view->parola);
 
             if ($this->view->numeErr == "" && $this->view->prenumeErr == "" && $this->view->emailErr == "" && $this->view->telefonErr == "" && $this->view->adresaErr == ""  && $this->view->parolaErr == "") {
                 $this->view->success_message = "Datele au fost actualizate cu succes.";
